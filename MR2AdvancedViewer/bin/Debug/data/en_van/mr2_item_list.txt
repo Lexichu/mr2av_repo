@@ -1,0 +1,110 @@
+Potato|Animal Foods|Though some monsters don't like such animal foods, a few do.|txt_Potato|-----|10
+Fish|Common Principle Foods|This is the main source of food for monsters.|txt_Fish|-----|100
+Meat|Sumptuous Meal|Best as an occasional treat, monsters tend to overeat this.|txt_Meat|-----|300
+Milk|Nutritious Drink|It is nutritious, but not filling, and is intended for baby monsters.|txt_Milk|-----|50
+Cup Jelly|Common Snack for Monsters|This gelatinous food is for busy monsters.|txt_CupJelly|-----|150
+Tablet|Balanced Nutrient|This ill-tasting food is high in protein, nutrition, and calories.|txt_Tablet|-----|500
+Sculpture|Sculpture of Artemis|A monster will become enchanted by the beautiful smile of this goddess.|+1 to Spoil at the start of a month.|1500|-----
+Gemini's Pot|Beautiful Pot|It is said that a monster will feel great if it drinks from this.|+1 to Fear at the start of a month.|1500|-----
+Lump of Ice|Lump of Ice|It helps a monster regain stamina, but ony during the summer.|???|150|-----
+Fire Stone|Unique Stone|The temperature of its surface will rise in winter and give you some heat.|???|5000|-----
+Pure Gold|Ingot of Pure Gold|This is a very highly valued natural resource.|-1% Fatigue(floored) at the end of a month. (Gold Suezo only)|6000|-----
+Pure Gold|Ingot of Pure Gold|This is a very highly valued natural resource.|-1% Fatigue(floored) at the end of a month, for any monster. Cheated item.|6000|-----
+Pure Silver|Ingot of Pure Silver|More affordable than gold but still highly valuable|No use besides selling.|4000|-----
+Pure Platina|Ingot of Pure Platina|More valuable than gold, few can afford platina.|No use besides selling.|8000|-----
+Mango|Imported Fruit|Monsters love to snack on this tasty fruit.|???|10|60
+Candy|Imported Candy|Monsters will gain weight if they eat a lot of sweet foods like this.|???|60|120
+Smoked Snake|A Strong-smelling food|Monsters don't like this much, but it's necessary for discipline.|???|300|600
+Apply Cake|A Mildly Sweet Treat|Monsters like this very much. Use it to reward your monster.|???|300|600
+Mint Leaf|A Refreshing Herb|Its scent and flavor relaxes your monster and relieves its stress.|Reduce Stress by 50% (floored).|100|200
+Powder|Powder for Fatness|This burns off unhealthy fat. Feed it to overweight monsters.|???|50|100
+Sweet Jelly|Sweet Treat|To feed sweet treats too much often spoils your monster.|+5 Form, -5 Nature.|100|200
+Sour Jelly|Sour Treat|This sour taste makes your monster brace.|+5 Form, +5 Nature|100|200
+Crab's Claw|Crab's Claw|It can be used as a secret seasoning when you combine monsters.|Increases POW and SKI of a monster combination by 50 each when used as a seasoning.|2000|-----
+Nuts Oil|Extract from Nuts|This oil squeezed out of nuts helps a monster recover from fatigue|Reduces Fatigue by 28. Increases Spoil and Fear by 1. For Henger/Arrowhead/Durahan, decreases Stress by 20% (floored).|100|200
+Nuts Oil|Extract from Nuts|This oil squeezed out of nuts helps a monster recover from fatigue|Reduces Fatigue by 28. Increases Spoil and Fear by 1. Decreases Stress by 20% (floored). Cheated item.|100|200
+Star Prune|Popular Tasty Fruit|It's rumored that a monster will become popular if it eats this.|Increases Fame by 20, Spoil by 5 and Form by 1.|500|1000
+Gold Peach|Golden Shining Fruit|To feed this increases your monster's lifespan, but only once.|Increases Lifespan by 50 weeks. Activates Gold Peach flag for monster.|4500|-----
+Silver Peach|Silvery Shining Fruit|To feed this increases your monster's lifespan, but only once.|Increases Lifespan by 25 weeks. Activates Silver Peach flag for monster.|5000|-----
+Magic Banana|Mysterious Banana|Its effect differs each time you feed it to your monster.|txt_Banana|100|200
+Magic Banana|Mysterious Banana|Its effect differs each time you feed it to your monster.|Always +10 Spoil, -10 Fear. Cheated item.|100|200
+Magic Banana|Mysterious Banana|Its effect differs each time you feed it to your monster.|Always +10 Spoil, +10 Fear, -1 week lifespan. Cheated item.|100|200
+Half-eaten|Half-eaten Nuts|These half-eaten nuts prove some monster or other was there before.|Increases Form by 1.|10|-----
+Irritater|Unique Flower|It is said that its scent contains poison, but the truth is unknown.|Increases Stress by 15 and Fatigue by 10, decreases Form by 1.|50|-----
+Griever|Unique Flower|It is said that its scent contains poison, but the truth is unknown.|Decreases Stress by 20 and Form by 1, increases Fatigue by 10.|50|-----
+Teromeann|Stimulant|This will temporarily stimulate a monster's abilities.|???, -20 weeks lifespan.|2000|-----
+Manseitan|Medicine from the Far East|'Lif. and 'Ski.' will increase. However, 'Spd.' will decrease.|Increase LIF and SKI by 10, decrease SPD by 10. -5 weeks lifespan.|1500|-----
+Larox|Imported Medicine|'Pow.' and 'Def.' will increase. However, 'Lif.' will decrease.|Increase POW and DEF by 10, decrease LIF by 10. -4 weeks lifespan.|1000|-----
+Kasseitan|Medicine from the Far East|This will temporarily stimulate a monster's abilities.|???, -20 weeks lifespan.|750|-----
+Troron|Imported Medicine|This will stimulate a monster and help to make it more disciplined.|On drill success (Cheat/Success/Great), gain 10 POW and 5 SKI. Lasts one month. -6 weeks lifespan.|600|-----
+Nageel|Stimulant|This will temporarily stimulate a monster's abilities.|???, -4 weeks lifespan.|1000|-----
+Torokachin FX|Imported Medicine|[no description]|On drill success (Cheat/Success/Great), gain 25 POW and SKI. Lasts one month. -12 weeks lifespan.|1000|-----
+Paradoxine|Mysterious Medicine|They say this is stronger than Troron, but the truth is unknown.|On drill success (Cheat/Success/Great), gain 30 POW and SKI, but lose 10% of DEF and SPD. Lasts one month. -18 weeks lifespan.|1500|-----
+Tiger Chips|Chips of Tiger's Disc|These chips can be used when combining as a secret seasoning|[effect]|500|-----
+Hopper Chips|Chips of Hopper's Disc|These chips can be used when combining as a secret seasoning|[effect]|500|-----
+Hare Chips|Chips of Hare's Disc|These chips can be used when combining as a secret seasoning|[effect]|500|-----
+Kato Chips|Chips of Kato's Disc|These chips can be used when combining as a secret seasoning|[effect]|500|-----
+Suezo Chips|Chips of Suezo's Disc|These chips can be used when combining as a secret seasoning|[effect]|500|-----
+Naga Chips|Chips of Naga's Disc|These chips can be used when combining as a secret seasoning|[effect]|500|-----
+Gaboo Chips|Chips of Gaboo's Disc|These chips can be used when combining as a secret seasoning|[effect]|500|-----
+Jell Chips|Chips of Jell's Disc|These chips can be used when combining as a secret seasoning|[effect]|500|-----
+Niton Chips|Chips of Niton's Disc|These chips can be used when combining as a secret seasoning|[effect]|500|-----
+Plant Chips|Chips of Plant's Disc|These chips can be used when combining as a secret seasoning|[effect]|1500|-----
+Mew Chips|Chips of Mew's Disc|These chips can be used when combining as a secret seasoning|[effect]|1000|-----
+Mocchi Chips|Chips of Mocchi's Disc|These chips can be used when combining as a secret seasoning|[effect]|500|-----
+Zuum Chips|Chips of Zuum's Disc|These chips can be used when combining as a secret seasoning|[effect]|500|-----
+Arrow Head Chips|Chips of Arrow Head's Disc|These chips can be used when combining as a secret seasoning|[effect]|500|-----
+Ape Chips|Chips of Ape's Disc|These chips can be used when combining as a secret seasoning|[effect]|1000|-----
+Monol Chips|Chips of Monol's Disc|These chips can be used when combining as a secret seasoning|[effect]|500|-----
+Bay Shrimp|Small Shrimp|Bay Shrimp can be used as bait for catching fish.|Increases Form by 1.|10|???
+Incense|Incense Stick|This item's scent has an unknown effect.|Decreases Stress by 1.|10|???
+Shoes|Leather Product|These durable leather shoes offer a Monster a nice solid chew toy.|40|???
+Rice Cracker|Rice Cracker Made in Galoe|This famous rice cracker from Galoe village is very hard.|Increases Form by 1.|10|???
+Tobacco|[no description]|[no description|Decreases Stress and Form by 1.|40|???
+Cloudy Sake|Bottle of 'Olive Oil'|'Olive Oil' is good for health and Kato loves drinking it.|Decreases Stress by 1 whilst increasing Form by 1|100|200
+Kaleidoscope|A Toy|You can see a beautiful pattern by peeking through its small hole.|Decreases Stress by 1.|500|1000
+Torles Water|Mineral Waters|This water drawn from the Torles Mountain is good for health purpose.|Decreases Stress by 1.|Decreases Stress by 1.|60|120
+Kiseru Part|[no description]|[the broken end of a Kiseru smoking pipe]|Decreases Stress by 1.|100|???
+Perfume|Bottle of Perfume|Monsters will become enchanted by this light-scented scent.|Decreases Stress by 1.|150|300
+Stick|Stick|Both its thickness and weight are perfectly suited for Ghost.|Cutscene item; unusable in combination for Ghost.|250|-----
+Bone|The Remains of a Feast|These left-overs are very tasty to some monsters.|Increases Form by 1.|10|20
+Mixed Liquor|Mixed Liquor of Torble|This famous liquor from Torble has very good fragrance.|Decreases Stress by 2, but increases Form by 10.|200|400
+Wool Ball|Toy for Monsters|This multi-colored yarn ball is very popular against monsters.|Decreases Stress by 1.|350|700
+Cedar Log|Log of Papas Cedar|This log is highly valued for building houses.|Decreases Stress by 1.|150|???
+Pile of Meat|Sumptuous Food|Such many slices of meat can be eaten only as a birthday meal.|Increases Form by 12.|450|???
+Soil|Soil of Parepare|The Parepare area is famous for its fertility.|Decreases Stress by 1.|100|200
+Rock Candy|Candy Made in Mandy|This large hard candy is sold for monsters in the Mandy area.|Increases Form by 1.|350|???
+Dummy|Dummy for Training|This dummy is used as a target during a monster's training.|Decreases Stress by 1.|100|200
+Ice of Papas|Lump of Ice|This Ice, collected in the Papas area, has a high purity.|Decreases Stress by 1.|100|???
+Greaase|Grease|This is used as lamp oil, or to reduce friction.|Decrease Stress by 1.|50|???
+DNA Cap. (Red)|Gene Capsule|It is said that this capsule contains a monster's genetic data.|Creates a Poison (Pixie/???) when used as seasoning.|50|-----
+DNA Cap. (Yellow)|Gene Capsule|It is said that this capsule contains a monster's genetic data.|Creates a Mia (Pixie/???) when used as seasoning.|50|-----
+DNA Cap. (Pink)|Gene Capsule|It is said that this capsule contains a monster's genetic data.|Creates a GentleMocchi (Mocchi/???) when used as seasoning.|50|-----
+DNA Cap. (Gray)|Gene Capsule|It is said that this capsule contains a monster's genetic data.|Creates a Moo (Dragon/???) when used as seasoning.|50|-----
+DNA Cap. (White)|Gene Capsule|It is said that this capsule contains a monster's genetic data.|Creates a White Mocchi (Mocchi/???) when used as seasoning.|50|-----
+DNA Cap. (Gold)|Gene Capsule|It is said that this capsule contains a monster's genetic data.|Creates a Gold Suezo (Suezo/???) when used as seasoning.|50|-----
+DNA Cap. (Black)|Gene Capsule|It is said that this capsule contains a monster's genetic data.|Creates a ForwardGolem (Golem/???) when used as seasoning. (New Bottle in MF2)|50|-----
+Gods' Slate|Slate with Inscriptions|This slate is said to contain the secrets of the Monsters.|Lore item - serves no practical purpose. Can be sold.|50|-----
+Hero Badge|Badge|It is a very valuable badge that shows a Monster's status.|Pushes the active Monster's nature 1 point towards Best at the start of every month.|5000|-----
+Heel Badge|Badge|It is a very valuable badge that shows a Monster's status.|Pushes the active Monster's nature 1 point towards Worst at the start of every month.|5000|-----
+Quack Doll (parts)|Wooden Bird Doll|This wooden bird-like doll must be built by hand.|Cutscene item for creating one of the Quack Doll variants.|-----|-----
+Dragon Tusk|Legendary Monster's Tusk|It is said that it is useful when trying to obtain a Dragon.|Creates a Dragon (Dragon/Dragon) when used as seasoning.|3000|-----
+Old Sheath|Ancient Weapon|This sheath is covered with rust. It is useless without its sword.|Decreases the DEF of a combined Monster by 50.|50|-----
+Double-Edged|Ancient Weapon|Use caution when you handle this sharp double-edged sword.|Creates a Durahan (Durahan/Durahan) when used as seasoning.|5000|-----
+Magic Pot|Pot|A magical spirit may appear if you rub this beat-up pot.|Creates a Bajarl (Bajarl/Bajarl) when used as seasoning.|-----|-----
+Mask|Mysterious Mask|There is a dangerous atmosphere about this mask.|Creates a Joker (Joker/Joker) when used as seasoning.|-----|-----
+Big Footstep|Someone's Footsteps|If you walk bare food in winter, your feet will be frostbitten.|Increases the LIF and DEF of a combined Monster by 10. Discovery allows Bighand to be fought.|1000|-----
+Big Boots|Long Boots|Who in the world wears such huge long boots?|Creates a Jill (Jill/Jill) when used as seasoning.|-----|-----
+Fire Feather|Flaming Feather|This flaming feather is too hot to use as a feather pen.|Creates a Phoenix (Phoenix/Phoenix) when used as seasoning.|-----|-----
+Taurus' Horn|Legendary Monster's Horn|This legendary monster is mentioned in myths, and might actually exist.|Does... something. Increases odds of Centaur similarly to Disc Chips.|2000|-----
+Dino's Tail|Tail of Monster|Some people carry it just as a good luck charm.|??? - seemingly worthless.|250|-----
+Zilla Beard|Beard of Monster|It is said that it is useful when trying to obtain a Zilla.|Creates a Zilla (Zilla/Zilla) when used as seasoning.|-----|-----
+Fun Can|Can of Toys|You can gather five diamond mark seals for this.|Cutscene item; contains Ducken parts.|-----|-----
+Strong Glue|Strong Glue|This strong glue bonds anything tightly.|txt_Glue|-----|-----
+Quack Doll (Glue)|Wooden Bird Doll|This wooden bird-like doll must be built by hand|Creates a Ducken (Ducken/Ducken)when used as seasoning.|3000|-----
+Mystic Seed|Plant Seed|Try to plant it, and it might bring you good luck.|Cutscene item; starts Mock unlock. Missable if you haven't beaten B rank within 30 years of first shop visit.|-----|-----
+Parepare Tea|Soft Drink|This slightly bitter drink is good for a Monster's health.|Decreases Stress by 1, increases Form by 1.|40|-----
+Match|Making Fire|This match-like tool is used to make fire.|Decreases Stress by 1.|10|20
+Tooth Pick|Tooth Pick|Toothpicks are available in all monster sizes.|Decreases Stress by 1.|50|100
+Playmate|Toy for Monsters|Monsters like to play with this fox-tail toy.|Decreases Stress by 1.|250|500
+Whet Stone|Whet Stone|Some monsters use this to sharpen their claws and teeth.|Decreases Stress by 1.|100|200

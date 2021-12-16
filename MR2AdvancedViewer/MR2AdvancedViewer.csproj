@@ -1,0 +1,840 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{E3BC3A29-81CD-4525-8210-BCD89A03CF17}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>MR2AdvancedViewer</RootNamespace>
+    <AssemblyName>MR2AdvancedViewer</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <PublishUrl>C:\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>1</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <PublishWizardCompleted>true</PublishWizardCompleted>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>mr2viewericon_EOf_icon.ico</ApplicationIcon>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ManifestCertificateThumbprint>9DC94E14D84F21654A47C9051650699EC4C067FF</ManifestCertificateThumbprint>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ManifestKeyFile>MR2AdvancedViewer_TemporaryKey.pfx</ManifestKeyFile>
+  </PropertyGroup>
+  <PropertyGroup>
+    <GenerateManifests>true</GenerateManifests>
+  </PropertyGroup>
+  <PropertyGroup>
+    <SignManifests>false</SignManifests>
+  </PropertyGroup>
+  <PropertyGroup>
+    <TargetZone>
+    </TargetZone>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationManifest>Properties\app.manifest</ApplicationManifest>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Memory, Version=1.2.17.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Memory.dll.1.2.17\lib\Memory.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Forms\CharMapping.cs" />
+    <Compile Include="Forms\ItemLister.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\ItemLister.Designer.cs">
+      <DependentUpon>ItemLister.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\MRDebug.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\MRDebug.Designer.cs">
+      <DependentUpon>MRDebug.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\TrainingWindow.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\TrainingWindow.Designer.cs">
+      <DependentUpon>TrainingWindow.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\ViewerWindow.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\ViewerWindow.Designer.cs">
+      <DependentUpon>ViewerWindow.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\MLifeIndexWindow.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\MLifeIndexWindow.Designer.cs">
+      <DependentUpon>MLifeIndexWindow.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\MMoveWindow.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\MMoveWindow.Designer.cs">
+      <DependentUpon>MMoveWindow.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Forms\ItemLister.resx">
+      <DependentUpon>ItemLister.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\MRDebug.resx">
+      <DependentUpon>MRDebug.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\TrainingWindow.resx">
+      <DependentUpon>TrainingWindow.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\ViewerWindow.resx">
+      <DependentUpon>ViewerWindow.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\MLifeIndexWindow.resx">
+      <DependentUpon>MLifeIndexWindow.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\MMoveWindow.resx">
+      <DependentUpon>MMoveWindow.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\ControllerView.resx">
+      <DependentUpon>ControllerView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Forms\ControllerView.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\ControllerView.Designer.cs">
+      <DependentUpon>ControllerView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <None Include="MR2AdvancedViewer_TemporaryKey.pfx" />
+    <None Include="packages.config" />
+    <None Include="Properties\app.manifest" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Ape_MoveIcons\Ape_1.png" />
+    <Content Include="Ape_MoveIcons\Ape_10.png" />
+    <Content Include="Ape_MoveIcons\Ape_11.png" />
+    <Content Include="Ape_MoveIcons\Ape_12.png" />
+    <Content Include="Ape_MoveIcons\Ape_2.png" />
+    <Content Include="Ape_MoveIcons\Ape_3.png" />
+    <Content Include="Ape_MoveIcons\Ape_4.png" />
+    <Content Include="Ape_MoveIcons\Ape_5.png" />
+    <Content Include="Ape_MoveIcons\Ape_6.png" />
+    <Content Include="Ape_MoveIcons\Ape_7.png" />
+    <Content Include="Ape_MoveIcons\Ape_8.png" />
+    <Content Include="Ape_MoveIcons\Ape_9.png" />
+    <Content Include="Arrow_MoveIcons\Arrow_1.png" />
+    <Content Include="Arrow_MoveIcons\Arrow_10.png" />
+    <Content Include="Arrow_MoveIcons\Arrow_11.png" />
+    <Content Include="Arrow_MoveIcons\Arrow_12.png" />
+    <Content Include="Arrow_MoveIcons\Arrow_13.png" />
+    <Content Include="Arrow_MoveIcons\Arrow_14.png" />
+    <Content Include="Arrow_MoveIcons\Arrow_15.png" />
+    <Content Include="Arrow_MoveIcons\Arrow_16.png" />
+    <Content Include="Arrow_MoveIcons\Arrow_17.png" />
+    <Content Include="Arrow_MoveIcons\Arrow_18.png" />
+    <Content Include="Arrow_MoveIcons\Arrow_19.png" />
+    <Content Include="Arrow_MoveIcons\Arrow_2.png" />
+    <Content Include="Arrow_MoveIcons\Arrow_20.png" />
+    <Content Include="Arrow_MoveIcons\Arrow_21.png" />
+    <Content Include="Arrow_MoveIcons\Arrow_22.png" />
+    <Content Include="Arrow_MoveIcons\Arrow_23.png" />
+    <Content Include="Arrow_MoveIcons\Arrow_24.png" />
+    <Content Include="Arrow_MoveIcons\Arrow_3.png" />
+    <Content Include="Arrow_MoveIcons\Arrow_4.png" />
+    <Content Include="Arrow_MoveIcons\Arrow_5.png" />
+    <Content Include="Arrow_MoveIcons\Arrow_6.png" />
+    <Content Include="Arrow_MoveIcons\Arrow_7.png" />
+    <Content Include="Arrow_MoveIcons\Arrow_8.png" />
+    <Content Include="Arrow_MoveIcons\Arrow_9.png" />
+    <Content Include="Bajar_MoveIcons\Bajar_1.png" />
+    <Content Include="Bajar_MoveIcons\Bajar_10.png" />
+    <Content Include="Bajar_MoveIcons\Bajar_11.png" />
+    <Content Include="Bajar_MoveIcons\Bajar_12.png" />
+    <Content Include="Bajar_MoveIcons\Bajar_13.png" />
+    <Content Include="Bajar_MoveIcons\Bajar_14.png" />
+    <Content Include="Bajar_MoveIcons\Bajar_15.png" />
+    <Content Include="Bajar_MoveIcons\Bajar_2.png" />
+    <Content Include="Bajar_MoveIcons\Bajar_3.png" />
+    <Content Include="Bajar_MoveIcons\Bajar_4.png" />
+    <Content Include="Bajar_MoveIcons\Bajar_5.png" />
+    <Content Include="Bajar_MoveIcons\Bajar_6.png" />
+    <Content Include="Bajar_MoveIcons\Bajar_7.png" />
+    <Content Include="Bajar_MoveIcons\Bajar_8.png" />
+    <Content Include="Bajar_MoveIcons\Bajar_9.png" />
+    <Content Include="Baku_MoveIcons\Baku_1.png" />
+    <Content Include="Baku_MoveIcons\Baku_10.png" />
+    <Content Include="Baku_MoveIcons\Baku_11.png" />
+    <Content Include="Baku_MoveIcons\Baku_12.png" />
+    <Content Include="Baku_MoveIcons\Baku_13.png" />
+    <Content Include="Baku_MoveIcons\Baku_14.png" />
+    <Content Include="Baku_MoveIcons\Baku_15.png" />
+    <Content Include="Baku_MoveIcons\Baku_16.png" />
+    <Content Include="Baku_MoveIcons\Baku_2.png" />
+    <Content Include="Baku_MoveIcons\Baku_3.png" />
+    <Content Include="Baku_MoveIcons\Baku_4.png" />
+    <Content Include="Baku_MoveIcons\Baku_5.png" />
+    <Content Include="Baku_MoveIcons\Baku_6.png" />
+    <Content Include="Baku_MoveIcons\Baku_7.png" />
+    <Content Include="Baku_MoveIcons\Baku_8.png" />
+    <Content Include="Baku_MoveIcons\Baku_9.png" />
+    <Content Include="Beacl_MoveIcons\Beacl_1.png" />
+    <Content Include="Beacl_MoveIcons\Beacl_10.png" />
+    <Content Include="Beacl_MoveIcons\Beacl_11.png" />
+    <Content Include="Beacl_MoveIcons\Beacl_12.png" />
+    <Content Include="Beacl_MoveIcons\Beacl_13.png" />
+    <Content Include="Beacl_MoveIcons\Beacl_14.png" />
+    <Content Include="Beacl_MoveIcons\Beacl_15.png" />
+    <Content Include="Beacl_MoveIcons\Beacl_16.png" />
+    <Content Include="Beacl_MoveIcons\Beacl_17.png" />
+    <Content Include="Beacl_MoveIcons\Beacl_18.png" />
+    <Content Include="Beacl_MoveIcons\Beacl_19.png" />
+    <Content Include="Beacl_MoveIcons\Beacl_2.png" />
+    <Content Include="Beacl_MoveIcons\Beacl_20.png" />
+    <Content Include="Beacl_MoveIcons\Beacl_21.png" />
+    <Content Include="Beacl_MoveIcons\Beacl_3.png" />
+    <Content Include="Beacl_MoveIcons\Beacl_4.png" />
+    <Content Include="Beacl_MoveIcons\Beacl_5.png" />
+    <Content Include="Beacl_MoveIcons\Beacl_6.png" />
+    <Content Include="Beacl_MoveIcons\Beacl_7.png" />
+    <Content Include="Beacl_MoveIcons\Beacl_8.png" />
+    <Content Include="Beacl_MoveIcons\Beacl_9.png" />
+    <Content Include="Centa_MoveIcons\Centa_1.png" />
+    <Content Include="Centa_MoveIcons\Centa_10.png" />
+    <Content Include="Centa_MoveIcons\Centa_11.png" />
+    <Content Include="Centa_MoveIcons\Centa_12.png" />
+    <Content Include="Centa_MoveIcons\Centa_13.png" />
+    <Content Include="Centa_MoveIcons\Centa_14.png" />
+    <Content Include="Centa_MoveIcons\Centa_15.png" />
+    <Content Include="Centa_MoveIcons\Centa_16.png" />
+    <Content Include="Centa_MoveIcons\Centa_17.png" />
+    <Content Include="Centa_MoveIcons\Centa_2.png" />
+    <Content Include="Centa_MoveIcons\Centa_3.png" />
+    <Content Include="Centa_MoveIcons\Centa_4.png" />
+    <Content Include="Centa_MoveIcons\Centa_5.png" />
+    <Content Include="Centa_MoveIcons\Centa_6.png" />
+    <Content Include="Centa_MoveIcons\Centa_7.png" />
+    <Content Include="Centa_MoveIcons\Centa_8.png" />
+    <Content Include="Centa_MoveIcons\Centa_9.png" />
+    <Content Include="Color_MoveIcons\Color_1.png" />
+    <Content Include="Color_MoveIcons\Color_10.png" />
+    <Content Include="Color_MoveIcons\Color_11.png" />
+    <Content Include="Color_MoveIcons\Color_12.png" />
+    <Content Include="Color_MoveIcons\Color_13.png" />
+    <Content Include="Color_MoveIcons\Color_14.png" />
+    <Content Include="Color_MoveIcons\Color_15.png" />
+    <Content Include="Color_MoveIcons\Color_2.png" />
+    <Content Include="Color_MoveIcons\Color_3.png" />
+    <Content Include="Color_MoveIcons\Color_4.png" />
+    <Content Include="Color_MoveIcons\Color_5.png" />
+    <Content Include="Color_MoveIcons\Color_6.png" />
+    <Content Include="Color_MoveIcons\Color_7.png" />
+    <Content Include="Color_MoveIcons\Color_8.png" />
+    <Content Include="Color_MoveIcons\Color_9.png" />
+    <Content Include="cursor.png" />
+    <Content Include="Drago_MoveIcons\Drago_1.png" />
+    <Content Include="Drago_MoveIcons\Drago_10.png" />
+    <Content Include="Drago_MoveIcons\Drago_11.png" />
+    <Content Include="Drago_MoveIcons\Drago_12.png" />
+    <Content Include="Drago_MoveIcons\Drago_13.png" />
+    <Content Include="Drago_MoveIcons\Drago_14.png" />
+    <Content Include="Drago_MoveIcons\Drago_15.png" />
+    <Content Include="Drago_MoveIcons\Drago_16.png" />
+    <Content Include="Drago_MoveIcons\Drago_17.png" />
+    <Content Include="Drago_MoveIcons\Drago_18.png" />
+    <Content Include="Drago_MoveIcons\Drago_19.png" />
+    <Content Include="Drago_MoveIcons\Drago_2.png" />
+    <Content Include="Drago_MoveIcons\Drago_3.png" />
+    <Content Include="Drago_MoveIcons\Drago_4.png" />
+    <Content Include="Drago_MoveIcons\Drago_5.png" />
+    <Content Include="Drago_MoveIcons\Drago_6.png" />
+    <Content Include="Drago_MoveIcons\Drago_7.png" />
+    <Content Include="Drago_MoveIcons\Drago_8.png" />
+    <Content Include="Drago_MoveIcons\Drago_9.png" />
+    <Content Include="Ducke_MoveIcons\Ducke_1.png" />
+    <Content Include="Ducke_MoveIcons\Ducke_10.png" />
+    <Content Include="Ducke_MoveIcons\Ducke_11.png" />
+    <Content Include="Ducke_MoveIcons\Ducke_12.png" />
+    <Content Include="Ducke_MoveIcons\Ducke_13.png" />
+    <Content Include="Ducke_MoveIcons\Ducke_14.png" />
+    <Content Include="Ducke_MoveIcons\Ducke_15.png" />
+    <Content Include="Ducke_MoveIcons\Ducke_16.png" />
+    <Content Include="Ducke_MoveIcons\Ducke_17.png" />
+    <Content Include="Ducke_MoveIcons\Ducke_18.png" />
+    <Content Include="Ducke_MoveIcons\Ducke_2.png" />
+    <Content Include="Ducke_MoveIcons\Ducke_3.png" />
+    <Content Include="Ducke_MoveIcons\Ducke_4.png" />
+    <Content Include="Ducke_MoveIcons\Ducke_5.png" />
+    <Content Include="Ducke_MoveIcons\Ducke_6.png" />
+    <Content Include="Ducke_MoveIcons\Ducke_7.png" />
+    <Content Include="Ducke_MoveIcons\Ducke_8.png" />
+    <Content Include="Ducke_MoveIcons\Ducke_9.png" />
+    <Content Include="Durah_MoveIcons\Durah_1.png" />
+    <Content Include="Durah_MoveIcons\Durah_10.png" />
+    <Content Include="Durah_MoveIcons\Durah_11.png" />
+    <Content Include="Durah_MoveIcons\Durah_12.png" />
+    <Content Include="Durah_MoveIcons\Durah_13.png" />
+    <Content Include="Durah_MoveIcons\Durah_14.png" />
+    <Content Include="Durah_MoveIcons\Durah_15.png" />
+    <Content Include="Durah_MoveIcons\Durah_16.png" />
+    <Content Include="Durah_MoveIcons\Durah_17.png" />
+    <Content Include="Durah_MoveIcons\Durah_18.png" />
+    <Content Include="Durah_MoveIcons\Durah_19.png" />
+    <Content Include="Durah_MoveIcons\Durah_2.png" />
+    <Content Include="Durah_MoveIcons\Durah_20.png" />
+    <Content Include="Durah_MoveIcons\Durah_21.png" />
+    <Content Include="Durah_MoveIcons\Durah_22.png" />
+    <Content Include="Durah_MoveIcons\Durah_3.png" />
+    <Content Include="Durah_MoveIcons\Durah_4.png" />
+    <Content Include="Durah_MoveIcons\Durah_5.png" />
+    <Content Include="Durah_MoveIcons\Durah_6.png" />
+    <Content Include="Durah_MoveIcons\Durah_7.png" />
+    <Content Include="Durah_MoveIcons\Durah_8.png" />
+    <Content Include="Durah_MoveIcons\Durah_9.png" />
+    <Content Include="Gaboo_MoveIcons\Gaboo_1.png" />
+    <Content Include="Gaboo_MoveIcons\Gaboo_10.png" />
+    <Content Include="Gaboo_MoveIcons\Gaboo_11.png" />
+    <Content Include="Gaboo_MoveIcons\Gaboo_12.png" />
+    <Content Include="Gaboo_MoveIcons\Gaboo_13.png" />
+    <Content Include="Gaboo_MoveIcons\Gaboo_14.png" />
+    <Content Include="Gaboo_MoveIcons\Gaboo_15.png" />
+    <Content Include="Gaboo_MoveIcons\Gaboo_16.png" />
+    <Content Include="Gaboo_MoveIcons\Gaboo_17.png" />
+    <Content Include="Gaboo_MoveIcons\Gaboo_2.png" />
+    <Content Include="Gaboo_MoveIcons\Gaboo_3.png" />
+    <Content Include="Gaboo_MoveIcons\Gaboo_4.png" />
+    <Content Include="Gaboo_MoveIcons\Gaboo_5.png" />
+    <Content Include="Gaboo_MoveIcons\Gaboo_6.png" />
+    <Content Include="Gaboo_MoveIcons\Gaboo_7.png" />
+    <Content Include="Gaboo_MoveIcons\Gaboo_8.png" />
+    <Content Include="Gaboo_MoveIcons\Gaboo_9.png" />
+    <Content Include="Gali_MoveIcons\Gali_1.png" />
+    <Content Include="Gali_MoveIcons\Gali_10.png" />
+    <Content Include="Gali_MoveIcons\Gali_11.png" />
+    <Content Include="Gali_MoveIcons\Gali_12.png" />
+    <Content Include="Gali_MoveIcons\Gali_13.png" />
+    <Content Include="Gali_MoveIcons\Gali_14.png" />
+    <Content Include="Gali_MoveIcons\Gali_15.png" />
+    <Content Include="Gali_MoveIcons\Gali_16.png" />
+    <Content Include="Gali_MoveIcons\Gali_17.png" />
+    <Content Include="Gali_MoveIcons\Gali_18.png" />
+    <Content Include="Gali_MoveIcons\Gali_19.png" />
+    <Content Include="Gali_MoveIcons\Gali_2.png" />
+    <Content Include="Gali_MoveIcons\Gali_20.png" />
+    <Content Include="Gali_MoveIcons\Gali_21.png" />
+    <Content Include="Gali_MoveIcons\Gali_22.png" />
+    <Content Include="Gali_MoveIcons\Gali_3.png" />
+    <Content Include="Gali_MoveIcons\Gali_4.png" />
+    <Content Include="Gali_MoveIcons\Gali_5.png" />
+    <Content Include="Gali_MoveIcons\Gali_6.png" />
+    <Content Include="Gali_MoveIcons\Gali_7.png" />
+    <Content Include="Gali_MoveIcons\Gali_8.png" />
+    <Content Include="Gali_MoveIcons\Gali_9.png" />
+    <Content Include="Ghost_MoveIcons\Ghost_1.png" />
+    <Content Include="Ghost_MoveIcons\Ghost_10.png" />
+    <Content Include="Ghost_MoveIcons\Ghost_11.png" />
+    <Content Include="Ghost_MoveIcons\Ghost_11a.png" />
+    <Content Include="Ghost_MoveIcons\Ghost_12.png" />
+    <Content Include="Ghost_MoveIcons\Ghost_2.png" />
+    <Content Include="Ghost_MoveIcons\Ghost_3.png" />
+    <Content Include="Ghost_MoveIcons\Ghost_4.png" />
+    <Content Include="Ghost_MoveIcons\Ghost_5.png" />
+    <Content Include="Ghost_MoveIcons\Ghost_6.png" />
+    <Content Include="Ghost_MoveIcons\Ghost_7.png" />
+    <Content Include="Ghost_MoveIcons\Ghost_8.png" />
+    <Content Include="Ghost_MoveIcons\Ghost_9.png" />
+    <Content Include="Golem_MoveIcons\Golem_1.png" />
+    <Content Include="Golem_MoveIcons\Golem_10.png" />
+    <Content Include="Golem_MoveIcons\Golem_11.png" />
+    <Content Include="Golem_MoveIcons\Golem_12.png" />
+    <Content Include="Golem_MoveIcons\Golem_13.png" />
+    <Content Include="Golem_MoveIcons\Golem_14.png" />
+    <Content Include="Golem_MoveIcons\Golem_15.png" />
+    <Content Include="Golem_MoveIcons\Golem_16.png" />
+    <Content Include="Golem_MoveIcons\Golem_17.png" />
+    <Content Include="Golem_MoveIcons\Golem_18.png" />
+    <Content Include="Golem_MoveIcons\Golem_19.png" />
+    <Content Include="Golem_MoveIcons\Golem_2.png" />
+    <Content Include="Golem_MoveIcons\Golem_20.png" />
+    <Content Include="Golem_MoveIcons\Golem_21.png" />
+    <Content Include="Golem_MoveIcons\Golem_22.png" />
+    <Content Include="Golem_MoveIcons\Golem_3.png" />
+    <Content Include="Golem_MoveIcons\Golem_4.png" />
+    <Content Include="Golem_MoveIcons\Golem_5.png" />
+    <Content Include="Golem_MoveIcons\Golem_6.png" />
+    <Content Include="Golem_MoveIcons\Golem_7.png" />
+    <Content Include="Golem_MoveIcons\Golem_8.png" />
+    <Content Include="Golem_MoveIcons\Golem_9.png" />
+    <Content Include="Hare_MoveIcons\Hare_1.png" />
+    <Content Include="Hare_MoveIcons\Hare_10.png" />
+    <Content Include="Hare_MoveIcons\Hare_11.png" />
+    <Content Include="Hare_MoveIcons\Hare_12.png" />
+    <Content Include="Hare_MoveIcons\Hare_13.png" />
+    <Content Include="Hare_MoveIcons\Hare_14.png" />
+    <Content Include="Hare_MoveIcons\Hare_15.png" />
+    <Content Include="Hare_MoveIcons\Hare_16.png" />
+    <Content Include="Hare_MoveIcons\Hare_17.png" />
+    <Content Include="Hare_MoveIcons\Hare_2.png" />
+    <Content Include="Hare_MoveIcons\Hare_3.png" />
+    <Content Include="Hare_MoveIcons\Hare_4.png" />
+    <Content Include="Hare_MoveIcons\Hare_5.png" />
+    <Content Include="Hare_MoveIcons\Hare_6.png" />
+    <Content Include="Hare_MoveIcons\Hare_7.png" />
+    <Content Include="Hare_MoveIcons\Hare_8.png" />
+    <Content Include="Hare_MoveIcons\Hare_9.png" />
+    <Content Include="Henge_MoveIcons\Henge_1.png" />
+    <Content Include="Henge_MoveIcons\Henge_10.png" />
+    <Content Include="Henge_MoveIcons\Henge_11.png" />
+    <Content Include="Henge_MoveIcons\Henge_12.png" />
+    <Content Include="Henge_MoveIcons\Henge_13.png" />
+    <Content Include="Henge_MoveIcons\Henge_14.png" />
+    <Content Include="Henge_MoveIcons\Henge_15.png" />
+    <Content Include="Henge_MoveIcons\Henge_16.png" />
+    <Content Include="Henge_MoveIcons\Henge_17.png" />
+    <Content Include="Henge_MoveIcons\Henge_18.png" />
+    <Content Include="Henge_MoveIcons\Henge_19.png" />
+    <Content Include="Henge_MoveIcons\Henge_2.png" />
+    <Content Include="Henge_MoveIcons\Henge_20.png" />
+    <Content Include="Henge_MoveIcons\Henge_3.png" />
+    <Content Include="Henge_MoveIcons\Henge_4.png" />
+    <Content Include="Henge_MoveIcons\Henge_5.png" />
+    <Content Include="Henge_MoveIcons\Henge_6.png" />
+    <Content Include="Henge_MoveIcons\Henge_7.png" />
+    <Content Include="Henge_MoveIcons\Henge_8.png" />
+    <Content Include="Henge_MoveIcons\Henge_9.png" />
+    <Content Include="Hoppe_MoveIcons\Hoppe_1.png" />
+    <Content Include="Hoppe_MoveIcons\Hoppe_10.png" />
+    <Content Include="Hoppe_MoveIcons\Hoppe_11.png" />
+    <Content Include="Hoppe_MoveIcons\Hoppe_12.png" />
+    <Content Include="Hoppe_MoveIcons\Hoppe_13.png" />
+    <Content Include="Hoppe_MoveIcons\Hoppe_2.png" />
+    <Content Include="Hoppe_MoveIcons\Hoppe_3.png" />
+    <Content Include="Hoppe_MoveIcons\Hoppe_4.png" />
+    <Content Include="Hoppe_MoveIcons\Hoppe_5.png" />
+    <Content Include="Hoppe_MoveIcons\Hoppe_6.png" />
+    <Content Include="Hoppe_MoveIcons\Hoppe_7.png" />
+    <Content Include="Hoppe_MoveIcons\Hoppe_8.png" />
+    <Content Include="Hoppe_MoveIcons\Hoppe_9.png" />
+    <Content Include="Jell_MoveIcons\Jell_1.png" />
+    <Content Include="Jell_MoveIcons\Jell_10.png" />
+    <Content Include="Jell_MoveIcons\Jell_11.png" />
+    <Content Include="Jell_MoveIcons\Jell_12.png" />
+    <Content Include="Jell_MoveIcons\Jell_13.png" />
+    <Content Include="Jell_MoveIcons\Jell_14.png" />
+    <Content Include="Jell_MoveIcons\Jell_15.png" />
+    <Content Include="Jell_MoveIcons\Jell_16.png" />
+    <Content Include="Jell_MoveIcons\Jell_17.png" />
+    <Content Include="Jell_MoveIcons\Jell_18.png" />
+    <Content Include="Jell_MoveIcons\Jell_19.png" />
+    <Content Include="Jell_MoveIcons\Jell_2.png" />
+    <Content Include="Jell_MoveIcons\Jell_20.png" />
+    <Content Include="Jell_MoveIcons\Jell_3.png" />
+    <Content Include="Jell_MoveIcons\Jell_4.png" />
+    <Content Include="Jell_MoveIcons\Jell_5.png" />
+    <Content Include="Jell_MoveIcons\Jell_6.png" />
+    <Content Include="Jell_MoveIcons\Jell_7.png" />
+    <Content Include="Jell_MoveIcons\Jell_8.png" />
+    <Content Include="Jell_MoveIcons\Jell_9.png" />
+    <Content Include="Jill_MoveIcons\Jill_1.png" />
+    <Content Include="Jill_MoveIcons\Jill_10.png" />
+    <Content Include="Jill_MoveIcons\Jill_11.png" />
+    <Content Include="Jill_MoveIcons\Jill_12.png" />
+    <Content Include="Jill_MoveIcons\Jill_2.png" />
+    <Content Include="Jill_MoveIcons\Jill_3.png" />
+    <Content Include="Jill_MoveIcons\Jill_4.png" />
+    <Content Include="Jill_MoveIcons\Jill_5.png" />
+    <Content Include="Jill_MoveIcons\Jill_6.png" />
+    <Content Include="Jill_MoveIcons\Jill_7.png" />
+    <Content Include="Jill_MoveIcons\Jill_8.png" />
+    <Content Include="Jill_MoveIcons\Jill_9.png" />
+    <Content Include="Joker_MoveIcons\Joker_1.png" />
+    <Content Include="Joker_MoveIcons\Joker_2.png" />
+    <Content Include="Joker_MoveIcons\Joker_3.png" />
+    <Content Include="Joker_MoveIcons\Joker_4.png" />
+    <Content Include="Joker_MoveIcons\Joker_5.png" />
+    <Content Include="Joker_MoveIcons\Joker_6.png" />
+    <Content Include="Kato_MoveIcons\Kato_1.png" />
+    <Content Include="Kato_MoveIcons\Kato_10.png" />
+    <Content Include="Kato_MoveIcons\Kato_11.png" />
+    <Content Include="Kato_MoveIcons\Kato_12.png" />
+    <Content Include="Kato_MoveIcons\Kato_13.png" />
+    <Content Include="Kato_MoveIcons\Kato_14.png" />
+    <Content Include="Kato_MoveIcons\Kato_15.png" />
+    <Content Include="Kato_MoveIcons\Kato_16.png" />
+    <Content Include="Kato_MoveIcons\Kato_17.png" />
+    <Content Include="Kato_MoveIcons\Kato_18.png" />
+    <Content Include="Kato_MoveIcons\Kato_19.png" />
+    <Content Include="Kato_MoveIcons\Kato_2.png" />
+    <Content Include="Kato_MoveIcons\Kato_20.png" />
+    <Content Include="Kato_MoveIcons\Kato_21.png" />
+    <Content Include="Kato_MoveIcons\Kato_22.png" />
+    <Content Include="Kato_MoveIcons\Kato_3.png" />
+    <Content Include="Kato_MoveIcons\Kato_4.png" />
+    <Content Include="Kato_MoveIcons\Kato_5.png" />
+    <Content Include="Kato_MoveIcons\Kato_6.png" />
+    <Content Include="Kato_MoveIcons\Kato_7.png" />
+    <Content Include="Kato_MoveIcons\Kato_8.png" />
+    <Content Include="Kato_MoveIcons\Kato_9.png" />
+    <Content Include="Metal_MoveIcons\Metal_1.png" />
+    <Content Include="Metal_MoveIcons\Metal_10.png" />
+    <Content Include="Metal_MoveIcons\Metal_11.png" />
+    <Content Include="Metal_MoveIcons\Metal_12.png" />
+    <Content Include="Metal_MoveIcons\Metal_13.png" />
+    <Content Include="Metal_MoveIcons\Metal_2.png" />
+    <Content Include="Metal_MoveIcons\Metal_3.png" />
+    <Content Include="Metal_MoveIcons\Metal_4.png" />
+    <Content Include="Metal_MoveIcons\Metal_5.png" />
+    <Content Include="Metal_MoveIcons\Metal_6.png" />
+    <Content Include="Metal_MoveIcons\Metal_7.png" />
+    <Content Include="Metal_MoveIcons\Metal_8.png" />
+    <Content Include="Metal_MoveIcons\Metal_9.png" />
+    <Content Include="Mew_MoveIcons\Mew_1.png" />
+    <Content Include="Mew_MoveIcons\Mew_10.png" />
+    <Content Include="Mew_MoveIcons\Mew_11.png" />
+    <Content Include="Mew_MoveIcons\Mew_12.png" />
+    <Content Include="Mew_MoveIcons\Mew_13.png" />
+    <Content Include="Mew_MoveIcons\Mew_14.png" />
+    <Content Include="Mew_MoveIcons\Mew_15.png" />
+    <Content Include="Mew_MoveIcons\Mew_16.png" />
+    <Content Include="Mew_MoveIcons\Mew_17.png" />
+    <Content Include="Mew_MoveIcons\Mew_18.png" />
+    <Content Include="Mew_MoveIcons\Mew_2.png" />
+    <Content Include="Mew_MoveIcons\Mew_3.png" />
+    <Content Include="Mew_MoveIcons\Mew_4.png" />
+    <Content Include="Mew_MoveIcons\Mew_5.png" />
+    <Content Include="Mew_MoveIcons\Mew_6.png" />
+    <Content Include="Mew_MoveIcons\Mew_7.png" />
+    <Content Include="Mew_MoveIcons\Mew_8.png" />
+    <Content Include="Mew_MoveIcons\Mew_9.png" />
+    <Content Include="Mocch_MoveIcons\Mocch_1.png" />
+    <Content Include="Mocch_MoveIcons\Mocch_10.png" />
+    <Content Include="Mocch_MoveIcons\Mocch_11.png" />
+    <Content Include="Mocch_MoveIcons\Mocch_12.png" />
+    <Content Include="Mocch_MoveIcons\Mocch_13.png" />
+    <Content Include="Mocch_MoveIcons\Mocch_14.png" />
+    <Content Include="Mocch_MoveIcons\Mocch_15.png" />
+    <Content Include="Mocch_MoveIcons\Mocch_16.png" />
+    <Content Include="Mocch_MoveIcons\Mocch_17.png" />
+    <Content Include="Mocch_MoveIcons\Mocch_18.png" />
+    <Content Include="Mocch_MoveIcons\Mocch_19.png" />
+    <Content Include="Mocch_MoveIcons\Mocch_2.png" />
+    <Content Include="Mocch_MoveIcons\Mocch_20.png" />
+    <Content Include="Mocch_MoveIcons\Mocch_3.png" />
+    <Content Include="Mocch_MoveIcons\Mocch_4.png" />
+    <Content Include="Mocch_MoveIcons\Mocch_5.png" />
+    <Content Include="Mocch_MoveIcons\Mocch_6.png" />
+    <Content Include="Mocch_MoveIcons\Mocch_7.png" />
+    <Content Include="Mocch_MoveIcons\Mocch_8.png" />
+    <Content Include="Mocch_MoveIcons\Mocch_9.png" />
+    <Content Include="Mock_MoveIcons\Mock_1.png" />
+    <Content Include="Mock_MoveIcons\Mock_2.png" />
+    <Content Include="Mock_MoveIcons\Mock_3.png" />
+    <Content Include="Mock_MoveIcons\Mock_4.png" />
+    <Content Include="Mock_MoveIcons\Mock_5.png" />
+    <Content Include="Mock_MoveIcons\Mock_6.png" />
+    <Content Include="Mock_MoveIcons\Mock_7.png" />
+    <Content Include="Mock_MoveIcons\Mock_8.png" />
+    <Content Include="Mock_MoveIcons\Mock_9.png" />
+    <Content Include="Monol_MoveIcons\Monol_1.png" />
+    <Content Include="Monol_MoveIcons\Monol_10.png" />
+    <Content Include="Monol_MoveIcons\Monol_11.png" />
+    <Content Include="Monol_MoveIcons\Monol_12.png" />
+    <Content Include="Monol_MoveIcons\Monol_13.png" />
+    <Content Include="Monol_MoveIcons\Monol_14.png" />
+    <Content Include="Monol_MoveIcons\Monol_15.png" />
+    <Content Include="Monol_MoveIcons\Monol_16.png" />
+    <Content Include="Monol_MoveIcons\Monol_17.png" />
+    <Content Include="Monol_MoveIcons\Monol_18.png" />
+    <Content Include="Monol_MoveIcons\Monol_19.png" />
+    <Content Include="Monol_MoveIcons\Monol_2.png" />
+    <Content Include="Monol_MoveIcons\Monol_20.png" />
+    <Content Include="Monol_MoveIcons\Monol_21.png" />
+    <Content Include="Monol_MoveIcons\Monol_3.png" />
+    <Content Include="Monol_MoveIcons\Monol_4.png" />
+    <Content Include="Monol_MoveIcons\Monol_5.png" />
+    <Content Include="Monol_MoveIcons\Monol_6.png" />
+    <Content Include="Monol_MoveIcons\Monol_7.png" />
+    <Content Include="Monol_MoveIcons\Monol_8.png" />
+    <Content Include="Monol_MoveIcons\Monol_9.png" />
+    <Content Include="MR2 Banana Fail.wav" />
+    <Content Include="MR2 Banana Success.wav" />
+    <Content Include="mr2viewericon_EOf_icon.ico" />
+    <Content Include="Naga_MoveIcons\Naga_1.png" />
+    <Content Include="Naga_MoveIcons\Naga_10.png" />
+    <Content Include="Naga_MoveIcons\Naga_11.png" />
+    <Content Include="Naga_MoveIcons\Naga_12.png" />
+    <Content Include="Naga_MoveIcons\Naga_2.png" />
+    <Content Include="Naga_MoveIcons\Naga_3.png" />
+    <Content Include="Naga_MoveIcons\Naga_4.png" />
+    <Content Include="Naga_MoveIcons\Naga_5.png" />
+    <Content Include="Naga_MoveIcons\Naga_6.png" />
+    <Content Include="Naga_MoveIcons\Naga_7.png" />
+    <Content Include="Naga_MoveIcons\Naga_8.png" />
+    <Content Include="Naga_MoveIcons\Naga_9.png" />
+    <Content Include="Niton_MoveIcons\Niton_1.png" />
+    <Content Include="Niton_MoveIcons\Niton_10.png" />
+    <Content Include="Niton_MoveIcons\Niton_11.png" />
+    <Content Include="Niton_MoveIcons\Niton_12.png" />
+    <Content Include="Niton_MoveIcons\Niton_13.png" />
+    <Content Include="Niton_MoveIcons\Niton_14.png" />
+    <Content Include="Niton_MoveIcons\Niton_15.png" />
+    <Content Include="Niton_MoveIcons\Niton_16.png" />
+    <Content Include="Niton_MoveIcons\Niton_17.png" />
+    <Content Include="Niton_MoveIcons\Niton_2.png" />
+    <Content Include="Niton_MoveIcons\Niton_3.png" />
+    <Content Include="Niton_MoveIcons\Niton_4.png" />
+    <Content Include="Niton_MoveIcons\Niton_5.png" />
+    <Content Include="Niton_MoveIcons\Niton_6.png" />
+    <Content Include="Niton_MoveIcons\Niton_7.png" />
+    <Content Include="Niton_MoveIcons\Niton_8.png" />
+    <Content Include="Niton_MoveIcons\Niton_9.png" />
+    <Content Include="No Move.png" />
+    <Content Include="Phoen_MoveIcons\Phoen_1.png" />
+    <Content Include="Phoen_MoveIcons\Phoen_10.png" />
+    <Content Include="Phoen_MoveIcons\Phoen_2.png" />
+    <Content Include="Phoen_MoveIcons\Phoen_3.png" />
+    <Content Include="Phoen_MoveIcons\Phoen_4.png" />
+    <Content Include="Phoen_MoveIcons\Phoen_5.png" />
+    <Content Include="Phoen_MoveIcons\Phoen_6.png" />
+    <Content Include="Phoen_MoveIcons\Phoen_7.png" />
+    <Content Include="Phoen_MoveIcons\Phoen_8.png" />
+    <Content Include="Phoen_MoveIcons\Phoen_9.png" />
+    <Content Include="Pixie_MoveIcons\Pixie_1.png" />
+    <Content Include="Pixie_MoveIcons\Pixie_10.png" />
+    <Content Include="Pixie_MoveIcons\Pixie_11.png" />
+    <Content Include="Pixie_MoveIcons\Pixie_12.png" />
+    <Content Include="Pixie_MoveIcons\Pixie_13.png" />
+    <Content Include="Pixie_MoveIcons\Pixie_14.png" />
+    <Content Include="Pixie_MoveIcons\Pixie_15.png" />
+    <Content Include="Pixie_MoveIcons\Pixie_16.png" />
+    <Content Include="Pixie_MoveIcons\Pixie_17.png" />
+    <Content Include="Pixie_MoveIcons\Pixie_18.png" />
+    <Content Include="Pixie_MoveIcons\Pixie_19.png" />
+    <Content Include="Pixie_MoveIcons\Pixie_2.png" />
+    <Content Include="Pixie_MoveIcons\Pixie_20.png" />
+    <Content Include="Pixie_MoveIcons\Pixie_21.png" />
+    <Content Include="Pixie_MoveIcons\Pixie_3.png" />
+    <Content Include="Pixie_MoveIcons\Pixie_4.png" />
+    <Content Include="Pixie_MoveIcons\Pixie_5.png" />
+    <Content Include="Pixie_MoveIcons\Pixie_6.png" />
+    <Content Include="Pixie_MoveIcons\Pixie_7.png" />
+    <Content Include="Pixie_MoveIcons\Pixie_8.png" />
+    <Content Include="Pixie_MoveIcons\Pixie_9.png" />
+    <Content Include="Plant_MoveIcons\Plant_1.png" />
+    <Content Include="Plant_MoveIcons\Plant_10.png" />
+    <Content Include="Plant_MoveIcons\Plant_11.png" />
+    <Content Include="Plant_MoveIcons\Plant_12.png" />
+    <Content Include="Plant_MoveIcons\Plant_2.png" />
+    <Content Include="Plant_MoveIcons\Plant_3.png" />
+    <Content Include="Plant_MoveIcons\Plant_4.png" />
+    <Content Include="Plant_MoveIcons\Plant_5.png" />
+    <Content Include="Plant_MoveIcons\Plant_6.png" />
+    <Content Include="Plant_MoveIcons\Plant_7.png" />
+    <Content Include="Plant_MoveIcons\Plant_8.png" />
+    <Content Include="Plant_MoveIcons\Plant_9.png" />
+    <Content Include="Suezo_MoveIcons\Suezo_1.png" />
+    <Content Include="Suezo_MoveIcons\Suezo_10.png" />
+    <Content Include="Suezo_MoveIcons\Suezo_11.png" />
+    <Content Include="Suezo_MoveIcons\Suezo_12.png" />
+    <Content Include="Suezo_MoveIcons\Suezo_2.png" />
+    <Content Include="Suezo_MoveIcons\Suezo_3.png" />
+    <Content Include="Suezo_MoveIcons\Suezo_4.png" />
+    <Content Include="Suezo_MoveIcons\Suezo_5.png" />
+    <Content Include="Suezo_MoveIcons\Suezo_6.png" />
+    <Content Include="Suezo_MoveIcons\Suezo_7.png" />
+    <Content Include="Suezo_MoveIcons\Suezo_8.png" />
+    <Content Include="Suezo_MoveIcons\Suezo_9.png" />
+    <Content Include="Tiger_MoveIcons\Tiger_1.png" />
+    <Content Include="Tiger_MoveIcons\Tiger_10.png" />
+    <Content Include="Tiger_MoveIcons\Tiger_11.png" />
+    <Content Include="Tiger_MoveIcons\Tiger_12.png" />
+    <Content Include="Tiger_MoveIcons\Tiger_2.png" />
+    <Content Include="Tiger_MoveIcons\Tiger_3.png" />
+    <Content Include="Tiger_MoveIcons\Tiger_4.png" />
+    <Content Include="Tiger_MoveIcons\Tiger_5.png" />
+    <Content Include="Tiger_MoveIcons\Tiger_6.png" />
+    <Content Include="Tiger_MoveIcons\Tiger_7.png" />
+    <Content Include="Tiger_MoveIcons\Tiger_8.png" />
+    <Content Include="Tiger_MoveIcons\Tiger_9.png" />
+    <Content Include="Undin_MoveIcons\Undin_1.png" />
+    <Content Include="Undin_MoveIcons\Undin_10.png" />
+    <Content Include="Undin_MoveIcons\Undin_11.png" />
+    <Content Include="Undin_MoveIcons\Undin_12.png" />
+    <Content Include="Undin_MoveIcons\Undin_13.png" />
+    <Content Include="Undin_MoveIcons\Undin_14.png" />
+    <Content Include="Undin_MoveIcons\Undin_15.png" />
+    <Content Include="Undin_MoveIcons\Undin_16.png" />
+    <Content Include="Undin_MoveIcons\Undin_17.png" />
+    <Content Include="Undin_MoveIcons\Undin_18.png" />
+    <Content Include="Undin_MoveIcons\Undin_19.png" />
+    <Content Include="Undin_MoveIcons\Undin_2.png" />
+    <Content Include="Undin_MoveIcons\Undin_20.png" />
+    <Content Include="Undin_MoveIcons\Undin_21.png" />
+    <Content Include="Undin_MoveIcons\Undin_3.png" />
+    <Content Include="Undin_MoveIcons\Undin_4.png" />
+    <Content Include="Undin_MoveIcons\Undin_5.png" />
+    <Content Include="Undin_MoveIcons\Undin_6.png" />
+    <Content Include="Undin_MoveIcons\Undin_7.png" />
+    <Content Include="Undin_MoveIcons\Undin_8.png" />
+    <Content Include="Undin_MoveIcons\Undin_9.png" />
+    <Content Include="Worm_MoveIcons\Worm_1.png" />
+    <Content Include="Worm_MoveIcons\Worm_10.png" />
+    <Content Include="Worm_MoveIcons\Worm_11.png" />
+    <Content Include="Worm_MoveIcons\Worm_12.png" />
+    <Content Include="Worm_MoveIcons\Worm_13.png" />
+    <Content Include="Worm_MoveIcons\Worm_14.png" />
+    <Content Include="Worm_MoveIcons\Worm_15.png" />
+    <Content Include="Worm_MoveIcons\Worm_2.png" />
+    <Content Include="Worm_MoveIcons\Worm_3.png" />
+    <Content Include="Worm_MoveIcons\Worm_4.png" />
+    <Content Include="Worm_MoveIcons\Worm_5.png" />
+    <Content Include="Worm_MoveIcons\Worm_6.png" />
+    <Content Include="Worm_MoveIcons\Worm_7.png" />
+    <Content Include="Worm_MoveIcons\Worm_8.png" />
+    <Content Include="Worm_MoveIcons\Worm_9.png" />
+    <Content Include="Wrack_MoveIcons\Wrack_1.png" />
+    <Content Include="Wrack_MoveIcons\Wrack_10.png" />
+    <Content Include="Wrack_MoveIcons\Wrack_11.png" />
+    <Content Include="Wrack_MoveIcons\Wrack_12.png" />
+    <Content Include="Wrack_MoveIcons\Wrack_13.png" />
+    <Content Include="Wrack_MoveIcons\Wrack_14.png" />
+    <Content Include="Wrack_MoveIcons\Wrack_15.png" />
+    <Content Include="Wrack_MoveIcons\Wrack_16.png" />
+    <Content Include="Wrack_MoveIcons\Wrack_17.png" />
+    <Content Include="Wrack_MoveIcons\Wrack_18.png" />
+    <Content Include="Wrack_MoveIcons\Wrack_19.png" />
+    <Content Include="Wrack_MoveIcons\Wrack_2.png" />
+    <Content Include="Wrack_MoveIcons\Wrack_20.png" />
+    <Content Include="Wrack_MoveIcons\Wrack_21.png" />
+    <Content Include="Wrack_MoveIcons\Wrack_22.png" />
+    <Content Include="Wrack_MoveIcons\Wrack_23.png" />
+    <Content Include="Wrack_MoveIcons\Wrack_24.png" />
+    <Content Include="Wrack_MoveIcons\Wrack_3.png" />
+    <Content Include="Wrack_MoveIcons\Wrack_4.png" />
+    <Content Include="Wrack_MoveIcons\Wrack_5.png" />
+    <Content Include="Wrack_MoveIcons\Wrack_6.png" />
+    <Content Include="Wrack_MoveIcons\Wrack_7.png" />
+    <Content Include="Wrack_MoveIcons\Wrack_8.png" />
+    <Content Include="Wrack_MoveIcons\Wrack_9.png" />
+    <Content Include="Zilla_MoveIcons\Zilla_1.png" />
+    <Content Include="Zilla_MoveIcons\Zilla_10.png" />
+    <Content Include="Zilla_MoveIcons\Zilla_11.png" />
+    <Content Include="Zilla_MoveIcons\Zilla_12.png" />
+    <Content Include="Zilla_MoveIcons\Zilla_13.png" />
+    <Content Include="Zilla_MoveIcons\Zilla_14.png" />
+    <Content Include="Zilla_MoveIcons\Zilla_2.png" />
+    <Content Include="Zilla_MoveIcons\Zilla_3.png" />
+    <Content Include="Zilla_MoveIcons\Zilla_4.png" />
+    <Content Include="Zilla_MoveIcons\Zilla_5.png" />
+    <Content Include="Zilla_MoveIcons\Zilla_6.png" />
+    <Content Include="Zilla_MoveIcons\Zilla_7.png" />
+    <Content Include="Zilla_MoveIcons\Zilla_8.png" />
+    <Content Include="Zilla_MoveIcons\Zilla_9.png" />
+    <Content Include="Zuum_MoveIcons\Zuum_1.png" />
+    <Content Include="Zuum_MoveIcons\Zuum_10.png" />
+    <Content Include="Zuum_MoveIcons\Zuum_11.png" />
+    <Content Include="Zuum_MoveIcons\Zuum_12.png" />
+    <Content Include="Zuum_MoveIcons\Zuum_13.png" />
+    <Content Include="Zuum_MoveIcons\Zuum_14.png" />
+    <Content Include="Zuum_MoveIcons\Zuum_15.png" />
+    <Content Include="Zuum_MoveIcons\Zuum_16.png" />
+    <Content Include="Zuum_MoveIcons\Zuum_17.png" />
+    <Content Include="Zuum_MoveIcons\Zuum_18.png" />
+    <Content Include="Zuum_MoveIcons\Zuum_19.png" />
+    <Content Include="Zuum_MoveIcons\Zuum_2.png" />
+    <Content Include="Zuum_MoveIcons\Zuum_20.png" />
+    <Content Include="Zuum_MoveIcons\Zuum_21.png" />
+    <Content Include="Zuum_MoveIcons\Zuum_22.png" />
+    <Content Include="Zuum_MoveIcons\Zuum_23.png" />
+    <Content Include="Zuum_MoveIcons\Zuum_24.png" />
+    <Content Include="Zuum_MoveIcons\Zuum_3.png" />
+    <Content Include="Zuum_MoveIcons\Zuum_4.png" />
+    <Content Include="Zuum_MoveIcons\Zuum_5.png" />
+    <Content Include="Zuum_MoveIcons\Zuum_6.png" />
+    <Content Include="Zuum_MoveIcons\Zuum_7.png" />
+    <Content Include="Zuum_MoveIcons\Zuum_8.png" />
+    <Content Include="Zuum_MoveIcons\Zuum_9.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include=".NETFramework,Version=v4.7.2">
+      <Visible>False</Visible>
+      <ProductName>Microsoft .NET Framework 4.7.2 %28x86 and x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>

@@ -1,0 +1,67 @@
+C:\Users\Lexichu\Documents\Visual Studio 2017\Projects\MR2AdvancedViewer\MR2AdvancedViewer\obj\Debug\MR2AdvancedViewer.ViewerWindow.resources
+C:\Users\Lexichu\Documents\Visual Studio 2017\Projects\MR2AdvancedViewer\MR2AdvancedViewer\obj\Debug\MR2AdvancedViewer.Properties.Resources.resources
+C:\Users\Lexichu\Documents\Visual Studio 2017\Projects\MR2AdvancedViewer\MR2AdvancedViewer\obj\Debug\MR2AdvancedViewer.csproj.GenerateResource.Cache
+C:\Users\Lexichu\Documents\Visual Studio 2017\Projects\MR2AdvancedViewer\MR2AdvancedViewer\obj\Debug\MR2AdvancedViewer.csproj.CoreCompileInputs.cache
+C:\Users\Lexichu\Documents\Visual Studio 2017\Projects\MR2AdvancedViewer\MR2AdvancedViewer\bin\Debug\MR2AdvancedViewer.exe.config
+C:\Users\Lexichu\Documents\Visual Studio 2017\Projects\MR2AdvancedViewer\MR2AdvancedViewer\bin\Debug\MR2AdvancedViewer.exe
+C:\Users\Lexichu\Documents\Visual Studio 2017\Projects\MR2AdvancedViewer\MR2AdvancedViewer\bin\Debug\MR2AdvancedViewer.pdb
+C:\Users\Lexichu\Documents\Visual Studio 2017\Projects\MR2AdvancedViewer\MR2AdvancedViewer\bin\Debug\Memory.dll
+C:\Users\Lexichu\Documents\Visual Studio 2017\Projects\MR2AdvancedViewer\MR2AdvancedViewer\bin\Debug\Memory.xml
+C:\Users\Lexichu\Documents\Visual Studio 2017\Projects\MR2AdvancedViewer\MR2AdvancedViewer\obj\Debug\MR2AdvancedViewer.csprojAssemblyReference.cache
+C:\Users\Lexichu\Documents\Visual Studio 2017\Projects\MR2AdvancedViewer\MR2AdvancedViewer\obj\Debug\MR2AdvancedViewer.csproj.CopyComplete
+C:\Users\Lexichu\Documents\Visual Studio 2017\Projects\MR2AdvancedViewer\MR2AdvancedViewer\obj\Debug\MR2AdvancedViewer.exe
+C:\Users\Lexichu\Documents\Visual Studio 2017\Projects\MR2AdvancedViewer\MR2AdvancedViewer\obj\Debug\MR2AdvancedViewer.pdb
+C:\Users\Lexichu\Documents\Visual Studio 2017\Projects\MR2AdvancedViewer\MR2AdvancedViewer\bin\Debug\MR2AdvancedViewer.exe.manifest
+C:\Users\Lexichu\Documents\Visual Studio 2017\Projects\MR2AdvancedViewer\MR2AdvancedViewer\bin\Debug\MR2AdvancedViewer.application
+C:\Users\Lexichu\Documents\Visual Studio 2017\Projects\MR2AdvancedViewer\MR2AdvancedViewer\obj\Debug\MR2AdvancedViewer.exe.manifest
+C:\Users\Lexichu\Documents\Visual Studio 2017\Projects\MR2AdvancedViewer\MR2AdvancedViewer\obj\Debug\MR2AdvancedViewer.application
+C:\Users\Lexichu\Documents\Visual Studio 2017\Projects\MR2AdvancedViewer\MR2AdvancedViewer\obj\Debug\MR2AdvancedViewer.MonLifeIndexWindow.resources
+C:\Users\Lexichu\Documents\Visual Studio 2017\Projects\MR2AdvancedViewer\MR2AdvancedViewer\obj\Debug\MR2AdvancedViewer.MonMoveWindow.resources
+C:\Users\Lexichu\Documents\Visual Studio 2017\Projects\MR2AdvancedViewer\MR2AdvancedViewer\obj\Debug\MR2AdvancedViewer.MR2ControllerView.resources
+C:\Users\Lexichu\Documents\Visual Studio 2017\Projects\MR2AdvancedViewer\MR2AdvancedViewer\obj\Debug\MR2AdvancedViewer.TrainingWindow.resources
+C:\Users\Lexi\Documents\Visual Studio Projects\MR2AdvancedViewer\MR2AdvancedViewer\obj\Debug\MR2AdvancedViewer.TrainingWindow.resources
+C:\Users\Lexi\Documents\Visual Studio Projects\MR2AdvancedViewer\MR2AdvancedViewer\obj\Debug\MR2AdvancedViewer.ViewerWindow.resources
+C:\Users\Lexi\Documents\Visual Studio Projects\MR2AdvancedViewer\MR2AdvancedViewer\obj\Debug\MR2AdvancedViewer.MonLifeIndexWindow.resources
+C:\Users\Lexi\Documents\Visual Studio Projects\MR2AdvancedViewer\MR2AdvancedViewer\obj\Debug\MR2AdvancedViewer.MonMoveWindow.resources
+C:\Users\Lexi\Documents\Visual Studio Projects\MR2AdvancedViewer\MR2AdvancedViewer\obj\Debug\MR2AdvancedViewer.MR2ControllerView.resources
+C:\Users\Lexi\Documents\Visual Studio Projects\MR2AdvancedViewer\MR2AdvancedViewer\obj\Debug\MR2AdvancedViewer.Properties.Resources.resources
+C:\Users\Lexi\Documents\Visual Studio Projects\MR2AdvancedViewer\MR2AdvancedViewer\obj\Debug\MR2AdvancedViewer.csproj.GenerateResource.cache
+C:\Users\Lexi\Documents\Visual Studio Projects\MR2AdvancedViewer\MR2AdvancedViewer\obj\Debug\MR2AdvancedViewer.exe
+C:\Users\Lexi\Documents\Visual Studio Projects\MR2AdvancedViewer\MR2AdvancedViewer\obj\Debug\MR2AdvancedViewer.pdb
+C:\Users\Lexi\Documents\Visual Studio Projects\MR2AdvancedViewer\MR2AdvancedViewer\bin\Debug\MR2AdvancedViewer.exe.config
+C:\Users\Lexi\Documents\Visual Studio Projects\MR2AdvancedViewer\MR2AdvancedViewer\bin\Debug\MR2AdvancedViewer.exe.manifest
+C:\Users\Lexi\Documents\Visual Studio Projects\MR2AdvancedViewer\MR2AdvancedViewer\bin\Debug\MR2AdvancedViewer.application
+C:\Users\Lexi\Documents\Visual Studio Projects\MR2AdvancedViewer\MR2AdvancedViewer\bin\Debug\MR2AdvancedViewer.exe
+C:\Users\Lexi\Documents\Visual Studio Projects\MR2AdvancedViewer\MR2AdvancedViewer\bin\Debug\MR2AdvancedViewer.pdb
+C:\Users\Lexi\Documents\Visual Studio Projects\MR2AdvancedViewer\MR2AdvancedViewer\bin\Debug\Memory.dll
+C:\Users\Lexi\Documents\Visual Studio Projects\MR2AdvancedViewer\MR2AdvancedViewer\bin\Debug\Memory.xml
+C:\Users\Lexi\Documents\Visual Studio Projects\MR2AdvancedViewer\MR2AdvancedViewer\obj\Debug\MR2AdvancedViewer.exe.manifest
+C:\Users\Lexi\Documents\Visual Studio Projects\MR2AdvancedViewer\MR2AdvancedViewer\obj\Debug\MR2AdvancedViewer.application
+C:\Users\Lexi\Documents\Visual Studio Projects\MR2AdvancedViewer\MR2AdvancedViewer\obj\Debug\MR2AdvancedViewer.csproj.CopyComplete
+C:\Users\Lexi\Documents\Visual Studio Projects\MR2AdvancedViewer\MR2AdvancedViewer\obj\Debug\MR2AdvancedViewer.Forms.ItemLister.resources
+C:\Users\Lexi\Documents\Visual Studio Projects\MR2AdvancedViewer\MR2AdvancedViewer\obj\Debug\MR2AdvancedViewer.csproj.CoreCompileInputs.cache
+C:\Users\Lexi\Documents\Visual Studio Projects\MR2AdvancedViewer\MR2AdvancedViewer\obj\Debug\MR2AdvancedViewer.Forms.MRDebug.resources
+C:\Users\Lexi\Documents\Visual Studio Projects\MR2AdvancedViewer\MR2AdvancedViewer\obj\Debug\MR2AdvancedViewer.csproj.AssemblyReference.cache
+D:\w\mr2av\MR2AdvancedViewer\obj\Debug\MR2AdvancedViewer.csproj.AssemblyReference.cache
+D:\w\mr2av\MR2AdvancedViewer\obj\Debug\MR2AdvancedViewer.Forms.ItemLister.resources
+D:\w\mr2av\MR2AdvancedViewer\obj\Debug\MR2AdvancedViewer.Forms.MRDebug.resources
+D:\w\mr2av\MR2AdvancedViewer\obj\Debug\MR2AdvancedViewer.TrainingWindow.resources
+D:\w\mr2av\MR2AdvancedViewer\obj\Debug\MR2AdvancedViewer.ViewerWindow.resources
+D:\w\mr2av\MR2AdvancedViewer\obj\Debug\MR2AdvancedViewer.MonLifeIndexWindow.resources
+D:\w\mr2av\MR2AdvancedViewer\obj\Debug\MR2AdvancedViewer.MonMoveWindow.resources
+D:\w\mr2av\MR2AdvancedViewer\obj\Debug\MR2AdvancedViewer.MR2ControllerView.resources
+D:\w\mr2av\MR2AdvancedViewer\obj\Debug\MR2AdvancedViewer.Properties.Resources.resources
+D:\w\mr2av\MR2AdvancedViewer\obj\Debug\MR2AdvancedViewer.csproj.GenerateResource.cache
+D:\w\mr2av\MR2AdvancedViewer\obj\Debug\MR2AdvancedViewer.csproj.CoreCompileInputs.cache
+D:\w\mr2av\MR2AdvancedViewer\obj\Debug\MR2AdvancedViewer.exe
+D:\w\mr2av\MR2AdvancedViewer\obj\Debug\MR2AdvancedViewer.pdb
+D:\w\mr2av\MR2AdvancedViewer\bin\Debug\MR2AdvancedViewer.exe.config
+D:\w\mr2av\MR2AdvancedViewer\bin\Debug\MR2AdvancedViewer.exe.manifest
+D:\w\mr2av\MR2AdvancedViewer\bin\Debug\MR2AdvancedViewer.application
+D:\w\mr2av\MR2AdvancedViewer\bin\Debug\MR2AdvancedViewer.exe
+D:\w\mr2av\MR2AdvancedViewer\bin\Debug\MR2AdvancedViewer.pdb
+D:\w\mr2av\MR2AdvancedViewer\bin\Debug\Memory.dll
+D:\w\mr2av\MR2AdvancedViewer\bin\Debug\Memory.xml
+D:\w\mr2av\MR2AdvancedViewer\obj\Debug\MR2AdvancedViewer.exe.manifest
+D:\w\mr2av\MR2AdvancedViewer\obj\Debug\MR2AdvancedViewer.application
+D:\w\mr2av\MR2AdvancedViewer\obj\Debug\MR2AdvancedViewer.csproj.CopyComplete
