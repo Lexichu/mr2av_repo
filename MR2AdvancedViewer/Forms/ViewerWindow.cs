@@ -31,6 +31,7 @@ namespace MR2AdvancedViewer
         Process PSXProcess;
         string EmuFileName;
         public byte[] ScratchData = new byte[4];
+        public byte[] nameToWrite = new byte[24]; //bedeg
 
         // Loaded Memory
         private int I_Exist_To_Suffer = 4; // This variable is cursed. It always returns 0 even when assigned a value...
@@ -118,6 +119,8 @@ namespace MR2AdvancedViewer
         readonly System.Media.SoundPlayer BananaLose = new System.Media.SoundPlayer(Properties.Resources.MR2_Banana_Fail);
         public Random rng = new Random();
         public int RNGNew, RNGCur = -1;
+        public bool bChangingName = false; //bedeg
+        public string prevName; //bedeg
 
         public string MonGRAlphabetise(int gValue, TextBox BoxID)
         {
@@ -4574,10 +4577,12 @@ namespace MR2AdvancedViewer
         {
             int PlayerMoney;
             Array.Clear(ScratchData, 0, 4);
-            if(EmuVer != 4)
+            if (EmuVer != 4)
                 ReadProcessMemory(psxPTR, PSXBase + 0x00098FBC, ScratchData, 4, ref HasRead);
             else
+            {
                 ReadProcessMemory(psxPTR, PSXBase + 0x0009A568, ScratchData, 4, ref HasRead);
+            }
             PlayerMoney = BitConverter.ToInt32(ScratchData, 0);
             return PlayerMoney.ToString() + "G";
         }
@@ -4587,21 +4592,46 @@ namespace MR2AdvancedViewer
             string MonGivenName = "";
             int CharaID;
 
-            for (int i = 0; i < 12; i++)
+            if (EmuVer == 4)
             {
-                if (EmuVer == 4)
+                for (int i = 0; i < 24; i++)                                                                                                            //24 bytes long //bedeg
                 {
-                    ReadProcessMemory(psxPTR, PSXBase + 0x00097B78 + i * 2, ScratchData, 2, ref HasRead);
-                    CharaID = (ScratchData[0] << 8) + ScratchData[1];
-
-                    if (CharaID == 0xFFFF)
+                    ReadProcessMemory(psxPTR, PSXBase + 0x0097B78 + i/* * 2*/, ScratchData, 1/*2*/, ref HasRead);
+                    CharaID = (ScratchData[0]);                                                                                                         //read 1 byte first
+                    if (CharaID == 0xb0 | CharaID == 0xb1 | CharaID == 0xb2 | CharaID == 0xb3 | CharaID == 0xb4 | CharaID == 0xb5 | CharaID == 0xb6)    //if it's any of these read 2 bytes
                     {
-                        break;
-                    }
+                        ReadProcessMemory(psxPTR, PSXBase + 0x0097B78 + i, ScratchData, 2, ref HasRead);
+                        CharaID = ((ScratchData[0] << 8) + ScratchData[1]);
+                        if (CharaID == 0xFFFF)
+                            break;
 
-                    MonGivenName += CharMapping.charMap[CharaID];
+                        if (CharMapping.charMap.ContainsKey(CharaID))
+                            MonGivenName += CharMapping.charMap[CharaID];
+                        else
+                            MonGivenName += "?";                                                                                                        //display "?" if character is unrecognized
+
+                        i++;
+                    }
+                    else                                                                                                                                //read 1 byte for number chars and possibly space if CE'd
+                    {
+                        if (CharaID == 0xFF)
+                            break;
+
+                        if (CharMapping.charMap.ContainsKey(CharaID))
+                            MonGivenName += CharMapping.charMap[CharaID];
+                        else
+                            MonGivenName += "?";                                                                                                        //display "?" if character is unrecognized
+                    }
                 }
+
+                if (MonGivenName != "" && !bChangingName)
+                    ChangeName.Visible = true;
                 else
+                    ChangeName.Visible = false;
+            }
+            else
+            {
+                for (int i = 0; i < 12; i++)
                 {
                     ReadProcessMemory(psxPTR, PSXBase + 0x00097B78 + i, ScratchData, 1, ref HasRead);
                     CharaID = ScratchData[0];
@@ -4733,7 +4763,7 @@ namespace MR2AdvancedViewer
 
         private string MonReadBattleSpecials()
         {
-            if(EmuVer != 4) // If this is PS1 emulation
+            if (EmuVer != 4) // If this is PS1 emulation
                 ReadProcessMemory(psxPTR, PSXBase + 0x00097BD8, ScratchData, 2, ref HasRead);
             else // If this is MR2DX
                 ReadProcessMemory(psxPTR, PSXBase + 0x00097BE0, ScratchData, 2, ref HasRead);
@@ -4953,6 +4983,7 @@ namespace MR2AdvancedViewer
             CocoonInfo.Hide();
             EmuSelectBox.SelectedIndex = -1;
             Array.Clear(ScratchData, 0, 4);
+            Array.Clear(nameToWrite, 0, 24); //bedeg
             EmuVer = -1;
 
             Text = "MR2 Advanced Viewer v0.621";
@@ -5057,8 +5088,8 @@ This replaces the old button, skipping the additional window and saving Lexi a l
         {
             for (int i = 0; i < 24; i++)
             {
-                Mon_Moves[i] = MR2ReadInt(0x00097B9A + (2 * i));
-                Mon_MoveUsed[i] = MR2ReadInt(0x00097B9B + (2 * i));
+                Mon_Moves[i] = MR2ReadInt(0x00097BA2 + (2 * i));    //bedeg
+                Mon_MoveUsed[i] = MR2ReadInt(0x00097BA3 + (2 * i)); //bedeg
             }
         }
 
@@ -5066,7 +5097,8 @@ This replaces the old button, skipping the additional window and saving Lexi a l
         {
             for (int i = 0; i < 20; i++)
             {
-                ItemList[i] = MR2ReadInt(0x0009923C + (4 * i));
+                //ItemList[i] = MR2ReadInt(0x0009923C + (4 * i));
+                ItemList[i] = MR2ReadInt(0x0009A7E4 + (4 * i)); //bedeg
             }
         }
 
@@ -5155,7 +5187,8 @@ This replaces the old button, skipping the additional window and saving Lexi a l
             TWButton.Enabled = bViewingMR2;
 //           IVButton.Enabled = bViewingMR2;
             if(EmuVer == 4)
-                MVButton.Enabled = false;
+                //MVButton.Enabled = false; //bedeg
+                MVButton.Enabled = bViewingMR2;
             else
                 MVButton.Enabled = bViewingMR2;
             MRDebugButton.Enabled = bViewingMR2;
@@ -5498,7 +5531,8 @@ As a precaution, MR2AV has stopped reading from the emulator. To continue, press
                     MonLifespanBox.Invoke((MethodInvoker)delegate { MonLifespanBox.Text = Mon_Lifespan + "w"; });
                     MonInitLifespanBox.Invoke((MethodInvoker)delegate { MonInitLifespanBox.Text = Mon_InitLifespan + "w"; });
                     MonBreedNameBox.Invoke((MethodInvoker)delegate { MonBreedNameBox.Text = MonBreedNames(); });
-                    MonGivenNameBox.Invoke((MethodInvoker)delegate { MonGivenNameBox.Text = MonReadGivenName(); });
+                    if(!bChangingName)  //bedeg
+                        MonGivenNameBox.Invoke((MethodInvoker)delegate { MonGivenNameBox.Text = MonReadGivenName(); });
                     MoneyBox.Invoke((MethodInvoker)delegate { MoneyBox.Text = MonReadMoney(); });
                     if (MonBreedNameBox.Text.Contains("[E]") || MonBreedNameBox.Text.Contains("(N/S)"))
                         MonBreedNameBox.BackColor = Color.LightPink;
@@ -5638,6 +5672,7 @@ Each increase also decreases SPD and DEF by 10%.
                         MMW.Mon_MoveUsed = Mon_MoveUsed;
                         MMW.Mon_Genus = MonGenus_Main;
                         MMW.Mon_SubGenus = MonGenus_Sub; // GREATEST PATCH OF THE CENTUARY
+                        MMW.Mon_Nature = Mon_EffNature; // send effnature too //bedeg
                         MMW.Mon_Stats[0] = Mon_Lif;
                         MMW.Mon_Stats[1] = Mon_Pow;
                         MMW.Mon_Stats[2] = Mon_Int;
@@ -5920,6 +5955,93 @@ Each increase also decreases SPD and DEF by 10%.
             System.Windows.Forms.Clipboard.SetText(OutputText);
             MoneyBox.BackColor = SystemColors.Control;
             MessageBox.Show(OutputText, "Copied Growths to clipboard!");
+        }
+
+        private void MonGivenNameBox_TextChanged(object sender, EventArgs e)
+        {
+            
+        }
+
+        private void MoneyBox_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void ChangeName_Click(object sender, EventArgs e) //bedeg
+        {
+            bChangingName = true;
+            ChangeName.Visible = false;
+            ChangeName.Location = new Point(69, 245);
+            SaveName.Visible = true;
+            SaveName.Location = new Point(26, 245);
+            CancelName.Visible = true;
+            CancelName.Location = new Point(116, 245);
+
+            prevName = MonGivenNameBox.Text;
+
+            MonGivenNameBox.ReadOnly = false;
+            MonGivenNameBox.Focus();
+        }
+
+        private void SaveName_Click(object sender, EventArgs e) //bedeg
+        {
+            convTextAndWrite();
+
+            bChangingName = false;
+            ChangeName.Visible = true;
+            SaveName.Visible = false;
+            CancelName.Visible = false;
+            MonGivenNameBox.ReadOnly = true;
+        }
+
+        private void CancelName_Click(object sender, EventArgs e) //bedeg
+        {
+            MonGivenNameBox.Text = prevName;
+
+            bChangingName = false;
+            ChangeName.Visible = true;
+            SaveName.Visible = false;
+            CancelName.Visible = false;
+            MonGivenNameBox.ReadOnly = true;
+        }
+
+        private void convTextAndWrite() //bedeg
+        {
+            int offsetIncrement = 0;
+            Array.Clear(nameToWrite, 0, 24);
+
+            foreach (char c in MonGivenNameBox.Text)
+            {
+                string r = Convert.ToString(c);
+                if (ReverseCharMapping.reverseCharMap.ContainsKey(r))
+                {
+                    if (ReverseCharMapping.reverseCharMap[r] <= 0xab)                                                       // 1 byte
+                    {
+                        nameToWrite[offsetIncrement] = BitConverter.GetBytes(ReverseCharMapping.reverseCharMap[r])[0];
+                        offsetIncrement += 1;
+                    }
+                    else                                                                                                    // 2 bytes
+                    {
+                        nameToWrite[offsetIncrement] = BitConverter.GetBytes(ReverseCharMapping.reverseCharMap[r])[1];      // endianness madness
+                        offsetIncrement += 1;
+                        nameToWrite[offsetIncrement] = BitConverter.GetBytes(ReverseCharMapping.reverseCharMap[r])[0];
+                        offsetIncrement += 1;
+                    }
+                }
+                else 
+                {
+                    nameToWrite[offsetIncrement] = 0xb0;                                                                    // write "?" if character is not found
+                    offsetIncrement += 1;
+                    nameToWrite[offsetIncrement] = 0x37;
+                    offsetIncrement += 1;
+                }
+            }
+            if (offsetIncrement < 24)                                                                                       // append FFFF to the end
+            {
+                for (int i = offsetIncrement; i < 24; i++)
+                    nameToWrite[i] = 0xFF;
+            }
+            WriteProcessMemory(psxPTR, PSXBase + 0x0097B78, nameToWrite, 24, ref HasRead);
         }
 
         private void StatusMessageCycle_Tick(object sender, EventArgs e)
