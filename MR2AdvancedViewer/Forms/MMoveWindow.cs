@@ -19,6 +19,7 @@ namespace MR2AdvancedViewer
         public int MoveSelected = -1;
         public int rowSelected, colSelected;
         public int[] Mon_Stats = new int[6];
+        public int Mon_Nature = -1; //bedeg
         public Color PowCol = System.Drawing.ColorTranslator.FromHtml("#DAA520");
         public Color IntCol = Color.Green;
         public Random rng = new Random();
@@ -48,7 +49,13 @@ namespace MR2AdvancedViewer
             MoveHit.Text = GenerateStatValue(1, Hit);
             MoveGuts.Text = Guts.ToString();
             MoveUses.Text = Mon_MoveUsed[MoveSlot].ToString();
-            MoveUnlocked.Checked = (Mon_Moves[MoveSlot] == 1);
+            MoveUnlocked.Checked = (Mon_Moves[MoveSlot] == 1);            
+            
+            hilightSelect.Parent = (PictureBox)this.Controls[("Slot" + ((MoveSlot / 6) + 1) + "_" + ((MoveSlot % 6) + 1))]; //bedeg
+            hilightSelect.Image = Properties.Resources.hilight;                                                             //
+            hilightSelect.BackColor = Color.Transparent;                                                                    //
+            hilightSelect.Location = new Point(0, 0);                                                                       //
+            hilightSelect.Visible = true;                                                                                   //
         }
 
         public MonMoveWindow()
@@ -529,7 +536,6 @@ namespace MR2AdvancedViewer
         {
             if (Mon_Genus != oldGenus)
                 PopulateMoveIcons();
-
             GenerateMoveInfo();
         }
 
@@ -1556,10 +1562,61 @@ namespace MR2AdvancedViewer
                     break;
             }
         }
-
+                
         private void GenerateMoveInfo()
         {
             int SHBoxLoc;
+
+            PictureBox[] childBoxes = { skillChecked_0, skillChecked_1, skillChecked_2, skillChecked_3, skillChecked_4, skillChecked_5,             //bedeg
+                                        skillChecked_6, skillChecked_7, skillChecked_8, skillChecked_9, skillChecked_10, skillChecked_11,           //
+                                        skillChecked_12, skillChecked_13, skillChecked_14, skillChecked_15, skillChecked_16, skillChecked_17,       //
+                                        skillChecked_18, skillChecked_19, skillChecked_20, skillChecked_21, skillChecked_22, skillChecked_23 };     //
+            /*PictureBox[] canGetBoxes = { canGet0, canGet1, canGet2, canGet3, canGet4, canGet5,                                                    //too much to handle...
+                                        canGet6, canGet7, canGet8, canGet9, canGet10, canGet11,                                                     //
+                                        canGet12, canGet13, canGet14, canGet15, canGet16, canGet17,                                                 //
+                                        canGet18, canGet19, canGet20, canGet21, canGet22, canGet23 };*/                                             //
+            PictureBox[] parentBoxes = { Slot1_1, Slot1_2, Slot1_3, Slot1_4, Slot1_5, Slot1_6,                                                      //
+                                        Slot2_1, Slot2_2, Slot2_3, Slot2_4, Slot2_5, Slot2_6,                                                       //
+                                        Slot3_1, Slot3_2, Slot3_3, Slot3_4, Slot3_5, Slot3_6,                                                       //
+                                        Slot4_1, Slot4_2, Slot4_3, Slot4_4, Slot4_5, Slot4_6 };                                                     //
+
+            for (int i = 0; i <= 23; i++)
+            {
+                childBoxes[i].Parent = parentBoxes[i];
+                childBoxes[i].Location = new Point(30, 2);
+                //canGetBoxes[i].Parent = parentBoxes[i];                                                                                           //too much to handle...
+                //canGetBoxes[i].Location = new Point(0, 16);
+                //canGetBoxes[i].Image = Properties.Resources.skillget;
+                //canGetBoxes[i].Visible = true;
+                if (Mon_Moves[i] == 1 && parentBoxes[i].Image.PixelFormat != Properties.Resources.No_Move.PixelFormat)
+                {
+                    childBoxes[i].Image = Properties.Resources.skillchecked;
+                    childBoxes[i].Visible = true;
+                }
+                else
+                {
+                    childBoxes[i].Image = null;
+                    childBoxes[i].Visible = false;
+                }
+            }
+
+            if (CanUnlock.Checked == true && MoveUnlocked.Checked == false)                                                                         //just do this I guess...
+            { 
+                canGet.Image= Properties.Resources.skillget;
+                canGet.Visible = true;
+            }
+            else
+            {
+                canGet.Image = null;
+                canGet.Visible = false;
+            }
+
+            if (MoveSelected == -1)
+            {
+                hilightSelect.Image = null;
+                hilightSelect.Visible = false;
+            }
+
             switch (Mon_Genus)
             {
                 case -1:
@@ -2205,7 +2262,7 @@ Chains into Spinning Claw when used 50x.";
                             MoveUses.Text = Mon_MoveUsed[6].ToString();
                             MoveUnlocked.Checked = (Mon_Moves[6] == 1);
                             CanUnlock.Checked = (Mon_Stats[1] + Mon_Stats[3] > 350);
-                            MoveInfo.Text = "Hit tech. POW + SKI should total over 350 to unlock. Learning priority over Triple Stabs";
+                            MoveInfo.Text = "Hit tech. POW + SKI should total over 350 to unlock. Learning priority over Triple Stabs.";
                             break;
                         case 7:
                             MoveName.Text = "Mind Flare"; MoveName.ForeColor = IntCol;
@@ -3241,6 +3298,1173 @@ Requires Good (~+30) Nature.";
                             break;
                     }
                     break;
+                case 6: // Wracky
+                    switch (MoveSelected)
+                    {
+                        case 1:
+                            MoveName.Text = "Weapon";
+	                        LazyDataFill(false, 10, 8, 10, 5, 0, 0);
+	                        MoveSH.Hide();
+	                        SHLabel.Hide();
+	                        CanUnlock.Checked = true;
+	                        MoveInfo.Text = "Starting basic tech. Chains into Weapon Combo when used 30 times.";
+	                        break;
+
+                        case 2:
+                            MoveName.Text = "Weapon Combo";
+	                        LazyDataFill(false, 20, 16, 5, 10, 0, 1);
+	                        MoveSH.Hide();
+	                        SHLabel.Hide();
+	                        CanUnlock.Checked = (Mon_MoveUsed[0] >= 30);
+                            MoveInfo.Text = "Basic tech. Chains from 30 Weapon. No stat requirement.";
+	                        break;
+
+                        case 3:
+                            MoveName.Text = "Kick";
+	                        LazyDataFill(false, 28, 17, 17, 7, 5, 2);
+	                        MoveSH.Hide();
+	                        SHLabel.Hide();
+	                        CanUnlock.Checked = (Mon_Stats[1] + Mon_Stats[3] >= 650);
+                            MoveInfo.Text = "Hit tech. POW + SKI should total over 650 to unlock. Chains into Spin Kick when used 50x.";
+	                        break;
+	
+                        case 4:
+                            MoveName.Text = "Spin Kick";
+	                        LazyDataFill(false, 33, 22, 15, 11, 5, 3);
+	                        MoveSH.Hide();
+	                        SHLabel.Hide();
+	                        CanUnlock.Checked = (Mon_MoveUsed[2] >= 50);
+                            MoveInfo.Text = "Hit tech. Chains from 50 Kick. Chains into Twister Kick when used 50x. No stat requirement.";
+	                        break;
+	
+                        case 5:
+                            MoveName.Text = "Twister Kick";
+	                        LazyDataFill(false, 45, 35, 15, 15, 5, 4);
+	                        MoveSH.Hide();
+	                        SHLabel.Hide();
+	                        CanUnlock.Checked = (Mon_MoveUsed[3] >= 50);
+                            MoveInfo.Text = "Special tech. Chains from 50 Spin Kick. No stat requirement.";
+	                        break;
+	
+                        case 6:
+                            MoveName.Text = "Punch";
+	                        LazyDataFill(false, 18, 20, -10, 10, 5, 5);
+	                        MoveSH.Hide();
+	                        SHLabel.Hide();
+	                        CanUnlock.Checked = (Mon_Stats[1] >= 250);
+                            MoveInfo.Text = "Heavy tech. POW should be over 250 to unlock. Chains into Heavy Punch when used 50 times.";
+	                        break;
+	
+                        case 7:
+                            MoveName.Text = "Heavy Punch";
+	                        LazyDataFill(false, 25, 27, -7, 15, 5, 6);
+	                        MoveSH.Hide();
+	                        SHLabel.Hide();
+	                        CanUnlock.Checked = (Mon_MoveUsed[5] >= 50);
+                            MoveInfo.Text = "Heavy tech. Chains from 50 Punch. Chains into Wracky Combo when used 50 times.\r\nNo stat requirement.";
+	                        break;
+	
+                        case 8:
+                            MoveName.Text = "Wracky Combo";
+	                        LazyDataFill(false, 50, 45, -15, 45, 5, 7);
+	                        MoveSH.Hide();
+	                        SHLabel.Hide();
+	                        CanUnlock.Checked = (Mon_MoveUsed[6] >= 50);
+                            MoveInfo.Text = "Special tech. Chains from 50 Heavy Punch. No stat requirement.";
+	                        break;
+	
+                        case 9:
+                            MoveName.Text = "Necromancy";
+	                        LazyDataFill(true, 20, 4, 0, 28, 5, 8);
+	                        MoveSH.Hide();
+	                        SHLabel.Hide();
+	                        CanUnlock.Checked = (Mon_Stats[2] >= 250);
+                            MoveInfo.Text = "Withering tech. INT should be over 250 to unlock.";
+	                        break;
+	
+                        case 10:
+                            MoveName.Text = "Sneak Attack";
+	                        LazyDataFill(false, 16, 11, 3, 9, 19, 9);
+	                        MoveSH.Hide();
+	                        SHLabel.Hide();
+	                        CanUnlock.Checked = (Mon_Stats[1] + Mon_Stats[4] >= 400);
+                            MoveInfo.Text = "Sharp tech. POW + SPD should total over 400 to unlock.";
+	                        break;
+	
+                        case 11:
+                            MoveName.Text = "Sneak Combo";
+	                        LazyDataFill(false, 42, 20, 2, 10, 25, 10);
+	                        MoveSH.Hide();
+	                        SHLabel.Hide();
+	                        CanUnlock.Checked = (Mon_Stats[1] + Mon_Stats[4] >= 600);
+                            MoveInfo.Text = "Sharp tech. POW + SPD should total over 600 to unlock.";
+	                        break;
+	
+                        case 12:
+                            MoveName.Text = "Fire Juggler";
+	                        LazyDataFill(true, 50, 55, -14, 25, 25, 11);
+	                        MoveSH.Hide();
+	                        SHLabel.Hide();
+	                        CanUnlock.Checked = (Mon_Stats[2] >= 600 && Mon_SubGenus == 1);
+                            MoveInfo.Text = "Special tech. Draco Doll exclusive. INT should be over 600 to unlock.";
+	                        break;
+	
+                        case 13:
+                            MoveName.Text = "Weapon Throw";
+	                        LazyDataFill(true, 12, 11, 6, 5, 0, 12);
+	                        MoveSH.Hide();
+	                        SHLabel.Hide();
+	                        CanUnlock.Checked = true;
+                            MoveInfo.Text = "Starting basic tech.";
+	                        break;
+	
+                        case 14:
+                            MoveName.Text = "Spin Slash";
+	                        LazyDataFill(false, 28, 32, -12, 5, 10, 13);
+	                        MoveSH.Hide();
+	                        SHLabel.Hide();
+	                        CanUnlock.Checked = (Mon_Stats[1] >= 450 && Mon_Nature <= -20);
+                            MoveInfo.Text = "Heavy tech. POW should be over 450 to unlock. Chains into TwisterSlash when used 50 times.\r\nRequires Bad (-20) Nature.";
+	                        break;
+	
+                        case 15:
+                            MoveName.Text = "Trick";
+	                        LazyDataFill(true, 32, 5, 0, 45, 5, 14);
+	                        MoveSH.Hide();
+	                        SHLabel.Hide();
+	                        CanUnlock.Checked = (Mon_Stats[2] >= 450);
+                            MoveInfo.Text = "Withering tech. INT should be over 450 to unlock.";
+	                        break;
+	
+                        case 16:
+                            MoveName.Text = "Explosion";
+	                        LazyDataFill(false, 50, 70, -25, 50, 10, 15);
+	                        MoveSH.Text = GenerateStatValue(0, 70);
+	                        MoveSH.Show();
+	                        SHLabel.Text = "Self-Damage:";
+	                        SHLabel.Show();
+                            CanUnlock.Checked = (Mon_Stats[1] + Mon_Stats[2] + Mon_Stats[5] >= 1200 && Mon_Nature <= -50 && (Mon_SubGenus != 0 && Mon_SubGenus != 1 && Mon_SubGenus != 18 && Mon_SubGenus != 31));
+                            MoveInfo.Text = "Special tech. POW + INT + DEF should total over 1200 to unlock. Requires Bad (-50) Nature.\r\nBaby Doll, Draco Doll, Bakky, Mocky can't learn.";
+	                        break;
+	
+                        case 17:
+                            MoveName.Text = "Head Spike";
+	                        LazyDataFill(true, 45, 25, -1, 37, 5, 16);
+	                        MoveSH.Hide();
+	                        SHLabel.Hide();
+	                        CanUnlock.Checked = (Mon_Stats[2] >= 600);
+                            MoveInfo.Text = "Special tech. INT should be over 600 to unlock. Chains into Fire Spike when used 50x.";
+	                        break;
+	
+                        case 18:
+                            MoveName.Text = "Fire Spike";
+	                        LazyDataFill(true, 50, 33, -5, 43, 5, 17);
+	                        MoveSH.Hide();
+	                        SHLabel.Hide();
+	                        CanUnlock.Checked = (Mon_MoveUsed[16] >= 50);
+                            MoveInfo.Text = "Special tech. Chains from 50 Head Spike. No stat requirement.";
+	                        break;
+	
+                        case 19:
+                            MoveName.Text = "Air Shot";
+	                        LazyDataFill(true, 17, 9, 22, 8, 5, 18);
+	                        MoveSH.Hide();
+	                        SHLabel.Hide();
+	                        CanUnlock.Checked = (Mon_Stats[2] + Mon_Stats[3] >= 400);
+                            MoveInfo.Text = "Hit tech. INT + SKI should total over 400 to unlock. Chains into Blast Shot when used 50x.";
+	                        break;
+	
+                        case 20:
+                            MoveName.Text = "Blast Shot";
+	                        LazyDataFill(true, 28, 20, 22, 12, 5, 19);
+	                        MoveSH.Hide();
+	                        SHLabel.Hide();
+	                        CanUnlock.Checked = (Mon_MoveUsed[18] >= 50);
+                            MoveInfo.Text = "Hit tech. Chains from 50 Air Shot. No stat requirement.";
+	                        break;
+	
+                        case 21:
+                            MoveName.Text = "TwisterSlash";
+	                        LazyDataFill(false, 39, 46, -13, 6, 10, 20);
+	                        MoveSH.Hide();
+	                        SHLabel.Hide();
+	                        CanUnlock.Checked = (Mon_MoveUsed[13] >= 50 && Mon_Nature >= 50);
+                            MoveInfo.Text = "Hit tech. Chains from 50 Spin Slash. Requires Good (+50) Nature.";
+	                        break;
+	
+                        case 22:
+                            MoveName.Text = "Beat Dance";
+	                        LazyDataFill(false, 50, 25, 0, 25, 25, 21);
+	                        MoveSH.Hide();
+	                        SHLabel.Hide();
+	                        CanUnlock.Checked = (Mon_Stats[1] + Mon_Stats[4] >= 800);
+                            MoveInfo.Text = "Special tech. POW + SPD should total over 800 to unlock. Chains into Cursed Dance when used 50x.";
+	                        break;
+	
+                        case 23:
+                            MoveName.Text = "Cursed Dance";
+	                        LazyDataFill(false, 55, 35, 0, 35, 35, 22);
+	                        MoveSH.Hide();
+	                        SHLabel.Hide();
+	                        CanUnlock.Checked = (Mon_MoveUsed[21] >= 50);
+                            MoveInfo.Text = "Special tech. Chains from 50 Beat Dance. No stat requirement.";
+	                        break;
+	
+                        case 24:
+                            MoveName.Text = "Flame";
+	                        LazyDataFill(true, 50, 44, -14, 44, 5, 23);
+	                        MoveSH.Hide();
+	                        SHLabel.Hide();
+	                        CanUnlock.Checked = (Mon_Stats[2] >= 600);
+                            MoveInfo.Text = "Special tech. INT should be over 600 to unlock.";
+	                        break;
+
+                        default:
+                            MoveName.Text = "No Move"; MoveName.ForeColor = Color.Black;
+                            MoveGuts.Text = "---";
+                            MoveDamage.Text = "---";
+                            MoveHit.Text = "---";
+                            MoveGD.Text = "---";
+                            MoveSharp.Text = "---";
+                            MoveSH.Hide();
+                            SHLabel.Hide();
+                            MoveUses.Text = "---";
+                            MoveUnlocked.Checked = false;
+                            CanUnlock.Checked = false;
+                            MoveInfo.Text = "Click on a move to learn more.";
+                            break;
+                    }
+                    break;
+                case 7: // Gollum                    
+                    switch (MoveSelected)
+                    {
+                        case 1:
+                            MoveName.Text = "Heavy Punch";
+                            LazyDataFill(false, 16, 28, -10, 5, 0, 0);
+                            MoveSH.Hide();
+                            SHLabel.Hide();
+                            CanUnlock.Checked = (Mon_MoveUsed[6] >= 30);
+                            MoveInfo.Text = "Basic tech. Chains from 30 Punch. No stat requirement.";
+                            break;
+
+                        case 2:
+                            MoveName.Text = "Kick";
+                            LazyDataFill(false, 12, 24, -14, 0, 5, 1);
+                            MoveSH.Hide();
+                            SHLabel.Hide();
+                            CanUnlock.Checked = true;
+                            MoveInfo.Text = "Starting basic tech. Chains into Heavy Kick when used 30x.";
+                            break;
+
+                        case 3:
+                            MoveName.Text = "Heavy Kick";
+                            LazyDataFill(false, 18, 34, -15, 5, 6, 2);
+                            MoveSH.Hide();
+                            SHLabel.Hide();
+                            CanUnlock.Checked = (Mon_MoveUsed[1] >= 30);
+                            MoveInfo.Text = "Basic tech. Chains into Heavy Kick when used 30x.\r\nMany Golem subs can't learn this at Torble Sea.";
+                            break;
+
+                        case 4:
+                            MoveName.Text = "Slap";
+                            LazyDataFill(false, 17, 22, 0, 5, 5, 3);
+                            MoveSH.Hide();
+                            SHLabel.Hide();
+                            CanUnlock.Checked = (Mon_Stats[1] + Mon_Stats[3] >= 400);
+                            MoveInfo.Text = "Hit tech. POW + SKI should total over 400 to unlock.\r\nChains into Heavy Slap when used 50x.";
+                            break;
+
+                        case 5:
+                            MoveName.Text = "Uppercut";
+                            LazyDataFill(false, 21, 45, -18, 5, 5, 4);
+                            MoveSH.Hide();
+                            SHLabel.Hide();
+                            CanUnlock.Checked = (Mon_Stats[1] >= 250);
+                            MoveInfo.Text = "Heavy tech. POW should be over 250 to unlock.\r\nLearning priority over Palm Strike";
+                            break;
+
+                        case 6:
+                            MoveName.Text = "Thwack";
+                            LazyDataFill(false, 17, 21, -12, 19, 5, 5);
+                            MoveSH.Hide();
+                            SHLabel.Hide();
+                            CanUnlock.Checked = (Mon_Stats[1] + Mon_Stats[2] >= 400);
+                            MoveInfo.Text = "Withering tech. POW + INT should total over 400 to unlock.\r\nChains into Smash Thwack when used 50x.";
+                            break;
+
+                        case 7:
+                            MoveName.Text = "Punch";
+                            LazyDataFill(false, 10, 19, -9, 0, 0, 6);
+                            MoveSH.Hide();
+                            SHLabel.Hide();
+                            CanUnlock.Checked = true;
+                            MoveInfo.Text = "Starting basic tech. Chains into Heavy Punch when used 30x.";
+                            break;
+
+                        case 8:
+                            MoveName.Text = "Brow Hit";
+                            LazyDataFill(false, 18, 29, -7, 10, 25, 7);
+                            MoveSH.Hide();
+                            SHLabel.Hide();
+                            CanUnlock.Checked = (Mon_Stats[1] + Mon_Stats[4] >= 400);
+                            MoveInfo.Text = "Sharp tech. POW + SPD should total over 400 to unlock. \r\nChains into Brow Smash when used 50x. Learning priority over Clap Attack";
+                            break;
+
+                        case 9:
+                            MoveName.Text = "Smash Thwack";
+                            LazyDataFill(false, 21, 23, -13, 35, 5, 8);
+                            MoveSH.Hide();
+                            SHLabel.Hide();
+                            CanUnlock.Checked = (Mon_MoveUsed[5] >= 50 && Mon_Nature <= -50);
+                            MoveInfo.Text = "Withering tech. Chains from 50 Thwack. Requires Bad (-50) Nature.";
+                            break;
+
+                        case 10:
+                            MoveName.Text = "Clap Attack";
+                            LazyDataFill(false, 26, 33, -12, 13, 18, 9);
+                            MoveSH.Hide();
+                            SHLabel.Hide();
+                            CanUnlock.Checked = (Mon_Stats[1] + Mon_Stats[4] >= 650);
+                            MoveInfo.Text = "Sharp tech. POW + SPD should total over 650 to unlock.\r\nChains into Giant Clap when used 50x.";
+                            break;
+
+                        case 11:
+                            MoveName.Text = "Palm Strike";
+                            LazyDataFill(false, 24, 31, -5, 12, 5, 10);
+                            MoveSH.Hide();
+                            SHLabel.Hide();
+                            CanUnlock.Checked = (Mon_Stats[1] >= 450);
+                            MoveInfo.Text = "Heavy tech. POW should be over 450 to unlock. Chains into Double Palms when used 50x.\r\nLearning priority over Diving Press";
+                            break;
+
+                        case 12:
+                            MoveName.Text = "Double Palms";
+                            LazyDataFill(false, 33, 47, -8, 15, 5, 11);
+                            MoveSH.Hide();
+                            SHLabel.Hide();
+                            CanUnlock.Checked = (Mon_MoveUsed[10] >= 50);
+                            MoveInfo.Text = "Heavy tech. Chains from 50 Palm Strike. No stat requirement.";
+                            break;
+
+                        case 13:
+                            MoveName.Text = "Heavy Slap";
+                            LazyDataFill(false, 23, 26, 2, 9, 5, 12);
+                            MoveSH.Hide();
+                            SHLabel.Hide();
+                            CanUnlock.Checked = (Mon_MoveUsed[3] >= 50);
+                            MoveInfo.Text = "Hit tech. Chains from 50 Slap. No stat requirement.";
+                            break;
+
+                        case 14:
+                            MoveName.Text = "Diving Press";
+                            LazyDataFill(false, 30, 65, -20, 17, 15, 13);
+                            MoveSH.Text = GenerateStatValue(0, 20);
+                            MoveSH.Show();
+                            SHLabel.Text = "Self-Damage:";
+                            SHLabel.Show();
+                            CanUnlock.Checked = (Mon_Stats[1] + Mon_Stats[5] >= 650);
+                            MoveInfo.Text = "Heavy tech. POW + DEF should total over 650 to unlock.";
+                            break;
+
+                        case 15:
+                            MoveName.Text = "Charge";
+                            LazyDataFill(false, 26, 30, 1, 11, 5, 14);
+                            MoveSH.Hide();
+                            SHLabel.Hide();
+                            CanUnlock.Checked = (Mon_Stats[1] + Mon_Stats[3] >= 650);
+                            MoveInfo.Text = "Hit tech. POW + SKI should total over 650 to unlock.";
+                            break;
+
+                        case 16:
+                            MoveName.Text = "Roll Assault";
+                            LazyDataFill(false, 50, 64, -16, 38, 10, 15);
+                            MoveSH.Hide();
+                            SHLabel.Hide();
+                            CanUnlock.Checked = (Mon_Stats[1] >= 600);
+                            MoveInfo.Text = "Special tech. POW should be over 600 to unlock.";
+                            break;
+
+                        case 17:
+                            MoveName.Text = "Brow Smash";
+                            LazyDataFill(false, 28, 44, -16, 17, 30, 18);
+                            MoveSH.Hide();
+                            SHLabel.Hide();
+                            CanUnlock.Checked = (Mon_MoveUsed[7] >= 50);
+                            MoveInfo.Text = "Sharp tech. Chains from 50 Brow Hit. No stat requirement.";
+                            break;
+
+                        case 18:
+                            MoveName.Text = "Earthquake";
+                            LazyDataFill(true, 28, 27, -11, 39, 5, 19);
+                            MoveSH.Hide();
+                            SHLabel.Hide();
+                            CanUnlock.Checked = (Mon_Stats[2] >= 450);
+                            MoveInfo.Text = "Withering tech. INT should be over 450 to unlock.";
+                            break;
+
+                        case 19:
+                            MoveName.Text = "Giant Clap";
+                            LazyDataFill(false, 31, 35, -15, 30, 19, 20);
+                            MoveSH.Hide();
+                            SHLabel.Hide();
+                            CanUnlock.Checked = (Mon_MoveUsed[9] >= 50);
+                            MoveInfo.Text = "Sharp tech. Chains from 50 Clap Attack. No stat requirement.";
+                            break;
+
+                        case 20:
+                            MoveName.Text = "Fist Shot";
+                            LazyDataFill(false, 50, 38, -5, 38, 15, 21);
+                            MoveSH.Hide();
+                            SHLabel.Hide();
+                            CanUnlock.Checked = (Mon_Stats[2] + Mon_Stats[4] >= 800 && Mon_Nature >= 20);
+                            MoveInfo.Text = "Special tech. INT + SPD (lolwut) should total over 800 to unlock.\r\nChains into Fist Missile when used 50x. Requires Good (+20) Nature.";
+                            break;
+
+                        case 21:
+                            MoveName.Text = "Fist Missile";
+                            LazyDataFill(false, 55, 45, -3, 45, 15, 22);
+                            MoveSH.Hide();
+                            SHLabel.Hide();
+                            CanUnlock.Checked = (Mon_MoveUsed[21] >= 50 && Mon_Nature >= 50);
+                            MoveInfo.Text = "Special tech. Chains from 50 Fist Shot.\r\nRequires Good (+50) Nature.";
+                            break;
+
+                        case 22:
+                            MoveName.Text = "Cyclone";
+                            LazyDataFill(false, 50, 78, -16, 21, 10, 23);
+                            MoveSH.Hide();
+                            SHLabel.Hide();
+                            CanUnlock.Checked = (Mon_Stats[1] >= 800);
+                            MoveInfo.Text = "Special tech. POW should be over 800 to unlock.";
+                            break;
+
+                        default:
+                            MoveName.Text = "No Move"; MoveName.ForeColor = Color.Black;
+                            MoveGuts.Text = "---";
+                            MoveDamage.Text = "---";
+                            MoveHit.Text = "---";
+                            MoveGD.Text = "---";
+                            MoveSharp.Text = "---";
+                            MoveSH.Hide();
+                            SHLabel.Hide();
+                            MoveUses.Text = "---";
+                            MoveUnlocked.Checked = false;
+                            CanUnlock.Checked = false;
+                            MoveInfo.Text = "Click on a move to learn more.";
+                            break;
+                    }                    
+                    break;
+
+                case 8: // Zuum                    
+                    switch (MoveSelected)
+                    {
+                        case 1:
+                            MoveName.Text = "Claw";
+                            LazyDataFill(false, 10, 10, 0, 0, 0, 0);
+                            MoveSH.Hide();
+                            SHLabel.Hide();
+                            CanUnlock.Checked = true;
+                            MoveInfo.Text = "Starting basic tech. Chains into MillionClaws when used 30x.";
+                            break;
+
+                        case 2:
+                            MoveName.Text = "MillionClaws";
+                            LazyDataFill(false, 15, 16, 5, 0, 0, 1);
+                            MoveSH.Hide();
+                            SHLabel.Hide();
+                            CanUnlock.Checked = (Mon_MoveUsed[0] >= 30);
+                            MoveInfo.Text = "Basic tech. Chains from 30 Claw. Chains into Claw Combo when used 30x.\r\nLearning priority over Tail Lash. No stat requirement.";
+                            break;
+
+                        case 3:
+                            MoveName.Text = "Bite";
+                            LazyDataFill(false, 18, 25, -9, 5, 5, 2);
+                            MoveSH.Hide();
+                            SHLabel.Hide();
+                            CanUnlock.Checked = (Mon_Stats[1] >= 250);
+                            MoveInfo.Text = "Heavy tech. POW should be over 250 to unlock.\r\nChains into MillionBites when used 50x. Learning priority over Fire Ball.";
+                            break;
+
+                        case 4:
+                            MoveName.Text = "Bite-Throw";
+                            LazyDataFill(false, 32, 41, -12, 19, 5, 3);
+                            MoveSH.Hide();
+                            SHLabel.Hide();
+                            CanUnlock.Checked = (Mon_MoveUsed[5] >= 50);
+                            MoveInfo.Text = "Heavy tech. Chains from 50 MillionBites. No stat requirement.";
+                            break;
+
+                        case 5:
+                            MoveName.Text = "Claw Combo";
+                            LazyDataFill(false, 23, 22, 4, 10, 5, 4);
+                            MoveSH.Hide();
+                            SHLabel.Hide();
+                            CanUnlock.Checked = (Mon_MoveUsed[1] >= 30);
+                            MoveInfo.Text = "Basic tech. Chains from 30 MillionClaws. No stat requirement.\r\nLearning priority over Tail Lash.";
+                            break;
+
+                        case 6:
+                            MoveName.Text = "MillionBites";
+                            LazyDataFill(false, 26, 34, -10, 10, 5, 5);
+                            MoveSH.Hide();
+                            SHLabel.Hide();
+                            CanUnlock.Checked = (Mon_MoveUsed[2] >= 50);
+                            MoveInfo.Text = "Heavy tech. Chains from 50 Bite. Chains into Bite-Throw when used 50x.\r\nNo stat requirement.";
+                            break;
+
+                        case 7:
+                            MoveName.Text = "Tail";
+                            LazyDataFill(false, 12, 13, 9, 0, 5, 6);
+                            MoveSH.Hide();
+                            SHLabel.Hide();
+                            CanUnlock.Checked = true;
+                            MoveInfo.Text = "Starting basic tech. Chains into Tail Lash when used 30x.\r\nChains into Tail Combo when used 25x.";
+                            break;
+
+                        case 8:
+                            MoveName.Text = "Tail Lash";
+                            LazyDataFill(false, 20, 18, 8, 5, 5, 7);
+                            MoveSH.Hide();
+                            SHLabel.Hide();
+                            CanUnlock.Checked = (Mon_MoveUsed[6] >= 30);
+                            MoveInfo.Text = "Basic tech. Chains from 30 Tail. Chains into Tail Lashes when used 30x.\r\nNo stat requirement.";
+                            break;
+
+                        case 9:
+                            MoveName.Text = "Tail Lashes";
+                            LazyDataFill(false, 25, 24, 7, 5, 10, 8);
+                            MoveSH.Hide();
+                            SHLabel.Hide();
+                            CanUnlock.Checked = (Mon_MoveUsed[7] >= 30);
+                            MoveInfo.Text = "Basic tech. Chains from 30 Tail Lash. No stat requirement.";
+                            break;
+
+                        case 10:
+                            MoveName.Text = "Dust Cloud";
+                            LazyDataFill(true, 27, 8, -5, 39, 5, 9);
+                            MoveSH.Hide();
+                            SHLabel.Hide();
+                            CanUnlock.Checked = (Mon_Stats[2] >= 450 && Mon_Nature <= -20);
+                            MoveInfo.Text = "Withering tech. INT should be over 450 to unlock.\r\nRequires Bad (-20) Nature.";
+                            break;
+
+                        case 11:
+                            MoveName.Text = "Hypnotism";
+                            LazyDataFill(true, 16, 7, 0, 22, 5, 10);
+                            MoveSH.Hide();
+                            SHLabel.Hide();
+                            CanUnlock.Checked = (Mon_Stats[2] >= 250);
+                            MoveInfo.Text = "Withering tech. INT should be over 250 to unlock.\r\nLearning priority over Dust Cloud.";
+                            break;
+
+                        case 12:
+                            MoveName.Text = "Tail Combo";
+                            LazyDataFill(false, 19, 19, 10, 5, 5, 11);
+                            MoveSH.Hide();
+                            SHLabel.Hide();
+                            CanUnlock.Checked = (Mon_Stats[1] + Mon_Stats[3] >= 400 && Mon_MoveUsed[6] >= 25);
+                            MoveInfo.Text = "Hit tech. POW + SKI should total over 400 to unlock.\r\nChains from 25 Tail. Learning priority over MillionClaws.";
+                            break;
+
+                        case 13:
+                            MoveName.Text = "Jumping Claw";
+                            LazyDataFill(false, 16, 13, -1, 8, 18, 12);
+                            MoveSH.Hide();
+                            SHLabel.Hide();
+                            CanUnlock.Checked = (Mon_Stats[1] + Mon_Stats[4] >= 400);
+                            MoveInfo.Text = "Sharp tech. POW + SPD should total over 400 to unlock.\r\nChains into Diving Claw when used 50x. Learning priority over Charge.";
+                            break;
+
+                        case 14:
+                            MoveName.Text = "Diving Claw";
+                            LazyDataFill(false, 22, 19, -3, 10, 18, 13);
+                            MoveSH.Hide();
+                            SHLabel.Hide();
+                            CanUnlock.Checked = (Mon_MoveUsed[12] >= 50);
+                            MoveInfo.Text = "Sharp tech. Chains from 50 Jumping Claw. \r\nChains into Aerial Claw when used 50x. No stat requirement.";
+                            break;
+
+                        case 15:
+                            MoveName.Text = "Aerial Claw";
+                            LazyDataFill(false, 36, 31, -5, 17, 20, 14);
+                            MoveSH.Hide();
+                            SHLabel.Hide();
+                            CanUnlock.Checked = (Mon_MoveUsed[13] >= 50);
+                            MoveInfo.Text = "Special tech. Chains from 50 Diving Claw. No stat requirement.\r\nLearning priority over Fire Breath.";
+                            break;
+
+                        case 16:
+                            MoveName.Text = "Fire Ball";
+                            LazyDataFill(true, 28, 35, -9, 12, 5, 15);
+                            MoveSH.Hide();
+                            SHLabel.Hide();
+                            CanUnlock.Checked = (Mon_Stats[1] + Mon_Stats[2] >= 650);
+                            MoveInfo.Text = "Heavy tech. POW + INT should total over 650 to unlock.\r\nChains into Jumping Fire when used 50x.";
+                            break;
+
+                        case 17:
+                            MoveName.Text = "Fire Breath";
+                            LazyDataFill(true, 37, 49, -13, 19, 10, 16);
+                            MoveSH.Hide();
+                            SHLabel.Hide();
+                            CanUnlock.Checked = (Mon_MoveUsed[17] >= 50);
+                            MoveInfo.Text = "Special tech. Chains from 50 Jumping Fire. No stat requirement.";
+                            break;
+
+                        case 18:
+                            MoveName.Text = "Jumping Fire";
+                            LazyDataFill(true, 32, 43, -13, 16, 5, 17);
+                            MoveSH.Hide();
+                            SHLabel.Hide();
+                            CanUnlock.Checked = (Mon_MoveUsed[15] >= 50);
+                            MoveInfo.Text = "Heavy tech. Chains from 50 Fire Ball. \r\nChains into Fire Breath when used 50x. No stat requirement.";
+                            break;
+
+                        case 19:
+                            MoveName.Text = "Charge";
+                            LazyDataFill(false, 24, 20, -6, 13, 20, 18);
+                            MoveSH.Hide();
+                            SHLabel.Hide();
+                            CanUnlock.Checked = (Mon_Stats[1] + Mon_Stats[4] >= 650 && Mon_Nature >= 20);
+                            MoveInfo.Text = "Sharp tech. POW + SPD should total over 650 to unlock.\r\nChains into Fire Charge when used 50x. Requires Good (+20) Nature.";
+                            break;
+
+                        case 20:
+                            MoveName.Text = "Fire Charge";
+                            LazyDataFill(false, 30, 25, -8, 25, 25, 19);
+                            MoveSH.Hide();
+                            SHLabel.Hide();
+                            CanUnlock.Checked = (Mon_Stats[1] + Mon_Stats[4] >= 650 && Mon_Nature >= 50);
+                            MoveInfo.Text = "Sharp tech. Chains from 50 Charge. No stat requirement.\r\nRequires Good (+50) Nature.";
+                            break;
+
+                        case 21:
+                            MoveName.Text = "Roll Assault";
+                            LazyDataFill(false, 50, 37, 2, 26, 10, 20);
+                            MoveSH.Hide();
+                            SHLabel.Hide();
+                            CanUnlock.Checked = (Mon_Stats[1] + Mon_Stats[5] >= 800);
+                            MoveInfo.Text = "Special tech. POW + DEF should total over 800 to unlock.\r\nChains into Burning Roll when used 50x. Learning priority over Five Balls.";
+                            break;
+
+                        case 22:
+                            MoveName.Text = "Five Balls";
+                            LazyDataFill(true, 45, 45, -10, 25, 15, 21);
+                            MoveSH.Hide();
+                            SHLabel.Hide();
+                            CanUnlock.Checked = (Mon_Stats[2] + Mon_Stats[4] >= 800);
+                            MoveInfo.Text = "Special tech. INT + SPD should total over 800 to unlock.\r\nChains into Fire Bomb when used 50x. Learning priority over Burning Roll.";
+                            break;
+
+                        case 23:
+                            MoveName.Text = "Fire Bomb";
+                            LazyDataFill(true, 50, 59, -15, 33, 25, 22);
+                            MoveSH.Hide();
+                            SHLabel.Hide();
+                            CanUnlock.Checked = (Mon_Stats[5] >= 450 && Mon_MoveUsed[21] >= 50);
+                            MoveInfo.Text = "Special tech. DEF should be over 450 to unlock. Chains from 50 Five Balls.";
+                            break;
+
+                        case 24:
+                            MoveName.Text = "Burning Roll";
+                            LazyDataFill(false, 55, 47, -2, 32, 10, 23);
+                            MoveSH.Hide();
+                            SHLabel.Hide();
+                            CanUnlock.Checked = (Mon_Stats[2] >= 450 && Mon_MoveUsed[20] >= 50);
+                            MoveInfo.Text = "Special tech. INT should be over 450 to unlock. Chains from 50 Roll Assault.\r\nLearning priority over Aerial Claw.";
+                            break;
+
+                        default:
+                            MoveName.Text = "No Move"; MoveName.ForeColor = Color.Black;
+                            MoveGuts.Text = "---";
+                            MoveDamage.Text = "---";
+                            MoveHit.Text = "---";
+                            MoveGD.Text = "---";
+                            MoveSharp.Text = "---";
+                            MoveSH.Hide();
+                            SHLabel.Hide();
+                            MoveUses.Text = "---";
+                            MoveUnlocked.Checked = false;
+                            CanUnlock.Checked = false;
+                            MoveInfo.Text = "Click on a move to learn more.";
+                            break;
+                    }
+
+                    break;
+
+                case 9: // Durahan
+                //{
+                    switch (MoveSelected)
+                    {
+                        case 1:
+                            MoveName.Text = "Swing";
+                            LazyDataFill(false, 18, 22, -4, 5, 8, 0);
+                            MoveSH.Hide();
+                            SHLabel.Hide();
+                            CanUnlock.Checked = (Mon_MoveUsed[6] >= 30);
+                            MoveInfo.Text = "Basic tech. Chains from 30 Cut-In-Two. No stat requirement.";
+                            break;
+
+                        case 2:
+                            MoveName.Text = "TwisterSlash";
+                            LazyDataFill(false, 19, 30, -12, 5, 5, 1);
+                            MoveSH.Hide();
+                            SHLabel.Hide();
+                            CanUnlock.Checked = (Mon_Stats[1] >= 250 && (Mon_SubGenus != 1 && Mon_SubGenus != 11 && Mon_SubGenus != 39 && Mon_SubGenus != 40));
+                            MoveInfo.Text = "Heavy tech. POW should be over 250 to unlock. Learning priority over Lightning.\r\nDurahan/Dragon, Durahan/Tiger, Ruby Knight, Kokushi Muso cannot learn.";
+                            break;
+
+                        case 3:
+                            MoveName.Text = "Thunderbolt";
+                            LazyDataFill(false, 32, 57, -17, 15, 5, 2);
+                            MoveSH.Hide();
+                            SHLabel.Hide();
+                            CanUnlock.Checked = (Mon_MoveUsed[19] >= 50 && Mon_Nature <= -50);
+                            MoveInfo.Text = "Heavy tech. Chains from 50 Lightning. No stat requirement.\r\nRequires Bad (-50) Nature.";
+                            break;
+
+                        case 4:
+                            MoveName.Text = "Flash Slash";
+                            LazyDataFill(false, 18, 18, -1, 5, 15, 3);
+                            MoveSH.Hide();
+                            SHLabel.Hide();
+                            CanUnlock.Checked = (Mon_Stats[1] + Mon_Stats[4] >= 400);
+                            MoveInfo.Text = "Sharp tech. POW + SPD should total over 400 to unlock.\r\nLearning priority over Jumping Stab.";
+                            break;
+
+                        case 5:
+                            MoveName.Text = "Triple Slash";
+                            LazyDataFill(false, 40, 39, -5, 18, 15, 4);
+                            MoveSH.Hide();
+                            SHLabel.Hide();
+                            CanUnlock.Checked = (Mon_Stats[1] + Mon_Stats[4] >= 800);
+                            MoveInfo.Text = "Special tech. POW + SPD should total over 800 to unlock.\r\nLearning priority over Punch Combo.";
+                            break;
+
+                        case 6:
+                            MoveName.Text = "Slash Combo";
+                            LazyDataFill(false, 35, 60, -15, 15, 5, 5);
+                            MoveSH.Hide();
+                            SHLabel.Hide();
+                            CanUnlock.Checked = (Mon_Stats[1] >= 450);
+                            MoveInfo.Text = "Heavy tech. POW should be over 450 to unlock.";
+                            break;
+
+                        case 7:
+                            MoveName.Text = "Cut-In-Two";
+                            LazyDataFill(false, 12, 16, -2, 0, 5, 6);
+                            MoveSH.Hide();
+                            SHLabel.Hide();
+                            CanUnlock.Checked = true;
+                            MoveInfo.Text = "Starting basic tech. Chains into Swing when used 30x.";
+                            break;
+
+                        case 8:
+                            MoveName.Text = "MillionStabs";
+                            LazyDataFill(false, 27, 22, 10, 12, 5, 7);
+                            MoveSH.Hide();
+                            SHLabel.Hide();
+                            CanUnlock.Checked = (Mon_Stats[1] + Mon_Stats[3] >= 400);
+                            MoveInfo.Text = "Hit tech. POW + SKI should total over 400 to unlock.\r\nLearning priority over Air Shot.";
+                            break;
+
+                        case 9:
+                            MoveName.Text = "Punch Combo";
+                            LazyDataFill(false, 45, 35, 11, 20, 5, 8);
+                            MoveSH.Hide();
+                            SHLabel.Hide();
+                            CanUnlock.Checked = (Mon_Stats[1] + Mon_Stats[3] >= 800 && Mon_Nature <= -20);
+                            MoveInfo.Text = "Special tech. POW + SKI should total over 800 to unlock.\r\nRequires Bad (-20) Nature.";
+                            break;
+
+                        case 10:
+                            MoveName.Text = "DeathBringer";
+                            LazyDataFill(false, 50, 69, -18, 41, 5, 9);
+                            MoveSH.Text = GenerateStatValue(0, 20);
+                            MoveSH.Show();
+                            SHLabel.Text = "Self-Damage:";
+                            SHLabel.Show();
+                            CanUnlock.Checked = (Mon_Stats[1] + Mon_Stats[5] >= 800);
+                            MoveInfo.Text = "Special tech. POW + DEF should total over 800 to unlock.";
+                            break;
+
+                        case 11:
+                            MoveName.Text = "Kick Combo";
+                            LazyDataFill(false, 19, 25, -5, 5, 5, 10);
+                            MoveSH.Hide();
+                            SHLabel.Hide();
+                            CanUnlock.Checked = (Mon_Stats[1] >= 250 && (Mon_SubGenus == 1 | Mon_SubGenus == 11 | Mon_SubGenus == 40));
+                            MoveInfo.Text = "Heavy tech. POW should be over 250 to unlock.\r\nDurahan/Dragon, Durahan/Tiger, Kokushi Muso only";
+                            break;
+
+                        case 12:
+                            MoveName.Text = "V Slash";
+                            LazyDataFill(false, 21, 25, -3, 10, 15, 11);
+                            MoveSH.Hide();
+                            SHLabel.Hide();
+                            CanUnlock.Checked = (Mon_Stats[1] >= 250 && Mon_SubGenus == 39);
+                            MoveInfo.Text = "Heavy tech. POW should be over 250 to unlock.\r\nExclusive to Ruby Knight";
+                            break;
+
+                        case 13:
+                            MoveName.Text = "Rush Slash";
+                            LazyDataFill(false, 10, 14, 5, 0, 5, 12);
+                            MoveSH.Hide();
+                            SHLabel.Hide();
+                            CanUnlock.Checked = true;
+                            MoveInfo.Text = "Starting basic tech. Chains into Dash Slash when used 30x.";
+                            break;
+
+                        case 14:
+                            MoveName.Text = "Dash Slash";
+                            LazyDataFill(false, 17, 20, 5, 0, 6, 13);
+                            MoveSH.Hide();
+                            SHLabel.Hide();
+                            CanUnlock.Checked = (Mon_MoveUsed[12] >= 30);
+                            MoveInfo.Text = "Basic tech. Chains from 30 Rush Slash. No stat requirement.";
+                            break;
+
+                        case 15:
+                            MoveName.Text = "Charge";
+                            LazyDataFill(false, 16, 13, 15, 5, 5, 14);
+                            MoveSH.Hide();
+                            SHLabel.Hide();
+                            CanUnlock.Checked = (Mon_Stats[1] + Mon_Stats[3] >= 250 && (Mon_SubGenus != 0 && Mon_SubGenus != 26 && Mon_SubGenus != 38));
+                            MoveInfo.Text = "Hit tech. POW + SKI should total over 250 to unlock.\r\nDurahan/Pixie, Durahan/Joker, Shogun cannot learn.";
+                            break;
+
+                        case 16:
+                            MoveName.Text = "Air Shot";
+                            LazyDataFill(true, 30, 17, 17, 17, 5, 15);
+                            MoveSH.Hide();
+                            SHLabel.Hide();
+                            CanUnlock.Checked = (Mon_Stats[2] + Mon_Stats[3] >= 650 && Mon_Nature >= 20);
+                            MoveInfo.Text = "Hit tech. INT + SKI should total over 650 to unlock.\r\nChains into Blast Shot when used 50x. Requires Good (+20) Nature.";
+                            break;
+
+                        case 17:
+                            MoveName.Text = "Jumping Stab";
+                            LazyDataFill(false, 26, 22, 0, 8, 22, 16);
+                            MoveSH.Hide();
+                            SHLabel.Hide();
+                            CanUnlock.Checked = (Mon_Stats[1] + Mon_Stats[4] >= 650 && Mon_Nature >= 20);
+                            MoveInfo.Text = "Sharp tech. POW + SPD should total over 650 to unlock.\r\nRequires Good (+20) Nature.";
+                            break;
+
+                        case 18:
+                            MoveName.Text = "RollingSlash";
+                            LazyDataFill(false, 28, 37, -9, 12, 5, 18);
+                            MoveSH.Hide();
+                            SHLabel.Hide();
+                            CanUnlock.Checked = (Mon_Stats[1] >= 450);
+                            MoveInfo.Text = "Heavy tech. POW should be over 450 to unlock.\r\nLearning priority over Lightning.";
+                            break;
+
+                        case 19:
+                            MoveName.Text = "Lightning";
+                            LazyDataFill(true, 26, 43, -1, 11, 5, 19);
+                            MoveSH.Hide();
+                            SHLabel.Hide();
+                            CanUnlock.Checked = (Mon_Stats[1] + Mon_Stats[2] >= 650 && Mon_Nature <= -30);
+                            MoveInfo.Text = "Heavy tech. POW + INT should total over 650 to unlock.\r\nRequires Bad (-30) Nature.";
+                            break;
+
+                        case 20:
+                            MoveName.Text = "Blast Shot";
+                            LazyDataFill(true, 40, 25, 14, 25, 5, 20);
+                            MoveSH.Hide();
+                            SHLabel.Hide();
+                            CanUnlock.Checked = (Mon_MoveUsed[15] >= 50 && Mon_Nature >= 50);
+                            MoveInfo.Text = "Hit tech. Chains from 50 Air Shot. No stat requirement.\r\nRequires Good (+50) Nature.";
+                            break;
+
+                        case 21:
+                            MoveName.Text = "Sword Throw";
+                            LazyDataFill(true, 25, 27, -13, 12, 25, 21);
+                            MoveSH.Hide();
+                            SHLabel.Hide();
+                            CanUnlock.Checked = (Mon_Stats[2] + Mon_Stats[4] >= 650);
+                            MoveInfo.Text = "Sharp tech. POW + INT should total over 650 to unlock.\r\nLearning priority over Jumping Stab.";
+                            break;
+
+                        case 22:
+                            MoveName.Text = "Gust Slash";
+                            LazyDataFill(true, 19, 16, 20, 5, 5, 22);
+                            MoveSH.Hide();
+                            SHLabel.Hide();
+                            CanUnlock.Checked = (Mon_Stats[2] + Mon_Stats[3] >= 400 && (Mon_SubGenus == 0 | Mon_SubGenus == 26 | Mon_SubGenus == 38));
+                            MoveInfo.Text = "Hit tech. INT + SKI should total over 650 to unlock.\r\nDurahan/Pixie, Durahan/Joker, Shogun only.";
+                            break;
+
+                        default:
+                            MoveName.Text = "No Move"; MoveName.ForeColor = Color.Black;
+                            MoveGuts.Text = "---";
+                            MoveDamage.Text = "---";
+                            MoveHit.Text = "---";
+                            MoveGD.Text = "---";
+                            MoveSharp.Text = "---";
+                            MoveSH.Hide();
+                            SHLabel.Hide();
+                            MoveUses.Text = "---";
+                            MoveUnlocked.Checked = false;
+                            CanUnlock.Checked = false;
+                            MoveInfo.Text = "Click on a move to learn more.";
+                            break;
+                    }
+                    /*if(Mon_MoveUsed[6] >= 30 && Mon_Moves[0] == 0)    //too much to handle...
+                    {
+                        canGetBoxes[0].Image = Properties.Resources.skillget;
+                        canGetBoxes[0].Visible = true;
+                    }
+                    else
+                    {
+                        canGetBoxes[0].Image = null;
+                        canGetBoxes[0].Visible = false;
+                    }*/
+
+                    break;
+                //}
+
+                case 10: // Arrow Head
+                    switch (MoveSelected)
+                    {
+                        case 1:
+                            MoveName.Text = "Punch";
+                            LazyDataFill(false, 10, 14, 9, 0, 0, 0);
+                            MoveSH.Hide();
+                            SHLabel.Hide();
+                            CanUnlock.Checked = true;
+                            MoveInfo.Text = "Starting basic tech. Chains into Long Punch when used 30x.";
+                            break;
+
+                        case 2:
+                            MoveName.Text = "Claw Pinch";
+                            LazyDataFill(false, 29, 39, -8, 15, 6, 1);
+                            MoveSH.Hide();
+                            SHLabel.Hide();
+                            CanUnlock.Checked = (Mon_Stats[1] >= 450);
+                            MoveInfo.Text = "Heavy tech. POW should be over 450 to unlock.";
+                            break;
+
+                        case 3:
+                            MoveName.Text = "Bloodsuction";
+                            LazyDataFill(false, 50, 30, -10, 0, 0, 2);
+                            MoveSH.Text = "100%";
+                            MoveSH.Show();
+                            SHLabel.Text = "HP Drain:";
+                            SHLabel.Show();
+                            CanUnlock.Checked = (Mon_Stats[1] >= 600 && Mon_Nature <= -50);
+                            MoveInfo.Text = "Special tech. POW should be over 600 to unlock.\r\nRequires Bad (-50) Nature.";
+                            break;
+
+                        case 4:
+                            MoveName.Text = "Somersault";
+                            LazyDataFill(false, 26, 22, 3, 10, 21, 3);
+                            MoveSH.Hide();
+                            SHLabel.Hide();
+                            CanUnlock.Checked = (Mon_Stats[1] + Mon_Stats[4] >= 650 && Mon_Nature >= 20);
+                            MoveInfo.Text = "Sharp tech. POW + SPD should total over 650 to unlock.\r\nChains into Somersaults when used 50x. Requires Good (+20) Nature.";
+                            if (rng.Next(100) < 10)
+                                MoveInfo.Text += " 🠫 ↑+K";
+                            break;
+
+                        case 5:
+                            MoveName.Text = "Somersaults";
+                            LazyDataFill(false, 50, 44, 3, 20, 25, 4);
+                            MoveSH.Hide();
+                            SHLabel.Hide();
+                            CanUnlock.Checked = (Mon_MoveUsed[3] >= 50 && Mon_Nature >= 50);
+                            MoveInfo.Text = "Special tech. Chains from 50 Somersault. No stat requirement.\r\nRequires Good (+50) Nature.";
+                            break;
+
+                        case 6:
+                            MoveName.Text = "Sting Slash";
+                            LazyDataFill(false, 50, 44, 3, 20, 25, 5);
+                            MoveSH.Hide();
+                            SHLabel.Hide();
+                            CanUnlock.Checked = (Mon_Stats[1] + Mon_Stats[4] >= 650 && Mon_SubGenus == 9);
+                            MoveInfo.Text = "Sharp tech. POW + SPD should total over 650 to unlock.\r\nExclusive to Arrow Head/Durahan.";
+                            break;
+
+                        case 7:
+                            MoveName.Text = "Long Punch";
+                            LazyDataFill(false, 19, 20, 8, 7, 3, 6);
+                            MoveSH.Hide();
+                            SHLabel.Hide();
+                            CanUnlock.Checked = (Mon_MoveUsed[0] >= 30);
+                            MoveInfo.Text = "Basic tech. Chains from 50 Punch. No stat requirement.";
+                            break;
+
+                        case 8:
+                            MoveName.Text = "Sting";
+                            LazyDataFill(true, 16, 15, 12, 6, 5, 7);
+                            MoveSH.Hide();
+                            SHLabel.Hide();
+                            CanUnlock.Checked = (Mon_Stats[2] + Mon_Stats[3] >= 400);
+                            MoveInfo.Text = "Hit tech. INT + SKI should total over 400 to unlock.\r\nChains into TripleStings when used 50x. Learning priority over Hidden Sting.";
+                            break;
+
+                        case 9:
+                            MoveName.Text = "TripleStings";
+                            LazyDataFill(true, 29, 23, 15, 12, 8, 8);
+                            MoveSH.Hide();
+                            SHLabel.Hide();
+                            CanUnlock.Checked = (Mon_MoveUsed[7] >= 50);
+                            MoveInfo.Text = "Hit tech. Chains from 50 Sting. No stat requirement.";
+                            break;
+
+                        case 10:
+                            MoveName.Text = "Tail Swing";
+                            LazyDataFill(false, 16, 24, -11, 9, 5, 9);
+                            MoveSH.Hide();
+                            SHLabel.Hide();
+                            CanUnlock.Checked = (Mon_Stats[1] >= 250);
+                            MoveInfo.Text = "Heavy tech. POW should be over 250 to unlock.\r\nChains into Tail Swings when used 50x. Learning priority over Claw Pinch.";
+                            break;
+
+                        case 11:
+                            MoveName.Text = "Tail Swings";
+                            LazyDataFill(false, 23, 36, -13, 12, 6, 10);
+                            MoveSH.Hide();
+                            SHLabel.Hide();
+                            CanUnlock.Checked = (Mon_MoveUsed[9] >= 50);
+                            MoveInfo.Text = "Heavy tech. Chains from 50 Tail Swing. No stat requirement.";
+                            break;
+
+                        case 12:
+                            MoveName.Text = "Death Scythe";
+                            LazyDataFill(false, 30, 18, 7, 15, 28, 11);
+                            MoveSH.Hide();
+                            SHLabel.Hide();
+                            CanUnlock.Checked = (Mon_Stats[1] + Mon_Stats[4] >= 650 && Mon_SubGenus == 26);
+                            MoveInfo.Text = "Sharp tech. POW + SPD should total over 650 to unlock.\r\nExclusive to Arrow Head/Joker.";
+                            break;
+
+                        case 13:
+                            MoveName.Text = "Claw Assault";
+                            LazyDataFill(false, 12, 17, 3, 0, 5, 12);
+                            MoveSH.Hide();
+                            SHLabel.Hide();
+                            CanUnlock.Checked = true;
+                            MoveInfo.Text = "Starting basic tech.";
+                            break;
+
+                        case 14:
+                            MoveName.Text = "Jumping Claw";
+                            LazyDataFill(false, 16, 15, 0, 8, 17, 13);
+                            MoveSH.Hide();
+                            SHLabel.Hide();
+                            CanUnlock.Checked = (Mon_Stats[1] + Mon_Stats[4] >= 400);
+                            MoveInfo.Text = "Sharp tech. POW + SPD should total over 400 to unlock.\r\nChains into Aerial Claw when used 50x. Learning priority over Somersault.";
+                            break;
+
+                        case 15:
+                            MoveName.Text = "Aerial Claw";
+                            LazyDataFill(false, 21, 19, -1, 11, 19, 14);
+                            MoveSH.Hide();
+                            SHLabel.Hide();
+                            CanUnlock.Checked = (Mon_MoveUsed[14] >= 50);
+                            MoveInfo.Text = "Sharp tech. Chains from 50 Jumping Claw. No stat requirement.";
+                            break;
+
+                        case 16:
+                            MoveName.Text = "Acrobatics";
+                            LazyDataFill(false, 45, 29, 13, 33, 5, 15);
+                            MoveSH.Hide();
+                            SHLabel.Hide();
+                            CanUnlock.Checked = (Mon_Stats[1] + Mon_Stats[3] >= 800);
+                            MoveInfo.Text = "Special tech. POW + SKI should total over 800 to unlock.";
+                            break;
+
+                        case 17:
+                            MoveName.Text = "Meteor";
+                            LazyDataFill(true, 45, 61, -14, 27, 5, 16);
+                            MoveSH.Hide();
+                            SHLabel.Hide();
+                            CanUnlock.Checked = (Mon_Stats[2] >= 600);
+                            MoveInfo.Text = "Special tech. INT should be over 600 to unlock.";
+                            break;
+
+                        case 18:
+                            MoveName.Text = "Cyclone";
+                            LazyDataFill(false, 50, 62, -16, 29, 10, 17);
+                            MoveSH.Hide();
+                            SHLabel.Hide();
+                            CanUnlock.Checked = (Mon_Stats[1] >= 600 && Mon_SubGenus == 7);
+                            MoveInfo.Text = "Special tech. POW should be over 600 to unlock.\r\nExclusive to Arrow Head/Golem.";
+                            break;
+
+                        case 19:
+                            MoveName.Text = "Hidden Sting";
+                            LazyDataFill(false, 27, 24, 19, 6, 5, 18);
+                            MoveSH.Hide();
+                            SHLabel.Hide();
+                            CanUnlock.Checked = (Mon_Stats[2] + Mon_Stats[3] >= 650);
+                            MoveInfo.Text = "Hit tech. INT + SKI (not a typo) should total over 650 to unlock.";
+                            break;
+
+                        case 20:
+                            MoveName.Text = "Energy Shot";
+                            LazyDataFill(true, 18, 7, 5, 27, 5, 19);
+                            MoveSH.Hide();
+                            SHLabel.Hide();
+                            CanUnlock.Checked = (Mon_Stats[2] >= 250);
+                            MoveInfo.Text = "Withering tech. INT should be over 250 to unlock.\r\nChains into Energy Shots when used 50x.";
+                            break;
+
+                        case 21:
+                            MoveName.Text = "Energy Shots";
+                            LazyDataFill(true, 25, 11, 5, 35, 5, 20);
+                            MoveSH.Hide();
+                            SHLabel.Hide();
+                            CanUnlock.Checked = (Mon_MoveUsed[19] >= 50);
+                            MoveInfo.Text = "Withering tech. Chains from 50 Energy Shot. No stat requirement.";
+                            break;
+
+                        case 22:
+                            MoveName.Text = "Javelin";
+                            LazyDataFill(false, 24, 20, -7, 23, 20, 21);
+                            MoveSH.Hide();
+                            SHLabel.Hide();
+                            CanUnlock.Checked = (Mon_Stats[2] + Mon_Stats[4] >= 650 && Mon_Nature <= -20 && Mon_SubGenus != 5 && Mon_SubGenus != 9);
+                            MoveInfo.Text = "Sharp tech. INT + SPD should total over 650 to unlock. Requires Bad (-20) Nature.\r\nArrow Head/Henger, Arrow Head/Durahan cannot learn.";
+                            break;
+
+                        case 23:
+                            MoveName.Text = "Roll Assault";
+                            LazyDataFill(false, 32, 50, -9, 8, 5, 22);
+                            MoveSH.Hide();
+                            SHLabel.Hide();
+                            CanUnlock.Checked = (Mon_Stats[1] >= 600 && Mon_Nature <= -30);
+                            MoveInfo.Text = "Heavy tech. POW should be over 600 to unlock. Requires Bad (-30) Nature.";
+                            break;
+
+                        case 24:
+                            MoveName.Text = "Fist Missile";
+                            LazyDataFill(false, 19, 16, 5, 5, 19, 23);
+                            MoveSH.Hide();
+                            SHLabel.Hide();
+                            CanUnlock.Checked = (Mon_Stats[1] + Mon_Stats[4] >= 800 && Mon_SubGenus == 5);
+                            MoveInfo.Text = "Special tech. POW + SPD should total over 800 to unlock.\r\nExclusive to Arrow Head/Henger.";
+                            break;
+
+                        default:
+                            MoveName.Text = "No Move"; MoveName.ForeColor = Color.Black;
+                            MoveGuts.Text = "---";
+                            MoveDamage.Text = "---";
+                            MoveHit.Text = "---";
+                            MoveGD.Text = "---";
+                            MoveSharp.Text = "---";
+                            MoveSH.Hide();
+                            SHLabel.Hide();
+                            MoveUses.Text = "---";
+                            MoveUnlocked.Checked = false;
+                            CanUnlock.Checked = false;
+                            MoveInfo.Text = "Click on a move to learn more.";
+                            break;
+                    }
+                    break;
+
                 case 11: // Tiger
                     switch (MoveSelected)
                     {
@@ -3428,6 +4652,7 @@ Requires Good (~+30) Nature.";
                             break;
                     }
                     break;
+
                 case 12: // Hopper
                     switch (MoveSelected)
                     {
@@ -3631,6 +4856,788 @@ Fairy Hopper exclusive. However, can be passed on to other breeds via combinatio
                             break;
                     }
                     break;
+
+                case 13: // Hare
+
+                    switch (MoveSelected)
+                    {
+                        case 1:
+                            MoveName.Text = "Straight";
+                            LazyDataFill(false, 20, 15, 20, 5, 10, 0);
+                            MoveSH.Hide();
+                            SHLabel.Hide();
+                            CanUnlock.Checked = (Mon_Stats[1] + Mon_Stats[3] >= 400);
+                            MoveInfo.Text = "Hit tech. POW + SKI should total over 400 to unlock.\r\nChains into HardStraight when used 50x.";
+                            break;
+
+                        case 2:
+                            MoveName.Text = "HardStraight";
+                            LazyDataFill(false, 27, 20, 16, 8, 12, 1);
+                            MoveSH.Hide();
+                            SHLabel.Hide();
+                            CanUnlock.Checked = (Mon_MoveUsed[0] >= 50);
+                            MoveInfo.Text = "Hit tech. Chains from 50 Straight. No stat requirement.";
+                            break;
+
+                        case 3:
+                            MoveName.Text = "Kung Fu Fist";
+                            LazyDataFill(false, 18, 19, -9, 7, 24, 2);
+                            MoveSH.Hide();
+                            SHLabel.Hide();
+                            CanUnlock.Checked = (Mon_Stats[1] + Mon_Stats[4] >= 400);
+                            MoveInfo.Text = "Sharp tech. POW + SPD should total over 400 to unlock.\r\nChains into Kung Fu Blow and Spin Kick when used 50x. Learning priority over High Kick.";
+                            break;
+
+                        case 4:
+                            MoveName.Text = "Kung Fu Blow";
+                            LazyDataFill(false, 25, 27, -11, 8, 28, 3);
+                            MoveSH.Hide();
+                            SHLabel.Hide();
+                            CanUnlock.Checked = (Mon_MoveUsed[2] >= 50);
+                            MoveInfo.Text = "Sharp tech. Chains from 50 Kung Fu Fist. No stat requirement.";
+                            break;
+
+                        case 5:
+                            MoveName.Text = "Bang";
+                            LazyDataFill(false, 45, 32, 10, 22, 10, 4);
+                            MoveSH.Hide();
+                            SHLabel.Hide();
+                            CanUnlock.Checked = (Mon_Stats[1] + Mon_Stats[3] + Mon_Stats[4] >= 1200);
+                            MoveInfo.Text = "Special tech. POW + SKI + SPD should total over 1200 to unlock.\r\nChains into Big Bang when used 50x.";
+                            break;
+
+                        case 6:
+                            MoveName.Text = "Big Bang";
+                            LazyDataFill(false, 50, 44, 5, 29, 5, 5);
+                            MoveSH.Hide();
+                            SHLabel.Hide();
+                            CanUnlock.Checked = (Mon_MoveUsed[4] >= 50);
+                            MoveInfo.Text = "Special tech. Chains from 50 Bang. No stat requirement.";
+                            break;
+
+                        case 7:
+                            MoveName.Text = "Back Blow";
+                            LazyDataFill(false, 19, 29, -14, 7, 10, 6);
+                            MoveSH.Hide();
+                            SHLabel.Hide();
+                            CanUnlock.Checked = (Mon_Stats[1] >= 250);
+                            MoveInfo.Text = "Heavy tech. POW should be over 250 to unlock.\r\nChains into Rolling Blow when used 50x. Learning priority over Smash.";
+                            break;
+
+                        case 8:
+                            MoveName.Text = "Rolling Blow";
+                            LazyDataFill(false, 27, 40, -15, 12, 11, 7);
+                            MoveSH.Hide();
+                            SHLabel.Hide();
+                            CanUnlock.Checked = (Mon_MoveUsed[6] >= 50);
+                            MoveInfo.Text = "Heavy tech. Chains from 50 Back Blow. No stat requirement.";
+                            break;
+
+                        case 9:
+                            MoveName.Text = "Smash";
+                            LazyDataFill(false, 26, 45, -18, 9, 10, 8);
+                            MoveSH.Hide();
+                            SHLabel.Hide();
+                            CanUnlock.Checked = (Mon_Stats[1] >= 450);
+                            MoveInfo.Text = "Heavy tech. POW should be over 450 to unlock.\r\nChains into Heavy Smash when used 50x.";
+                            break;
+
+                        case 10:
+                            MoveName.Text = "Heavy Smash";
+                            LazyDataFill(false, 33, 56, -19, 13, 12, 9);
+                            MoveSH.Hide();
+                            SHLabel.Hide();
+                            CanUnlock.Checked = (Mon_MoveUsed[8] >= 50);
+                            MoveInfo.Text = "Heavy tech. Chains from 50 Smash. No stat requirement.";
+                            break;
+
+                        case 11:
+                            MoveName.Text = "High Kick";
+                            LazyDataFill(false, 31, 29, -5, 12, 21, 10);
+                            MoveSH.Hide();
+                            SHLabel.Hide();
+                            CanUnlock.Checked = (Mon_Stats[1] + Mon_Stats[4] >= 650);
+                            MoveInfo.Text = "Sharp tech. POW + SPD should total over 650 to unlock.";
+                            break;
+
+                        case 12:
+                            MoveName.Text = "Spin Kick";
+                            LazyDataFill(false, 36, 35, -7, 14, 25, 11);
+                            MoveSH.Hide();
+                            SHLabel.Hide();
+                            CanUnlock.Checked = (Mon_MoveUsed[2] >= 50);
+                            MoveInfo.Text = "Sharp tech. Chains from 50 Kung Fu Fist. No stat requirement.\r\nChains into Kung Fu Kick when used 50x.";
+                            break;
+
+                        case 13:
+                            MoveName.Text = "1-2 Punch";
+                            LazyDataFill(false, 10, 12, 15, 0, 5, 12);
+                            MoveSH.Hide();
+                            SHLabel.Hide();
+                            CanUnlock.Checked = true;
+                            MoveInfo.Text = "Starting basic tech.";
+                            break;
+
+                        case 14:
+                            MoveName.Text = "Foul Gas";
+                            LazyDataFill(true, 14, 0, 9, 27, 10, 13);
+                            MoveSH.Hide();
+                            SHLabel.Hide();
+                            CanUnlock.Checked = (Mon_Stats[2] >= 250);
+                            MoveInfo.Text = "Withering tech. INT should be over 250 to unlock.";
+                            break;
+
+                        case 15:
+                            MoveName.Text = "Kung Fu Kick";
+                            LazyDataFill(false, 44, 41, -12, 18, 29, 14);
+                            MoveSH.Hide();
+                            SHLabel.Hide();
+                            CanUnlock.Checked = (Mon_MoveUsed[11] >= 50);
+                            MoveInfo.Text = "Special tech. Chains from 50 Spin Kick. No stat requirement.";
+                            break;
+
+                        case 16:
+                            MoveName.Text = "Gas";
+                            LazyDataFill(true, 10, 7, 7, 7, 0, 15);
+                            MoveSH.Hide();
+                            SHLabel.Hide();
+                            CanUnlock.Checked = true;
+                            MoveInfo.Text = "Starting basic tech.";
+                            break;
+
+                        case 17:
+                            MoveName.Text = "Stinking Gas";
+                            LazyDataFill(true, 25, 5, 13, 35, 10, 18);
+                            MoveSH.Hide();
+                            SHLabel.Hide();
+                            CanUnlock.Checked = (Mon_Nature <= -20);
+                            MoveInfo.Text = "Withering tech. Requires Bad (-20) Nature.";
+                            break;
+
+                        default:
+                            MoveName.Text = "No Move"; MoveName.ForeColor = Color.Black;
+                            MoveGuts.Text = "---";
+                            MoveDamage.Text = "---";
+                            MoveHit.Text = "---";
+                            MoveGD.Text = "---";
+                            MoveSharp.Text = "---";
+                            MoveSH.Hide();
+                            SHLabel.Hide();
+                            MoveUses.Text = "---";
+                            MoveUnlocked.Checked = false;
+                            CanUnlock.Checked = false;
+                            MoveInfo.Text = "Click on a move to learn more.";
+                            break;
+                    }
+                    break;
+
+                case 14: // Baku
+                    switch (MoveSelected)
+                    {
+                        case 1:
+                            MoveName.Text = "Dust Cloud";
+                            LazyDataFill(false, 10, 12, 5, 0, 0, 0);
+                            MoveSH.Hide();
+                            SHLabel.Hide();
+                            CanUnlock.Checked = true;
+                            MoveInfo.Text = "Starting basic tech.";
+                            break;
+
+                        case 2:
+                            MoveName.Text = "Bite";
+                            LazyDataFill(false, 15, 15, 0, 9, 5, 1);
+                            MoveSH.Hide();
+                            SHLabel.Hide();
+                            CanUnlock.Checked = (Mon_Stats[1] + Mon_Stats[3] >= 400);
+                            MoveInfo.Text = "Hit tech. POW + SKI should total over 400 to unlock.\r\nChains into Two Bites when used 50x. Learning priority over Gust Breath.";
+                            break;
+
+                        case 3:
+                            MoveName.Text = "Two Bites";
+                            LazyDataFill(false, 25, 23, 7, 10, 5, 2);
+                            MoveSH.Hide();
+                            SHLabel.Hide();
+                            CanUnlock.Checked = (Mon_MoveUsed[1] >= 50);
+                            MoveInfo.Text = "Hit tech. Chains from 50 Bite. No stat requirement.\r\nChains into Three Bites when used 50x.";
+                            break;
+
+                        case 4:
+                            MoveName.Text = "Three Bites";
+                            LazyDataFill(false, 33, 33, -5, 33, 5, 3);
+                            MoveSH.Hide();
+                            SHLabel.Hide();
+                            CanUnlock.Checked = (Mon_MoveUsed[2] >= 50);
+                            MoveInfo.Text = "Special tech. Chains from 50 Two Bites. No stat requirement.";
+                            break;
+
+                        case 5:
+                            MoveName.Text = "Tongue Slap";
+                            LazyDataFill(false, 25, 41, -14, 11, 5, 4);
+                            MoveSH.Hide();
+                            SHLabel.Hide();
+                            CanUnlock.Checked = (Mon_Stats[1] >= 250);
+                            MoveInfo.Text = "Heavy tech. POW should be over 250 to unlock.\r\nLearning priority over Diving Press.";
+                            break;
+
+                        case 6:
+                            MoveName.Text = "Charge";
+                            LazyDataFill(false, 13, 17, -5, 0, 5, 6);
+                            MoveSH.Hide();
+                            SHLabel.Hide();
+                            CanUnlock.Checked = true;
+                            MoveInfo.Text = "Starting basic tech.";
+                            break;
+
+                        case 7:
+                            MoveName.Text = "Roar";
+                            LazyDataFill(true, 19, 18, -2, 10, 15, 7);
+                            MoveSH.Hide();
+                            SHLabel.Hide();
+                            CanUnlock.Checked = (Mon_Stats[2] + Mon_Stats[4] >= 400);
+                            MoveInfo.Text = "Sharp tech. INT + SPD should total over 400 to unlock.\r\nChains into Two Roars when used 50x. Learning priority over Hypnotism.";
+                            break;
+
+                        case 8:
+                            MoveName.Text = "Two Roars";
+                            LazyDataFill(true, 26, 25, -8, 8, 24, 8);
+                            MoveSH.Hide();
+                            SHLabel.Hide();
+                            CanUnlock.Checked = (Mon_MoveUsed[7] >= 50);
+                            MoveInfo.Text = "Sharp tech. Chains from 50 Roar. No stat requirement.\r\nChains into MillionRoars when used 50x.";
+                            break;
+
+                        case 9:
+                            MoveName.Text = "MillionRoars";
+                            LazyDataFill(true, 34, 43, -12, 22, 15, 9);
+                            MoveSH.Hide();
+                            SHLabel.Hide();
+                            CanUnlock.Checked = (Mon_MoveUsed[8] >= 50);
+                            MoveInfo.Text = "Special tech. Chains from 50 Two Roars. No stat requirement.";
+                            break;
+
+                        case 10:
+                            MoveName.Text = "Diving Press";
+                            LazyDataFill(false, 30, 60, -16, 28, 15, 12);
+                            MoveSH.Text = GenerateStatValue(0, 20);
+                            MoveSH.Show();
+                            SHLabel.Text = "Self-Damage:";
+                            SHLabel.Show();
+                            CanUnlock.Checked = (Mon_Stats[1] + Mon_Stats[5] >= 650);
+                            MoveInfo.Text = "Heavy tech. POW + DEF should total over 650 to unlock. Damages self if missed.";
+                            break;
+
+                        case 11:
+                            MoveName.Text = "Sneeze";
+                            LazyDataFill(true, 20, 16, -9, 24, 5, 13);
+                            MoveSH.Hide();
+                            SHLabel.Hide();
+                            CanUnlock.Checked = (Mon_Stats[2] >= 250);
+                            MoveInfo.Text = "Withering tech. INT should be over 250 to unlock.\r\nLearning priority over Mating Song.";
+                            break;
+
+                        case 12:
+                            MoveName.Text = "Mating Song";
+                            LazyDataFill(true, 32, 19, -7, 33, 6, 14);
+                            MoveSH.Hide();
+                            SHLabel.Hide();
+                            CanUnlock.Checked = (Mon_Stats[2] >= 450);
+                            MoveInfo.Text = "Withering tech. INT should be over 450 to unlock.";
+                            break;
+
+                        case 13:
+                            MoveName.Text = "Foul Wind";
+                            LazyDataFill(true, 35, 26, -13, 40, 7, 15);
+                            MoveSH.Hide();
+                            SHLabel.Hide();
+                            CanUnlock.Checked = (Mon_Stats[2] >= 450 && Mon_Nature <= -20);
+                            MoveInfo.Text = "Special tech. INT should be over 450 to unlock. Requires Bad (-20) Nature.";
+                            break;
+
+                        case 14:
+                            MoveName.Text = "Gust Breath";
+                            LazyDataFill(false, 19, 21, 5, 5, 5, 18);
+                            MoveSH.Hide();
+                            SHLabel.Hide();
+                            CanUnlock.Checked = (Mon_Stats[1] + Mon_Stats[3] >= 650);
+                            MoveInfo.Text = "Hit tech. POW + SKI should total over 650 to unlock.";
+                            break;
+
+                        case 15:
+                            MoveName.Text = "Hypnotism";
+                            LazyDataFill(true, 21, 16, -4, 16, 25, 19);
+                            MoveSH.Hide();
+                            SHLabel.Hide();
+                            CanUnlock.Checked = (Mon_Stats[2] + Mon_Stats[4] >= 650);
+                            MoveInfo.Text = "Sharp tech. INT + SPD should total over 650 to unlock.";
+                            break;
+
+                        case 16:
+                            MoveName.Text = "Nap";
+                            LazyDataFill(true, 30, 0, -20, 0, 0, 20);
+                            MoveSH.Show();
+                            MoveSH.Text = GenerateStatValue(0, 30);
+                            SHLabel.Show();
+                            SHLabel.Text = "Recovery:";
+                            CanUnlock.Checked = (Mon_Stats[2] >= 600 && Mon_Nature >= 30);
+                            MoveInfo.Text = "Special tech. INT should be over 600 to unlock. Requires Good (+30) Nature.";
+                            break;
+
+                        default:
+                            MoveName.Text = "No Move"; MoveName.ForeColor = Color.Black;
+                            MoveGuts.Text = "---";
+                            MoveDamage.Text = "---";
+                            MoveHit.Text = "---";
+                            MoveGD.Text = "---";
+                            MoveSharp.Text = "---";
+                            MoveSH.Hide();
+                            SHLabel.Hide();
+                            MoveUses.Text = "---";
+                            MoveUnlocked.Checked = false;
+                            CanUnlock.Checked = false;
+                            MoveInfo.Text = "Click on a move to learn more.";
+                            break;
+                    }
+                    break;
+
+                case 15: // Gali
+                    switch (MoveSelected)
+                    {
+                        case 1:
+                            MoveName.Text = "Back Blow";
+                            LazyDataFill(false, 25, 19, 13, 12, 7, 0);
+                            MoveSH.Hide();
+                            SHLabel.Hide();
+                            CanUnlock.Checked = (Mon_Stats[1] + Mon_Stats[3] >= 650);
+                            MoveInfo.Text = "Hit tech. POW + SKI should total over 650 to unlock.\r\nChains into Heavy Blow when used 50x.";
+                            break;
+
+                        case 2:
+                            MoveName.Text = "Fire Wall";
+                            LazyDataFill(true, 15, 14, 11, 5, 5, 1);
+                            MoveSH.Hide();
+                            SHLabel.Hide();
+                            CanUnlock.Checked = (Mon_Stats[2] + Mon_Stats[3] >= 400);
+                            MoveInfo.Text = "Hit tech. INT + SKI should total over 400 to unlock.\r\nChains into Blaze Wall when used 50x.";
+                            break;
+
+                        case 3:
+                            MoveName.Text = "Blaze Wall";
+                            LazyDataFill(true, 27, 21, 16, 13, 5, 2);
+                            MoveSH.Hide();
+                            SHLabel.Hide();
+                            CanUnlock.Checked = (Mon_MoveUsed[1] >= 50);
+                            MoveInfo.Text = "Hit tech. Chains from 50 Fire Wall.\r\nChains into Napalm when used 50x. No stat requirement.";
+                            break;
+
+                        case 4:
+                            MoveName.Text = "Napalm";
+                            LazyDataFill(true, 38, 34, 12, 14, 5, 3);
+                            MoveSH.Hide();
+                            SHLabel.Hide();
+                            CanUnlock.Checked = (Mon_MoveUsed[2] >= 50);
+                            MoveInfo.Text = "Special tech. Chains from 50 Blaze Wall. No stat requirement.";
+                            break;
+
+                        case 5:
+                            MoveName.Text = "Heavy Blow";
+                            LazyDataFill(false, 35, 26, 15, 16, 8, 6);
+                            MoveSH.Hide();
+                            SHLabel.Hide();
+                            CanUnlock.Checked = (Mon_MoveUsed[0] >= 50);
+                            MoveInfo.Text = "Hit tech. Chains from 50 Back Blow.\r\nChains into Giant Blow when used 50x. No stat requirement.";
+                            break;
+
+                        case 6:
+                            MoveName.Text = "Thwack";
+                            LazyDataFill(false, 17, 27, -11, 7, 5, 7);
+                            MoveSH.Hide();
+                            SHLabel.Hide();
+                            CanUnlock.Checked = (Mon_Stats[1] >= 250);
+                            MoveInfo.Text = "Heavy tech. POW should be over 250 to unlock.\r\nChains into Smash Thwack when used 50x. Learning priority over Whirlwind.";
+                            break;
+
+                        case 7:
+                            MoveName.Text = "Whirlwind";
+                            LazyDataFill(true, 25, 35, -9, 12, 5, 8);
+                            MoveSH.Hide();
+                            SHLabel.Hide();
+                            CanUnlock.Checked = (Mon_Stats[1] >= 450);
+                            MoveInfo.Text = "Heavy tech. POW (not a typo) should be over 450 to unlock.\r\nChains into Typhoon when used 50x.";
+                            break;
+
+                        case 8:
+                            MoveName.Text = "Typhoon";
+                            LazyDataFill(true, 35, 42, -12, 26, 10, 9);
+                            MoveSH.Hide();
+                            SHLabel.Hide();
+                            CanUnlock.Checked = (Mon_MoveUsed[8] >= 50);
+                            MoveInfo.Text = "Heavy tech. Chains from 50 Whirlwind.\r\nChains into Hurricane when used 50x. No stat requirement.";
+                            break;
+
+                        case 9:
+                            MoveName.Text = "Hurricane";
+                            LazyDataFill(true, 41, 50, -10, 27, 15, 10);
+                            MoveSH.Hide();
+                            SHLabel.Hide();
+                            CanUnlock.Checked = (Mon_MoveUsed[9] >= 50);
+                            MoveInfo.Text = "Special tech. Chains from 50 Typhoon. No stat requirement.";
+                            break;
+
+                        case 10:
+                            MoveName.Text = "Spirit Blow";
+                            LazyDataFill(false, 38, 36, 0, 25, 8, 11);
+                            MoveSH.Hide();
+                            SHLabel.Hide();
+                            CanUnlock.Checked = (Mon_Stats[1] >= 600);
+                            MoveInfo.Text = "Special tech. POW should be over 600 to unlock.\r\nChains into Spirit Punch and Spirit Smash when used 50x.";
+                            break;
+
+                        case 11:
+                            MoveName.Text = "Straight";
+                            LazyDataFill(false, 10, 13, 6, 0, 0, 12);
+                            MoveSH.Hide();
+                            SHLabel.Hide();
+                            CanUnlock.Checked = true;
+                            MoveInfo.Text = "Starting basic tech.";
+                            break;
+
+                        case 12:
+                            MoveName.Text = "Smash Thwack";
+                            LazyDataFill(false, 35, 49, -13, 19, 10, 13);
+                            MoveSH.Hide();
+                            SHLabel.Hide();
+                            CanUnlock.Checked = (Mon_MoveUsed[7] >= 50);
+                            MoveInfo.Text = "Heavy tech. Chains from 50 Thwack.\r\nChains into Giant Thwack when used 50x. No stat requirement.";
+                            break;
+
+                        case 13:
+                            MoveName.Text = "Red Wisp";
+                            LazyDataFill(true, 18, 10, -2, 27, 5, 14);
+                            MoveSH.Hide();
+                            SHLabel.Hide();
+                            CanUnlock.Checked = (Mon_Stats[2] >= 250 && Mon_Nature >= 20);
+                            MoveInfo.Text = "Withering tech. INT should be over 250 to unlock. Requires Good (+20) Nature.";
+                            break;
+
+                        case 14:
+                            MoveName.Text = "Blue Wisp";
+                            LazyDataFill(true, 30, 18, -4, 44, 5, 15);
+                            MoveSH.Hide();
+                            SHLabel.Hide();
+                            CanUnlock.Checked = (Mon_Stats[2] >= 450 && Mon_Nature >= 50);
+                            MoveInfo.Text = "Withering tech. INT should be over 450 to unlock. Requires Good (+50) Nature.";
+                            break;
+
+                        case 15:
+                            MoveName.Text = "Flying Mask";
+                            LazyDataFill(false, 17, 15, 1, 7, 19, 16);
+                            MoveSH.Hide();
+                            SHLabel.Hide();
+                            CanUnlock.Checked = (Mon_Stats[2] + Mon_Stats[4] >= 400);
+                            MoveInfo.Text = "Sharp tech. INT + SPD should total over 400 to unlock.\r\nChains into Cutting Mask when used 50x.";
+                            break;
+
+                        case 16:
+                            MoveName.Text = "Spirit Punch";
+                            LazyDataFill(false, 43, 45, -5, 29, 9, 17);
+                            MoveSH.Hide();
+                            SHLabel.Hide();
+                            CanUnlock.Checked = (Mon_MoveUsed[11] >= 50 && Mon_Nature >= 20);
+                            MoveInfo.Text = "Special tech. Chains from 50 Spirit Blow.\r\nRequires Good (+20) Nature. No stat requirement.";
+                            break;
+
+                        case 17:
+                            MoveName.Text = "Thunderbolt";
+                            LazyDataFill(true, 13, 14, 3, 5, 0, 18);
+                            MoveSH.Hide();
+                            SHLabel.Hide();
+                            CanUnlock.Checked = true;
+                            MoveInfo.Text = "Starting basic tech.";
+                            break;
+
+                        case 18:
+                            MoveName.Text = "Giant Blow";
+                            LazyDataFill(false, 41, 33, 14, 17, 6, 19);
+                            MoveSH.Hide();
+                            SHLabel.Hide();
+                            CanUnlock.Checked = (Mon_MoveUsed[6] >= 50);
+                            MoveInfo.Text = "Special tech. Chains from 50 Heavy Blow. No stat requirement.";
+                            break;
+
+                        case 19:
+                            MoveName.Text = "Giant Thwack";
+                            LazyDataFill(false, 40, 54, -10, 24, 5, 20);
+                            MoveSH.Hide();
+                            SHLabel.Hide();
+                            CanUnlock.Checked = (Mon_MoveUsed[13] >= 50);
+                            MoveInfo.Text = "Special tech. Chains from 50 Smash Thwack. No stat requirement.";
+                            break;
+
+                        case 20:
+                            MoveName.Text = "Cutting Mask";
+                            LazyDataFill(false, 24, 19, -1, 9, 23, 21);
+                            MoveSH.Hide();
+                            SHLabel.Hide();
+                            CanUnlock.Checked = (Mon_MoveUsed[16] >= 50);
+                            MoveInfo.Text = "Sharp tech. Chains from 50 Flying Mask.\r\nChains into Hashing Mask when used 50x. No stat requirement.";
+                            break;
+
+                        case 21:
+                            MoveName.Text = "Hashing Mask";
+                            LazyDataFill(false, 38, 28, -3, 28, 28, 22);
+                            MoveSH.Hide();
+                            SHLabel.Hide();
+                            CanUnlock.Checked = (Mon_MoveUsed[21] >= 50);
+                            MoveInfo.Text = "Special tech. Chains from 50 Cutting Mask. No stat requirement.";
+                            break;
+
+                        case 22:
+                            MoveName.Text = "Spirit Smash";
+                            LazyDataFill(false, 40, 33, -5, 45, 5, 23);
+                            MoveSH.Hide();
+                            SHLabel.Hide();
+                            CanUnlock.Checked = (Mon_MoveUsed[11] >= 50 && Mon_Nature <= -20);
+                            MoveInfo.Text = "Special tech. Chains from 50 Spirit Blow.\r\nRequires Bad (-20) Nature. No stat requirement.";
+                            break;
+
+                        default:
+                            MoveName.Text = "No Move"; MoveName.ForeColor = Color.Black;
+                            MoveGuts.Text = "---";
+                            MoveDamage.Text = "---";
+                            MoveHit.Text = "---";
+                            MoveGD.Text = "---";
+                            MoveSharp.Text = "---";
+                            MoveSH.Hide();
+                            SHLabel.Hide();
+                            MoveUses.Text = "---";
+                            MoveUnlocked.Checked = false;
+                            CanUnlock.Checked = false;
+                            MoveInfo.Text = "Click on a move to learn more.";
+                            break;
+                    }
+                    break;
+
+                case 16: // Kato
+                    switch (MoveSelected)
+                    {
+                        case 1:
+                            MoveName.Text = "Slash Claw";
+                            LazyDataFill(false, 10, 13, 7, 0, 10, 0);
+                            MoveSH.Hide();
+                            SHLabel.Hide();
+                            CanUnlock.Checked = true;
+                            MoveInfo.Text = "Starting basic tech. Chains into Slash Claws when used 30x.";
+                            break;
+
+                        case 2:
+                            MoveName.Text = "Slash Claws";
+                            LazyDataFill(false, 17, 19, 4, 5, 10, 1);
+                            MoveSH.Hide();
+                            SHLabel.Hide();
+                            CanUnlock.Checked = (Mon_MoveUsed[0] >= 30);
+                            MoveInfo.Text = "Basic tech. Chains from 30 Slash Claw.\r\nChains into Claw Combo when used 50x. No stat requirement.";
+                            break;
+
+                        case 3:
+                            MoveName.Text = "Claw Combo";
+                            LazyDataFill(false, 23, 36, -12, 10, 10, 2);
+                            MoveSH.Hide();
+                            SHLabel.Hide();
+                            CanUnlock.Checked = (Mon_MoveUsed[1] >= 50);
+                            MoveInfo.Text = "Heavy tech. Chains from 50 Slash Claws. No stat requirement.";
+                            break;
+
+                        case 4:
+                            MoveName.Text = "Smoke Breath";
+                            LazyDataFill(true, 18, 8, 5, 24, 10, 3);
+                            MoveSH.Hide();
+                            SHLabel.Hide();
+                            CanUnlock.Checked = (Mon_Stats[2] >= 250 && Mon_Nature <= -20);
+                            MoveInfo.Text = "Withering tech. INT should be over 250 to unlock. Requires Bad (-20) Nature.";
+                            break;
+
+                        case 5:
+                            MoveName.Text = "Lick";
+                            LazyDataFill(true, 19, 13, -7, 29, 5, 4);
+                            MoveSH.Hide();
+                            SHLabel.Hide();
+                            CanUnlock.Checked = (Mon_Stats[2] >= 250 && Mon_SubGenus == 23);
+                            MoveInfo.Text = "Withering tech. INT should be over 250 to unlock. Exclusive to Kato/Suezo.";
+                            break;
+
+                        case 6:
+                            MoveName.Text = "Licking";
+                            LazyDataFill(true, 15, 13, -11, 24, 5, 5);
+                            MoveSH.Hide();
+                            SHLabel.Hide();
+                            CanUnlock.Checked = (Mon_Stats[2] >= 250 && Mon_SubGenus == 25);
+                            MoveInfo.Text = "Withering tech. INT should be over 250 to unlock. Exclusive to Kato/Mocchi.";
+                            break;
+
+                        case 7:
+                            MoveName.Text = "Thrust Claw";
+                            LazyDataFill(false, 12, 16, 3, 0, 10, 6);
+                            MoveSH.Hide();
+                            SHLabel.Hide();
+                            CanUnlock.Checked = true;
+                            MoveInfo.Text = "Starting basic tech.";
+                            break;
+
+                        case 8:
+                            MoveName.Text = "Oil Spray";
+                            LazyDataFill(true, 27, 23, -11, 43, 5, 7);
+                            MoveSH.Hide();
+                            SHLabel.Hide();
+                            CanUnlock.Checked = (Mon_Stats[2] >= 450 && Mon_Nature <= -50);
+                            MoveInfo.Text = "Withering tech. INT should be over 450 to unlock. Requires Bad (-50) Nature.";
+                            break;
+
+                        case 9:
+                            MoveName.Text = "Turn Claw";
+                            LazyDataFill(false, 15, 19, -7, 12, 20, 8);
+                            MoveSH.Hide();
+                            SHLabel.Hide();
+                            CanUnlock.Checked = (Mon_Stats[1] + Mon_Stats[4] >= 400);
+                            MoveInfo.Text = "Sharp tech. POW + SPD should total over 400 to unlock.\r\nChains into Turn Claws when used 50x. Learning priority over Drill Claw.";
+                            break;
+
+                        case 10:
+                            MoveName.Text = "Turn Claws";
+                            LazyDataFill(false, 28, 29, -10, 19, 25, 9);
+                            MoveSH.Hide();
+                            SHLabel.Hide();
+                            CanUnlock.Checked = (Mon_MoveUsed[8] >= 50);
+                            MoveInfo.Text = "Sharp tech. Chains from 50 Turn Claw.\r\nChains into Rolling Claw when used 50x. No stat requirement.";
+                            break;
+
+                        case 11:
+                            MoveName.Text = "Rolling Claw";
+                            LazyDataFill(false, 30, 30, -13, 30, 30, 10);
+                            MoveSH.Hide();
+                            SHLabel.Hide();
+                            CanUnlock.Checked = (Mon_MoveUsed[8] >= 50 && Mon_Nature >= 20);
+                            MoveInfo.Text = "Special tech. Chains from 50 Turn Claws.\r\nRequires Good (+20) Nature. No stat requirement.";
+                            break;
+
+                        case 12:
+                            MoveName.Text = "Oil Fire";
+                            LazyDataFill(true, 17, 28, -6, 7, 5, 12);
+                            MoveSH.Hide();
+                            SHLabel.Hide();
+                            CanUnlock.Checked = (Mon_Stats[1] + Mon_Stats[2] >= 650);
+                            MoveInfo.Text = "Heavy tech. POW + INT should total over 650 to unlock.\r\nChains into Oil Flame when used 50x.";
+                            break;
+
+                        case 13:
+                            MoveName.Text = "Oil Flame";
+                            LazyDataFill(true, 30, 46, -15, 14, 10, 13);
+                            MoveSH.Hide();
+                            SHLabel.Hide();
+                            CanUnlock.Checked = (Mon_MoveUsed[12] >= 50 && Mon_Nature <= -30);
+                            MoveInfo.Text = "Heavy tech. Chains from 50 Oil Fire.\r\nRequires Bad (-30) Nature. No stat requirement.";
+                            break;
+
+                        case 14:
+                            MoveName.Text = "Drill Claw";
+                            LazyDataFill(false, 20, 25, 0, 5, 25, 14);
+                            MoveSH.Hide();
+                            SHLabel.Hide();
+                            CanUnlock.Checked = (Mon_Stats[1] + Mon_Stats[4] >= 650);
+                            MoveInfo.Text = "Sharp tech. POW + SPD should total over 650 to unlock.";
+                            break;
+
+                        case 15:
+                            MoveName.Text = "Twister Claw";
+                            LazyDataFill(true, 25, 20, 20, 7, 10, 15);
+                            MoveSH.Hide();
+                            SHLabel.Hide();
+                            CanUnlock.Checked = (Mon_Stats[2] + Mon_Stats[3] >= 650);
+                            MoveInfo.Text = "Hit tech. INT + SKI should total over 650 to unlock.\r\nChains into Tornado Claw when used 50x.";
+                            break;
+
+                        case 16:
+                            MoveName.Text = "Tornado Claw";
+                            LazyDataFill(true, 35, 25, 20, 10, 15, 16);
+                            MoveSH.Hide();
+                            SHLabel.Hide();
+                            CanUnlock.Checked = (Mon_MoveUsed[15] >= 50);
+                            MoveInfo.Text = "Hit tech. Chains from 50 Twister Claw. No stat requirement.";
+                            break;
+
+                        case 17:
+                            MoveName.Text = "Phantom Claw";
+                            LazyDataFill(false, 17, 17, 15, 5, 10, 18);
+                            MoveSH.Hide();
+                            SHLabel.Hide();
+                            CanUnlock.Checked = (Mon_Stats[1] + Mon_Stats[3] >= 400);
+                            MoveInfo.Text = "Hit tech. POW + SKI should total over 400 to unlock.";
+                            break;
+
+                        case 18:
+                            MoveName.Text = "Hopping Claw";
+                            LazyDataFill(false, 17, 24, -5, 8, 10, 19);
+                            MoveSH.Hide();
+                            SHLabel.Hide();
+                            CanUnlock.Checked = (Mon_Stats[1] >= 250);
+                            MoveInfo.Text = "Heavy tech. POW should be over 250 to unlock.\r\nChains into Jumping Claw when used 50x. Learning priority over Oil Fire.";
+                            break;
+
+                        case 19:
+                            MoveName.Text = "Jumping Claw";
+                            LazyDataFill(false, 22, 36, -18, 17, 10, 20);
+                            MoveSH.Hide();
+                            SHLabel.Hide();
+                            CanUnlock.Checked = (Mon_MoveUsed[19] >= 50);
+                            MoveInfo.Text = "Heavy tech. Chains from 50 Hopping Claw.\r\nChains into Aerial Claw when used 50x. No stat requirement.";
+                            break;
+
+                        case 20:
+                            MoveName.Text = "Aerial Claw";
+                            LazyDataFill(false, 30, 43, -19, 27, 19, 21);
+                            MoveSH.Hide();
+                            SHLabel.Hide();
+                            CanUnlock.Checked = (Mon_MoveUsed[20] >= 50);
+                            MoveInfo.Text = "Special tech. Chains from 50 Jumping Claw. No stat requirement.";
+                            break;
+
+                        case 21:
+                            MoveName.Text = "Oil Drinking";
+                            LazyDataFill(true, 50, 0, -15, 0, 0, 22);
+                            MoveSH.Show();
+                            MoveSH.Text = GenerateStatValue(0, 50);
+                            SHLabel.Show();
+                            SHLabel.Text = "Recovery:";
+                            CanUnlock.Checked = (Mon_Stats[2] >= 600 && Mon_Nature >= 50);
+                            MoveInfo.Text = "Special tech. INT should be over 600 to unlock. Requires Good (+50) Nature.";
+                            break;
+
+                        case 22:
+                            MoveName.Text = "Bolt";
+                            LazyDataFill(true, 11, 7, -2, 16, 10, 23);
+                            MoveSH.Hide();
+                            SHLabel.Hide();
+                            CanUnlock.Checked = (Mon_Stats[2] >= 250 && Mon_SubGenus == 11);
+                            MoveInfo.Text = "Withering tech. INT should be over 250 to unlock. Exclusive to Kato/Tiger.";
+                            break;
+
+
+                        default:
+                            MoveName.Text = "No Move"; MoveName.ForeColor = Color.Black;
+                            MoveGuts.Text = "---";
+                            MoveDamage.Text = "---";
+                            MoveHit.Text = "---";
+                            MoveGD.Text = "---";
+                            MoveSharp.Text = "---";
+                            MoveSH.Hide();
+                            SHLabel.Hide();
+                            MoveUses.Text = "---";
+                            MoveUnlocked.Checked = false;
+                            CanUnlock.Checked = false;
+                            MoveInfo.Text = "Click on a move to learn more.";
+                            break;
+                    }
+                    break;
+
                 case 17: // Godzilla
                     switch (MoveSelected)
                     {
@@ -4083,6 +6090,189 @@ Chains into Mystic Pot and Miracle Pot when used 50x.";
                             break;
                     }
                     break;
+
+                case 19: //Mew
+                    switch (MoveSelected)
+                    {
+                        case 1:
+                            MoveName.Text = "Punch";
+                            LazyDataFill(false, 10, 9, 5, 0, 0, 0);
+                            MoveSH.Hide();
+                            SHLabel.Hide();
+                            CanUnlock.Checked = true;
+                            MoveInfo.Text = "Starting basic tech.";
+                            break;
+
+                        case 2:
+                            MoveName.Text = "Head Butt";
+                            LazyDataFill(false, 15, 15, 1, 5, 23, 1);
+                            MoveSH.Hide();
+                            SHLabel.Hide();
+                            CanUnlock.Checked = (Mon_Stats[1] + Mon_Stats[4] >= 400 && Mon_Nature >= 20);
+                            MoveInfo.Text = "Sharp tech. POW + SPD should total over 400 to unlock.\r\nChains into Head Assault when used 50x. Requires Good (+20) Nature.";
+                            break;
+
+                        case 3:
+                            MoveName.Text = "Head Assault";
+                            LazyDataFill(false, 25, 20, 2, 10, 25, 2);
+                            MoveSH.Hide();
+                            SHLabel.Hide();
+                            CanUnlock.Checked = (Mon_MoveUsed[1] >= 50 && Mon_Nature >= 50);
+                            MoveInfo.Text = "Sharp tech. Chains from 50 Head Butt.\r\nRequires Good (+50) Nature. No stat requirement.";
+                            break;
+
+                        case 4:
+                            MoveName.Text = "Leaping Kick";
+                            LazyDataFill(false, 12, 12, 0, 0, 5, 6);
+                            MoveSH.Hide();
+                            SHLabel.Hide();
+                            CanUnlock.Checked = true;
+                            MoveInfo.Text = "Starting basic tech.";
+                            break;
+
+                        case 5:
+                            MoveName.Text = "Scratch";
+                            LazyDataFill(false, 19, 15, 18, 6, 15, 7);
+                            MoveSH.Hide();
+                            SHLabel.Hide();
+                            CanUnlock.Checked = (Mon_Stats[1] + Mon_Stats[3] >= 400);
+                            MoveInfo.Text = "Hit tech. POW + SKI should total over 400 to unlock.";
+                            break;
+
+                        case 6:
+                            MoveName.Text = "Stab";
+                            LazyDataFill(false, 19, 13, -2, 21, 10, 8);
+                            MoveSH.Hide();
+                            SHLabel.Hide();
+                            CanUnlock.Checked = (Mon_Stats[2] >= 250 && Mon_Nature <= -20);
+                            MoveInfo.Text = "Withering tech. INT should be over 250 to unlock. Requires Bad (-20) Nature.";
+                            break;
+
+                        case 7:
+                            MoveName.Text = "RushingPunch";
+                            LazyDataFill(false, 30, 35, -3, 11, 10, 9);
+                            MoveSH.Hide();
+                            SHLabel.Hide();
+                            CanUnlock.Checked = (Mon_Stats[1] >= 450);
+                            MoveInfo.Text = "Heavy tech. POW should be over 450 to unlock.";
+                            break;
+
+                        case 8:
+                            MoveName.Text = "Diving Press";
+                            LazyDataFill(false, 19, 25, -9, 7, 10, 12);
+                            MoveSH.Hide();
+                            SHLabel.Hide();
+                            CanUnlock.Checked = (Mon_Stats[1] >= 250);
+                            MoveInfo.Text = "Heavy tech. POW should be over 250 to unlock.\r\nLearning priority over RushingPunch.";
+                            break;
+
+                        case 9:
+                            MoveName.Text = "HundredBlows";
+                            LazyDataFill(false, 50, 39, 11, 19, 10, 13);
+                            MoveSH.Hide();
+                            SHLabel.Hide();
+                            CanUnlock.Checked = (Mon_Stats[1] + Mon_Stats[3] >= 800);
+                            MoveInfo.Text = "Special tech. POW + SKI should total over 800 to unlock.\r\nChains into MillionBlows when used 50x.";
+                            break;
+
+                        case 10:
+                            MoveName.Text = "MillionBlows";
+                            LazyDataFill(false, 55, 43, 10, 21, 15, 14);
+                            MoveSH.Hide();
+                            SHLabel.Hide();
+                            CanUnlock.Checked = (Mon_MoveUsed[13] >= 50);
+                            MoveInfo.Text = "Special tech. Chains from 50 HundredBlows. No stat requirement.";
+                            break;
+
+                        case 11:
+                            MoveName.Text = "Twiddling";
+                            LazyDataFill(false, 23, 22, -4, 8, 19, 15);
+                            MoveSH.Hide();
+                            SHLabel.Hide();
+                            CanUnlock.Checked = (Mon_Stats[1] + Mon_Stats[4] >= 650);
+                            MoveInfo.Text = "Sharp tech. POW + SPD should total over 650 to unlock.\r\nChains into Twiddling-2 when used 50x. Learning priority over Head Butt.";
+                            break;
+
+                        case 12:
+                            MoveName.Text = "Twiddling-2";
+                            LazyDataFill(false, 27, 30, -7, 8, 26, 16);
+                            MoveSH.Hide();
+                            SHLabel.Hide();
+                            CanUnlock.Checked = (Mon_MoveUsed[15] >= 50);
+                            MoveInfo.Text = "Sharp tech. Chains from 50 Twiddling.\r\nChains into Twiddling-Z when used 50x. No stat requirement.";
+                            break;
+
+                        case 13:
+                            MoveName.Text = "Twiddling-Z";
+                            LazyDataFill(false, 39, 37, -10, 18, 30, 17);
+                            MoveSH.Hide();
+                            SHLabel.Hide();
+                            CanUnlock.Checked = (Mon_MoveUsed[16] >= 50);
+                            MoveInfo.Text = "Special tech. Chains from 50 Twiddling-2. No stat requirement.";
+                            break;
+
+                        case 14:
+                            MoveName.Text = "Miaow";
+                            LazyDataFill(true, 30, 2, 15, 34, 5, 18);
+                            MoveSH.Hide();
+                            SHLabel.Hide();
+                            CanUnlock.Checked = (Mon_Stats[2] >= 450);
+                            MoveInfo.Text = "Withering tech. INT should be over 450 to unlock.\r\nChains into Song Of Mew when used 50x. Learning priority over Stab.";
+                            break;
+
+                        case 15:
+                            MoveName.Text = "Song Of Mew";
+                            LazyDataFill(true, 39, 15, 6, 39, 5, 19);
+                            MoveSH.Hide();
+                            SHLabel.Hide();
+                            CanUnlock.Checked = (Mon_MoveUsed[18] >= 50);
+                            MoveInfo.Text = "Withering tech. Chains from 50 Miaow.\r\nChains into Recital when used 50x. No stat requirement.";
+                            break;
+
+                        case 16:
+                            MoveName.Text = "Recital";
+                            LazyDataFill(true, 40, 25, -2, 45, 10, 20);
+                            MoveSH.Hide();
+                            SHLabel.Hide();
+                            CanUnlock.Checked = (Mon_MoveUsed[19] >= 50);
+                            MoveInfo.Text = "Special tech. Chains from 50 Song Of Mew. No stat requirement.";
+                            break;
+
+                        case 17:
+                            MoveName.Text = "Zap";
+                            LazyDataFill(true, 40, 41, -12, 41, 10, 21);
+                            MoveSH.Hide();
+                            SHLabel.Hide();
+                            CanUnlock.Checked = (Mon_Stats[2] >= 500);
+                            MoveInfo.Text = "Special tech. INT should be over 500 to unlock. Chains into Maximal Zap when used 50x.";
+                            break;
+
+                        case 18:
+                            MoveName.Text = "Maximal Zap";
+                            LazyDataFill(true, 50, 59, -16, 45, 20, 22);
+                            MoveSH.Hide();
+                            SHLabel.Hide();
+                            CanUnlock.Checked = (Mon_MoveUsed[21] >= 50);
+                            MoveInfo.Text = "Special tech. Chains from 50 Zap. No stat requirement.";
+                            break;
+
+                        default:
+                            MoveName.Text = "No Move"; MoveName.ForeColor = Color.Black;
+                            MoveGuts.Text = "---";
+                            MoveDamage.Text = "---";
+                            MoveHit.Text = "---";
+                            MoveGD.Text = "---";
+                            MoveSharp.Text = "---";
+                            MoveSH.Hide();
+                            SHLabel.Hide();
+                            MoveUses.Text = "---";
+                            MoveUnlocked.Checked = false;
+                            CanUnlock.Checked = false;
+                            MoveInfo.Text = "Click on a move to learn more.";
+                            break;
+                    }
+                    break;
+
                 case 20: // Phoenix
                     switch (MoveSelected)
                     {
@@ -5005,6 +7195,211 @@ Chains into Mystic Pot and Miracle Pot when used 50x.";
                             break;
                     }
                     break;
+
+                case 25: //Mocchi
+                    switch (MoveSelected)
+                    {
+                        case 1:
+                            MoveName.Text = "Slap";
+                            LazyDataFill(false, 10, 9, 2, 5, 0, 0);
+                            MoveSH.Hide();
+                            SHLabel.Hide();
+                            CanUnlock.Checked = true;
+                            MoveInfo.Text = "Starting basic tech.";
+                            break;
+
+                        case 2:
+                            MoveName.Text = "Thrust";
+                            LazyDataFill(false, 15, 10, 6, 9, 6, 1);
+                            MoveSH.Hide();
+                            SHLabel.Hide();
+                            CanUnlock.Checked = (Mon_Stats[1] + Mon_Stats[3] >= 400);
+                            MoveInfo.Text = "Hit tech. POW + SKI should total over 400 to unlock.\r\nChains into 1-2 Thrust when used 50x.";
+                            break;
+
+                        case 3:
+                            MoveName.Text = "1-2 Thrust";
+                            LazyDataFill(false, 27, 15, 13, 14, 7, 2);
+                            MoveSH.Hide();
+                            SHLabel.Hide();
+                            CanUnlock.Checked = (Mon_MoveUsed[1] >= 50);
+                            MoveInfo.Text = "Hit tech. Chains from 50 Thrust.\r\nChains into Thrusts when used 50x. No stat requirement.";
+                            break;
+
+                        case 4:
+                            MoveName.Text = "Thrusts";
+                            LazyDataFill(false, 38, 38, -10, 22, 10, 3);
+                            MoveSH.Hide();
+                            SHLabel.Hide();
+                            CanUnlock.Checked = (Mon_MoveUsed[2] >= 50);
+                            MoveInfo.Text = "Special tech. Chains from 50 1-2 Thrust. No stat requirement.";
+                            break;
+
+                        case 5:
+                            MoveName.Text = "Head Butt";
+                            LazyDataFill(false, 12, 12, -5, 5, 0, 6);
+                            MoveSH.Hide();
+                            SHLabel.Hide();
+                            CanUnlock.Checked = true;
+                            MoveInfo.Text = "Starting basic tech.";
+                            break;
+
+                        case 6:
+                            MoveName.Text = "Licking";
+                            LazyDataFill(true, 19, 13, -11, 24, 5, 7);
+                            MoveSH.Hide();
+                            SHLabel.Hide();
+                            CanUnlock.Checked = (Mon_Stats[2] >= 250);
+                            MoveInfo.Text = "Withering tech. INT should be over 250 to unlock.";
+                            break;
+
+                        case 7:
+                            MoveName.Text = "Press";
+                            LazyDataFill(false, 24, 24, -9, 12, 9, 8);
+                            MoveSH.Hide();
+                            SHLabel.Hide();
+                            CanUnlock.Checked = (Mon_Stats[1] >= 400);
+                            MoveInfo.Text = "Heavy tech. POW should be over 400 to unlock.\r\nChains into Diving Press when used 50x.";
+                            break;
+
+                        case 8:
+                            MoveName.Text = "Diving Press";
+                            LazyDataFill(false, 34, 39, -14, 19, 10, 9);
+                            MoveSH.Hide();
+                            SHLabel.Hide();
+                            CanUnlock.Checked = (Mon_MoveUsed[8] >= 50);
+                            MoveInfo.Text = "Heavy tech. Chains from 50 Press.\r\nChains into Giant Press when used 50x. No stat requirement.";
+                            break;
+
+                        case 9:
+                            MoveName.Text = "Giant Press";
+                            LazyDataFill(false, 39, 49, -16, 20, 10, 10);
+                            MoveSH.Hide();
+                            SHLabel.Hide();
+                            CanUnlock.Checked = (Mon_MoveUsed[9] >= 50);
+                            MoveInfo.Text = "Heavy tech. Chains from 50 Diving Press. No stat requirement.";
+                            break;
+
+                        case 10:
+                            MoveName.Text = "Roll Attack";
+                            LazyDataFill(false, 27, 19, -6, 19, 19, 12);
+                            MoveSH.Hide();
+                            SHLabel.Hide();
+                            CanUnlock.Checked = (Mon_Stats[1] + Mon_Stats[4] >= 650);
+                            MoveInfo.Text = "Sharp tech. POW + SPD should total over 650 to unlock.\r\nChains into DazzlingRoll when used 50x.";
+                            break;
+
+                        case 11:
+                            MoveName.Text = "DazzlingRoll";
+                            LazyDataFill(false, 36, 28, -9, 20, 25, 13);
+                            MoveSH.Hide();
+                            SHLabel.Hide();
+                            CanUnlock.Checked = (Mon_MoveUsed[12] >= 50);
+                            MoveInfo.Text = "Sharp tech. Chains from 50 Roll Attack. No stat requirement.";
+                            break;
+
+                        case 12:
+                            MoveName.Text = "Petal Swirl";
+                            LazyDataFill(true, 16, 14, -10, 13, 16, 14);
+                            MoveSH.Hide();
+                            SHLabel.Hide();
+                            CanUnlock.Checked = (Mon_Stats[2] + Mon_Stats[4] >= 400);
+                            MoveInfo.Text = "Sharp tech. INT + SPD should total over 400 to unlock.\r\nChains into Petal Vortex and Petal Storm when used 50x. Learning priority over Roll Attack.";
+                            break;
+
+                        case 13:
+                            MoveName.Text = "Petal Vortex";
+                            LazyDataFill(true, 45, 0, -15, 0, 0, 15);
+                            MoveSH.Show();
+                            MoveSH.Text = GenerateStatValue(0, 40);
+                            SHLabel.Show();
+                            SHLabel.Text = "Recovery:";
+                            CanUnlock.Checked = (Mon_Stats[2] >= 600 && Mon_MoveUsed[14] >= 50 && Mon_Nature >= 50);
+                            MoveInfo.Text = "Special tech. INT should be over 600 to unlock.\r\nChains from 50 Petal Swirl. Requires Good (+50) Nature.";
+                            break;
+
+                        case 14:
+                            MoveName.Text = "Petal Storm";
+                            LazyDataFill(true, 40, 35, -15, 0, 0, 16);
+                            MoveSH.Text = "100%";
+                            MoveSH.Show();
+                            SHLabel.Text = "HP Drain:";
+                            SHLabel.Show();
+                            CanUnlock.Checked = (Mon_Stats[2] >= 600 && Mon_MoveUsed[14] >= 50 && Mon_Nature <= -50);
+                            MoveInfo.Text = "Special tech. INT should be over 600 to unlock.\r\nChains from 50 Petal Swirl. Requires Bad (-50) Nature.";
+                            break;
+
+                        case 15:
+                            MoveName.Text = "Mocchi Ray";
+                            LazyDataFill(true, 35, 20, 10, 20, 10, 18);
+                            MoveSH.Hide();
+                            SHLabel.Hide();
+                            CanUnlock.Checked = (Mon_Stats[2] + Mon_Stats[3] + Mon_Stats[4] >= 1000);
+                            MoveInfo.Text = "Special tech. INT + SKI + SPD should total over 1000 to unlock.\r\nChains into Mocchi Beam when used 50x.";
+                            break;
+
+                        case 16:
+                            MoveName.Text = "Mocchi Beam";
+                            LazyDataFill(true, 40, 25, 3, 25, 15, 19);
+                            MoveSH.Hide();
+                            SHLabel.Hide();
+                            CanUnlock.Checked = (Mon_MoveUsed[18] >= 50);
+                            MoveInfo.Text = "Special tech. Chains from 50 Mocchi Ray.\r\nChains into MocchiCannon when used 50x. No stat requirement.";
+                            break;
+
+                        case 17:
+                            MoveName.Text = "MocchiCannon";
+                            LazyDataFill(true, 50, 45, -5, 25, 20, 20);
+                            MoveSH.Hide();
+                            SHLabel.Hide();
+                            CanUnlock.Checked = (Mon_MoveUsed[19] >= 50 && Mon_Nature >= 20);
+                            MoveInfo.Text = "Special tech. Chains from 50 Mocchi Beam.\r\nRequires Good (+20) Nature. No stat requirement.";
+                            break;
+
+                        case 18:
+                            MoveName.Text = "Flame";
+                            LazyDataFill(true, 38, 44, -13, 16, 10, 21);
+                            MoveSH.Hide();
+                            SHLabel.Hide();
+                            CanUnlock.Checked = (Mon_Stats[1] + Mon_Stats[2] >= 800 && Mon_SubGenus == 1);
+                            MoveInfo.Text = "Special tech. POW + INT should total over 800 to unlock.\r\nExclusive to Mocchi/Dragon.";
+                            break;
+
+                        case 19:
+                            MoveName.Text = "Roll Assault";
+                            LazyDataFill(false, 19, 25, -12, 7, 5, 22);
+                            MoveSH.Hide();
+                            SHLabel.Hide();
+                            CanUnlock.Checked = (Mon_Stats[1] >= 250);
+                            MoveInfo.Text = "Heavy tech. POW should be over 250 to unlock.\r\nChains into Petal Roll when used 50x. Learning priority over Press.";
+                            break;
+
+                        case 20:
+                            MoveName.Text = "Petal Roll";
+                            LazyDataFill(false, 25, 29, -13, 15, 7, 23);
+                            MoveSH.Hide();
+                            SHLabel.Hide();
+                            CanUnlock.Checked = (Mon_MoveUsed[22] >= 50);
+                            MoveInfo.Text = "Heavy tech. Chains from 50 Roll Assault. No stat requirement.";
+                            break;
+
+                        default:
+                            MoveName.Text = "No Move"; MoveName.ForeColor = Color.Black;
+                            MoveGuts.Text = "---";
+                            MoveDamage.Text = "---";
+                            MoveHit.Text = "---";
+                            MoveGD.Text = "---";
+                            MoveSharp.Text = "---";
+                            MoveSH.Hide();
+                            SHLabel.Hide();
+                            MoveUses.Text = "---";
+                            MoveUnlocked.Checked = false;
+                            CanUnlock.Checked = false;
+                            MoveInfo.Text = "Click on a move to learn more.";
+                            break;
+                    }
+                    break;
+
                 case 26: // Joker
                     switch (MoveSelected)
                     {
@@ -5108,6 +7503,771 @@ Chains into Mystic Pot and Miracle Pot when used 50x.";
                             break;
                     }
                     break;
+
+                case 27: // Potats
+                    switch (MoveSelected)
+                    {
+                        case 1:
+                            MoveName.Text = "Slap";
+                            LazyDataFill(false, 10, 12, 10, 0, 0, 0);
+                            MoveSH.Hide();
+                            SHLabel.Hide();
+                            CanUnlock.Checked = true;
+                            MoveInfo.Text = "Starting basic tech.";
+                            break;
+
+                        case 2:
+                            MoveName.Text = "Acid Spit";
+                            LazyDataFill(true, 35, 35, -15, 48, 5, 1);
+                            MoveSH.Hide();
+                            SHLabel.Hide();
+                            CanUnlock.Checked = (Mon_Stats[2] >= 500 && Mon_Nature <= -50);
+                            MoveInfo.Text = "Special tech. INT should be over 500 to unlock.\r\nRequires Bad (-50) Nature.";
+                            break;
+
+                        case 3:
+                            MoveName.Text = "Diving Press";
+                            LazyDataFill(false, 18, 16, -3, 9, 16, 2);
+                            MoveSH.Hide();
+                            SHLabel.Hide();
+                            CanUnlock.Checked = (Mon_Stats[1] + Mon_Stats[4] >= 400);
+                            MoveInfo.Text = "Sharp tech. POW + SPD should total over 400 to unlock.\r\nLearning priority over Jumping Chop.";
+                            break;
+
+                        case 4:
+                            MoveName.Text = "Chop Combo";
+                            LazyDataFill(false, 40, 44, 1, 10, 5, 3);
+                            MoveSH.Hide();
+                            SHLabel.Hide();
+                            CanUnlock.Checked = (Mon_Stats[1] + Mon_Stats[5] >= 800);
+                            MoveInfo.Text = "Special tech. POW + DEF should total over 800 to unlock.\r\nLearning priority over Samurai Kick.";
+                            break;
+
+                        case 5:
+                            MoveName.Text = "Samurai Kick";
+                            LazyDataFill(false, 30, 25, 10, 25, 10, 4);
+                            MoveSH.Hide();
+                            SHLabel.Hide();
+                            CanUnlock.Checked = (Mon_Stats[1] >= 600);
+                            MoveInfo.Text = "Special tech. POW + DEF should total over 800 to unlock.\r\nChains into Ninja Kick when used 50x.";
+                            break;
+
+                        case 6:
+                            MoveName.Text = "Chop";
+                            LazyDataFill(false, 11, 16, -4, 0, 5, 6);
+                            MoveSH.Hide();
+                            SHLabel.Hide();
+                            CanUnlock.Checked = true;
+                            MoveInfo.Text = "Starting basic tech. Chains into Rolling Chop when used 30x.";
+                            break;
+
+                        case 7:
+                            MoveName.Text = "Rolling Chop";
+                            LazyDataFill(false, 19, 20, -2, 10, 10, 7);
+                            MoveSH.Hide();
+                            SHLabel.Hide();
+                            CanUnlock.Checked = (Mon_MoveUsed[6] >= 30);
+                            MoveInfo.Text = "Basic tech. Chains from 30 Chop.";
+                            break;
+
+                        case 8:
+                            MoveName.Text = "Shock Wave";
+                            LazyDataFill(false, 17, 14, 13, 7, 0, 8);
+                            MoveSH.Hide();
+                            SHLabel.Hide();
+                            CanUnlock.Checked = (Mon_Stats[1] + Mon_Stats[3] >= 400);
+                            MoveInfo.Text = "Hit tech. POW + SKI should total over 400 to unlock.\r\nLearning priority over Long Punch.";
+                            break;
+
+                        case 9:
+                            MoveName.Text = "Back Blow";
+                            LazyDataFill(false, 14, 19, -13, 10, 5, 9);
+                            MoveSH.Hide();
+                            SHLabel.Hide();
+                            CanUnlock.Checked = (Mon_Stats[1] >= 250);
+                            MoveInfo.Text = "Heavy tech. POW should be over 250 to unlock.\r\nChains into ElectricBlow when used 50x. Learning priority over Straight.";
+                            break;
+
+                        case 10:
+                            MoveName.Text = "ElectricBlow";
+                            LazyDataFill(false, 29, 41, -16, 17, 10, 10);
+                            MoveSH.Hide();
+                            SHLabel.Hide();
+                            CanUnlock.Checked = (Mon_Stats[1] >= 450 && Mon_MoveUsed[9] >= 50 && Mon_Nature >= 20);
+                            MoveInfo.Text = "Heavy tech. POW should be over 450 to unlock.\r\nChains from 50 Back Blow. Requires Good (+20) Nature.";
+                            break;
+
+                        case 11:
+                            MoveName.Text = "Ninja Kick";
+                            LazyDataFill(false, 55, 55, -5, 30, 10, 11);
+                            MoveSH.Hide();
+                            SHLabel.Hide();
+                            CanUnlock.Checked = (Mon_MoveUsed[4] >= 50 && Mon_Nature <= -30);
+                            MoveInfo.Text = "Special tech. Chains from 50 Samurai Kick. Requires Bad (-30) Nature.\r\nNo stat requirement.";
+                            break;
+
+                        case 12:
+                            MoveName.Text = "Straight";
+                            LazyDataFill(false, 20, 26, -9, 7, 10, 12);
+                            MoveSH.Hide();
+                            SHLabel.Hide();
+                            CanUnlock.Checked = (Mon_Stats[1] >= 450);
+                            MoveInfo.Text = "Heavy tech. POW should be over 450 to unlock.";
+                            break;
+
+                        case 13:
+                            MoveName.Text = "Chop Combo";
+                            LazyDataFill(true, 39, 39, -7, 22, 13, 13);
+                            MoveSH.Hide();
+                            SHLabel.Hide();
+                            CanUnlock.Checked = (Mon_Stats[2] + Mon_Stats[4] >= 800);
+                            MoveInfo.Text = "Special tech. INT + SPD should total over 800 to unlock.\r\nLearning priority over Acid Spit.";
+                            break;
+
+                        case 14:
+                            MoveName.Text = "Kiss";
+                            LazyDataFill(true, 16, 5, 0, 25, 5, 14);
+                            MoveSH.Hide();
+                            SHLabel.Hide();
+                            CanUnlock.Checked = (Mon_Stats[2] >= 250);
+                            MoveInfo.Text = "Withering tech. INT should be over 250 to unlock. Learning priority over Spit.";
+                            break;
+
+                        case 15:
+                            MoveName.Text = "Long Punch";
+                            LazyDataFill(false, 27, 19, 15, 13, 5, 18);
+                            MoveSH.Hide();
+                            SHLabel.Hide();
+                            CanUnlock.Checked = (Mon_Stats[1] + Mon_Stats[3] >= 650);
+                            MoveInfo.Text = "Hit tech. POW + SKI should total over 650 to unlock.";
+                            break;
+
+                        case 16:
+                            MoveName.Text = "Spit";
+                            LazyDataFill(true, 24, 12, -5, 37, 5, 19);
+                            MoveSH.Hide();
+                            SHLabel.Hide();
+                            CanUnlock.Checked = (Mon_Stats[2] >= 450 && Mon_Nature <= -20);
+                            MoveInfo.Text = "Withering tech. INT should be over 450 to unlock. Requires Bad (-20) Nature.";
+                            break;
+
+                        case 17:
+                            MoveName.Text = "Jumping Chop";
+                            LazyDataFill(false, 28, 24, -6, 16, 23, 20);
+                            MoveSH.Hide();
+                            SHLabel.Hide();
+                            CanUnlock.Checked = (Mon_Stats[1] + Mon_Stats[4] >= 650 && Mon_Nature >= 50);
+                            MoveInfo.Text = "Sharp tech. POW + SPD should total over 650 to unlock. Requires Good (+50) Nature.";
+                            break;
+
+                        default:
+                            MoveName.Text = "No Move"; MoveName.ForeColor = Color.Black;
+                            MoveGuts.Text = "---";
+                            MoveDamage.Text = "---";
+                            MoveHit.Text = "---";
+                            MoveGD.Text = "---";
+                            MoveSharp.Text = "---";
+                            MoveSH.Hide();
+                            SHLabel.Hide();
+                            MoveUses.Text = "---";
+                            MoveUnlocked.Checked = false;
+                            CanUnlock.Checked = false;
+                            MoveInfo.Text = "Click on a move to learn more.";
+                            break;
+                    }
+                    break;
+
+                case 28: // Jell
+                    switch (MoveSelected)
+                    {
+                        case 1:
+                            MoveName.Text = "Stab";
+                            LazyDataFill(false, 11, 14, 0, 0, 5, 0);
+                            MoveSH.Hide();
+                            SHLabel.Hide();
+                            CanUnlock.Checked = true;
+                            MoveInfo.Text = "Starting basic tech. Chains into Pierce when used 30x.";
+                            break;
+
+                        case 2:
+                            MoveName.Text = "Pierce";
+                            LazyDataFill(false, 21, 20, 0, 0, 5, 1);
+                            MoveSH.Hide();
+                            SHLabel.Hide();
+                            CanUnlock.Checked = (Mon_MoveUsed[0] >= 30);
+                            MoveInfo.Text = "Basic tech. Chains from 30 Stab. No stat requirement.";
+                            break;
+
+                        case 3:
+                            MoveName.Text = "Suffocation";
+                            LazyDataFill(false, 24, 20, 4, 8, 20, 2);
+                            MoveSH.Hide();
+                            SHLabel.Hide();
+                            CanUnlock.Checked = (Mon_Stats[1] + Mon_Stats[4] >= 650);
+                            MoveInfo.Text = "Sharp tech. POW + SPD should total over 650 to unlock.";
+                            break;
+
+                        case 4:
+                            MoveName.Text = "Bloodsuction";
+                            LazyDataFill(false, 24, 12, -5, 37, 5, 3);
+                            MoveSH.Text = "100%";
+                            MoveSH.Show();
+                            SHLabel.Text = "HP Drain:";
+                            SHLabel.Show();
+                            CanUnlock.Checked = (Mon_Stats[2] >= 500 && Mon_Nature <= -50);
+                            MoveInfo.Text = "Special tech. INT should be over 500 to unlock. Requires Bad (-50) Nature.";
+                            break;
+
+                        case 5:
+                            MoveName.Text = "Whip";
+                            LazyDataFill(false, 14, 14, 6, 0, 5, 6);
+                            MoveSH.Hide();
+                            SHLabel.Hide();
+                            CanUnlock.Checked = true;
+                            MoveInfo.Text = "Starting basic tech. Chains into Two Whips when used 30x.";
+                            break;
+
+                        case 6:
+                            MoveName.Text = "Two Whips";
+                            LazyDataFill(false, 22, 21, 6, 11, 0, 7);
+                            MoveSH.Hide();
+                            SHLabel.Hide();
+                            CanUnlock.Checked = (Mon_MoveUsed[6] >= 30);
+                            MoveInfo.Text = "Basic tech. Chains from 30 Whip. No stat requirement.";
+                            break;
+
+                        case 7:
+                            MoveName.Text = "Jell Press";
+                            LazyDataFill(false, 30, 28, 11, 7, 5, 8);
+                            MoveSH.Hide();
+                            SHLabel.Hide();
+                            CanUnlock.Checked = (Mon_Stats[1] + Mon_Stats[3] >= 650);
+                            MoveInfo.Text = "Hit tech. POW + SKI should total over 650 to unlock.";
+                            break;
+
+                        case 8:
+                            MoveName.Text = "Jell Cube";
+                            LazyDataFill(false, 16, 29, -16, 5, 9, 9);
+                            MoveSH.Hide();
+                            SHLabel.Hide();
+                            CanUnlock.Checked = (Mon_Stats[1] >= 250);
+                            MoveInfo.Text = "Heavy tech. POW should be over 250 to unlock. Chains into Three Cubes when used 50x.\r\nLearning priority over Cannon.";
+                            break;
+
+                        case 9:
+                            MoveName.Text = "Three Cubes";
+                            LazyDataFill(false, 23, 39, -10, 6, 9, 10);
+                            MoveSH.Hide();
+                            SHLabel.Hide();
+                            CanUnlock.Checked = (Mon_MoveUsed[9] >= 50);
+                            MoveInfo.Text = "Heavy tech. Chains from 50 Jell Cube. No stat requirement.";
+                            break;
+
+                        case 10:
+                            MoveName.Text = "Jell Top";
+                            LazyDataFill(false, 17, 14, 15, 6, 5, 12);
+                            MoveSH.Hide();
+                            SHLabel.Hide();
+                            CanUnlock.Checked = (Mon_Stats[1] + Mon_Stats[3] >= 400);
+                            MoveInfo.Text = "Hit tech. POW + SKI should total over 400 to unlock.\r\nChains into Spiked Top when used 50x. Learning priority over Jell Press.";
+                            break;
+
+                        case 11:
+                            MoveName.Text = "Spiked Top";
+                            LazyDataFill(false, 28, 22, 13, 8, 10, 13);
+                            MoveSH.Hide();
+                            SHLabel.Hide();
+                            CanUnlock.Checked = (Mon_MoveUsed[12] >= 50);
+                            MoveInfo.Text = "Hit tech. Chains from 50 Jell Top. No stat requirement.";
+                            break;
+
+                        case 12:
+                            MoveName.Text = "Fly Swatter";
+                            LazyDataFill(false, 27, 15, -3, 31, 7, 14);
+                            MoveSH.Hide();
+                            SHLabel.Hide();
+                            CanUnlock.Checked = (Mon_Stats[1] + Mon_Stats[2] >= 650);
+                            MoveInfo.Text = "Withering tech. POW + INT should total over 650 to unlock.\r\nChains into Fly Smasher when used 50x.";
+                            break;
+
+                        case 13:
+                            MoveName.Text = "Fly Smasher";
+                            LazyDataFill(false, 39, 26, -5, 41, 9, 15);
+                            MoveSH.Hide();
+                            SHLabel.Hide();
+                            CanUnlock.Checked = (Mon_MoveUsed[14] >= 50);
+                            MoveInfo.Text = "Withering tech. Chains from 50 Fly Swatter. No stat requirement.";
+                            break;
+
+                        case 14:
+                            MoveName.Text = "Beam Gun";
+                            LazyDataFill(true, 18, 15, -2, 15, 19, 16);
+                            MoveSH.Hide();
+                            SHLabel.Hide();
+                            CanUnlock.Checked = (Mon_Stats[2] + Mon_Stats[4] >= 400);
+                            MoveInfo.Text = "Sharp tech. INT + SPD should total over 400 to unlock.\r\nChains into Beam Cannon when used 50x.";
+                            break;
+
+                        case 15:
+                            MoveName.Text = "Beam Cannon";
+                            LazyDataFill(true, 35, 25, -2, 25, 25, 17);
+                            MoveSH.Hide();
+                            SHLabel.Hide();
+                            CanUnlock.Checked = (Mon_MoveUsed[16] >= 50);
+                            MoveInfo.Text = "Sharp tech. Chains from 50 Beam Gun. No stat requirement.";
+                            break;
+
+                        case 16:
+                            MoveName.Text = "Cannon";
+                            LazyDataFill(true, 35, 50, -12, 10, 10, 18);
+                            MoveSH.Hide();
+                            SHLabel.Hide();
+                            CanUnlock.Checked = (Mon_Stats[1] >= 450);
+                            MoveInfo.Text = "Heavy tech. POW should be over 450 to unlock.";
+                            break;
+
+                        case 17:
+                            MoveName.Text = "Slingshot";
+                            LazyDataFill(true, 18, 9, -8, 31, 9, 19);
+                            MoveSH.Hide();
+                            SHLabel.Hide();
+                            CanUnlock.Checked = (Mon_Stats[1] >= 250);
+                            MoveInfo.Text = "Withering tech. INT should be over 250 to unlock.\r\nLearning priority over Fly Swatter.";
+                            break;
+
+                        case 18:
+                            MoveName.Text = "Pyramid";
+                            LazyDataFill(true, 40, 0, -20, 0, 0, 20);
+                            MoveSH.Show();
+                            MoveSH.Text = GenerateStatValue(0, 40);
+                            SHLabel.Show();
+                            SHLabel.Text = "Recovery:";
+                            CanUnlock.Checked = (Mon_Stats[1] >= 500 && Mon_Nature >= 50);
+                            MoveInfo.Text = "Special tech. POW should be over 500 to unlock. Requires Good (+50) Nature.";
+                            break;
+
+                        case 19:
+                            MoveName.Text = "Gatling Gun";
+                            LazyDataFill(true, 45, 30, 15, 15, 15, 21);
+                            MoveSH.Hide();
+                            SHLabel.Hide();
+                            CanUnlock.Checked = (Mon_Stats[3] + Mon_Stats[4] >= 800);
+                            MoveInfo.Text = "Special tech. SKI + SPD should total over 800 to unlock.";
+                            break;
+
+                        case 20:
+                            MoveName.Text = "Jell Copter";
+                            LazyDataFill(true, 50, 50, 5, 15, 5, 22);
+                            MoveSH.Hide();
+                            SHLabel.Hide();
+                            CanUnlock.Checked = (Mon_Stats[2] >= 600);
+                            MoveInfo.Text = "Special tech. INT should be over 600 to unlock.";
+                            break;
+
+                        default:
+                            MoveName.Text = "No Move"; MoveName.ForeColor = Color.Black;
+                            MoveGuts.Text = "---";
+                            MoveDamage.Text = "---";
+                            MoveHit.Text = "---";
+                            MoveGD.Text = "---";
+                            MoveSharp.Text = "---";
+                            MoveSH.Hide();
+                            SHLabel.Hide();
+                            MoveUses.Text = "---";
+                            MoveUnlocked.Checked = false;
+                            CanUnlock.Checked = false;
+                            MoveInfo.Text = "Click on a move to learn more.";
+                            break;
+                    }
+                    break;
+
+                case 29: // Undine
+                    switch (MoveSelected)
+                    {
+                        case 1:
+                            MoveName.Text = "Ice Sword";
+                            LazyDataFill(false, 10, 8, 10, 0, 5, 0);
+                            MoveSH.Hide();
+                            SHLabel.Hide();
+                            CanUnlock.Checked = true;
+                            MoveInfo.Text = "Starting basic tech. Chains into Ice Swords when used 30x.";
+                            break;
+
+                        case 2:
+                            MoveName.Text = "Ice Swords";
+                            LazyDataFill(false, 14, 15, 10, 0, 9, 1);
+                            MoveSH.Hide();
+                            SHLabel.Hide();
+                            CanUnlock.Checked = (Mon_MoveUsed[0] >= 30);
+                            MoveInfo.Text = "Basic tech. Chains from 30 Ice Sword. No stat requirement.";
+                            break;
+
+                        case 3:
+                            MoveName.Text = "Dolphin Blow";
+                            LazyDataFill(false, 18, 23, -5, 5, 5, 2);
+                            MoveSH.Hide();
+                            SHLabel.Hide();
+                            CanUnlock.Checked = (Mon_Stats[1] >= 250);
+                            if (rng.Next(100) > 5)
+                                MoveInfo.Text = "Heavy tech. POW should be over 250 to unlock.";
+                            else
+                                MoveInfo.Text = "Tifa's Limit Break. POW should be over 250 to unlock.";
+                            break;
+
+                        case 4:
+                            MoveName.Text = "Splash";
+                            LazyDataFill(true, 27, 8, -8, 40, 5, 3);
+                            MoveSH.Hide();
+                            SHLabel.Hide();
+                            CanUnlock.Checked = (Mon_Stats[2] >= 450 && Mon_Nature >= 20);
+                            MoveInfo.Text = "Withering tech. INT should be over 450 to unlock.\r\nRequires Good (+20) Nature.";
+                            break;
+
+                        case 5:
+                            MoveName.Text = "Aqua Whip";
+                            LazyDataFill(false, 19, 6, -9, 29, 5, 6);
+                            MoveSH.Hide();
+                            SHLabel.Hide();
+                            CanUnlock.Checked = (Mon_Stats[1] + Mon_Stats[2] >= 400 && Mon_Nature <= -20);
+                            MoveInfo.Text = "Withering tech. POW + INT should total over 400 to unlock.\r\nChains into Two Whips when used 50x. Requires Bad (-20) Nature.";
+                            break;
+
+                        case 6:
+                            MoveName.Text = "Two Whips";
+                            LazyDataFill(false, 29, 11, -12, 39, 5, 7);
+                            MoveSH.Hide();
+                            SHLabel.Hide();
+                            CanUnlock.Checked = (Mon_MoveUsed[6] >= 50 && Mon_Nature <= -30);
+                            MoveInfo.Text = "Withering tech. Chains from 50 Aqua Whip.\r\nRequires Bad (-30) Nature. No stat requirement.";
+                            break;
+
+                        case 7:
+                            MoveName.Text = "Kiss";
+                            LazyDataFill(true, 30, 15, 15, 14, 5, 8);
+                            MoveSH.Hide();
+                            SHLabel.Hide();
+                            CanUnlock.Checked = (Mon_Stats[2] + Mon_Stats[3] >= 650);
+                            MoveInfo.Text = "Hit tech. INT + SKI should total over 650 to unlock.";
+                            break;
+
+                        case 8:
+                            MoveName.Text = "Cold Fog";
+                            LazyDataFill(true, 12, 10, 12, 0, 0, 9);
+                            MoveSH.Hide();
+                            SHLabel.Hide();
+                            CanUnlock.Checked = true;
+                            MoveInfo.Text = "Starting basic tech.";
+                            break;
+
+                        case 9:
+                            MoveName.Text = "Arrow";
+                            LazyDataFill(true, 18, 15, 2, 6, 20, 10);
+                            MoveSH.Hide();
+                            SHLabel.Hide();
+                            CanUnlock.Checked = (Mon_Stats[2] + Mon_Stats[4] >= 400 && Mon_Nature >= 20);
+                            MoveInfo.Text = "Sharp tech. INT + SPD should total over 400 to unlock.\r\nChains into Ice Arrow when used 50x. Requires Good (+20) Nature.";
+                            break;
+
+                        case 10:
+                            MoveName.Text = "Aqua Wave";
+                            LazyDataFill(true, 19, 12, 20, 5, 5, 12);
+                            MoveSH.Hide();
+                            SHLabel.Hide();
+                            CanUnlock.Checked = (Mon_Stats[2] + Mon_Stats[3] >= 400);
+                            MoveInfo.Text = "Hit tech. INT + SKI should total over 400 to unlock.\r\nChains into Aqua Waves when used 50x. Learning priority over Kiss.";
+                            break;
+
+                        case 11:
+                            MoveName.Text = "Aqua Waves";
+                            LazyDataFill(true, 28, 20, 15, 7, 5, 13);
+                            MoveSH.Hide();
+                            SHLabel.Hide();
+                            CanUnlock.Checked = (Mon_MoveUsed[12] >= 50);
+                            MoveInfo.Text = "Hit tech. Chains from 50 Aqua Wave. No stat requirement.";
+                            break;
+
+                        case 12:
+                            MoveName.Text = "Ice Coffin";
+                            LazyDataFill(true, 30, 38, -15, 15, 10, 14);
+                            MoveSH.Hide();
+                            SHLabel.Hide();
+                            CanUnlock.Checked = (Mon_Stats[1] + Mon_Stats[2] >= 650);
+                            MoveInfo.Text = "Heavy tech. POW + INT should total over 650 to unlock.";
+                            break;
+
+                        case 13:
+                            MoveName.Text = "Ice Arrow";
+                            LazyDataFill(true, 28, 20, 0, 12, 25, 15);
+                            MoveSH.Hide();
+                            SHLabel.Hide();
+                            CanUnlock.Checked = (Mon_MoveUsed[10] >= 50 && Mon_Nature >= 30);
+                            MoveInfo.Text = "Sharp tech. Chains from 50 Arrow.\r\nRequires Good (+30) Nature. No stat requirement.";
+                            break;
+
+                        case 14:
+                            MoveName.Text = "Cold Whirl";
+                            LazyDataFill(true, 50, 39, -10, 39, 5, 16);
+                            MoveSH.Hide();
+                            SHLabel.Hide();
+                            CanUnlock.Checked = (Mon_Stats[2] >= 600);
+                            MoveInfo.Text = "Special tech. INT should be over 600 to unlock.\r\nChains into Cold Storm when used 50x.";
+                            break;
+
+                        case 15:
+                            MoveName.Text = "Water Gun";
+                            LazyDataFill(true, 45, 20, 15, 30, 5, 17);
+                            MoveSH.Hide();
+                            SHLabel.Hide();
+                            CanUnlock.Checked = (Mon_Stats[2] + Mon_Stats[3] >= 800);
+                            MoveInfo.Text = "Special tech. INT + SKI should total over 800 to unlock.\r\nChains into Water Cannon when used 50x. Learning priority over Cold Whirl.";
+                            break;
+
+                        case 16:
+                            MoveName.Text = "Icicle Arrow";
+                            LazyDataFill(true, 35, 30, -4, 15, 30, 18);
+                            MoveSH.Hide();
+                            SHLabel.Hide();
+                            CanUnlock.Checked = (Mon_MoveUsed[15] >= 50 && Mon_Nature >= 50);
+                            MoveInfo.Text = "Special tech. Chains from 50 Ice Arrow.\r\nRequires Good (+50) Nature. No stat requirement.";
+                            break;
+
+                        case 17:
+                            MoveName.Text = "Hailstorm";
+                            LazyDataFill(true, 34, 23, 4, 5, 20, 19);
+                            MoveSH.Hide();
+                            SHLabel.Hide();
+                            CanUnlock.Checked = (Mon_Stats[2] + Mon_Stats[4] >= 650);
+                            MoveInfo.Text = "Sharp tech. INT + SPD should total over 650 to unlock.";
+                            break;
+
+                        case 18:
+                            MoveName.Text = "Cold Storm";
+                            LazyDataFill(true, 55, 49, -15, 49, 10, 20);
+                            MoveSH.Hide();
+                            SHLabel.Hide();
+                            CanUnlock.Checked = (Mon_MoveUsed[16] >= 50);
+                            MoveInfo.Text = "Special tech. Chains from 50 Cold Whirl. No stat requirement.";
+                            break;
+
+                        case 19:
+                            MoveName.Text = "Vitalization";
+                            LazyDataFill(true, 40, 0, -20, 0, 0, 21);
+                            MoveSH.Show();
+                            MoveSH.Text = GenerateStatValue(0, 30);
+                            SHLabel.Show();
+                            SHLabel.Text = "Recovery:";
+                            CanUnlock.Checked = (Mon_Stats[2] >= 600 && Mon_Nature >= 50);
+                            MoveInfo.Text = "Special tech. INT should be over 600 to unlock. Requires Good (+50) Nature.";
+                            break;
+
+                        case 20:
+                            MoveName.Text = "Cold Geyser";
+                            LazyDataFill(true, 16, 11, -2, 7, 30, 22);
+                            MoveSH.Hide();
+                            SHLabel.Hide();
+                            CanUnlock.Checked = (Mon_Stats[2] + Mon_Stats[4] >= 400);
+                            MoveInfo.Text = "Sharp tech. INT + SPD should total over 400 to unlock.\r\nLearning priority over Hailstorm.";
+                            break;
+
+                        case 21:
+                            MoveName.Text = "Water Cannon";
+                            LazyDataFill(true, 50, 30, 5, 40, 15, 23);
+                            MoveSH.Hide();
+                            SHLabel.Hide();
+                            CanUnlock.Checked = (Mon_MoveUsed[17] >= 50);
+                            MoveInfo.Text = "Special tech. Chains from 50 Water Gun. No stat requirement.";
+                            break;
+
+                        default:
+                            MoveName.Text = "No Move"; MoveName.ForeColor = Color.Black;
+                            MoveGuts.Text = "---";
+                            MoveDamage.Text = "---";
+                            MoveHit.Text = "---";
+                            MoveGD.Text = "---";
+                            MoveSharp.Text = "---";
+                            MoveSH.Hide();
+                            SHLabel.Hide();
+                            MoveUses.Text = "---";
+                            MoveUnlocked.Checked = false;
+                            CanUnlock.Checked = false;
+                            MoveInfo.Text = "Click on a move to learn more.";
+                            break;
+                    }
+                    break;
+
+                    case 30: // Niton
+					switch (MoveSelected)
+                    {
+                        case 1:
+                            MoveName.Text = "Whip";
+                            LazyDataFill(false, 10, 9, 8, 0, 0, 0);
+                            MoveSH.Hide();
+                            SHLabel.Hide();
+                            CanUnlock.Checked = true;
+                            MoveInfo.Text = "Starting basic tech.";
+                            break;
+
+                        case 2:
+                            MoveName.Text = "Stab";
+                            LazyDataFill(false, 12, 12, -1, 0, 0, 1);
+                            MoveSH.Hide();
+                            SHLabel.Hide();
+                            CanUnlock.Checked = true;
+                            MoveInfo.Text = "Starting basic tech. Chains into Numbing Stab when used 30x.";
+                            break;
+
+                        case 3:
+                            MoveName.Text = "Numbing Stab";
+                            LazyDataFill(false, 15, 15, -1, 0, 5, 2);
+                            MoveSH.Hide();
+                            SHLabel.Hide();
+                            CanUnlock.Checked = (Mon_MoveUsed[1] >= 30);
+                            MoveInfo.Text = "Basic tech. Chains from 30 Stab.\r\nChains into ElectricStab when used 30x. No stat requirement.";
+                            break;
+
+                        case 4:
+                            MoveName.Text = "ElectricStab";
+                            LazyDataFill(false, 21, 22, -6, 6, 10, 3);
+                            MoveSH.Hide();
+                            SHLabel.Hide();
+                            CanUnlock.Checked = (Mon_MoveUsed[2] >= 30);
+                            MoveInfo.Text = "Basic tech. Chains from 30 Numbing Stab. No stat requirement.";
+                            break;
+
+                        case 5:
+                            MoveName.Text = "Sound Wave";
+                            LazyDataFill(true, 16, 10, 16, 10, 9, 6);
+                            MoveSH.Hide();
+                            SHLabel.Hide();
+                            CanUnlock.Checked = (Mon_Stats[2] + Mon_Stats[3] >= 400);
+                            MoveInfo.Text = "Hit tech. INT + SKI should total over 400 to unlock.\r\nChains into Sound Wave-L when used 50x.";
+                            break;
+
+                        case 6:
+                            MoveName.Text = "Sound Wave-L";
+                            LazyDataFill(true, 24, 16, 14, 12, 15, 7);
+                            MoveSH.Hide();
+                            SHLabel.Hide();
+                            CanUnlock.Checked = (Mon_MoveUsed[6] >= 50);
+                            MoveInfo.Text = "Hit tech. Chains from 50 Sound Wave.\r\nChains into Sound Wave-X when used 50x. No stat requirement.";
+                            break;
+
+                        case 7:
+                            MoveName.Text = "Sound Wave-X";
+                            LazyDataFill(true, 35, 19, 15, 18, 15, 8);
+                            MoveSH.Hide();
+                            SHLabel.Hide();
+                            CanUnlock.Checked = (Mon_MoveUsed[7] >= 50);
+                            MoveInfo.Text = "Special tech. Chains from 50 Sound Wave-L. No stat requirement.";
+                            break;
+
+                        case 8:
+                            MoveName.Text = "Numbing Whip";
+                            LazyDataFill(false, 19, 17, -7, 7, 25, 9);
+                            MoveSH.Hide();
+                            SHLabel.Hide();
+                            CanUnlock.Checked = (Mon_Stats[1] + Mon_Stats[4] >= 400);
+                            MoveInfo.Text = "Sharp tech. POW + SPD should total over 400 to unlock.\r\nChains into ElectricWhip when used 50x.";
+                            break;
+
+                        case 9:
+                            MoveName.Text = "ElectricWhip";
+                            LazyDataFill(false, 28, 23, -10, 13, 29, 10);
+                            MoveSH.Hide();
+                            SHLabel.Hide();
+                            CanUnlock.Checked = (Mon_MoveUsed[9] >= 50);
+                            MoveInfo.Text = "Sharp tech. Chains from 50 Numbing Whip.\r\nChains into MillionWhips when used 50x. No stat requirement.";
+                            break;
+
+                        case 10:
+                            MoveName.Text = "MillionWhips";
+                            LazyDataFill(false, 35, 31, -10, 15, 35, 11);
+                            MoveSH.Hide();
+                            SHLabel.Hide();
+                            CanUnlock.Checked = (Mon_MoveUsed[10] >= 50 && Mon_Nature >= 20);
+                            MoveInfo.Text = "Special tech. Chains from 50 ElectricWhip.\r\nRequires Good (+20) Nature. No stat requirement.";
+                            break;
+
+                        case 11:
+                            MoveName.Text = "Shock";
+                            LazyDataFill(true, 19, 18, -10, 14, 10, 12);
+                            MoveSH.Hide();
+                            SHLabel.Hide();
+                            CanUnlock.Checked = (Mon_Stats[1] + Mon_Stats[2] >= 400);
+                            MoveInfo.Text = "Heavy tech. POW + INT should total over 400 to unlock.\r\nChains into Severe Shock when used 50x.";
+                            break;
+
+                        case 12:
+                            MoveName.Text = "Severe Shock";
+                            LazyDataFill(true, 26, 28, -12, 15, 10, 13);
+                            MoveSH.Hide();
+                            SHLabel.Hide();
+                            CanUnlock.Checked = (Mon_MoveUsed[12] >= 50);
+                            MoveInfo.Text = "Heavy tech. Chains from 50 Shock.\r\nChains into MaximalShock when used 50x. No stat requirement.";
+                            break;
+
+                        case 13:
+                            MoveName.Text = "MaximalShock";
+                            LazyDataFill(true, 35, 38, -12, 19, 10, 14);
+                            MoveSH.Hide();
+                            SHLabel.Hide();
+                            CanUnlock.Checked = (Mon_MoveUsed[13] >= 50 && Mon_Nature >= 20);
+                            MoveInfo.Text = "Special tech. Chains from 50 Severe Shock.\r\nRequires Good (+20) Nature. No stat requirement.";
+                            break;
+
+                        case 14:
+                            MoveName.Text = "Niton Ink";
+                            LazyDataFill(true, 20, 2, 2, 32, 10, 15);
+                            MoveSH.Hide();
+                            SHLabel.Hide();
+                            CanUnlock.Checked = (Mon_Stats[2] >= 250 && Mon_Nature <= -20);
+                            MoveInfo.Text = "Withering tech. INT should be over 250 to unlock. Requires Bad (-20) Nature.";
+                            break;
+
+                        case 15:
+                            MoveName.Text = "Shell Attack";
+                            LazyDataFill(false, 35, 30, 0, 5, 10, 18);
+                            MoveSH.Hide();
+                            SHLabel.Hide();
+                            CanUnlock.Checked = (Mon_Stats[1] + Mon_Stats[5] >= 800);
+                            MoveInfo.Text = "Special tech. POW + DEF should total over 800 to unlock.\r\nChains into Spiked Shell when used 50x.";
+                            break;
+
+                        case 16:
+                            MoveName.Text = "Spiked Shell";
+                            LazyDataFill(false, 40, 35, -2, 5, 20, 19);
+                            MoveSH.Hide();
+                            SHLabel.Hide();
+                            CanUnlock.Checked = (Mon_MoveUsed[18] >= 50);
+                            MoveInfo.Text = "Special tech. Chains from 50 Shell Attack.\r\nChains into ViolentShell when used 50x. No stat requirement.";
+                            break;
+
+                        case 17:
+                            MoveName.Text = "ViolentShell";
+                            LazyDataFill(false, 50, 40, -5, 35, 20, 20);
+                            MoveSH.Hide();
+                            SHLabel.Hide();
+                            CanUnlock.Checked = (Mon_MoveUsed[19] >= 50);
+                            MoveInfo.Text = "Special tech. Chains from 50 Spiked Shell. No stat requirement.";
+                            break;
+
+                        default:
+                            MoveName.Text = "No Move"; MoveName.ForeColor = Color.Black;
+                            MoveGuts.Text = "---";
+                            MoveDamage.Text = "---";
+                            MoveHit.Text = "---";
+                            MoveGD.Text = "---";
+                            MoveSharp.Text = "---";
+                            MoveSH.Hide();
+                            SHLabel.Hide();
+                            MoveUses.Text = "---";
+                            MoveUnlocked.Checked = false;
+                            CanUnlock.Checked = false;
+                            MoveInfo.Text = "Click on a move to learn more.";
+                            break;
+                    }
+                    break;
+
                 case 31: // Mock
                     switch (MoveSelected)
                     {
@@ -5255,6 +8415,191 @@ Chains into Mystic Pot and Miracle Pot when used 50x.";
                             break;
                     }
                     break;
+
+                case 32: // Ducken
+                    switch (MoveSelected)
+                    {
+                        case 1:
+                            MoveName.Text = "Flutter Slap";
+                            LazyDataFill(false, 11, 8, 5, 5, 0, 0);
+                            MoveSH.Hide();
+                            SHLabel.Hide();
+                            CanUnlock.Checked = true;
+                            MoveInfo.Text = "Starting basic tech.";
+                            break;
+
+                        case 2:
+                            MoveName.Text = "Explosion";
+                            LazyDataFill(false, 50, 60, -20, 55, 10, 1);
+                            MoveSH.Text = GenerateStatValue(0, 60);
+                            MoveSH.Show();
+                            SHLabel.Text = "Self-Damage:";
+                            SHLabel.Show();
+                            CanUnlock.Checked = (Mon_Stats[0] + Mon_Stats[1] + Mon_Stats[2] + Mon_Stats[3] + Mon_Stats[4] + Mon_Stats[5] >= 1800 && Mon_Nature <= -20);
+                            MoveInfo.Text = "Special tech. LIF + POW + INT + SKI + SPD + DEF should total over 1800 to unlock.\r\nRequires Bad (-20) Nature. Damages self when used.";
+                            break;
+
+                        case 3:
+                            MoveName.Text = "Beak Thrust";
+                            LazyDataFill(false, 15, 14, 0, 0, 5, 6);
+                            MoveSH.Hide();
+                            SHLabel.Hide();
+                            CanUnlock.Checked = true;
+                            MoveInfo.Text = "Starting basic tech.";
+                            break;
+
+                        case 4:
+                            MoveName.Text = "Ducken Dance";
+                            LazyDataFill(true, 20, 2, 2, 32, 10, 7);
+                            MoveSH.Hide();
+                            SHLabel.Hide();
+                            CanUnlock.Checked = (Mon_Stats[2] >= 250);
+                            MoveInfo.Text = "Withering tech. INT should be over 250 to unlock. Learning priority over Surprise.";
+                            break;
+
+                        case 5:
+                            MoveName.Text = "Surprise";
+                            LazyDataFill(true, 27, 7, -8, 39, 5, 8);
+                            MoveSH.Hide();
+                            SHLabel.Hide();
+                            CanUnlock.Checked = (Mon_Stats[2] >= 450);
+                            MoveInfo.Text = "Withering tech. INT should be over 450 to unlock.";
+                            break;
+
+                        case 6:
+                            MoveName.Text = "Bound Charge";
+                            LazyDataFill(false, 30, 20, 15, 8, 10, 9);
+                            MoveSH.Hide();
+                            SHLabel.Hide();
+                            CanUnlock.Checked = (Mon_MoveUsed[12] >= 50);
+                            MoveInfo.Text = "Hit tech. Chains from 50 Bound.\r\nChains into Bound Stamp when used 50x. No stat requirement.";
+                            break;
+
+                        case 7:
+                            MoveName.Text = "Bound Stamp";
+                            LazyDataFill(false, 39, 31, 6, 8, 10, 10);
+                            MoveSH.Hide();
+                            SHLabel.Hide();
+                            CanUnlock.Checked = (Mon_MoveUsed[9] >= 50);
+                            MoveInfo.Text = "Special tech. Chains from 50 Bound Charge. No stat requirement.";
+                            break;
+
+                        case 8:
+                            MoveName.Text = "Bound";
+                            LazyDataFill(false, 15, 10, 12, 5, 10, 12);
+                            MoveSH.Hide();
+                            SHLabel.Hide();
+                            CanUnlock.Checked = (Mon_Stats[1] + Mon_Stats[3] >= 400);
+                            MoveInfo.Text = "Hit tech. POW + SKI should total over 400 to unlock.\r\nChains into Bound Charge when used 50x.";
+                            break;
+
+                        case 9:
+                            MoveName.Text = "Eye Beam";
+                            LazyDataFill(true, 26, 15, 8, 15, 10, 13);
+                            MoveSH.Hide();
+                            SHLabel.Hide();
+                            CanUnlock.Checked = (Mon_Stats[2] + Mon_Stats[3] >= 650);
+                            MoveInfo.Text = "Hit tech. INT + SKI should total over 650 to unlock.\r\nChains into Beam Shower when used 25x.";
+                            break;
+
+                        case 10:
+                            MoveName.Text = "Beam Shower";
+                            LazyDataFill(true, 35, 20, 15, 18, 10, 14);
+                            MoveSH.Hide();
+                            SHLabel.Hide();
+                            CanUnlock.Checked = (Mon_MoveUsed[13] >= 25);
+                            MoveInfo.Text = "Hit tech. Chains from 25 Eye Beam.\r\nChains into Maximal Beam when used 50x. No stat requirement.";
+                            break;
+
+                        case 11:
+                            MoveName.Text = "Maximal Beam";
+                            LazyDataFill(true, 40, 31, 0, 31, 10, 15);
+                            MoveSH.Hide();
+                            SHLabel.Hide();
+                            CanUnlock.Checked = (Mon_MoveUsed[14] >= 50 && Mon_Nature >= 20);
+                            MoveInfo.Text = "Special tech. Chains from 50 Beam Shower.\r\nRequires Good (+20) Nature. No stat requirement.";
+                            break;
+
+                        case 12:
+                            MoveName.Text = "Bombing";
+                            LazyDataFill(true, 33, 43, -18, 10, 10, 16);
+                            MoveSH.Hide();
+                            SHLabel.Hide();
+                            CanUnlock.Checked = (Mon_Stats[1] + Mon_Stats[2] >= 650);
+                            MoveInfo.Text = "Heavy tech. POW + INT should total over 650 to unlock.";
+                            break;
+
+                        case 13:
+                            MoveName.Text = "Boomerang";
+                            LazyDataFill(true, 28, 19, -3, 11, 26, 17);
+                            MoveSH.Hide();
+                            SHLabel.Hide();
+                            CanUnlock.Checked = (Mon_Stats[2] + Mon_Stats[4] >= 650);
+                            MoveInfo.Text = "Sharp tech. INT + SPD should total over 650 to unlock.";
+                            break;
+
+                        case 14:
+                            MoveName.Text = "Missile";
+                            LazyDataFill(true, 19, 29, -20, 5, 5, 18);
+                            MoveSH.Hide();
+                            SHLabel.Hide();
+                            CanUnlock.Checked = (Mon_Stats[1] + Mon_Stats[2] >= 400);
+                            MoveInfo.Text = "Heavy tech. POW + INT should total over 400 to unlock.\r\nChains into Two Missiles and Big Missile when used 50x. Learning priority over Bombing.";
+                            break;
+
+                        case 15:
+                            MoveName.Text = "Two Missiles";
+                            LazyDataFill(true, 31, 28, -8, 10, 30, 19);
+                            MoveSH.Hide();
+                            SHLabel.Hide();
+                            CanUnlock.Checked = (Mon_MoveUsed[18] >= 50 && Mon_Nature >= 20);
+                            MoveInfo.Text = "Sharp tech. Chains from 50 Missile.\r\nRequires Good (+20) Nature. No stat requirement.";
+                            break;
+
+                        case 16:
+                            MoveName.Text = "Big Missile";
+                            LazyDataFill(true, 39, 55, -22, 19, 5, 20);
+                            MoveSH.Hide();
+                            SHLabel.Hide();
+                            CanUnlock.Checked = (Mon_MoveUsed[18] >= 50 && Mon_Nature <= -20);
+                            MoveInfo.Text = "Heavy tech. Chains from 50 Missile.\r\nRequires Bad (-20) Nature. No stat requirement.";
+                            break;
+
+                        case 17:
+                            MoveName.Text = "Falling Beak";
+                            LazyDataFill(false, 17, 15, -11, 5, 21, 21);
+                            MoveSH.Hide();
+                            SHLabel.Hide();
+                            CanUnlock.Checked = (Mon_Stats[1] + Mon_Stats[4] >= 400);
+                            MoveInfo.Text = "Sharp tech. POW + SPD should total over 400 to unlock.";
+                            break;
+
+                        case 18:
+                            MoveName.Text = "Frantic Beam";
+                            LazyDataFill(true, 45, 25, 2, 25, 25, 22);
+                            MoveSH.Hide();
+                            SHLabel.Hide();
+                            CanUnlock.Checked = (Mon_Stats[2] + Mon_Stats[4] >= 800 && Mon_Nature >= 20);
+                            MoveInfo.Text = "Special tech. INT + SPD should total over 800 to unlock.\r\nRequires Good (+20) Nature.";
+                            break;
+
+                        default:
+                            MoveName.Text = "No Move"; MoveName.ForeColor = Color.Black;
+                            MoveGuts.Text = "---";
+                            MoveDamage.Text = "---";
+                            MoveHit.Text = "---";
+                            MoveGD.Text = "---";
+                            MoveSharp.Text = "---";
+                            MoveSH.Hide();
+                            SHLabel.Hide();
+                            MoveUses.Text = "---";
+                            MoveUnlocked.Checked = false;
+                            CanUnlock.Checked = false;
+                            MoveInfo.Text = "Click on a move to learn more.";
+                            break;
+                    }
+                    break;
+
                 case 33: // Plant
                     switch (MoveSelected)
                     {
@@ -5445,6 +8790,216 @@ Requires Good (+20) Nature.";
                             break;
                     }
                     break;
+
+                case 34: // Monol
+                    switch (MoveSelected)
+                    {
+                        case 1:
+                            MoveName.Text = "Charge";
+                            LazyDataFill(false, 10, 12, 10, 0, 0, 0);
+                            MoveSH.Hide();
+                            SHLabel.Hide();
+                            CanUnlock.Checked = true;
+                            MoveInfo.Text = "Starting basic tech.";
+                            break;
+
+                        case 2:
+                            MoveName.Text = "Needle Stabs";
+                            LazyDataFill(false, 21, 27, -2, 10, 5, 1);
+                            MoveSH.Hide();
+                            SHLabel.Hide();
+                            CanUnlock.Checked = (Mon_Stats[1] >= 250);
+                            MoveInfo.Text = "Heavy tech. POW should be over 250 to unlock.\r\nChains into Spike Stabs when used 50x. Learning priority over Spike Bite.";
+                            break;
+
+                        case 3:
+                            MoveName.Text = "Spike Stabs";
+                            LazyDataFill(false, 27, 34, -4, 11, 8, 2);
+                            MoveSH.Hide();
+                            SHLabel.Hide();
+                            CanUnlock.Checked = (Mon_MoveUsed[1] >= 50);
+                            MoveInfo.Text = "Heavy tech. Chains from 50 Needle Stabs. No stat requirement.";
+                            break;
+
+                        case 4:
+                            MoveName.Text = "Ray";
+                            LazyDataFill(true, 35, 25, 4, 35, 5, 3);
+                            MoveSH.Hide();
+                            SHLabel.Hide();
+                            CanUnlock.Checked = (Mon_Stats[2] >= 600);
+                            MoveInfo.Text = "Special tech. INT should be over 600 to unlock.\r\nChains into Double Rays when used 50x.";
+                            break;
+
+                        case 5:
+                            MoveName.Text = "Double Rays";
+                            LazyDataFill(true, 40, 30, 1, 40, 5, 4);
+                            MoveSH.Hide();
+                            SHLabel.Hide();
+                            CanUnlock.Checked = (Mon_MoveUsed[3] >= 50);
+                            MoveInfo.Text = "Special tech. Chains from 50 Ray.\r\nChains into Triple Rays when used 50x. No stat requirement.";
+                            break;
+
+                        case 6:
+                            MoveName.Text = "Triple Rays";
+                            LazyDataFill(true, 45, 35, 0, 45, 0, 5);
+                            MoveSH.Hide();
+                            SHLabel.Hide();
+                            CanUnlock.Checked = (Mon_MoveUsed[4] >= 50);
+                            MoveInfo.Text = "Special tech. Chains from 50 Double Rays. No stat requirement.";
+                            break;
+
+                        case 7:
+                            MoveName.Text = "Flattening";
+                            LazyDataFill(false, 12, 16, 5, 0, 0, 6);
+                            MoveSH.Hide();
+                            SHLabel.Hide();
+                            CanUnlock.Checked = true;
+                            MoveInfo.Text = "Starting basic tech. Chains into Flattening-L when used 30x.";
+                            break;
+
+                        case 8:
+                            MoveName.Text = "Spike Bite";
+                            LazyDataFill(false, 29, 39, -12, 20, 10, 7);
+                            MoveSH.Hide();
+                            SHLabel.Hide();
+                            CanUnlock.Checked = (Mon_Stats[1] >= 450);
+                            MoveInfo.Text = "Heavy tech. POW should be over 450 to unlock.";
+                            break;
+
+                        case 9:
+                            MoveName.Text = "Scratch";
+                            LazyDataFill(false, 20, 16, -2, 24, 5, 8);
+                            MoveSH.Hide();
+                            SHLabel.Hide();
+                            CanUnlock.Checked = (Mon_Stats[1] + Mon_Stats[2] >= 400);
+                            MoveInfo.Text = "Withering tech. POW + INT should total over 400 to unlock.";
+                            break;
+
+                        case 10:
+                            MoveName.Text = "Knock";
+                            LazyDataFill(false, 35, 35, 10, 10, 5, 9);
+                            MoveSH.Hide();
+                            SHLabel.Hide();
+                            CanUnlock.Checked = (Mon_Stats[1] + Mon_Stats[5] >= 800);
+                            MoveInfo.Text = "Special tech. POW + DEF should total over 800 to unlock.\r\nChains into Two Knocks when used 50x.";
+                            break;
+
+                        case 11:
+                            MoveName.Text = "Two Knocks";
+                            LazyDataFill(false, 45, 40, 15, 15, 5, 10);
+                            MoveSH.Hide();
+                            SHLabel.Hide();
+                            CanUnlock.Checked = (Mon_MoveUsed[9] >= 50);
+                            MoveInfo.Text = "Special tech. Chains from 50 Knock.\r\nChains into Three Knocks when used 50x. No stat requirement.";
+                            break;
+
+                        case 12:
+                            MoveName.Text = "Three Knocks";
+                            LazyDataFill(false, 50, 42, 15, 21, 5, 11);
+                            MoveSH.Hide();
+                            SHLabel.Hide();
+                            CanUnlock.Checked = (Mon_MoveUsed[10] >= 50);
+                            MoveInfo.Text = "Special tech. Chains from 50 Two Knocks. No stat requirement.";
+                            break;
+
+                        case 13:
+                            MoveName.Text = "Flattening-L";
+                            LazyDataFill(false, 15, 19, 5, 5, 0, 12);
+                            MoveSH.Hide();
+                            SHLabel.Hide();
+                            CanUnlock.Checked = (Mon_MoveUsed[6] >= 30);
+                            MoveInfo.Text = "Basic tech. Chains from 30 Flattening.\r\nChains into Flattening-X when used 30x. No stat requirement.";
+                            break;
+
+                        case 14:
+                            MoveName.Text = "Screech";
+                            LazyDataFill(true, 25, 16, 24, 14, 5, 13);
+                            MoveSH.Hide();
+                            SHLabel.Hide();
+                            CanUnlock.Checked = (Mon_Stats[2] + Mon_Stats[3] >= 650);
+                            MoveInfo.Text = "Hit tech. INT + SKI should total over 650 to unlock.";
+                            break;
+
+                        case 15:
+                            MoveName.Text = "StrangeLight";
+                            LazyDataFill(true, 18, 23, -7, 6, 15, 14);
+                            MoveSH.Hide();
+                            SHLabel.Hide();
+                            CanUnlock.Checked = (Mon_Stats[2] + Mon_Stats[4] >= 400);
+                            MoveInfo.Text = "Sharp tech. INT + SPD should total over 400 to unlock.\r\nLearning priority over Beam.";
+                            break;
+
+                        case 16:
+                            MoveName.Text = "Flattening-X";
+                            LazyDataFill(false, 20, 24, 2, 5, 5, 18);
+                            MoveSH.Hide();
+                            SHLabel.Hide();
+                            CanUnlock.Checked = (Mon_MoveUsed[12] >= 30);
+                            MoveInfo.Text = "Basic tech. Chains from 30 Flattening-L. No stat requirement.";
+                            break;
+
+                        case 17:
+                            MoveName.Text = "Sound Wave";
+                            LazyDataFill(true, 17, 15, 18, 5, 5, 19);
+                            MoveSH.Hide();
+                            SHLabel.Hide();
+                            CanUnlock.Checked = (Mon_Stats[2] + Mon_Stats[3] >= 400);
+                            MoveInfo.Text = "Hit tech. INT + SKI should total over 400 to unlock.\r\nLearning priority over Screech.";
+                            break;
+
+                        case 18:
+                            MoveName.Text = "Tentacles";
+                            LazyDataFill(false, 37, 27, 0, 41, 5, 20);
+                            MoveSH.Hide();
+                            SHLabel.Hide();
+                            CanUnlock.Checked = (Mon_Stats[1] + Mon_Stats[2] >= 650 && Mon_Nature <= -20);
+                            MoveInfo.Text = "Withering tech. POW + INT should total over 650 to unlock.\r\nRequires Bad (-20) Nature.";
+                            break;
+
+                        case 19:
+                            MoveName.Text = "Beam";
+                            LazyDataFill(true, 24, 28, -3, 5, 17, 21);
+                            MoveSH.Hide();
+                            SHLabel.Hide();
+                            CanUnlock.Checked = (Mon_Stats[2] + Mon_Stats[4] >= 650);
+                            MoveInfo.Text = "Sharp tech. INT + SPD should total over 650 to unlock.\r\nChains into Double Beams when used 50x.";
+                            break;
+
+                        case 20:
+                            MoveName.Text = "Double Beams";
+                            LazyDataFill(true, 29, 31, -6, 14, 19, 22);
+                            MoveSH.Hide();
+                            SHLabel.Hide();
+                            CanUnlock.Checked = (Mon_MoveUsed[21] >= 50);
+                            MoveInfo.Text = "Sharp tech. Chains from 50 Beam.\r\nChains into Triple Beams when used 50x. No stat requirement.";
+                            break;
+
+                        case 21:
+                            MoveName.Text = "Triple Beams";
+                            LazyDataFill(true, 40, 38, -6, 22, 25, 23);
+                            MoveSH.Hide();
+                            SHLabel.Hide();
+                            CanUnlock.Checked = (Mon_MoveUsed[22] >= 50 && Mon_Nature >= 20);
+                            MoveInfo.Text = "Special tech. Chains from 50 Double Beam.\r\nRequires Good (+20) Nature. No stat requirement.";
+                            break;
+
+                        default:
+                            MoveName.Text = "No Move"; MoveName.ForeColor = Color.Black;
+                            MoveGuts.Text = "---";
+                            MoveDamage.Text = "---";
+                            MoveHit.Text = "---";
+                            MoveGD.Text = "---";
+                            MoveSharp.Text = "---";
+                            MoveSH.Hide();
+                            SHLabel.Hide();
+                            MoveUses.Text = "---";
+                            MoveUnlocked.Checked = false;
+                            CanUnlock.Checked = false;
+                            MoveInfo.Text = "Click on a move to learn more.";
+                            break;
+                    }
+                    break;
+
                 case 35: // Ape
                     switch (MoveSelected)
                     {
