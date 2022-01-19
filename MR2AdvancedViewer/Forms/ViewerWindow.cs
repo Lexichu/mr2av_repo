@@ -5098,7 +5098,7 @@ This replaces the old button, skipping the additional window and saving Lexi a l
             for (int i = 0; i < 20; i++)
             {
                 //ItemList[i] = MR2ReadInt(0x0009923C + (4 * i));
-                ItemList[i] = MR2ReadInt(0x0009A7E4 + (4 * i)); //bedeg
+                ItemList[i] = MR2ReadInt(0x0009A7EC + (4 * i)); //bedeg
             }
         }
 
