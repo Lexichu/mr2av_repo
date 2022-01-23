@@ -171,13 +171,17 @@
             this.StatusBarURL = new System.Windows.Forms.ToolStripStatusLabel();
             this.StatusMessageCycle = new System.Windows.Forms.Timer(this.components);
             this.DumpGrowths = new System.Windows.Forms.Button();
+            this.ChangeName = new System.Windows.Forms.Button();
+            this.SaveName = new System.Windows.Forms.Button();
+            this.CancelName = new System.Windows.Forms.Button();
+            this.label43 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.UpdateRate)).BeginInit();
             this.statusStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
             // MonPlayBox
             // 
-            this.MonPlayBox.Location = new System.Drawing.Point(404, 258);
+            this.MonPlayBox.Location = new System.Drawing.Point(404, 274);
             this.MonPlayBox.Name = "MonPlayBox";
             this.MonPlayBox.ReadOnly = true;
             this.MonPlayBox.RightToLeft = System.Windows.Forms.RightToLeft.No;
@@ -188,7 +192,7 @@
             // Label29
             // 
             this.Label29.AutoSize = true;
-            this.Label29.Location = new System.Drawing.Point(346, 261);
+            this.Label29.Location = new System.Drawing.Point(346, 277);
             this.Label29.Name = "Label29";
             this.Label29.Size = new System.Drawing.Size(57, 13);
             this.Label29.TabIndex = 176;
@@ -196,7 +200,7 @@
             // 
             // MonDislikeItemBox
             // 
-            this.MonDislikeItemBox.Location = new System.Drawing.Point(254, 258);
+            this.MonDislikeItemBox.Location = new System.Drawing.Point(254, 274);
             this.MonDislikeItemBox.Name = "MonDislikeItemBox";
             this.MonDislikeItemBox.ReadOnly = true;
             this.MonDislikeItemBox.RightToLeft = System.Windows.Forms.RightToLeft.No;
@@ -207,7 +211,7 @@
             // Label28
             // 
             this.Label28.AutoSize = true;
-            this.Label28.Location = new System.Drawing.Point(172, 261);
+            this.Label28.Location = new System.Drawing.Point(172, 277);
             this.Label28.Name = "Label28";
             this.Label28.Size = new System.Drawing.Size(81, 13);
             this.Label28.TabIndex = 174;
@@ -215,7 +219,7 @@
             // 
             // MonLikeItemBox
             // 
-            this.MonLikeItemBox.Location = new System.Drawing.Point(80, 258);
+            this.MonLikeItemBox.Location = new System.Drawing.Point(80, 274);
             this.MonLikeItemBox.Name = "MonLikeItemBox";
             this.MonLikeItemBox.ReadOnly = true;
             this.MonLikeItemBox.RightToLeft = System.Windows.Forms.RightToLeft.No;
@@ -226,7 +230,7 @@
             // Label27
             // 
             this.Label27.AutoSize = true;
-            this.Label27.Location = new System.Drawing.Point(10, 261);
+            this.Label27.Location = new System.Drawing.Point(10, 277);
             this.Label27.Name = "Label27";
             this.Label27.Size = new System.Drawing.Size(69, 13);
             this.Label27.TabIndex = 172;
@@ -234,7 +238,7 @@
             // 
             // MR2AVValueUpdate
             // 
-            this.MR2AVValueUpdate.Location = new System.Drawing.Point(539, 406);
+            this.MR2AVValueUpdate.Location = new System.Drawing.Point(539, 422);
             this.MR2AVValueUpdate.Name = "MR2AVValueUpdate";
             this.MR2AVValueUpdate.Size = new System.Drawing.Size(75, 23);
             this.MR2AVValueUpdate.TabIndex = 171;
@@ -244,7 +248,7 @@
             // 
             // MonSpecialsBox
             // 
-            this.MonSpecialsBox.Location = new System.Drawing.Point(90, 285);
+            this.MonSpecialsBox.Location = new System.Drawing.Point(90, 301);
             this.MonSpecialsBox.Name = "MonSpecialsBox";
             this.MonSpecialsBox.ReadOnly = true;
             this.MonSpecialsBox.Size = new System.Drawing.Size(300, 20);
@@ -254,7 +258,7 @@
             // Label26
             // 
             this.Label26.AutoSize = true;
-            this.Label26.Location = new System.Drawing.Point(10, 288);
+            this.Label26.Location = new System.Drawing.Point(10, 304);
             this.Label26.Name = "Label26";
             this.Label26.Size = new System.Drawing.Size(80, 13);
             this.Label26.TabIndex = 169;
@@ -371,7 +375,7 @@
             // Label19
             // 
             this.Label19.AutoSize = true;
-            this.Label19.Location = new System.Drawing.Point(12, 377);
+            this.Label19.Location = new System.Drawing.Point(12, 393);
             this.Label19.Name = "Label19";
             this.Label19.Size = new System.Drawing.Size(120, 13);
             this.Label19.TabIndex = 156;
@@ -380,7 +384,7 @@
             // Label18
             // 
             this.Label18.AutoSize = true;
-            this.Label18.Location = new System.Drawing.Point(397, 394);
+            this.Label18.Location = new System.Drawing.Point(397, 410);
             this.Label18.Name = "Label18";
             this.Label18.Size = new System.Drawing.Size(32, 13);
             this.Label18.TabIndex = 155;
@@ -388,7 +392,7 @@
             // 
             // MonMotiveBox10
             // 
-            this.MonMotiveBox10.Location = new System.Drawing.Point(392, 410);
+            this.MonMotiveBox10.Location = new System.Drawing.Point(392, 426);
             this.MonMotiveBox10.Name = "MonMotiveBox10";
             this.MonMotiveBox10.ReadOnly = true;
             this.MonMotiveBox10.Size = new System.Drawing.Size(40, 20);
@@ -398,7 +402,7 @@
             // Label17
             // 
             this.Label17.AutoSize = true;
-            this.Label17.Location = new System.Drawing.Point(355, 394);
+            this.Label17.Location = new System.Drawing.Point(355, 410);
             this.Label17.Name = "Label17";
             this.Label17.Size = new System.Drawing.Size(31, 13);
             this.Label17.TabIndex = 153;
@@ -406,7 +410,7 @@
             // 
             // MonMotiveBox9
             // 
-            this.MonMotiveBox9.Location = new System.Drawing.Point(350, 410);
+            this.MonMotiveBox9.Location = new System.Drawing.Point(350, 426);
             this.MonMotiveBox9.Name = "MonMotiveBox9";
             this.MonMotiveBox9.ReadOnly = true;
             this.MonMotiveBox9.Size = new System.Drawing.Size(40, 20);
@@ -416,7 +420,7 @@
             // Label16
             // 
             this.Label16.AutoSize = true;
-            this.Label16.Location = new System.Drawing.Point(305, 394);
+            this.Label16.Location = new System.Drawing.Point(305, 410);
             this.Label16.Name = "Label16";
             this.Label16.Size = new System.Drawing.Size(48, 13);
             this.Label16.TabIndex = 151;
@@ -424,7 +428,7 @@
             // 
             // MonMotiveBox8
             // 
-            this.MonMotiveBox8.Location = new System.Drawing.Point(308, 410);
+            this.MonMotiveBox8.Location = new System.Drawing.Point(308, 426);
             this.MonMotiveBox8.Name = "MonMotiveBox8";
             this.MonMotiveBox8.ReadOnly = true;
             this.MonMotiveBox8.Size = new System.Drawing.Size(40, 20);
@@ -434,7 +438,7 @@
             // Label15
             // 
             this.Label15.AutoSize = true;
-            this.Label15.Location = new System.Drawing.Point(274, 394);
+            this.Label15.Location = new System.Drawing.Point(274, 410);
             this.Label15.Name = "Label15";
             this.Label15.Size = new System.Drawing.Size(24, 13);
             this.Label15.TabIndex = 149;
@@ -442,7 +446,7 @@
             // 
             // MonMotiveBox7
             // 
-            this.MonMotiveBox7.Location = new System.Drawing.Point(266, 410);
+            this.MonMotiveBox7.Location = new System.Drawing.Point(266, 426);
             this.MonMotiveBox7.Name = "MonMotiveBox7";
             this.MonMotiveBox7.ReadOnly = true;
             this.MonMotiveBox7.Size = new System.Drawing.Size(40, 20);
@@ -452,7 +456,7 @@
             // Label9
             // 
             this.Label9.AutoSize = true;
-            this.Label9.Location = new System.Drawing.Point(225, 394);
+            this.Label9.Location = new System.Drawing.Point(225, 410);
             this.Label9.Name = "Label9";
             this.Label9.Size = new System.Drawing.Size(41, 13);
             this.Label9.TabIndex = 147;
@@ -461,7 +465,7 @@
             // Label10
             // 
             this.Label10.AutoSize = true;
-            this.Label10.Location = new System.Drawing.Point(183, 394);
+            this.Label10.Location = new System.Drawing.Point(183, 410);
             this.Label10.Name = "Label10";
             this.Label10.Size = new System.Drawing.Size(39, 13);
             this.Label10.TabIndex = 146;
@@ -470,7 +474,7 @@
             // Label11
             // 
             this.Label11.AutoSize = true;
-            this.Label11.Location = new System.Drawing.Point(143, 394);
+            this.Label11.Location = new System.Drawing.Point(143, 410);
             this.Label11.Name = "Label11";
             this.Label11.Size = new System.Drawing.Size(35, 13);
             this.Label11.TabIndex = 145;
@@ -479,7 +483,7 @@
             // Label12
             // 
             this.Label12.AutoSize = true;
-            this.Label12.Location = new System.Drawing.Point(105, 394);
+            this.Label12.Location = new System.Drawing.Point(105, 410);
             this.Label12.Name = "Label12";
             this.Label12.Size = new System.Drawing.Size(27, 13);
             this.Label12.TabIndex = 144;
@@ -488,7 +492,7 @@
             // Label13
             // 
             this.Label13.AutoSize = true;
-            this.Label13.Location = new System.Drawing.Point(59, 394);
+            this.Label13.Location = new System.Drawing.Point(59, 410);
             this.Label13.Name = "Label13";
             this.Label13.Size = new System.Drawing.Size(34, 13);
             this.Label13.TabIndex = 143;
@@ -497,7 +501,7 @@
             // Label14
             // 
             this.Label14.AutoSize = true;
-            this.Label14.Location = new System.Drawing.Point(13, 394);
+            this.Label14.Location = new System.Drawing.Point(13, 410);
             this.Label14.Name = "Label14";
             this.Label14.Size = new System.Drawing.Size(43, 13);
             this.Label14.TabIndex = 142;
@@ -505,7 +509,7 @@
             // 
             // MonMotiveBox6
             // 
-            this.MonMotiveBox6.Location = new System.Drawing.Point(224, 410);
+            this.MonMotiveBox6.Location = new System.Drawing.Point(224, 426);
             this.MonMotiveBox6.Name = "MonMotiveBox6";
             this.MonMotiveBox6.ReadOnly = true;
             this.MonMotiveBox6.Size = new System.Drawing.Size(40, 20);
@@ -514,7 +518,7 @@
             // 
             // MonMotiveBox5
             // 
-            this.MonMotiveBox5.Location = new System.Drawing.Point(182, 410);
+            this.MonMotiveBox5.Location = new System.Drawing.Point(182, 426);
             this.MonMotiveBox5.Name = "MonMotiveBox5";
             this.MonMotiveBox5.ReadOnly = true;
             this.MonMotiveBox5.Size = new System.Drawing.Size(40, 20);
@@ -523,7 +527,7 @@
             // 
             // MonMotiveBox4
             // 
-            this.MonMotiveBox4.Location = new System.Drawing.Point(140, 410);
+            this.MonMotiveBox4.Location = new System.Drawing.Point(140, 426);
             this.MonMotiveBox4.Name = "MonMotiveBox4";
             this.MonMotiveBox4.ReadOnly = true;
             this.MonMotiveBox4.Size = new System.Drawing.Size(40, 20);
@@ -532,7 +536,7 @@
             // 
             // MonMotiveBox3
             // 
-            this.MonMotiveBox3.Location = new System.Drawing.Point(98, 410);
+            this.MonMotiveBox3.Location = new System.Drawing.Point(98, 426);
             this.MonMotiveBox3.Name = "MonMotiveBox3";
             this.MonMotiveBox3.ReadOnly = true;
             this.MonMotiveBox3.Size = new System.Drawing.Size(40, 20);
@@ -541,7 +545,7 @@
             // 
             // MonMotiveBox2
             // 
-            this.MonMotiveBox2.Location = new System.Drawing.Point(56, 410);
+            this.MonMotiveBox2.Location = new System.Drawing.Point(56, 426);
             this.MonMotiveBox2.Name = "MonMotiveBox2";
             this.MonMotiveBox2.ReadOnly = true;
             this.MonMotiveBox2.Size = new System.Drawing.Size(40, 20);
@@ -550,7 +554,7 @@
             // 
             // MonMotiveBox1
             // 
-            this.MonMotiveBox1.Location = new System.Drawing.Point(14, 410);
+            this.MonMotiveBox1.Location = new System.Drawing.Point(14, 426);
             this.MonMotiveBox1.Name = "MonMotiveBox1";
             this.MonMotiveBox1.ReadOnly = true;
             this.MonMotiveBox1.Size = new System.Drawing.Size(40, 20);
@@ -559,7 +563,7 @@
             // 
             // MonLifeTypeBox
             // 
-            this.MonLifeTypeBox.Location = new System.Drawing.Point(303, 334);
+            this.MonLifeTypeBox.Location = new System.Drawing.Point(303, 350);
             this.MonLifeTypeBox.Name = "MonLifeTypeBox";
             this.MonLifeTypeBox.ReadOnly = true;
             this.MonLifeTypeBox.Size = new System.Drawing.Size(100, 20);
@@ -569,7 +573,7 @@
             // Label8
             // 
             this.Label8.AutoSize = true;
-            this.Label8.Location = new System.Drawing.Point(198, 338);
+            this.Label8.Location = new System.Drawing.Point(198, 354);
             this.Label8.Name = "Label8";
             this.Label8.Size = new System.Drawing.Size(105, 13);
             this.Label8.TabIndex = 134;
@@ -577,7 +581,7 @@
             // 
             // MonLifeStageBox
             // 
-            this.MonLifeStageBox.Location = new System.Drawing.Point(109, 334);
+            this.MonLifeStageBox.Location = new System.Drawing.Point(109, 350);
             this.MonLifeStageBox.Name = "MonLifeStageBox";
             this.MonLifeStageBox.ReadOnly = true;
             this.MonLifeStageBox.Size = new System.Drawing.Size(85, 20);
@@ -587,7 +591,7 @@
             // Label7
             // 
             this.Label7.AutoSize = true;
-            this.Label7.Location = new System.Drawing.Point(10, 338);
+            this.Label7.Location = new System.Drawing.Point(10, 354);
             this.Label7.Name = "Label7";
             this.Label7.Size = new System.Drawing.Size(99, 13);
             this.Label7.TabIndex = 132;
@@ -596,7 +600,7 @@
             // MonSilverPeachBox
             // 
             this.MonSilverPeachBox.AutoSize = true;
-            this.MonSilverPeachBox.Location = new System.Drawing.Point(304, 313);
+            this.MonSilverPeachBox.Location = new System.Drawing.Point(304, 329);
             this.MonSilverPeachBox.Name = "MonSilverPeachBox";
             this.MonSilverPeachBox.Size = new System.Drawing.Size(86, 17);
             this.MonSilverPeachBox.TabIndex = 131;
@@ -608,7 +612,7 @@
             // MonGoldPeachBox
             // 
             this.MonGoldPeachBox.AutoSize = true;
-            this.MonGoldPeachBox.Location = new System.Drawing.Point(224, 313);
+            this.MonGoldPeachBox.Location = new System.Drawing.Point(224, 329);
             this.MonGoldPeachBox.Name = "MonGoldPeachBox";
             this.MonGoldPeachBox.Size = new System.Drawing.Size(82, 17);
             this.MonGoldPeachBox.TabIndex = 130;
@@ -619,7 +623,7 @@
             // 
             // MonInitLifespanBox
             // 
-            this.MonInitLifespanBox.Location = new System.Drawing.Point(180, 310);
+            this.MonInitLifespanBox.Location = new System.Drawing.Point(180, 326);
             this.MonInitLifespanBox.Name = "MonInitLifespanBox";
             this.MonInitLifespanBox.ReadOnly = true;
             this.MonInitLifespanBox.Size = new System.Drawing.Size(40, 20);
@@ -629,7 +633,7 @@
             // Label6
             // 
             this.Label6.AutoSize = true;
-            this.Label6.Location = new System.Drawing.Point(104, 313);
+            this.Label6.Location = new System.Drawing.Point(104, 329);
             this.Label6.Name = "Label6";
             this.Label6.Size = new System.Drawing.Size(77, 13);
             this.Label6.TabIndex = 128;
@@ -637,7 +641,7 @@
             // 
             // MonLifespanBox
             // 
-            this.MonLifespanBox.Location = new System.Drawing.Point(60, 310);
+            this.MonLifespanBox.Location = new System.Drawing.Point(60, 326);
             this.MonLifespanBox.Name = "MonLifespanBox";
             this.MonLifespanBox.ReadOnly = true;
             this.MonLifespanBox.Size = new System.Drawing.Size(40, 20);
@@ -647,7 +651,7 @@
             // Label5
             // 
             this.Label5.AutoSize = true;
-            this.Label5.Location = new System.Drawing.Point(10, 313);
+            this.Label5.Location = new System.Drawing.Point(10, 329);
             this.Label5.Name = "Label5";
             this.Label5.Size = new System.Drawing.Size(50, 13);
             this.Label5.TabIndex = 126;
@@ -1032,7 +1036,7 @@
             // MonBanaScumToggle
             // 
             this.MonBanaScumToggle.AutoSize = true;
-            this.MonBanaScumToggle.Location = new System.Drawing.Point(390, 313);
+            this.MonBanaScumToggle.Location = new System.Drawing.Point(390, 329);
             this.MonBanaScumToggle.Name = "MonBanaScumToggle";
             this.MonBanaScumToggle.Size = new System.Drawing.Size(100, 17);
             this.MonBanaScumToggle.TabIndex = 189;
@@ -1169,11 +1173,13 @@
             // MonGivenNameBox
             // 
             this.MonGivenNameBox.Location = new System.Drawing.Point(48, 219);
+            this.MonGivenNameBox.MaxLength = 12;
             this.MonGivenNameBox.Name = "MonGivenNameBox";
             this.MonGivenNameBox.ReadOnly = true;
             this.MonGivenNameBox.Size = new System.Drawing.Size(130, 20);
             this.MonGivenNameBox.TabIndex = 191;
             this.MonGivenNameBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.MonGivenNameBox.TextChanged += new System.EventHandler(this.MonGivenNameBox_TextChanged);
             // 
             // label33
             // 
@@ -1257,6 +1263,7 @@
             this.MoneyBox.TabIndex = 199;
             this.MoneyBox.Text = "0G";
             this.MoneyBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.MoneyBox.TextChanged += new System.EventHandler(this.MoneyBox_TextChanged);
             // 
             // label34
             // 
@@ -1315,7 +1322,7 @@
             // label30
             // 
             this.label30.AutoSize = true;
-            this.label30.Location = new System.Drawing.Point(408, 338);
+            this.label30.Location = new System.Drawing.Point(408, 354);
             this.label30.Name = "label30";
             this.label30.Size = new System.Drawing.Size(79, 13);
             this.label30.TabIndex = 208;
@@ -1324,7 +1331,7 @@
             // MonDrugsLabel
             // 
             this.MonDrugsLabel.AutoSize = true;
-            this.MonDrugsLabel.Location = new System.Drawing.Point(488, 338);
+            this.MonDrugsLabel.Location = new System.Drawing.Point(488, 354);
             this.MonDrugsLabel.Name = "MonDrugsLabel";
             this.MonDrugsLabel.Size = new System.Drawing.Size(16, 13);
             this.MonDrugsLabel.TabIndex = 209;
@@ -1333,7 +1340,7 @@
             // MonDrugsWeeks
             // 
             this.MonDrugsWeeks.AutoSize = true;
-            this.MonDrugsWeeks.Location = new System.Drawing.Point(510, 338);
+            this.MonDrugsWeeks.Location = new System.Drawing.Point(510, 354);
             this.MonDrugsWeeks.Name = "MonDrugsWeeks";
             this.MonDrugsWeeks.Size = new System.Drawing.Size(13, 13);
             this.MonDrugsWeeks.TabIndex = 210;
@@ -1347,7 +1354,7 @@
             // EXFeaturesChkBox
             // 
             this.EXFeaturesChkBox.AutoSize = true;
-            this.EXFeaturesChkBox.Location = new System.Drawing.Point(438, 411);
+            this.EXFeaturesChkBox.Location = new System.Drawing.Point(438, 427);
             this.EXFeaturesChkBox.Name = "EXFeaturesChkBox";
             this.EXFeaturesChkBox.Size = new System.Drawing.Size(94, 17);
             this.EXFeaturesChkBox.TabIndex = 211;
@@ -1358,7 +1365,7 @@
             // LIWButton
             // 
             this.LIWButton.Enabled = false;
-            this.LIWButton.Location = new System.Drawing.Point(630, 406);
+            this.LIWButton.Location = new System.Drawing.Point(630, 422);
             this.LIWButton.Name = "LIWButton";
             this.LIWButton.Size = new System.Drawing.Size(90, 23);
             this.LIWButton.TabIndex = 212;
@@ -1369,7 +1376,7 @@
             // MVButton
             // 
             this.MVButton.Enabled = false;
-            this.MVButton.Location = new System.Drawing.Point(630, 380);
+            this.MVButton.Location = new System.Drawing.Point(630, 396);
             this.MVButton.Name = "MVButton";
             this.MVButton.Size = new System.Drawing.Size(90, 23);
             this.MVButton.TabIndex = 213;
@@ -1380,7 +1387,7 @@
             // IVButton
             // 
             this.IVButton.Enabled = false;
-            this.IVButton.Location = new System.Drawing.Point(630, 354);
+            this.IVButton.Location = new System.Drawing.Point(630, 370);
             this.IVButton.Name = "IVButton";
             this.IVButton.Size = new System.Drawing.Size(90, 23);
             this.IVButton.TabIndex = 214;
@@ -1411,7 +1418,7 @@
             // TWButton
             // 
             this.TWButton.Enabled = false;
-            this.TWButton.Location = new System.Drawing.Point(630, 328);
+            this.TWButton.Location = new System.Drawing.Point(630, 344);
             this.TWButton.Name = "TWButton";
             this.TWButton.Size = new System.Drawing.Size(90, 23);
             this.TWButton.TabIndex = 217;
@@ -1442,7 +1449,7 @@
             // ItemViewButton
             // 
             this.ItemViewButton.Enabled = false;
-            this.ItemViewButton.Location = new System.Drawing.Point(630, 302);
+            this.ItemViewButton.Location = new System.Drawing.Point(630, 318);
             this.ItemViewButton.Name = "ItemViewButton";
             this.ItemViewButton.Size = new System.Drawing.Size(90, 23);
             this.ItemViewButton.TabIndex = 224;
@@ -1477,7 +1484,7 @@
             // MRDebugButton
             // 
             this.MRDebugButton.Enabled = false;
-            this.MRDebugButton.Location = new System.Drawing.Point(630, 276);
+            this.MRDebugButton.Location = new System.Drawing.Point(630, 292);
             this.MRDebugButton.Name = "MRDebugButton";
             this.MRDebugButton.Size = new System.Drawing.Size(90, 23);
             this.MRDebugButton.TabIndex = 227;
@@ -1490,7 +1497,7 @@
             this.statusStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.StatusBarMSG,
             this.StatusBarURL});
-            this.statusStrip1.Location = new System.Drawing.Point(0, 439);
+            this.statusStrip1.Location = new System.Drawing.Point(0, 458);
             this.statusStrip1.Name = "statusStrip1";
             this.statusStrip1.Size = new System.Drawing.Size(724, 22);
             this.statusStrip1.SizingGrip = false;
@@ -1523,7 +1530,7 @@
             // 
             // DumpGrowths
             // 
-            this.DumpGrowths.Location = new System.Drawing.Point(630, 250);
+            this.DumpGrowths.Location = new System.Drawing.Point(630, 266);
             this.DumpGrowths.Name = "DumpGrowths";
             this.DumpGrowths.Size = new System.Drawing.Size(90, 23);
             this.DumpGrowths.TabIndex = 229;
@@ -1531,11 +1538,56 @@
             this.DumpGrowths.UseVisualStyleBackColor = true;
             this.DumpGrowths.Click += new System.EventHandler(this.DumpGrowths_Click);
             // 
+            // ChangeName
+            // 
+            this.ChangeName.Location = new System.Drawing.Point(69, 245);
+            this.ChangeName.Name = "ChangeName";
+            this.ChangeName.Size = new System.Drawing.Size(86, 23);
+            this.ChangeName.TabIndex = 230;
+            this.ChangeName.Text = "Change Name";
+            this.ChangeName.UseVisualStyleBackColor = true;
+            this.ChangeName.Visible = false;
+            this.ChangeName.Click += new System.EventHandler(this.ChangeName_Click);
+            // 
+            // SaveName
+            // 
+            this.SaveName.Location = new System.Drawing.Point(162, 245);
+            this.SaveName.Name = "SaveName";
+            this.SaveName.Size = new System.Drawing.Size(86, 23);
+            this.SaveName.TabIndex = 231;
+            this.SaveName.Text = "Save Change";
+            this.SaveName.UseVisualStyleBackColor = true;
+            this.SaveName.Visible = false;
+            this.SaveName.Click += new System.EventHandler(this.SaveName_Click);
+            // 
+            // CancelName
+            // 
+            this.CancelName.Location = new System.Drawing.Point(255, 245);
+            this.CancelName.Name = "CancelName";
+            this.CancelName.Size = new System.Drawing.Size(86, 23);
+            this.CancelName.TabIndex = 232;
+            this.CancelName.Text = "Cancel";
+            this.CancelName.UseVisualStyleBackColor = true;
+            this.CancelName.Visible = false;
+            this.CancelName.Click += new System.EventHandler(this.CancelName_Click);
+            // 
+            // label43
+            // 
+            this.label43.AutoSize = true;
+            this.label43.Location = new System.Drawing.Point(539, 142);
+            this.label43.Name = "label43";
+            this.label43.Size = new System.Drawing.Size(0, 13);
+            this.label43.TabIndex = 233;
+            // 
             // ViewerWindow
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(724, 461);
+            this.ClientSize = new System.Drawing.Size(724, 480);
+            this.Controls.Add(this.label43);
+            this.Controls.Add(this.CancelName);
+            this.Controls.Add(this.SaveName);
+            this.Controls.Add(this.ChangeName);
             this.Controls.Add(this.DumpGrowths);
             this.Controls.Add(this.statusStrip1);
             this.Controls.Add(this.MRDebugButton);
@@ -1828,6 +1880,10 @@
         private System.Windows.Forms.ToolStripStatusLabel StatusBarMSG;
         private System.Windows.Forms.ToolStripStatusLabel StatusBarURL;
         private System.Windows.Forms.Button DumpGrowths;
+        private System.Windows.Forms.Button ChangeName;
+        private System.Windows.Forms.Button SaveName;
+        private System.Windows.Forms.Button CancelName;
+        private System.Windows.Forms.Label label43;
     }
 }
 

@@ -19,7 +19,7 @@ namespace MR2AdvancedViewer.Properties {
     // class via a tool like ResGen or Visual Studio.
     // To add or remove a member, edit your .ResX file then rerun ResGen
     // with the /str option, or rebuild your VS project.
-    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "15.0.0.0")]
+    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "16.0.0.0")]
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
     internal class Resources {
@@ -1256,16 +1256,6 @@ namespace MR2AdvancedViewer.Properties {
         internal static System.Drawing.Bitmap Color_9 {
             get {
                 object obj = ResourceManager.GetObject("Color_9", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap cursor {
-            get {
-                object obj = ResourceManager.GetObject("cursor", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -2966,6 +2956,26 @@ namespace MR2AdvancedViewer.Properties {
         internal static System.Drawing.Bitmap Henge_9 {
             get {
                 object obj = ResourceManager.GetObject("Henge_9", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap hilight {
+            get {
+                object obj = ResourceManager.GetObject("hilight", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap hilightgif {
+            get {
+                object obj = ResourceManager.GetObject("hilightgif", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -5264,6 +5274,26 @@ namespace MR2AdvancedViewer.Properties {
         internal static System.Drawing.Bitmap Plant_9 {
             get {
                 object obj = ResourceManager.GetObject("Plant_9", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap skillchecked {
+            get {
+                object obj = ResourceManager.GetObject("skillchecked", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap skillget {
+            get {
+                object obj = ResourceManager.GetObject("skillget", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

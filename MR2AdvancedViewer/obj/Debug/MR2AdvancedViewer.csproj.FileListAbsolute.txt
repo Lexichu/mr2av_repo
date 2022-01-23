@@ -65,3 +65,72 @@ D:\w\mr2av\MR2AdvancedViewer\bin\Debug\Memory.xml
 D:\w\mr2av\MR2AdvancedViewer\obj\Debug\MR2AdvancedViewer.exe.manifest
 D:\w\mr2av\MR2AdvancedViewer\obj\Debug\MR2AdvancedViewer.application
 D:\w\mr2av\MR2AdvancedViewer\obj\Debug\MR2AdvancedViewer.csproj.CopyComplete
+D:\modding\MR2AV code\mr2av_repo-7c16ad923acf8266e173059f8173d0a76e9f0fb6\MR2AdvancedViewer\bin\Debug\MR2AdvancedViewer.exe.config
+D:\modding\MR2AV code\mr2av_repo-7c16ad923acf8266e173059f8173d0a76e9f0fb6\MR2AdvancedViewer\bin\Debug\MR2AdvancedViewer.exe.manifest
+D:\modding\MR2AV code\mr2av_repo-7c16ad923acf8266e173059f8173d0a76e9f0fb6\MR2AdvancedViewer\bin\Debug\MR2AdvancedViewer.application
+D:\modding\MR2AV code\mr2av_repo-7c16ad923acf8266e173059f8173d0a76e9f0fb6\MR2AdvancedViewer\bin\Debug\MR2AdvancedViewer.exe
+D:\modding\MR2AV code\mr2av_repo-7c16ad923acf8266e173059f8173d0a76e9f0fb6\MR2AdvancedViewer\bin\Debug\MR2AdvancedViewer.pdb
+D:\modding\MR2AV code\mr2av_repo-7c16ad923acf8266e173059f8173d0a76e9f0fb6\MR2AdvancedViewer\bin\Debug\Memory.dll
+D:\modding\MR2AV code\mr2av_repo-7c16ad923acf8266e173059f8173d0a76e9f0fb6\MR2AdvancedViewer\bin\Debug\Memory.xml
+D:\modding\MR2AV code\mr2av_repo-7c16ad923acf8266e173059f8173d0a76e9f0fb6\MR2AdvancedViewer\obj\Debug\MR2AdvancedViewer.csproj.AssemblyReference.cache
+D:\modding\MR2AV code\mr2av_repo-7c16ad923acf8266e173059f8173d0a76e9f0fb6\MR2AdvancedViewer\obj\Debug\MR2AdvancedViewer.Forms.ItemLister.resources
+D:\modding\MR2AV code\mr2av_repo-7c16ad923acf8266e173059f8173d0a76e9f0fb6\MR2AdvancedViewer\obj\Debug\MR2AdvancedViewer.Forms.MRDebug.resources
+D:\modding\MR2AV code\mr2av_repo-7c16ad923acf8266e173059f8173d0a76e9f0fb6\MR2AdvancedViewer\obj\Debug\MR2AdvancedViewer.TrainingWindow.resources
+D:\modding\MR2AV code\mr2av_repo-7c16ad923acf8266e173059f8173d0a76e9f0fb6\MR2AdvancedViewer\obj\Debug\MR2AdvancedViewer.ViewerWindow.resources
+D:\modding\MR2AV code\mr2av_repo-7c16ad923acf8266e173059f8173d0a76e9f0fb6\MR2AdvancedViewer\obj\Debug\MR2AdvancedViewer.MonLifeIndexWindow.resources
+D:\modding\MR2AV code\mr2av_repo-7c16ad923acf8266e173059f8173d0a76e9f0fb6\MR2AdvancedViewer\obj\Debug\MR2AdvancedViewer.MonMoveWindow.resources
+D:\modding\MR2AV code\mr2av_repo-7c16ad923acf8266e173059f8173d0a76e9f0fb6\MR2AdvancedViewer\obj\Debug\MR2AdvancedViewer.MR2ControllerView.resources
+D:\modding\MR2AV code\mr2av_repo-7c16ad923acf8266e173059f8173d0a76e9f0fb6\MR2AdvancedViewer\obj\Debug\MR2AdvancedViewer.Properties.Resources.resources
+D:\modding\MR2AV code\mr2av_repo-7c16ad923acf8266e173059f8173d0a76e9f0fb6\MR2AdvancedViewer\obj\Debug\MR2AdvancedViewer.csproj.GenerateResource.cache
+D:\modding\MR2AV code\mr2av_repo-7c16ad923acf8266e173059f8173d0a76e9f0fb6\MR2AdvancedViewer\obj\Debug\MR2AdvancedViewer.csproj.CoreCompileInputs.cache
+D:\modding\MR2AV code\mr2av_repo-7c16ad923acf8266e173059f8173d0a76e9f0fb6\MR2AdvancedViewer\obj\Debug\MR2AdvancedViewer.exe.manifest
+D:\modding\MR2AV code\mr2av_repo-7c16ad923acf8266e173059f8173d0a76e9f0fb6\MR2AdvancedViewer\obj\Debug\MR2AdvancedViewer.application
+D:\modding\MR2AV code\mr2av_repo-7c16ad923acf8266e173059f8173d0a76e9f0fb6\MR2AdvancedViewer\obj\Debug\MR2AdvancedViewer.csproj.CopyComplete
+D:\modding\MR2AV code\mr2av_repo-7c16ad923acf8266e173059f8173d0a76e9f0fb6\MR2AdvancedViewer\obj\Debug\MR2AdvancedViewer.exe
+D:\modding\MR2AV code\mr2av_repo-7c16ad923acf8266e173059f8173d0a76e9f0fb6\MR2AdvancedViewer\obj\Debug\MR2AdvancedViewer.pdb
+D:\modding\MR2AV code\Main MR2AV\mr2av_repo-7c16ad923acf8266e173059f8173d0a76e9f0fb6\MR2AdvancedViewer\bin\Debug\MR2AdvancedViewer.exe.config
+D:\modding\MR2AV code\Main MR2AV\mr2av_repo-7c16ad923acf8266e173059f8173d0a76e9f0fb6\MR2AdvancedViewer\bin\Debug\MR2AdvancedViewer.exe.manifest
+D:\modding\MR2AV code\Main MR2AV\mr2av_repo-7c16ad923acf8266e173059f8173d0a76e9f0fb6\MR2AdvancedViewer\bin\Debug\MR2AdvancedViewer.application
+D:\modding\MR2AV code\Main MR2AV\mr2av_repo-7c16ad923acf8266e173059f8173d0a76e9f0fb6\MR2AdvancedViewer\bin\Debug\MR2AdvancedViewer.exe
+D:\modding\MR2AV code\Main MR2AV\mr2av_repo-7c16ad923acf8266e173059f8173d0a76e9f0fb6\MR2AdvancedViewer\bin\Debug\MR2AdvancedViewer.pdb
+D:\modding\MR2AV code\Main MR2AV\mr2av_repo-7c16ad923acf8266e173059f8173d0a76e9f0fb6\MR2AdvancedViewer\bin\Debug\Memory.dll
+D:\modding\MR2AV code\Main MR2AV\mr2av_repo-7c16ad923acf8266e173059f8173d0a76e9f0fb6\MR2AdvancedViewer\bin\Debug\Memory.xml
+D:\modding\MR2AV code\Main MR2AV\mr2av_repo-7c16ad923acf8266e173059f8173d0a76e9f0fb6\MR2AdvancedViewer\obj\Debug\MR2AdvancedViewer.csproj.AssemblyReference.cache
+D:\modding\MR2AV code\Main MR2AV\mr2av_repo-7c16ad923acf8266e173059f8173d0a76e9f0fb6\MR2AdvancedViewer\obj\Debug\MR2AdvancedViewer.Forms.ItemLister.resources
+D:\modding\MR2AV code\Main MR2AV\mr2av_repo-7c16ad923acf8266e173059f8173d0a76e9f0fb6\MR2AdvancedViewer\obj\Debug\MR2AdvancedViewer.Forms.MRDebug.resources
+D:\modding\MR2AV code\Main MR2AV\mr2av_repo-7c16ad923acf8266e173059f8173d0a76e9f0fb6\MR2AdvancedViewer\obj\Debug\MR2AdvancedViewer.TrainingWindow.resources
+D:\modding\MR2AV code\Main MR2AV\mr2av_repo-7c16ad923acf8266e173059f8173d0a76e9f0fb6\MR2AdvancedViewer\obj\Debug\MR2AdvancedViewer.ViewerWindow.resources
+D:\modding\MR2AV code\Main MR2AV\mr2av_repo-7c16ad923acf8266e173059f8173d0a76e9f0fb6\MR2AdvancedViewer\obj\Debug\MR2AdvancedViewer.MonLifeIndexWindow.resources
+D:\modding\MR2AV code\Main MR2AV\mr2av_repo-7c16ad923acf8266e173059f8173d0a76e9f0fb6\MR2AdvancedViewer\obj\Debug\MR2AdvancedViewer.MonMoveWindow.resources
+D:\modding\MR2AV code\Main MR2AV\mr2av_repo-7c16ad923acf8266e173059f8173d0a76e9f0fb6\MR2AdvancedViewer\obj\Debug\MR2AdvancedViewer.MR2ControllerView.resources
+D:\modding\MR2AV code\Main MR2AV\mr2av_repo-7c16ad923acf8266e173059f8173d0a76e9f0fb6\MR2AdvancedViewer\obj\Debug\MR2AdvancedViewer.Properties.Resources.resources
+D:\modding\MR2AV code\Main MR2AV\mr2av_repo-7c16ad923acf8266e173059f8173d0a76e9f0fb6\MR2AdvancedViewer\obj\Debug\MR2AdvancedViewer.csproj.GenerateResource.cache
+D:\modding\MR2AV code\Main MR2AV\mr2av_repo-7c16ad923acf8266e173059f8173d0a76e9f0fb6\MR2AdvancedViewer\obj\Debug\MR2AdvancedViewer.csproj.CoreCompileInputs.cache
+D:\modding\MR2AV code\Main MR2AV\mr2av_repo-7c16ad923acf8266e173059f8173d0a76e9f0fb6\MR2AdvancedViewer\obj\Debug\MR2AdvancedViewer.exe.manifest
+D:\modding\MR2AV code\Main MR2AV\mr2av_repo-7c16ad923acf8266e173059f8173d0a76e9f0fb6\MR2AdvancedViewer\obj\Debug\MR2AdvancedViewer.application
+D:\modding\MR2AV code\Main MR2AV\mr2av_repo-7c16ad923acf8266e173059f8173d0a76e9f0fb6\MR2AdvancedViewer\obj\Debug\MR2AdvancedViewer.csproj.CopyComplete
+D:\modding\MR2AV code\Main MR2AV\mr2av_repo-7c16ad923acf8266e173059f8173d0a76e9f0fb6\MR2AdvancedViewer\obj\Debug\MR2AdvancedViewer.exe
+D:\modding\MR2AV code\Main MR2AV\mr2av_repo-7c16ad923acf8266e173059f8173d0a76e9f0fb6\MR2AdvancedViewer\obj\Debug\MR2AdvancedViewer.pdb
+D:\modding\MR2AV code\MRA2AV 1.00\mr2av_repo-7c16ad923acf8266e173059f8173d0a76e9f0fb6\MR2AdvancedViewer\bin\Debug\MR2AdvancedViewer.exe.config
+D:\modding\MR2AV code\MRA2AV 1.00\mr2av_repo-7c16ad923acf8266e173059f8173d0a76e9f0fb6\MR2AdvancedViewer\bin\Debug\MR2AdvancedViewer.exe.manifest
+D:\modding\MR2AV code\MRA2AV 1.00\mr2av_repo-7c16ad923acf8266e173059f8173d0a76e9f0fb6\MR2AdvancedViewer\bin\Debug\MR2AdvancedViewer.application
+D:\modding\MR2AV code\MRA2AV 1.00\mr2av_repo-7c16ad923acf8266e173059f8173d0a76e9f0fb6\MR2AdvancedViewer\bin\Debug\MR2AdvancedViewer.exe
+D:\modding\MR2AV code\MRA2AV 1.00\mr2av_repo-7c16ad923acf8266e173059f8173d0a76e9f0fb6\MR2AdvancedViewer\bin\Debug\MR2AdvancedViewer.pdb
+D:\modding\MR2AV code\MRA2AV 1.00\mr2av_repo-7c16ad923acf8266e173059f8173d0a76e9f0fb6\MR2AdvancedViewer\bin\Debug\Memory.dll
+D:\modding\MR2AV code\MRA2AV 1.00\mr2av_repo-7c16ad923acf8266e173059f8173d0a76e9f0fb6\MR2AdvancedViewer\bin\Debug\Memory.xml
+D:\modding\MR2AV code\MRA2AV 1.00\mr2av_repo-7c16ad923acf8266e173059f8173d0a76e9f0fb6\MR2AdvancedViewer\obj\Debug\MR2AdvancedViewer.csproj.AssemblyReference.cache
+D:\modding\MR2AV code\MRA2AV 1.00\mr2av_repo-7c16ad923acf8266e173059f8173d0a76e9f0fb6\MR2AdvancedViewer\obj\Debug\MR2AdvancedViewer.Forms.ItemLister.resources
+D:\modding\MR2AV code\MRA2AV 1.00\mr2av_repo-7c16ad923acf8266e173059f8173d0a76e9f0fb6\MR2AdvancedViewer\obj\Debug\MR2AdvancedViewer.Forms.MRDebug.resources
+D:\modding\MR2AV code\MRA2AV 1.00\mr2av_repo-7c16ad923acf8266e173059f8173d0a76e9f0fb6\MR2AdvancedViewer\obj\Debug\MR2AdvancedViewer.TrainingWindow.resources
+D:\modding\MR2AV code\MRA2AV 1.00\mr2av_repo-7c16ad923acf8266e173059f8173d0a76e9f0fb6\MR2AdvancedViewer\obj\Debug\MR2AdvancedViewer.ViewerWindow.resources
+D:\modding\MR2AV code\MRA2AV 1.00\mr2av_repo-7c16ad923acf8266e173059f8173d0a76e9f0fb6\MR2AdvancedViewer\obj\Debug\MR2AdvancedViewer.MonLifeIndexWindow.resources
+D:\modding\MR2AV code\MRA2AV 1.00\mr2av_repo-7c16ad923acf8266e173059f8173d0a76e9f0fb6\MR2AdvancedViewer\obj\Debug\MR2AdvancedViewer.MonMoveWindow.resources
+D:\modding\MR2AV code\MRA2AV 1.00\mr2av_repo-7c16ad923acf8266e173059f8173d0a76e9f0fb6\MR2AdvancedViewer\obj\Debug\MR2AdvancedViewer.MR2ControllerView.resources
+D:\modding\MR2AV code\MRA2AV 1.00\mr2av_repo-7c16ad923acf8266e173059f8173d0a76e9f0fb6\MR2AdvancedViewer\obj\Debug\MR2AdvancedViewer.Properties.Resources.resources
+D:\modding\MR2AV code\MRA2AV 1.00\mr2av_repo-7c16ad923acf8266e173059f8173d0a76e9f0fb6\MR2AdvancedViewer\obj\Debug\MR2AdvancedViewer.csproj.GenerateResource.cache
+D:\modding\MR2AV code\MRA2AV 1.00\mr2av_repo-7c16ad923acf8266e173059f8173d0a76e9f0fb6\MR2AdvancedViewer\obj\Debug\MR2AdvancedViewer.csproj.CoreCompileInputs.cache
+D:\modding\MR2AV code\MRA2AV 1.00\mr2av_repo-7c16ad923acf8266e173059f8173d0a76e9f0fb6\MR2AdvancedViewer\obj\Debug\MR2AdvancedViewer.exe.manifest
+D:\modding\MR2AV code\MRA2AV 1.00\mr2av_repo-7c16ad923acf8266e173059f8173d0a76e9f0fb6\MR2AdvancedViewer\obj\Debug\MR2AdvancedViewer.application
+D:\modding\MR2AV code\MRA2AV 1.00\mr2av_repo-7c16ad923acf8266e173059f8173d0a76e9f0fb6\MR2AdvancedViewer\obj\Debug\MR2AdvancedViewer.csproj.CopyComplete
+D:\modding\MR2AV code\MRA2AV 1.00\mr2av_repo-7c16ad923acf8266e173059f8173d0a76e9f0fb6\MR2AdvancedViewer\obj\Debug\MR2AdvancedViewer.exe
+D:\modding\MR2AV code\MRA2AV 1.00\mr2av_repo-7c16ad923acf8266e173059f8173d0a76e9f0fb6\MR2AdvancedViewer\obj\Debug\MR2AdvancedViewer.pdb

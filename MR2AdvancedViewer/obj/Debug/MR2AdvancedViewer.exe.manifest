@@ -55,14 +55,14 @@
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="MR2AdvancedViewer.exe" size="2456064">
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="MR2AdvancedViewer.exe" size="2794496">
       <assemblyIdentity name="MR2AdvancedViewer" version="1.0.0.0" language="neutral" processorArchitecture="msil" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>I2tYScgpK6CbBMVllYhsu4WnuUmXalk8j/qRmMzd6Vw=</dsig:DigestValue>
+        <dsig:DigestValue>S5Fer8xWS8wdAUEKEX6RrfzBU1VM8Tsm75wSb453dxQ=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
@@ -4089,13 +4089,13 @@
       <dsig:DigestValue>DbnanS9P4qzFyyEKGKwPqvrB3DoYTBQ1XtnHsjrrPMc=</dsig:DigestValue>
     </hash>
   </file>
-  <file name="MR2AdvancedViewer.exe.config" size="186">
+  <file name="MR2AdvancedViewer.exe.config" size="180">
     <hash>
       <dsig:Transforms>
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
       </dsig:Transforms>
       <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-      <dsig:DigestValue>eSEJjkfolEEv39DK/g+IzGhJd0CZjqwXxowAEpBp2AM=</dsig:DigestValue>
+      <dsig:DigestValue>obFMKcgS5/TieIZmcz9JzK9LKsSlZ0EO2uNQGC3B6yg=</dsig:DigestValue>
     </hash>
   </file>
   <file name="mr2viewericon_EOf_icon.ico" size="90022">
@@ -4762,6 +4762,15 @@
       </dsig:Transforms>
       <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
       <dsig:DigestValue>5ePBvDoyBh2Bhe2hRskqQayZ8njJ22aOUqelYLYIhq0=</dsig:DigestValue>
+    </hash>
+  </file>
+  <file name="Resources\Image1.png" size="9757">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+      <dsig:DigestValue>uRuiGS7og4Uhno9eXt5VfEZkpnGFpuf36kxUam5cu1Y=</dsig:DigestValue>
     </hash>
   </file>
   <file name="Suezo_MoveIcons\Suezo_1.png" size="558">
