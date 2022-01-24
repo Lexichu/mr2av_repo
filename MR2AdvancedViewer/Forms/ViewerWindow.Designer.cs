@@ -1727,7 +1727,8 @@
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.Name = "ViewerWindow";
-            this.Text = "MR2 Advanced Viewer v0.621";
+            this.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.Text = "MR2 Advanced Viewer v0.7";
             this.Load += new System.EventHandler(this.ViewerWindow_Load);
             ((System.ComponentModel.ISupportInitialize)(this.UpdateRate)).EndInit();
             this.statusStrip1.ResumeLayout(false);

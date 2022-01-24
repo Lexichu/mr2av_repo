@@ -14,7 +14,7 @@ Currently, Monster Rancher 2 Advanced Viewer (MR2AV) supports:
 ----- Special Thanks to:
 - Jack of Hearts/JD; for asking me to make this in the first place, knocking on for four years ago!
 - Fad; for showing me how to set up a GitHub page, and making the Name Viewer section work with MR2DX!
-- anon #1; for fixing the Move Viewer to work with every monster, as well as adding a Name Edit feature!
+- anon; for fixing the Move Viewer to work with every monster, as well as adding a Name Edit feature!
 - You; for actually reading this!
 
 
@@ -136,19 +136,19 @@ You will also require the latest .net Framework, or at least version 4.7.2. Down
 ---- Setting this below 2 ticks/second will disable banana chimes. They start acting glitchy if the ticks are too slow.
 
 -- v0.7 (formerly 0.621 provisional)
-- E numbers have been removed from this update!
 - Thanks to SmilingFaces96, I was able to make the effective Nature value work as it is shown in-game.
 -- Thanks to this, the Battle Specials wiil now show whether a monster has Power or Anger (or neither) as its active nature special.
+- Also thanks to SmilingFaces96 for requesting it, there is also a debugger that lets you view 4 locations in memory of your choosing. Get you that (up to) 16 bytes of voyeurism!
 - Fixed attachment error with ePSXe 2.0.5 after migrating from Memory.dll.
 - AV can now read information from external text files! Once this is implemented fully, feel free to translate the texts.
 - The "Hard Mode" switch has been replaced with a combo-box with four options. This is currently visual only.
 -- Yes, I plan to add support for Monster Farm 2 in future.
 - Someone has hopefully realised that this numbering scheme is entirely arbitrary.
-- Also thanks to SmilingFaces96 for requesting it, there is also a debugger that lets you view 4 locations in memory of your choosing. Get you that (up to) 16 bytes of voyeurism!
 - Item Viewer now reads item information from a text file. Saving me hundreds of lines of writing, and you... pretty much nothing.
 - Support for MR2DX! (but only the latest Steam release; pls support MR if you can, even if KTG are smelly xoxo)
 - Move Viewer is finally complete!
 - Several fixes for previously unworking 0.621 provisional content, such as the Errantry Sale tickbox and the Shop Sale counter.
+- E numbers have been removed from this update!
 
 ----------------
 -- Mostly Useless Features:
@@ -167,7 +167,8 @@ You will also require the latest .net Framework, or at least version 4.7.2. Down
 - /??? monsters (except Moo, slate exclusives, and DNA Capsule monsters) have no stat checking to see if they're non-standard growth stats.
 -- They also have no checks for Guts Rate aside from Moo, Ghost and Phoenix.
 - Hard Mode generated monsters may be considered non-standard. This will be patched in due time.
-- MR2DX special spawns may also be considered non-standard.
+-- MR2DX special spawns may also be considered non-standard.
 - The mode switcher for MR2AV currently does nothing. Please leave it on MR2 Vanilla. c:
 - Attaching MR2AV may load incorrect data from NO$PSX, if the emulator has been opened more than once.
 -- In this case: Manually detatch MR2AV, open Task Manager, and close any extra copies of NO$PSX that are running in the background.
+- 

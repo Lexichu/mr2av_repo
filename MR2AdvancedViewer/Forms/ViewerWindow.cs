@@ -5,6 +5,9 @@ using Microsoft.Win32;
 using System.Diagnostics;
 using System.Runtime.InteropServices;
 using MR2AdvancedViewer.Forms;
+using Octokit;
+using System.Collections.Generic;
+using System.Threading.Tasks;
 
 namespace MR2AdvancedViewer
 {
@@ -18,6 +21,8 @@ namespace MR2AdvancedViewer
 
         // Some crap to do with reading memory IDK LOL I just wrote this.
         const int PROCESS_ALLACCESS = 0x1F0FFF;
+        const int DXSelectionID = 4;
+        const string VersionID = "0.7.0.0";
         [DllImport("kernel32.dll")]
         public static extern IntPtr OpenProcess(int dwDesiredAccess, bool bInheritHandle, int dwProcessId);
         [DllImport("kernel32.dll")]
@@ -34,7 +39,7 @@ namespace MR2AdvancedViewer
         public byte[] nameToWrite = new byte[24]; //bedeg
 
         // Loaded Memory
-        private int I_Exist_To_Suffer = 4; // This variable is cursed. It always returns 0 even when assigned a value...
+        private readonly int I_Exist_To_Suffer = 4; // This variable is cursed. It always returns 0 even when assigned a value...
         private int MonGR_LIF = -1;
         private int MonGR_Power = -1;
         private int MonGR_Intelligence = -1;
@@ -122,6 +127,46 @@ namespace MR2AdvancedViewer
         public bool bChangingName = false; //bedeg
         public string prevName; //bedeg
 
+        private async Task CheckGitHubNewerVersion()
+        {
+            //Get all releases from GitHub
+            //Source: https://octokitnet.readthedocs.io/en/latest/getting-started/
+            GitHubClient client = new GitHubClient(new ProductHeaderValue("mr2av_repo"));
+            IReadOnlyList<Release> releases = await client.Repository.Release.GetAll("Lexichu", "mr2av_repo");
+
+            //Setup the versions
+            Version latestGitHubVersion = new Version(releases[0].TagName);
+            Version localVersion = new Version(VersionID); //Replace this with your local version.
+
+            //Compare the Versions
+            //Source: https://stackoverflow.com/questions/7568147/compare-version-numbers-without-using-split-function
+            int versionComparison = localVersion.CompareTo(latestGitHubVersion);
+            if (versionComparison < 0) 
+            {
+                DialogResult result = MessageBox.Show(@"You are currently on an outdated build of MR2AV.
+
+Please visit https://github.com/Lexichu/mr2av_repo/releases/ to download the latest release!
+(clicking OK will close MR2AV and visit the GitHub)", "MR2AV Version Notice", MessageBoxButtons.OKCancel, MessageBoxIcon.Error); ;
+                if (result == DialogResult.OK)
+                {
+                    Process.Start("https://github.com/Lexichu/mr2av_repo/releases/");
+                    this.Close();
+                }
+                else
+                {
+                }
+            }
+            else if (versionComparison > 0)
+            {
+                MessageBox.Show(@"You are currently on a prerelease build of MR2AV! 
+
+Who do you think you are, Lexichu_?", "MR2AV Version Notice", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+            }
+            else
+            {
+            }
+        }
+
         public string MonGRAlphabetise(int gValue, TextBox BoxID)
         {
             switch (gValue)
@@ -136,6 +181,7 @@ namespace MR2AdvancedViewer
                 case 7: BoxID.BackColor = Color.HotPink; return "S3";
                 case 8: BoxID.BackColor = Color.HotPink; return "S4";
                 case 9: BoxID.BackColor = Color.HotPink; return "S5";
+                case 10: BoxID.BackColor = Color.HotPink; return "F";
                 default: BoxID.BackColor = SystemColors.Control; return "---";
             }
         }
@@ -202,7 +248,10 @@ namespace MR2AdvancedViewer
             if (MonGenus_Main == 5 && MonGenus_Sub == 15) // Slated Henger/Gali revived
             {
                 MonGutsRateBox.BackColor = SystemColors.Control;
-                return "「プロト」の力わからないwww!";
+                if (EmuVer == DXSelectionID)
+                    return "Protomessiah";
+                else
+                    return "「プロト」の力わからないwww!";
             }
             if (PossibleCocoon() && MonWormGenus() != "Undefined Monster")
                 return MonWormGenus();
@@ -4577,7 +4626,7 @@ namespace MR2AdvancedViewer
         {
             int PlayerMoney;
             Array.Clear(ScratchData, 0, 4);
-            if (EmuVer != 4)
+            if (EmuVer != DXSelectionID)
                 ReadProcessMemory(psxPTR, PSXBase + 0x00098FBC, ScratchData, 4, ref HasRead);
             else
             {
@@ -4592,7 +4641,7 @@ namespace MR2AdvancedViewer
             string MonGivenName = "";
             int CharaID;
 
-            if (EmuVer == 4)
+            if (EmuVer == DXSelectionID)
             {
                 for (int i = 0; i < 24; i++)                                                                                                            //24 bytes long //bedeg
                 {
@@ -4763,7 +4812,7 @@ namespace MR2AdvancedViewer
 
         private string MonReadBattleSpecials()
         {
-            if (EmuVer != 4) // If this is PS1 emulation
+            if (EmuVer != DXSelectionID) // If this is PS1 emulation
                 ReadProcessMemory(psxPTR, PSXBase + 0x00097BD8, ScratchData, 2, ref HasRead);
             else // If this is MR2DX
                 ReadProcessMemory(psxPTR, PSXBase + 0x00097BE0, ScratchData, 2, ref HasRead);
@@ -4986,7 +5035,7 @@ namespace MR2AdvancedViewer
             Array.Clear(nameToWrite, 0, 24); //bedeg
             EmuVer = -1;
 
-            Text = "MR2 Advanced Viewer v0.621";
+            Text = "MR2 Advanced Viewer v0.7";
             if (LIW != null)
             {
                 LIW.Close();
@@ -5019,7 +5068,8 @@ namespace MR2AdvancedViewer
             }
         }
 
-        private void ViewerWindow_Load(object sender, EventArgs e)
+        //private void ViewerWindow_Load(object sender, EventArgs e)
+        private async void ViewerWindow_Load(object sender, EventArgs e)
         {
             int FrameID = (int)Registry.GetValue(@"HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\NET Framework Setup\NDP\v4\Full", "Release", null);
             if (FrameID < 461808) // 4.7.2 (Win 10 update)
@@ -5032,6 +5082,7 @@ namespace MR2AdvancedViewer
 
             bShowingExtras = true;
             CycleFeatureDisplay();
+            await CheckGitHubNewerVersion();
 
             ScumTip.SetToolTip(EXFeaturesChkBox, @"Show/Hide the extra features of MR2AV.
 This replaces the old button, skipping the additional window and saving Lexi a lot of code headache.");
@@ -5116,7 +5167,7 @@ This replaces the old button, skipping the additional window and saving Lexi a l
                     psxPTR = OpenProcess(PROCESS_ALLACCESS, false, PSXProcess.Id);
                     PSBase = (int)PSXProcess.MainModule.BaseAddress;
                     EmuAttachButton.Text = "Detach";
-                    Text = " MR2 Advanced Viewer v0.621 - Attached to " + EmuSelectBox.Text;
+                    Text = " MR2 Advanced Viewer v0.7 - Attached to " + EmuSelectBox.Text;
                     EmuSelectBox.Enabled = false;
                     UnfreezeTicks = 4;
 
@@ -5185,12 +5236,8 @@ This replaces the old button, skipping the additional window and saving Lexi a l
             }
             LIWButton.Enabled = bViewingMR2;
             TWButton.Enabled = bViewingMR2;
-//           IVButton.Enabled = bViewingMR2;
-            if(EmuVer == 4)
-                //MVButton.Enabled = false; //bedeg
-                MVButton.Enabled = bViewingMR2;
-            else
-                MVButton.Enabled = bViewingMR2;
+//          IVButton.Enabled = bViewingMR2;
+            MVButton.Enabled = bViewingMR2;
             MRDebugButton.Enabled = bViewingMR2;
             ItemViewButton.Enabled = bViewingMR2;
         }
@@ -5302,7 +5349,7 @@ As a precaution, MR2AV has stopped reading from the emulator. To continue, press
                     if (Process.GetProcessesByName(EmuFileName).Length <= 0)
                         KillAttach();
 
-                    if(EmuVer == 4) // MR2DX changed locations
+                    if(EmuVer == DXSelectionID) // MR2DX changed locations
                     {
                         // All -8 as of 1.0.0.1
                         Mon_Age = MR2ReadDouble(0x00097A0C);
@@ -5345,7 +5392,7 @@ As a precaution, MR2AV has stopped reading from the emulator. To continue, press
                         Mon_MotivLea = MR2ReadInt(0x00097AF0);
                         Mon_MotivSwi = MR2ReadInt(0x00097AF1);
                         Mon_PlayType = MR2ReadInt(0x00097AF5);
-                        Mon_Drug = MR2ReadInt(0x00097B02);  // 97B78 ??
+                        Mon_Drug = MR2ReadInt(0x00097B02);
                         Mon_DrugDuration = MR2ReadInt(0x00097B04);
                         Mon_ItemUsed = MR2ReadBool(0x00097B06);
                         MonItem_Like = MR2ReadInt(0x00097B12);
@@ -5359,8 +5406,8 @@ As a precaution, MR2AV has stopped reading from the emulator. To continue, press
                         Mon_GutsRate = MR2ReadInt(0x00097BDF);
 
                         // I have no idea where these are stored.
-                        Game_NextSale = MR2ReadInt(0x000992DE);
-                        Game_ErrantryCD = MR2ReadInt(0x000992E9);
+                        Game_NextSale = MR2ReadInt(0x0009A88E);
+                        Game_ErrantryCD = MR2ReadInt(0x0009A899);
                     }
                     else
                     {
@@ -5712,7 +5759,6 @@ Each increase also decreases SPD and DEF by 10%.
                         if (MonDesireNames(ItemList[i]) == "Magic Banana")
                             BananaCount++;
                     }
-                    //MonFameBox.Invoke((MethodInvoker)delegate { MonFameBox.Text = BananaCount.ToString() + " " + OldBananaCount; });
                     if (BananaTicks > 0)
                     {
                         BananaTicks--;

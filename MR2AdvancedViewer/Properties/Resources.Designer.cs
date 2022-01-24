@@ -2973,9 +2973,9 @@ namespace MR2AdvancedViewer.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap hilightgif {
+        internal static System.Drawing.Bitmap hilight1 {
             get {
-                object obj = ResourceManager.GetObject("hilightgif", resourceCulture);
+                object obj = ResourceManager.GetObject("hilight1", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -3106,6 +3106,16 @@ namespace MR2AdvancedViewer.Properties {
         internal static System.Drawing.Bitmap Hoppe_9 {
             get {
                 object obj = ResourceManager.GetObject("Hoppe_9", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Image1 {
+            get {
+                object obj = ResourceManager.GetObject("Image1", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

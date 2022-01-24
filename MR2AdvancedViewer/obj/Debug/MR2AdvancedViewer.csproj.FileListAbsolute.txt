@@ -70,8 +70,6 @@ G:\Git_MR2AV\MR2AdvancedViewer\bin\Debug\MR2AdvancedViewer.exe.manifest
 G:\Git_MR2AV\MR2AdvancedViewer\bin\Debug\MR2AdvancedViewer.application
 G:\Git_MR2AV\MR2AdvancedViewer\bin\Debug\MR2AdvancedViewer.exe
 G:\Git_MR2AV\MR2AdvancedViewer\bin\Debug\MR2AdvancedViewer.pdb
-G:\Git_MR2AV\MR2AdvancedViewer\bin\Debug\Memory.xml
-G:\Git_MR2AV\MR2AdvancedViewer\obj\Debug\MR2AdvancedViewer.csproj.AssemblyReference.cache
 G:\Git_MR2AV\MR2AdvancedViewer\obj\Debug\MR2AdvancedViewer.Forms.ItemLister.resources
 G:\Git_MR2AV\MR2AdvancedViewer\obj\Debug\MR2AdvancedViewer.Forms.MRDebug.resources
 G:\Git_MR2AV\MR2AdvancedViewer\obj\Debug\MR2AdvancedViewer.TrainingWindow.resources
@@ -84,6 +82,9 @@ G:\Git_MR2AV\MR2AdvancedViewer\obj\Debug\MR2AdvancedViewer.csproj.GenerateResour
 G:\Git_MR2AV\MR2AdvancedViewer\obj\Debug\MR2AdvancedViewer.csproj.CoreCompileInputs.cache
 G:\Git_MR2AV\MR2AdvancedViewer\obj\Debug\MR2AdvancedViewer.exe.manifest
 G:\Git_MR2AV\MR2AdvancedViewer\obj\Debug\MR2AdvancedViewer.application
-G:\Git_MR2AV\MR2AdvancedViewer\obj\Debug\MR2AdvancedViewer.csproj.CopyComplete
 G:\Git_MR2AV\MR2AdvancedViewer\obj\Debug\MR2AdvancedViewer.exe
 G:\Git_MR2AV\MR2AdvancedViewer\obj\Debug\MR2AdvancedViewer.pdb
+G:\Git_MR2AV\MR2AdvancedViewer\obj\Debug\MR2AdvancedViewer.csproj.AssemblyReference.cache
+G:\Git_MR2AV\MR2AdvancedViewer\bin\Debug\Octokit.dll
+G:\Git_MR2AV\MR2AdvancedViewer\bin\Debug\Octokit.xml
+G:\Git_MR2AV\MR2AdvancedViewer\obj\Debug\MR2AdvancedViewer.csproj.CopyComplete
