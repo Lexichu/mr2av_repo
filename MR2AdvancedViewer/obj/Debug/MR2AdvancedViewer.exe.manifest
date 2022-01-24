@@ -62,7 +62,7 @@
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>I2tYScgpK6CbBMVllYhsu4WnuUmXalk8j/qRmMzd6Vw=</dsig:DigestValue>
+        <dsig:DigestValue>ym1s7RoukKBF3y4PHKlXLrTri9mfb3Ew2rrRjQJ2FG4=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
@@ -1488,103 +1488,103 @@
       <dsig:DigestValue>e70HO3RqJYcr10jc5Tfd7Zrip6R5TBaPJiTKhzhhsKE=</dsig:DigestValue>
     </hash>
   </file>
-  <file name="Durah_MoveIcons\Durah_1.png" size="621">
+  <file name="Durah_MoveIcons\Durah_1.png" size="580">
     <hash>
       <dsig:Transforms>
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
       </dsig:Transforms>
       <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-      <dsig:DigestValue>EZPjwAaKOexMdf6oXAZiNHLbqABIx1+YPWwJiMG6uEs=</dsig:DigestValue>
+      <dsig:DigestValue>AqFXqCrGDWWVtBz1w+YVy9TldZ4V8LfkGwz07mGJL+0=</dsig:DigestValue>
     </hash>
   </file>
-  <file name="Durah_MoveIcons\Durah_10.png" size="2000">
+  <file name="Durah_MoveIcons\Durah_10.png" size="555">
     <hash>
       <dsig:Transforms>
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
       </dsig:Transforms>
       <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-      <dsig:DigestValue>aHlSDtR9dXc5grZHpMBlSxYamDdq5Tg/urVCHjqtHcY=</dsig:DigestValue>
+      <dsig:DigestValue>NCaALQE2cAF3LWNrjBMXRjliw/rbMav3nLHmXBkbPYQ=</dsig:DigestValue>
     </hash>
   </file>
-  <file name="Durah_MoveIcons\Durah_11.png" size="1989">
+  <file name="Durah_MoveIcons\Durah_11.png" size="553">
     <hash>
       <dsig:Transforms>
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
       </dsig:Transforms>
       <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-      <dsig:DigestValue>gfANrgPy80Q22W/zS/kspC6iQvNo4AXf25ZEoyL62Ao=</dsig:DigestValue>
+      <dsig:DigestValue>LHC4ZPVOsnVHVkOGkP5+QiU5vTQDOD3OB63TbNNVEJY=</dsig:DigestValue>
     </hash>
   </file>
-  <file name="Durah_MoveIcons\Durah_12.png" size="1477">
+  <file name="Durah_MoveIcons\Durah_12.png" size="454">
     <hash>
       <dsig:Transforms>
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
       </dsig:Transforms>
       <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-      <dsig:DigestValue>1V6zleTEKJSM65lv24A+jYFcZccdddMWSrJYFXOmk7w=</dsig:DigestValue>
+      <dsig:DigestValue>potKifGHbHHQ/cGBoe63ukHl9ZGKhEgyIij3hZ9k2aM=</dsig:DigestValue>
     </hash>
   </file>
-  <file name="Durah_MoveIcons\Durah_13.png" size="1699">
+  <file name="Durah_MoveIcons\Durah_13.png" size="518">
     <hash>
       <dsig:Transforms>
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
       </dsig:Transforms>
       <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-      <dsig:DigestValue>jW9N6JwWNjnOc2EEe2Xye54FPgMcRpOA+GRopgDdWRM=</dsig:DigestValue>
+      <dsig:DigestValue>zJ6n+wsTy0MPWWm5D+4riTyqcM7xX5CbNDcFMmKkBp8=</dsig:DigestValue>
     </hash>
   </file>
-  <file name="Durah_MoveIcons\Durah_14.png" size="1832">
+  <file name="Durah_MoveIcons\Durah_14.png" size="534">
     <hash>
       <dsig:Transforms>
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
       </dsig:Transforms>
       <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-      <dsig:DigestValue>2plhgyO/g1zGNN8U76FPuiLNcJPPIiE2VSTIV4ftQEE=</dsig:DigestValue>
+      <dsig:DigestValue>+VYycKme/kQB3kinta59qP28Kc3+K/BT3D5209rg0SA=</dsig:DigestValue>
     </hash>
   </file>
-  <file name="Durah_MoveIcons\Durah_15.png" size="1933">
+  <file name="Durah_MoveIcons\Durah_15.png" size="569">
     <hash>
       <dsig:Transforms>
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
       </dsig:Transforms>
       <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-      <dsig:DigestValue>ONLTWwhAQTdWMk56AKkMbM6HIAp/B3hSir887y1yHBU=</dsig:DigestValue>
+      <dsig:DigestValue>sDvUuy98n1oVf5Pfo8qJ2FaOLD7FdkjOh+aJcYQ3KSU=</dsig:DigestValue>
     </hash>
   </file>
-  <file name="Durah_MoveIcons\Durah_16.png" size="1931">
+  <file name="Durah_MoveIcons\Durah_16.png" size="579">
     <hash>
       <dsig:Transforms>
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
       </dsig:Transforms>
       <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-      <dsig:DigestValue>KuzLDTfL9NaPVON0+bd4j/5b7fSN++P2PNm/zcz/RLk=</dsig:DigestValue>
+      <dsig:DigestValue>zsU3/+2XrPhSlQH/+oIbeStm1YtUDjoFH+mHGnlmaHQ=</dsig:DigestValue>
     </hash>
   </file>
-  <file name="Durah_MoveIcons\Durah_17.png" size="1858">
+  <file name="Durah_MoveIcons\Durah_17.png" size="554">
     <hash>
       <dsig:Transforms>
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
       </dsig:Transforms>
       <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-      <dsig:DigestValue>pz2mBtRecovvYoiKeubo1GHIcbPs2hHONYLiEel9mSY=</dsig:DigestValue>
+      <dsig:DigestValue>qvEUC3jDd6WcK8JOeOGUyzhWRLu2olgJipiu55hHMEI=</dsig:DigestValue>
     </hash>
   </file>
-  <file name="Durah_MoveIcons\Durah_18.png" size="1812">
+  <file name="Durah_MoveIcons\Durah_18.png" size="564">
     <hash>
       <dsig:Transforms>
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
       </dsig:Transforms>
       <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-      <dsig:DigestValue>vpA4Nw4ouhMzTPIOUrtBRM9mRwBXb5LLbr8Yyka/U90=</dsig:DigestValue>
+      <dsig:DigestValue>R1j3j//8AWay9V/BJMujUtmzbfQTeN9+xMLp4kiKjks=</dsig:DigestValue>
     </hash>
   </file>
-  <file name="Durah_MoveIcons\Durah_19.png" size="2029">
+  <file name="Durah_MoveIcons\Durah_19.png" size="489">
     <hash>
       <dsig:Transforms>
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
       </dsig:Transforms>
       <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-      <dsig:DigestValue>1y3MkdctCjDe8XA6bw5Mtc+bLjq1niaj3djylYjMNFk=</dsig:DigestValue>
+      <dsig:DigestValue>Iie3DI/Dp2TbNuiCWiJiVugQ/jbARYb3nfb8uOdwuFA=</dsig:DigestValue>
     </hash>
   </file>
   <file name="Durah_MoveIcons\Durah_2.png" size="602">
@@ -1596,31 +1596,31 @@
       <dsig:DigestValue>Flol8PKSkGnj34/PalfYm1GsA5v3krlAxQFbJtfmW94=</dsig:DigestValue>
     </hash>
   </file>
-  <file name="Durah_MoveIcons\Durah_20.png" size="2116">
+  <file name="Durah_MoveIcons\Durah_20.png" size="581">
     <hash>
       <dsig:Transforms>
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
       </dsig:Transforms>
       <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-      <dsig:DigestValue>dEyp9ctD42qvNMXQHvqrVm9FZwR6lAAC8+FpCAYye08=</dsig:DigestValue>
+      <dsig:DigestValue>c+qM2WZbvuH2fVsEQ4VD65cAOQ8mikREjPdISf9i8FI=</dsig:DigestValue>
     </hash>
   </file>
-  <file name="Durah_MoveIcons\Durah_21.png" size="2111">
+  <file name="Durah_MoveIcons\Durah_21.png" size="672">
     <hash>
       <dsig:Transforms>
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
       </dsig:Transforms>
       <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-      <dsig:DigestValue>xam0ZVlEUpMVXh14xD3JwY/BSRhq07EZFfgspuFRqTU=</dsig:DigestValue>
+      <dsig:DigestValue>u8PUpds1JdHxSVt50xf+Y6ju/NUewCAEMUFraKrts9E=</dsig:DigestValue>
     </hash>
   </file>
-  <file name="Durah_MoveIcons\Durah_22.png" size="1942">
+  <file name="Durah_MoveIcons\Durah_22.png" size="599">
     <hash>
       <dsig:Transforms>
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
       </dsig:Transforms>
       <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-      <dsig:DigestValue>oWqaSSjnGahwj7viVqsskifOEjHCjZtqDU/OKMJp414=</dsig:DigestValue>
+      <dsig:DigestValue>ZKbOmvEVdmWqhgzkfbGppIdkXk2laDK4lNKn6hjBG5Y=</dsig:DigestValue>
     </hash>
   </file>
   <file name="Durah_MoveIcons\Durah_3.png" size="594">
@@ -1668,373 +1668,373 @@
       <dsig:DigestValue>L2klhrfMKpautZd9xE1Kb/rcqsiipD75xQldusI455M=</dsig:DigestValue>
     </hash>
   </file>
-  <file name="Durah_MoveIcons\Durah_8.png" size="2083">
+  <file name="Durah_MoveIcons\Durah_8.png" size="608">
     <hash>
       <dsig:Transforms>
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
       </dsig:Transforms>
       <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-      <dsig:DigestValue>1FVnIRmA3F9Obizm7bfpQQ79Q95sxZAwOoffPOsUrdU=</dsig:DigestValue>
+      <dsig:DigestValue>qC9HLZXzVrKOhtYlev9NS7Rk0ohBSkmLR2wl8RdNwhw=</dsig:DigestValue>
     </hash>
   </file>
-  <file name="Durah_MoveIcons\Durah_9.png" size="1904">
+  <file name="Durah_MoveIcons\Durah_9.png" size="570">
     <hash>
       <dsig:Transforms>
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
       </dsig:Transforms>
       <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-      <dsig:DigestValue>ISG+6Dr++gDuPYwcCVG0DhybnwBZmeYTruGHKsqFoIs=</dsig:DigestValue>
+      <dsig:DigestValue>a896YDlbWBNGUBl+6HAsdcZSw160Oe7riBSXOH7qj3A=</dsig:DigestValue>
     </hash>
   </file>
-  <file name="Gaboo_MoveIcons\Gaboo_1.png" size="1977">
+  <file name="Gaboo_MoveIcons\Gaboo_1.png" size="632">
     <hash>
       <dsig:Transforms>
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
       </dsig:Transforms>
       <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-      <dsig:DigestValue>8CpJ9iNiJke60gzSvxkl8Tvl/4uFQwt7imxnb9ABJY0=</dsig:DigestValue>
+      <dsig:DigestValue>L3RA1ORLzV5j907H5NAReWL3A5PFGwZORh+tXC89uxg=</dsig:DigestValue>
     </hash>
   </file>
-  <file name="Gaboo_MoveIcons\Gaboo_10.png" size="1886">
+  <file name="Gaboo_MoveIcons\Gaboo_10.png" size="536">
     <hash>
       <dsig:Transforms>
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
       </dsig:Transforms>
       <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-      <dsig:DigestValue>FLz+YRH6uh6GPu1QUrzN0N9bd5ARItsTA97K7tf1rXQ=</dsig:DigestValue>
+      <dsig:DigestValue>3nP3tfzybCuUgYgXXJ9bCZfAxESzWS6Ld0kIgI7aZQk=</dsig:DigestValue>
     </hash>
   </file>
-  <file name="Gaboo_MoveIcons\Gaboo_11.png" size="1792">
+  <file name="Gaboo_MoveIcons\Gaboo_11.png" size="567">
     <hash>
       <dsig:Transforms>
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
       </dsig:Transforms>
       <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-      <dsig:DigestValue>fNnNiUj+E2AOMvlnRFaqEt9gdac0FNHFCsSpjIcNETw=</dsig:DigestValue>
+      <dsig:DigestValue>j2BGVPqEN2vXFPn5fy4EM/aiWFeIyJ1hl43HG0vh3yU=</dsig:DigestValue>
     </hash>
   </file>
-  <file name="Gaboo_MoveIcons\Gaboo_12.png" size="1655">
+  <file name="Gaboo_MoveIcons\Gaboo_12.png" size="470">
     <hash>
       <dsig:Transforms>
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
       </dsig:Transforms>
       <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-      <dsig:DigestValue>k8w86PBYlktr3hmWcDNNXko/OMp+VXcMg5pif9XI97w=</dsig:DigestValue>
+      <dsig:DigestValue>X7kmrIpmNhDQ2311gDqvmqGGvKgloE0hAdJ+EHX0E4A=</dsig:DigestValue>
     </hash>
   </file>
-  <file name="Gaboo_MoveIcons\Gaboo_13.png" size="1917">
+  <file name="Gaboo_MoveIcons\Gaboo_13.png" size="718">
     <hash>
       <dsig:Transforms>
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
       </dsig:Transforms>
       <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-      <dsig:DigestValue>cnK/+F6tkxwUi7Vvrx/T/kQ0kHRWyqBYZkW5Q5QNqCY=</dsig:DigestValue>
+      <dsig:DigestValue>LL7HBgfb7Lddb1eqw0ASWke3AkaoHw0lvnM+0JZfzUs=</dsig:DigestValue>
     </hash>
   </file>
-  <file name="Gaboo_MoveIcons\Gaboo_14.png" size="2086">
+  <file name="Gaboo_MoveIcons\Gaboo_14.png" size="610">
     <hash>
       <dsig:Transforms>
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
       </dsig:Transforms>
       <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-      <dsig:DigestValue>faybjqZJQvOVsQe9I5A8H/GJtdO0En8scnWMxGiUFgw=</dsig:DigestValue>
+      <dsig:DigestValue>l2SaN2N7pGDRTRu4HemjqPeF9fF11tV+qmNHDLWciv4=</dsig:DigestValue>
     </hash>
   </file>
-  <file name="Gaboo_MoveIcons\Gaboo_15.png" size="1843">
+  <file name="Gaboo_MoveIcons\Gaboo_15.png" size="553">
     <hash>
       <dsig:Transforms>
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
       </dsig:Transforms>
       <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-      <dsig:DigestValue>89BPup0Y4izA7XNiOY0AW4SzwrGIA38TF4A1czqk95M=</dsig:DigestValue>
+      <dsig:DigestValue>dxoBiyDMxKahyNp3Xz28GDvJBJ7xcj0JtsoGF2IgNfc=</dsig:DigestValue>
     </hash>
   </file>
-  <file name="Gaboo_MoveIcons\Gaboo_16.png" size="2066">
+  <file name="Gaboo_MoveIcons\Gaboo_16.png" size="584">
     <hash>
       <dsig:Transforms>
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
       </dsig:Transforms>
       <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-      <dsig:DigestValue>2bvXcsDnkCYZXTH2Rq6bdACdjSYHJp5fmkHdEyw5T6o=</dsig:DigestValue>
+      <dsig:DigestValue>kjKS/BZVXc/fxZj/aZ4f45VML/P8LDIXlsbchsn/nSw=</dsig:DigestValue>
     </hash>
   </file>
-  <file name="Gaboo_MoveIcons\Gaboo_17.png" size="1898">
+  <file name="Gaboo_MoveIcons\Gaboo_17.png" size="547">
     <hash>
       <dsig:Transforms>
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
       </dsig:Transforms>
       <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-      <dsig:DigestValue>aCv8Lg7hUNHYbwHvr9smKqImaEDS4i8M/ASjl/Ub05M=</dsig:DigestValue>
+      <dsig:DigestValue>bvf+Iuybbtqs7hQeJ9bqq68r+ulOSWFaf1RZJ6obYjk=</dsig:DigestValue>
     </hash>
   </file>
-  <file name="Gaboo_MoveIcons\Gaboo_2.png" size="2276">
+  <file name="Gaboo_MoveIcons\Gaboo_2.png" size="630">
     <hash>
       <dsig:Transforms>
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
       </dsig:Transforms>
       <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-      <dsig:DigestValue>e4Sksg3IWLB7+zhcCGwIqx/gH8v1Rz2obbv3YJj/Csg=</dsig:DigestValue>
+      <dsig:DigestValue>qhdnC+k/eSUEq1So8w8nXMgoNlkuj9VPhidZEdqp5r4=</dsig:DigestValue>
     </hash>
   </file>
-  <file name="Gaboo_MoveIcons\Gaboo_3.png" size="1722">
+  <file name="Gaboo_MoveIcons\Gaboo_3.png" size="504">
     <hash>
       <dsig:Transforms>
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
       </dsig:Transforms>
       <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-      <dsig:DigestValue>/5WpR0JRhv2dSlOjL76vDoun9csXXzVFBZshlyVRH30=</dsig:DigestValue>
+      <dsig:DigestValue>ndkzhMIQOtI+USB6CNfgV/WuPVJAr62rmBWg/gSEAs4=</dsig:DigestValue>
     </hash>
   </file>
-  <file name="Gaboo_MoveIcons\Gaboo_4.png" size="2002">
+  <file name="Gaboo_MoveIcons\Gaboo_4.png" size="541">
     <hash>
       <dsig:Transforms>
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
       </dsig:Transforms>
       <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-      <dsig:DigestValue>0cLiNE8FPRL3utfzztK6t/Ii0K7keb3HOiYh8NcRXBY=</dsig:DigestValue>
+      <dsig:DigestValue>Br9BVDJ4jZi0hGdBObU5/FjcWJtCbPwWLpd8X8U0btc=</dsig:DigestValue>
     </hash>
   </file>
-  <file name="Gaboo_MoveIcons\Gaboo_5.png" size="1977">
+  <file name="Gaboo_MoveIcons\Gaboo_5.png" size="602">
     <hash>
       <dsig:Transforms>
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
       </dsig:Transforms>
       <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-      <dsig:DigestValue>w69I91Ja9c7akRS9C5umrhj1XNJVlrbnhM1RPyC3K1U=</dsig:DigestValue>
+      <dsig:DigestValue>h9qmlhsYZW2v7KbYxjoMzjhE4ryF6NQPOQSWCpH4RAY=</dsig:DigestValue>
     </hash>
   </file>
-  <file name="Gaboo_MoveIcons\Gaboo_6.png" size="1818">
+  <file name="Gaboo_MoveIcons\Gaboo_6.png" size="519">
     <hash>
       <dsig:Transforms>
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
       </dsig:Transforms>
       <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-      <dsig:DigestValue>2stNnMW0pzePAe6B34nqetvcdoaWjMCRQWTK8cBSzjM=</dsig:DigestValue>
+      <dsig:DigestValue>OpbjTtQNs/s0UKo4vOy9JKyZ6Y0sBpOQFODAXMmxOl8=</dsig:DigestValue>
     </hash>
   </file>
-  <file name="Gaboo_MoveIcons\Gaboo_7.png" size="1807">
+  <file name="Gaboo_MoveIcons\Gaboo_7.png" size="688">
     <hash>
       <dsig:Transforms>
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
       </dsig:Transforms>
       <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-      <dsig:DigestValue>i+mkllpChpbN0A030C7VSzymF6aFCtUgKOA8wCrtmAw=</dsig:DigestValue>
+      <dsig:DigestValue>Uo8qy3G7h1reVAJY9SpYHBr1vDJzZw2MGfLSS8zc0WQ=</dsig:DigestValue>
     </hash>
   </file>
-  <file name="Gaboo_MoveIcons\Gaboo_8.png" size="2003">
+  <file name="Gaboo_MoveIcons\Gaboo_8.png" size="568">
     <hash>
       <dsig:Transforms>
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
       </dsig:Transforms>
       <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-      <dsig:DigestValue>MFNOOkIJ6NIl90BtN9mo+4ofZtU6ehK2B+zM6ThJtDo=</dsig:DigestValue>
+      <dsig:DigestValue>PkKl94JrhWFvnM0XaBmD9ohwlLn8rA3pd8VAeLzjwB0=</dsig:DigestValue>
     </hash>
   </file>
-  <file name="Gaboo_MoveIcons\Gaboo_9.png" size="1924">
+  <file name="Gaboo_MoveIcons\Gaboo_9.png" size="597">
     <hash>
       <dsig:Transforms>
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
       </dsig:Transforms>
       <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-      <dsig:DigestValue>DlseelB2LIdOEKEUZPTrhgrbM+/PmB/FzjmvkP6NO90=</dsig:DigestValue>
+      <dsig:DigestValue>RuZ4qOZlzYRLd7hekrncZ2e26x7UNDKIV7QTLe2c5lk=</dsig:DigestValue>
     </hash>
   </file>
-  <file name="Gali_MoveIcons\Gali_1.png" size="1707">
+  <file name="Gali_MoveIcons\Gali_1.png" size="562">
     <hash>
       <dsig:Transforms>
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
       </dsig:Transforms>
       <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-      <dsig:DigestValue>YcWo1Wn+oSH1LspmZqSUsXF2gvQfJCqxXV1kghqiAW8=</dsig:DigestValue>
+      <dsig:DigestValue>Lj5WqRnPRaeO1L0MkEO5SmDOK3E7oXD6QELPFdf6X6s=</dsig:DigestValue>
     </hash>
   </file>
-  <file name="Gali_MoveIcons\Gali_10.png" size="1813">
+  <file name="Gali_MoveIcons\Gali_10.png" size="594">
     <hash>
       <dsig:Transforms>
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
       </dsig:Transforms>
       <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-      <dsig:DigestValue>iNhrIoPDYZxmMqnJHpvVHJZ/quFqCNvm1YL5PklGb10=</dsig:DigestValue>
+      <dsig:DigestValue>wlb3DOQO7lOtxmoo1pgzWs1R0AJRCdRuqup6brqSAAw=</dsig:DigestValue>
     </hash>
   </file>
-  <file name="Gali_MoveIcons\Gali_11.png" size="1725">
+  <file name="Gali_MoveIcons\Gali_11.png" size="527">
     <hash>
       <dsig:Transforms>
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
       </dsig:Transforms>
       <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-      <dsig:DigestValue>xHoUW8J2pOx+IWROjwy0MuEb2OArkXGm3A4vuDbbd9Q=</dsig:DigestValue>
+      <dsig:DigestValue>0uWJEp9wVUxqaZHD0ie+ZwyvkltN/VZbr1jKWR6ydlQ=</dsig:DigestValue>
     </hash>
   </file>
-  <file name="Gali_MoveIcons\Gali_12.png" size="1706">
+  <file name="Gali_MoveIcons\Gali_12.png" size="509">
     <hash>
       <dsig:Transforms>
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
       </dsig:Transforms>
       <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-      <dsig:DigestValue>xM1zWdBnRjMJ4BEPlkrQGBa9R1USKbM6esCoGqXVNSI=</dsig:DigestValue>
+      <dsig:DigestValue>6f4aw9aB/eEj2+FEeFtU5eQLfwuebCcBmPDwPT92hqY=</dsig:DigestValue>
     </hash>
   </file>
-  <file name="Gali_MoveIcons\Gali_13.png" size="1801">
+  <file name="Gali_MoveIcons\Gali_13.png" size="645">
     <hash>
       <dsig:Transforms>
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
       </dsig:Transforms>
       <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-      <dsig:DigestValue>JCkgkuoaGMX/7ayXLk8WPldrebx/PYS5zbJYm1S/yz8=</dsig:DigestValue>
+      <dsig:DigestValue>VaRI1YfCaRGbeQ5IrzdpZIwFbkOCLlLHmy+a9QjqrvE=</dsig:DigestValue>
     </hash>
   </file>
-  <file name="Gali_MoveIcons\Gali_14.png" size="1183">
+  <file name="Gali_MoveIcons\Gali_14.png" size="549">
     <hash>
       <dsig:Transforms>
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
       </dsig:Transforms>
       <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-      <dsig:DigestValue>wzasSINPcmgL7Gao56la7d2ohjNqo8EtnS7c5jLeLfs=</dsig:DigestValue>
+      <dsig:DigestValue>mdq9cXWH2j8xxKxsJp8LTot0UPY+hWQf9r/K8grL0ZA=</dsig:DigestValue>
     </hash>
   </file>
-  <file name="Gali_MoveIcons\Gali_15.png" size="1776">
+  <file name="Gali_MoveIcons\Gali_15.png" size="537">
     <hash>
       <dsig:Transforms>
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
       </dsig:Transforms>
       <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-      <dsig:DigestValue>hVLL1pgfXhuYWb73QWrEXk1YZ/YD1j8lQnCT5mPVOpk=</dsig:DigestValue>
+      <dsig:DigestValue>KrvBq2iPXMUj8jkcdsNwbVTz87bOC3DQorPefpNPtnY=</dsig:DigestValue>
     </hash>
   </file>
-  <file name="Gali_MoveIcons\Gali_16.png" size="1766">
+  <file name="Gali_MoveIcons\Gali_16.png" size="533">
     <hash>
       <dsig:Transforms>
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
       </dsig:Transforms>
       <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-      <dsig:DigestValue>mansXl/f+9kRA8qys90GnuzMHt5UhFUuU0drpmcUmCo=</dsig:DigestValue>
+      <dsig:DigestValue>hioLo9HuDjCwvkIahLDJktdiSvBnxcNBTSZKZtgfqiM=</dsig:DigestValue>
     </hash>
   </file>
-  <file name="Gali_MoveIcons\Gali_17.png" size="1789">
+  <file name="Gali_MoveIcons\Gali_17.png" size="606">
     <hash>
       <dsig:Transforms>
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
       </dsig:Transforms>
       <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-      <dsig:DigestValue>xu+k0d7Axh94Vg9zBC6BkHpssY1mA023reOjX8MZDKs=</dsig:DigestValue>
+      <dsig:DigestValue>Oc3XGsC/8oJbrBP+Frbnf5FLlemCRI7qKbTIl6XgUo4=</dsig:DigestValue>
     </hash>
   </file>
-  <file name="Gali_MoveIcons\Gali_18.png" size="1888">
+  <file name="Gali_MoveIcons\Gali_18.png" size="583">
     <hash>
       <dsig:Transforms>
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
       </dsig:Transforms>
       <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-      <dsig:DigestValue>CcuMSaZJUomOm3ATNZHcCRRaJlk52rHgNbPvlulNhAc=</dsig:DigestValue>
+      <dsig:DigestValue>0JejVV5eMVHjFQN8Cfl6H3b4Y35M1sZPRZf7J+WgGpM=</dsig:DigestValue>
     </hash>
   </file>
-  <file name="Gali_MoveIcons\Gali_19.png" size="2050">
+  <file name="Gali_MoveIcons\Gali_19.png" size="576">
     <hash>
       <dsig:Transforms>
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
       </dsig:Transforms>
       <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-      <dsig:DigestValue>Ky40081OixECmufSIzXO6Rv3c2ctS+XuvPaCy2NlyGk=</dsig:DigestValue>
+      <dsig:DigestValue>jJy1slwf/c2lDCr9BU1kYmXh/4xFv61VWoMaROrc9r4=</dsig:DigestValue>
     </hash>
   </file>
-  <file name="Gali_MoveIcons\Gali_2.png" size="2024">
+  <file name="Gali_MoveIcons\Gali_2.png" size="580">
     <hash>
       <dsig:Transforms>
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
       </dsig:Transforms>
       <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-      <dsig:DigestValue>qEnZalPvhPomHkNWDA2lcjedK1Zr0uqiiAs4JPs5iYw=</dsig:DigestValue>
+      <dsig:DigestValue>XlqPwDYV/FsvCW8hpcAc1iX9KIHKLhxOzeYOCR0mljc=</dsig:DigestValue>
     </hash>
   </file>
-  <file name="Gali_MoveIcons\Gali_20.png" size="2178">
+  <file name="Gali_MoveIcons\Gali_20.png" size="727">
     <hash>
       <dsig:Transforms>
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
       </dsig:Transforms>
       <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-      <dsig:DigestValue>oUltGZVGPkttaIN3LvFtxJjGOjk1RR+YAfpokll4cG4=</dsig:DigestValue>
+      <dsig:DigestValue>s40glkVyPFHZ8m/dLhGLdYa1r9Dxv4HXN4humgm8n1Y=</dsig:DigestValue>
     </hash>
   </file>
-  <file name="Gali_MoveIcons\Gali_21.png" size="2156">
+  <file name="Gali_MoveIcons\Gali_21.png" size="613">
     <hash>
       <dsig:Transforms>
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
       </dsig:Transforms>
       <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-      <dsig:DigestValue>nqiNshKhlFgsP+Cn5sMi0jXnew78nFuIT0etyc64QQ0=</dsig:DigestValue>
+      <dsig:DigestValue>/OD5uYisqxsUrBQy6h0caqfXR18lkIg3i9bSAlDQEJQ=</dsig:DigestValue>
     </hash>
   </file>
-  <file name="Gali_MoveIcons\Gali_22.png" size="1871">
+  <file name="Gali_MoveIcons\Gali_22.png" size="561">
     <hash>
       <dsig:Transforms>
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
       </dsig:Transforms>
       <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-      <dsig:DigestValue>L1b6cGfr83eljRPSur6PFk+Uol8guGBb7oGasC30jYM=</dsig:DigestValue>
+      <dsig:DigestValue>NPVFvtIo5BCLxZUokEQfTZAWqriY9Tmtd8VdiqUEcLs=</dsig:DigestValue>
     </hash>
   </file>
-  <file name="Gali_MoveIcons\Gali_3.png" size="2162">
+  <file name="Gali_MoveIcons\Gali_3.png" size="591">
     <hash>
       <dsig:Transforms>
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
       </dsig:Transforms>
       <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-      <dsig:DigestValue>mRHwu1CC7W74Atvtpo8LQAtkQMwPTPjei/Qpyrs+GXk=</dsig:DigestValue>
+      <dsig:DigestValue>jJ4f4OTyardBbh7K5a9uNnbwnMoRh839JxziqA8abCo=</dsig:DigestValue>
     </hash>
   </file>
-  <file name="Gali_MoveIcons\Gali_4.png" size="1949">
+  <file name="Gali_MoveIcons\Gali_4.png" size="563">
     <hash>
       <dsig:Transforms>
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
       </dsig:Transforms>
       <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-      <dsig:DigestValue>ODnlFQVAJx/tOKXcXEP3smhr+ZdtTrYAnxl2+c9S8u4=</dsig:DigestValue>
+      <dsig:DigestValue>9h1YVtV0q0Vzwox3rTLvnG4LAMGldiqD8bDMMtOmi8Q=</dsig:DigestValue>
     </hash>
   </file>
-  <file name="Gali_MoveIcons\Gali_5.png" size="1851">
+  <file name="Gali_MoveIcons\Gali_5.png" size="580">
     <hash>
       <dsig:Transforms>
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
       </dsig:Transforms>
       <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-      <dsig:DigestValue>ERQNMyrMQYzyYuJ13pG2tc5ZrTOM2/kMhyUKztHwG7E=</dsig:DigestValue>
+      <dsig:DigestValue>rPwftWftwhvjXbWCUX0lAg6H8T2uUKy1CvlBjcvo7Mk=</dsig:DigestValue>
     </hash>
   </file>
-  <file name="Gali_MoveIcons\Gali_6.png" size="1683">
+  <file name="Gali_MoveIcons\Gali_6.png" size="516">
     <hash>
       <dsig:Transforms>
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
       </dsig:Transforms>
       <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-      <dsig:DigestValue>7GFykNgbr8iaPJ73AjFY6ENmMOjDW89OgC+mqLHwRKQ=</dsig:DigestValue>
+      <dsig:DigestValue>LauKdHAiB8uS+zWy6zmY0RZDoQifR4uoYhIGSyd4x2o=</dsig:DigestValue>
     </hash>
   </file>
-  <file name="Gali_MoveIcons\Gali_7.png" size="1637">
+  <file name="Gali_MoveIcons\Gali_7.png" size="524">
     <hash>
       <dsig:Transforms>
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
       </dsig:Transforms>
       <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-      <dsig:DigestValue>HJsijuAcraXAHKa4FzZAKieLGV9rXemYfIHDSHElYrs=</dsig:DigestValue>
+      <dsig:DigestValue>gGnLRO8WxRjs2Ml7ymddL8duvdIpDFVymOyMETg9NXc=</dsig:DigestValue>
     </hash>
   </file>
-  <file name="Gali_MoveIcons\Gali_8.png" size="1779">
+  <file name="Gali_MoveIcons\Gali_8.png" size="586">
     <hash>
       <dsig:Transforms>
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
       </dsig:Transforms>
       <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-      <dsig:DigestValue>DUPXAW66e5PdRdczqmhLFtz8V9F94XkPQOMWzfkJIAA=</dsig:DigestValue>
+      <dsig:DigestValue>ow7JklxcENPYMIUqDjzTnc2b88s33FU3JjFr0awlX2o=</dsig:DigestValue>
     </hash>
   </file>
-  <file name="Gali_MoveIcons\Gali_9.png" size="1854">
+  <file name="Gali_MoveIcons\Gali_9.png" size="634">
     <hash>
       <dsig:Transforms>
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
       </dsig:Transforms>
       <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-      <dsig:DigestValue>FpvwCXJkR/vmFdxHZCqdyT67qqhg2DX9MlrcCK9lfqA=</dsig:DigestValue>
+      <dsig:DigestValue>5PORUkNhBzZFu5JEi7t3IZwc+eA47BEFD+uojHakCOk=</dsig:DigestValue>
     </hash>
   </file>
   <file name="Ghost_MoveIcons\Ghost_1.png" size="492">
@@ -2154,202 +2154,202 @@
       <dsig:DigestValue>o4rPQ2t0BjBxofeuQjX/2dCJFbEyge48NS7t3kaqEnk=</dsig:DigestValue>
     </hash>
   </file>
-  <file name="Golem_MoveIcons\Golem_1.png" size="1845">
+  <file name="Golem_MoveIcons\Golem_1.png" size="532">
     <hash>
       <dsig:Transforms>
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
       </dsig:Transforms>
       <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-      <dsig:DigestValue>KnhzJLJSExWcBEmh/NWpT2M7TXeGnIT8e2nqiybl5ps=</dsig:DigestValue>
+      <dsig:DigestValue>VMWJ1fMxLmyG28N9jr3vl93eGzJpLbjXp6kl1LV/7To=</dsig:DigestValue>
     </hash>
   </file>
-  <file name="Golem_MoveIcons\Golem_10.png" size="1777">
+  <file name="Golem_MoveIcons\Golem_10.png" size="482">
     <hash>
       <dsig:Transforms>
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
       </dsig:Transforms>
       <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-      <dsig:DigestValue>uYCMyeAhnq/sO3QUfA/1FgASHPzcusVc5SzckbeQrGk=</dsig:DigestValue>
+      <dsig:DigestValue>xmL19pcdd0ajtGcv3Ol8K3EZ3HSr7FuOv0lIjyG5GKQ=</dsig:DigestValue>
     </hash>
   </file>
-  <file name="Golem_MoveIcons\Golem_11.png" size="1931">
+  <file name="Golem_MoveIcons\Golem_11.png" size="518">
     <hash>
       <dsig:Transforms>
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
       </dsig:Transforms>
       <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-      <dsig:DigestValue>XerR7Xk1vpA+P3a0usBd1X1/+6EDI3hACfT8O/lD93I=</dsig:DigestValue>
+      <dsig:DigestValue>08pGNte0RHMbZ5k8E6EujM+muo8NIkZtNN0qIbiX2H8=</dsig:DigestValue>
     </hash>
   </file>
-  <file name="Golem_MoveIcons\Golem_12.png" size="1905">
+  <file name="Golem_MoveIcons\Golem_12.png" size="519">
     <hash>
       <dsig:Transforms>
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
       </dsig:Transforms>
       <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-      <dsig:DigestValue>t20brjaWsnoAzyX85LIHSRm7tKRvfzchDAYUrZNPyKU=</dsig:DigestValue>
+      <dsig:DigestValue>8WBK2v3UwUkf1qHlMktNRYJR6rCmeTvNn0Y2t25oEGI=</dsig:DigestValue>
     </hash>
   </file>
-  <file name="Golem_MoveIcons\Golem_13.png" size="1914">
+  <file name="Golem_MoveIcons\Golem_13.png" size="531">
     <hash>
       <dsig:Transforms>
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
       </dsig:Transforms>
       <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-      <dsig:DigestValue>c9VkkM4G1NlO61lhwKhCXk+Xlv+L/3PRXSn6jW3jUUE=</dsig:DigestValue>
+      <dsig:DigestValue>Jvj9T5t7n3ptReoJeiQ3NQp4IGEqFkzR1NrbXzp+rnQ=</dsig:DigestValue>
     </hash>
   </file>
-  <file name="Golem_MoveIcons\Golem_14.png" size="2018">
+  <file name="Golem_MoveIcons\Golem_14.png" size="607">
     <hash>
       <dsig:Transforms>
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
       </dsig:Transforms>
       <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-      <dsig:DigestValue>MHFIPkIDomdnHHgNYw0iTbFjFePEnfCiOAr6JdtiDTg=</dsig:DigestValue>
+      <dsig:DigestValue>S3xdqAAU9uHabyyxg/7XOTPNzfVxZZ1Rwq2Xs7h5aP4=</dsig:DigestValue>
     </hash>
   </file>
-  <file name="Golem_MoveIcons\Golem_15.png" size="1995">
+  <file name="Golem_MoveIcons\Golem_15.png" size="909">
     <hash>
       <dsig:Transforms>
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
       </dsig:Transforms>
       <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-      <dsig:DigestValue>tQ46DDqvyX1d4IX13Q/e+b4sJzI5I6kLXy+2PQ/m28o=</dsig:DigestValue>
+      <dsig:DigestValue>d0vyYHbuiZ544mGaqzUtvz7tA8pJymCaB0tiY1ZSm18=</dsig:DigestValue>
     </hash>
   </file>
-  <file name="Golem_MoveIcons\Golem_16.png" size="1933">
+  <file name="Golem_MoveIcons\Golem_16.png" size="560">
     <hash>
       <dsig:Transforms>
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
       </dsig:Transforms>
       <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-      <dsig:DigestValue>mcYzMZl2UJaZFYAVqOyftfo8P6pUGAWfkW7zaGM4DIA=</dsig:DigestValue>
+      <dsig:DigestValue>IMmhw7RJp6R31WlUxL+p3pnl2d3DHec/YMC9azSXwto=</dsig:DigestValue>
     </hash>
   </file>
-  <file name="Golem_MoveIcons\Golem_17.png" size="1792">
+  <file name="Golem_MoveIcons\Golem_17.png" size="539">
     <hash>
       <dsig:Transforms>
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
       </dsig:Transforms>
       <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-      <dsig:DigestValue>O+0n2C5YFllzEBurT2tlKb2ZunGwbKpUp6o3SpHA6+I=</dsig:DigestValue>
+      <dsig:DigestValue>C3jbejnqnbtyYGwZp3ieSWfdEFg7xzp91zCtDIbSTQc=</dsig:DigestValue>
     </hash>
   </file>
-  <file name="Golem_MoveIcons\Golem_18.png" size="1874">
+  <file name="Golem_MoveIcons\Golem_18.png" size="446">
     <hash>
       <dsig:Transforms>
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
       </dsig:Transforms>
       <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-      <dsig:DigestValue>te+pJRPH/cFZfxpQDrdWfN1jqKWVeG4XI/qlDWOdOPY=</dsig:DigestValue>
+      <dsig:DigestValue>yu7py0QcY5ZRrV+D9Ekm79BtrgyqJ5ertVRY70UJYW4=</dsig:DigestValue>
     </hash>
   </file>
-  <file name="Golem_MoveIcons\Golem_19.png" size="2030">
+  <file name="Golem_MoveIcons\Golem_19.png" size="567">
     <hash>
       <dsig:Transforms>
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
       </dsig:Transforms>
       <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-      <dsig:DigestValue>5+MEJFfob0qtkbEPger2d9pEvTLlq1Jr4VLjh1J54Wo=</dsig:DigestValue>
+      <dsig:DigestValue>D1WftCnLQ0d2EiyfoandOwX388vxjwTt/OuMuL1irag=</dsig:DigestValue>
     </hash>
   </file>
-  <file name="Golem_MoveIcons\Golem_2.png" size="1894">
+  <file name="Golem_MoveIcons\Golem_2.png" size="535">
     <hash>
       <dsig:Transforms>
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
       </dsig:Transforms>
       <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-      <dsig:DigestValue>/YIn6RDjRuMvWk+9RpmRJc2Oy9S5W2ZH/1+RWkn7zfs=</dsig:DigestValue>
+      <dsig:DigestValue>H4V4kQDyKtD/ltmHHGQYsWKWHznyQz2GzxmVnkCG39E=</dsig:DigestValue>
     </hash>
   </file>
-  <file name="Golem_MoveIcons\Golem_20.png" size="1834">
+  <file name="Golem_MoveIcons\Golem_20.png" size="960">
     <hash>
       <dsig:Transforms>
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
       </dsig:Transforms>
       <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-      <dsig:DigestValue>9jL1d5gfPoCB+u2i81Z8umZU+/SLA1vK/9Q4C5P1oUI=</dsig:DigestValue>
+      <dsig:DigestValue>dTPW4t4FDweS/HY7xjLw+JAaIhZH68eCHG2VGOdrNHU=</dsig:DigestValue>
     </hash>
   </file>
-  <file name="Golem_MoveIcons\Golem_21.png" size="1919">
+  <file name="Golem_MoveIcons\Golem_21.png" size="582">
     <hash>
       <dsig:Transforms>
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
       </dsig:Transforms>
       <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-      <dsig:DigestValue>cflft/7nwkNG+Qe4YGNkxIu+gBXtST4rbObfCt13N8w=</dsig:DigestValue>
+      <dsig:DigestValue>2iFo0UUSokIAUw7EQSQJl2SQBDRJW1Sir0OSbcdA4Qk=</dsig:DigestValue>
     </hash>
   </file>
-  <file name="Golem_MoveIcons\Golem_22.png" size="1588">
+  <file name="Golem_MoveIcons\Golem_22.png" size="503">
     <hash>
       <dsig:Transforms>
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
       </dsig:Transforms>
       <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-      <dsig:DigestValue>Ov2WP3Tl11M4CG3/S6CutRPi4rwdruLhfh4wL2vJpxc=</dsig:DigestValue>
+      <dsig:DigestValue>hgbC0+UfZpjfgyP79VZaCG1WUyDxrcb6yAsx9aBUuB0=</dsig:DigestValue>
     </hash>
   </file>
-  <file name="Golem_MoveIcons\Golem_3.png" size="1676">
+  <file name="Golem_MoveIcons\Golem_3.png" size="554">
     <hash>
       <dsig:Transforms>
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
       </dsig:Transforms>
       <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-      <dsig:DigestValue>N+9lupOO2WVJLPZpDDOoiT3676kq8fdGlvAFLpVD2Gc=</dsig:DigestValue>
+      <dsig:DigestValue>7OdBMeFqmYMTniTA4rOrPIY0wUO2iDnfhJFqZeAmIAA=</dsig:DigestValue>
     </hash>
   </file>
-  <file name="Golem_MoveIcons\Golem_4.png" size="1668">
+  <file name="Golem_MoveIcons\Golem_4.png" size="454">
     <hash>
       <dsig:Transforms>
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
       </dsig:Transforms>
       <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-      <dsig:DigestValue>pSEWsVjefTD7iH/6DeK/yoNxyOy5U9QQXxUDBok5rXU=</dsig:DigestValue>
+      <dsig:DigestValue>j33S4exA/Wtah3a6hylT287M+tpQ9Wt6Tj3ZtCT7QjQ=</dsig:DigestValue>
     </hash>
   </file>
-  <file name="Golem_MoveIcons\Golem_5.png" size="1883">
+  <file name="Golem_MoveIcons\Golem_5.png" size="594">
     <hash>
       <dsig:Transforms>
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
       </dsig:Transforms>
       <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-      <dsig:DigestValue>qgdiryilYnrzQRVqdXrVTWhF9sDCWRrP92aEJQ+wKlg=</dsig:DigestValue>
+      <dsig:DigestValue>u6YWU6in7Ob8kpflwP3ylcgWroFtriU5HRF/m5HlNiY=</dsig:DigestValue>
     </hash>
   </file>
-  <file name="Golem_MoveIcons\Golem_6.png" size="1686">
+  <file name="Golem_MoveIcons\Golem_6.png" size="525">
     <hash>
       <dsig:Transforms>
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
       </dsig:Transforms>
       <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-      <dsig:DigestValue>W47c32WkmMQyDHKhKr53vWu61uySvJ1/BCOyAnm6aOo=</dsig:DigestValue>
+      <dsig:DigestValue>zyVGKLWujXqfY90FL7PBr2GL2po7H1Hkym8j/WAdWNE=</dsig:DigestValue>
     </hash>
   </file>
-  <file name="Golem_MoveIcons\Golem_7.png" size="1651">
+  <file name="Golem_MoveIcons\Golem_7.png" size="474">
     <hash>
       <dsig:Transforms>
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
       </dsig:Transforms>
       <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-      <dsig:DigestValue>jxxYcznPFay1rjHnctXMlrwkhARibEEUYZdUeulTIZg=</dsig:DigestValue>
+      <dsig:DigestValue>W5ciqo8xH3Bb0yOXq4C8W7Y1YtI2fr+bTi7TaZTvzIU=</dsig:DigestValue>
     </hash>
   </file>
-  <file name="Golem_MoveIcons\Golem_8.png" size="1917">
+  <file name="Golem_MoveIcons\Golem_8.png" size="560">
     <hash>
       <dsig:Transforms>
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
       </dsig:Transforms>
       <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-      <dsig:DigestValue>B+aSOI/MqXi339XVVAIbCf2aAxoCcuzGS9TuYbI7ggw=</dsig:DigestValue>
+      <dsig:DigestValue>k9ZMMPoeMLPXlRcvKKXgM9ewKLSgRO15xzWt2rFD4/E=</dsig:DigestValue>
     </hash>
   </file>
-  <file name="Golem_MoveIcons\Golem_9.png" size="2005">
+  <file name="Golem_MoveIcons\Golem_9.png" size="578">
     <hash>
       <dsig:Transforms>
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
       </dsig:Transforms>
       <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-      <dsig:DigestValue>n3cJ+uDkwyjvzTpNmb/ZGGA4W3GIUhHfl/sLFulWtDk=</dsig:DigestValue>
+      <dsig:DigestValue>1EuLFiDYCyQpGuFfxEIR90riXiZZ0fRmyHxsP369hCw=</dsig:DigestValue>
     </hash>
   </file>
   <file name="Hare_MoveIcons\Hare_1.png" size="522">
@@ -2802,184 +2802,184 @@
       <dsig:DigestValue>DNvJjK4m+3Qzuu3iHXt09kPZT2lQAs77bDoREZpf+L4=</dsig:DigestValue>
     </hash>
   </file>
-  <file name="Jell_MoveIcons\Jell_1.png" size="1158">
+  <file name="Jell_MoveIcons\Jell_1.png" size="437">
     <hash>
       <dsig:Transforms>
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
       </dsig:Transforms>
       <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-      <dsig:DigestValue>GhfEgTfABXQhYVRibvngsuYv8cCIzAviar7Vdth1Lak=</dsig:DigestValue>
+      <dsig:DigestValue>B8n8hcDuJmzRjxwGW3MqHWXmpZjf37Skfp0vXGOCCHg=</dsig:DigestValue>
     </hash>
   </file>
-  <file name="Jell_MoveIcons\Jell_10.png" size="1752">
+  <file name="Jell_MoveIcons\Jell_10.png" size="512">
     <hash>
       <dsig:Transforms>
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
       </dsig:Transforms>
       <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-      <dsig:DigestValue>ULDblk3hXpjZJ1Z2FBMv1u16p0kHJztRI+0y59tDexY=</dsig:DigestValue>
+      <dsig:DigestValue>5en5NIZqJkgN/IC4mXVa86qfdebWcH11Qm11Q5CDEeE=</dsig:DigestValue>
     </hash>
   </file>
-  <file name="Jell_MoveIcons\Jell_11.png" size="1854">
+  <file name="Jell_MoveIcons\Jell_11.png" size="540">
     <hash>
       <dsig:Transforms>
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
       </dsig:Transforms>
       <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-      <dsig:DigestValue>hxCUEOo7Edf4t/ECXmV3WpCpo0U0sP47tacdJYNXhD0=</dsig:DigestValue>
+      <dsig:DigestValue>EwKuFLA0F6BCzXjaUxt6RjJqrvPEKONxGYV5kUb0fnw=</dsig:DigestValue>
     </hash>
   </file>
-  <file name="Jell_MoveIcons\Jell_12.png" size="1714">
+  <file name="Jell_MoveIcons\Jell_12.png" size="541">
     <hash>
       <dsig:Transforms>
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
       </dsig:Transforms>
       <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-      <dsig:DigestValue>MLeIOPWz25eMaqYja0CfYRqTasgqp0WbixgfbzTiG6M=</dsig:DigestValue>
+      <dsig:DigestValue>0xCOnxiOhgN+lpUauceeFukX3AFmTElyuA/RIAgwDH0=</dsig:DigestValue>
     </hash>
   </file>
-  <file name="Jell_MoveIcons\Jell_13.png" size="1783">
+  <file name="Jell_MoveIcons\Jell_13.png" size="510">
     <hash>
       <dsig:Transforms>
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
       </dsig:Transforms>
       <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-      <dsig:DigestValue>AwfDy+05/bdfIEwFHZ4e3NyHZEuAbrI115VESpvdJu4=</dsig:DigestValue>
+      <dsig:DigestValue>XcNCu4E/lOTCrHlzPVrrrVx7DSLJZETUPjn5qcj++Lk=</dsig:DigestValue>
     </hash>
   </file>
-  <file name="Jell_MoveIcons\Jell_14.png" size="1900">
+  <file name="Jell_MoveIcons\Jell_14.png" size="535">
     <hash>
       <dsig:Transforms>
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
       </dsig:Transforms>
       <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-      <dsig:DigestValue>ePgQm4lU8fshhBsAPWpDobFJZLNmKxbYbf0uSOP1yMc=</dsig:DigestValue>
+      <dsig:DigestValue>ASSXb3uqmB531sGttE6biUYxiRqX0fBvkzQuhdIhmQY=</dsig:DigestValue>
     </hash>
   </file>
-  <file name="Jell_MoveIcons\Jell_15.png" size="2011">
+  <file name="Jell_MoveIcons\Jell_15.png" size="618">
     <hash>
       <dsig:Transforms>
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
       </dsig:Transforms>
       <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-      <dsig:DigestValue>OgmUWMX2FgfKvO3cnHtZFv+gj7TH1usxPj3y4+rdTFQ=</dsig:DigestValue>
+      <dsig:DigestValue>PlAoCMswEWr/Z0Muov2vgKkV3KVx+7h4x8UcdQw7H1E=</dsig:DigestValue>
     </hash>
   </file>
-  <file name="Jell_MoveIcons\Jell_16.png" size="1693">
+  <file name="Jell_MoveIcons\Jell_16.png" size="509">
     <hash>
       <dsig:Transforms>
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
       </dsig:Transforms>
       <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-      <dsig:DigestValue>fjCBHIb6MqPoCS6q8IZumTjexobcc+x4aw2o7PptLaM=</dsig:DigestValue>
+      <dsig:DigestValue>BnttFV302W2ltxVufn53Ea3CFg1FojvkyFa5PnCf1y8=</dsig:DigestValue>
     </hash>
   </file>
-  <file name="Jell_MoveIcons\Jell_17.png" size="1515">
+  <file name="Jell_MoveIcons\Jell_17.png" size="499">
     <hash>
       <dsig:Transforms>
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
       </dsig:Transforms>
       <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-      <dsig:DigestValue>0KpFL7V9kOWY8zSV4hrctfSuuC3Iq1nKWutL8gPjp9k=</dsig:DigestValue>
+      <dsig:DigestValue>oV2TZTMDwfMl6tqkXQ377nm5BGNdTfF34Wf6HwEnVvQ=</dsig:DigestValue>
     </hash>
   </file>
-  <file name="Jell_MoveIcons\Jell_18.png" size="1988">
+  <file name="Jell_MoveIcons\Jell_18.png" size="538">
     <hash>
       <dsig:Transforms>
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
       </dsig:Transforms>
       <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-      <dsig:DigestValue>zX2+lL8MKtcGbiogNKuYBYy9GNKLWoRE0QAj2pGhfio=</dsig:DigestValue>
+      <dsig:DigestValue>pga8z0mDe0D/kwrfV0rKRs0l0+l+d2OCNUY+VTfWQdI=</dsig:DigestValue>
     </hash>
   </file>
-  <file name="Jell_MoveIcons\Jell_19.png" size="1811">
+  <file name="Jell_MoveIcons\Jell_19.png" size="523">
     <hash>
       <dsig:Transforms>
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
       </dsig:Transforms>
       <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-      <dsig:DigestValue>y0U4nlK3BDG5hyhqwYLTZDeWmdWoPMhUbEAyJsJjAgU=</dsig:DigestValue>
+      <dsig:DigestValue>zl13cv5Ru8QoHV/RydSMkqKZnXZDwOYY7gSU1c+JFxs=</dsig:DigestValue>
     </hash>
   </file>
-  <file name="Jell_MoveIcons\Jell_2.png" size="1486">
+  <file name="Jell_MoveIcons\Jell_2.png" size="468">
     <hash>
       <dsig:Transforms>
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
       </dsig:Transforms>
       <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-      <dsig:DigestValue>9iy8kujnGYn8+2JMJnfaQ4Z1yivQph0uUThe+hxrPOU=</dsig:DigestValue>
+      <dsig:DigestValue>JQVnMEwg5uX7Ac80DUCoFxSRKvflPUzpXIvJ86r0N78=</dsig:DigestValue>
     </hash>
   </file>
-  <file name="Jell_MoveIcons\Jell_20.png" size="1767">
+  <file name="Jell_MoveIcons\Jell_20.png" size="617">
     <hash>
       <dsig:Transforms>
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
       </dsig:Transforms>
       <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-      <dsig:DigestValue>oMM52YvRsYOxJz+YXU1wXA3oBM6OEO+phQ79/RnwK+U=</dsig:DigestValue>
+      <dsig:DigestValue>UNss2iMK/jWgR6cLtD6M6QXJLsknyKguUAGMNffsjr8=</dsig:DigestValue>
     </hash>
   </file>
-  <file name="Jell_MoveIcons\Jell_3.png" size="1624">
+  <file name="Jell_MoveIcons\Jell_3.png" size="502">
     <hash>
       <dsig:Transforms>
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
       </dsig:Transforms>
       <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-      <dsig:DigestValue>64d0mI0z4wKLSwv0PsJ61u2DkRaP86iGST98Ct3Ejls=</dsig:DigestValue>
+      <dsig:DigestValue>bMOT9nm0ER2llX0VwV8dZZHMuOkZbC3x++90Dn/5DUk=</dsig:DigestValue>
     </hash>
   </file>
-  <file name="Jell_MoveIcons\Jell_4.png" size="1899">
+  <file name="Jell_MoveIcons\Jell_4.png" size="559">
     <hash>
       <dsig:Transforms>
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
       </dsig:Transforms>
       <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-      <dsig:DigestValue>carQDzTwbJhesjG+CFVsLhS5LQQowmjluhZEORx8lKw=</dsig:DigestValue>
+      <dsig:DigestValue>nvnqWbXylbhnsaLm+DcinIYJvTRnl+rzmU4fS+O/79c=</dsig:DigestValue>
     </hash>
   </file>
-  <file name="Jell_MoveIcons\Jell_5.png" size="1884">
+  <file name="Jell_MoveIcons\Jell_5.png" size="543">
     <hash>
       <dsig:Transforms>
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
       </dsig:Transforms>
       <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-      <dsig:DigestValue>6c8KzgnbFCtGA363XFECXHPlzx04/hAYkslPN2wuXcE=</dsig:DigestValue>
+      <dsig:DigestValue>4SRleACdUbZLO6LMQJij/DcXzsQPqm1o8CgXIM85qUY=</dsig:DigestValue>
     </hash>
   </file>
-  <file name="Jell_MoveIcons\Jell_6.png" size="1923">
+  <file name="Jell_MoveIcons\Jell_6.png" size="625">
     <hash>
       <dsig:Transforms>
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
       </dsig:Transforms>
       <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-      <dsig:DigestValue>2cwpIGq8C03Gxad/CjIu6xPePmKzf8Vm8Qe9NMXL1P0=</dsig:DigestValue>
+      <dsig:DigestValue>hvDTNnEq6UN03BXF4EDHSaA1VOT6jCKepKmMcF3CSk0=</dsig:DigestValue>
     </hash>
   </file>
-  <file name="Jell_MoveIcons\Jell_7.png" size="1598">
+  <file name="Jell_MoveIcons\Jell_7.png" size="488">
     <hash>
       <dsig:Transforms>
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
       </dsig:Transforms>
       <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-      <dsig:DigestValue>EOd8C8kIUUNg6lNn8pC7OLptRU5r9DsPX5b4C97s3EM=</dsig:DigestValue>
+      <dsig:DigestValue>PM0CsL7fT54pBLKN91A2u2Lo+bLdrPCoqRfRfbs4n+0=</dsig:DigestValue>
     </hash>
   </file>
-  <file name="Jell_MoveIcons\Jell_8.png" size="1720">
+  <file name="Jell_MoveIcons\Jell_8.png" size="528">
     <hash>
       <dsig:Transforms>
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
       </dsig:Transforms>
       <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-      <dsig:DigestValue>BC41mceAMIwUGMyKJDLSTXTN1BT9b5F+9TlV6WmWQo8=</dsig:DigestValue>
+      <dsig:DigestValue>429QeQw0TflPR8M7AcXXrRYiFbbPjSvd8dCG2YTNnLI=</dsig:DigestValue>
     </hash>
   </file>
-  <file name="Jell_MoveIcons\Jell_9.png" size="2198">
+  <file name="Jell_MoveIcons\Jell_9.png" size="586">
     <hash>
       <dsig:Transforms>
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
       </dsig:Transforms>
       <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-      <dsig:DigestValue>MfQhYYFd/xIqkgJdHCc3RQ0Ky7hF5DZeZMo2lOGr9SE=</dsig:DigestValue>
+      <dsig:DigestValue>gx7XTGKySeHR9Ms9LMppDMZf6fxLqjaLLoE4JqYUNPU=</dsig:DigestValue>
     </hash>
   </file>
   <file name="Jill_MoveIcons\Jill_1.png" size="542">
@@ -3144,202 +3144,202 @@
       <dsig:DigestValue>0Y60B7aTrVcZ9OtmVem7M1r2mmrgJdCaxRop1FIsyfo=</dsig:DigestValue>
     </hash>
   </file>
-  <file name="Kato_MoveIcons\Kato_1.png" size="1879">
+  <file name="Kato_MoveIcons\Kato_1.png" size="558">
     <hash>
       <dsig:Transforms>
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
       </dsig:Transforms>
       <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-      <dsig:DigestValue>eAFNJa7XagPQJ0MpcdKHNsMyE8/TbF8hi+mBs/RVrRQ=</dsig:DigestValue>
+      <dsig:DigestValue>Cf9GFaxR6p3QLr51KiFQYATW1Lwr8aWjoF5hs18RXmg=</dsig:DigestValue>
     </hash>
   </file>
-  <file name="Kato_MoveIcons\Kato_10.png" size="2138">
+  <file name="Kato_MoveIcons\Kato_10.png" size="561">
     <hash>
       <dsig:Transforms>
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
       </dsig:Transforms>
       <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-      <dsig:DigestValue>WRDSETau1qt1QpKW7xcxC5V7Fcyr9oWDsJSFI/RgwXk=</dsig:DigestValue>
+      <dsig:DigestValue>LKIabQ6QN835rIgkAZ2gR4ikIUMv39Vj323hLzmtXtA=</dsig:DigestValue>
     </hash>
   </file>
-  <file name="Kato_MoveIcons\Kato_11.png" size="2359">
+  <file name="Kato_MoveIcons\Kato_11.png" size="664">
     <hash>
       <dsig:Transforms>
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
       </dsig:Transforms>
       <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-      <dsig:DigestValue>tcZCQhNZUvyWD5XShAuWsdcAg2BpSI1vr7wHvoks6Ac=</dsig:DigestValue>
+      <dsig:DigestValue>m/qEzXTBwKOtwKcyzmocmxZivgkPu3jgUOj7aThxmTQ=</dsig:DigestValue>
     </hash>
   </file>
-  <file name="Kato_MoveIcons\Kato_12.png" size="1568">
+  <file name="Kato_MoveIcons\Kato_12.png" size="484">
     <hash>
       <dsig:Transforms>
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
       </dsig:Transforms>
       <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-      <dsig:DigestValue>glCNKXZbRMwhfeP+UFcm5PoDe4BtMMWR2E9r01rFxqw=</dsig:DigestValue>
+      <dsig:DigestValue>rut6vRYbVVPE80O9r/kvRS1ZiGCxO81TMsUF5ajpc1Q=</dsig:DigestValue>
     </hash>
   </file>
-  <file name="Kato_MoveIcons\Kato_13.png" size="2323">
+  <file name="Kato_MoveIcons\Kato_13.png" size="706">
     <hash>
       <dsig:Transforms>
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
       </dsig:Transforms>
       <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-      <dsig:DigestValue>fIObBIh1BH64i2CUWA1roKNHuNbnVL5mDKeEAcZJIHE=</dsig:DigestValue>
+      <dsig:DigestValue>CHHUMWMr7xcoqkNc75r7stIyQQHYzvqHEY+lwBXZgiY=</dsig:DigestValue>
     </hash>
   </file>
-  <file name="Kato_MoveIcons\Kato_14.png" size="2060">
+  <file name="Kato_MoveIcons\Kato_14.png" size="567">
     <hash>
       <dsig:Transforms>
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
       </dsig:Transforms>
       <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-      <dsig:DigestValue>YEsXWFSY1U0WyVQTy6Ch0lc94+8MMZLTgiAqbHgiiOo=</dsig:DigestValue>
+      <dsig:DigestValue>j4F4Ui9SNBaHXE4nLcyHO3S8jmMUCweMh1lWlbJsb7o=</dsig:DigestValue>
     </hash>
   </file>
-  <file name="Kato_MoveIcons\Kato_15.png" size="1673">
+  <file name="Kato_MoveIcons\Kato_15.png" size="584">
     <hash>
       <dsig:Transforms>
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
       </dsig:Transforms>
       <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-      <dsig:DigestValue>zlNUOmpYmwchxzY3Vy5TK8AvMVCtiIfZenXLDh4alS8=</dsig:DigestValue>
+      <dsig:DigestValue>JOII4+Id80TDhWXiaisi/dB0eO1T78imC6hQHqrJk6Q=</dsig:DigestValue>
     </hash>
   </file>
-  <file name="Kato_MoveIcons\Kato_16.png" size="1822">
+  <file name="Kato_MoveIcons\Kato_16.png" size="568">
     <hash>
       <dsig:Transforms>
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
       </dsig:Transforms>
       <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-      <dsig:DigestValue>90JMvCOIXj5khmRz55R85Z6uTqNbTwwqwhrXYXqlqb4=</dsig:DigestValue>
+      <dsig:DigestValue>nhZ4ulA2Xtt7f4aREe89R+yfwTMI8b5LgHwnf94Idp0=</dsig:DigestValue>
     </hash>
   </file>
-  <file name="Kato_MoveIcons\Kato_17.png" size="1682">
+  <file name="Kato_MoveIcons\Kato_17.png" size="549">
     <hash>
       <dsig:Transforms>
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
       </dsig:Transforms>
       <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-      <dsig:DigestValue>/djWqV54G+mKx7noYEB7IfakL2STf4wuS+FQc4az0BA=</dsig:DigestValue>
+      <dsig:DigestValue>kBRa3j884YoC1cQzFdCIx/hjWZL8Uofc1K3K6r1O2c4=</dsig:DigestValue>
     </hash>
   </file>
-  <file name="Kato_MoveIcons\Kato_18.png" size="1794">
+  <file name="Kato_MoveIcons\Kato_18.png" size="549">
     <hash>
       <dsig:Transforms>
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
       </dsig:Transforms>
       <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-      <dsig:DigestValue>quRVAoAvtaYo1Uc/Gr60b1j2aignEO1Yl0pSEZxwl4Q=</dsig:DigestValue>
+      <dsig:DigestValue>EiEnGPcv8PT8fcmLq6xVwHACmHXxbdCfqOePc58YOP8=</dsig:DigestValue>
     </hash>
   </file>
-  <file name="Kato_MoveIcons\Kato_19.png" size="1839">
+  <file name="Kato_MoveIcons\Kato_19.png" size="663">
     <hash>
       <dsig:Transforms>
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
       </dsig:Transforms>
       <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-      <dsig:DigestValue>vyQqf8TtwauByGsisml//s1J8SWrS0xbXSMWOi3IXXg=</dsig:DigestValue>
+      <dsig:DigestValue>4GAksmC2oTnPrbXtu5A9NDZsuDcmrNt/7zAbyqTx8SU=</dsig:DigestValue>
     </hash>
   </file>
-  <file name="Kato_MoveIcons\Kato_2.png" size="2121">
+  <file name="Kato_MoveIcons\Kato_2.png" size="607">
     <hash>
       <dsig:Transforms>
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
       </dsig:Transforms>
       <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-      <dsig:DigestValue>YZ5m6181dU0x1W/xi844ivmITPjPYlZKFJwNPhhJ8ys=</dsig:DigestValue>
+      <dsig:DigestValue>mpWB0qJKm7XdEwhy2OsdzzzjMYNpnwVZpqPqU08ix24=</dsig:DigestValue>
     </hash>
   </file>
-  <file name="Kato_MoveIcons\Kato_20.png" size="2155">
+  <file name="Kato_MoveIcons\Kato_20.png" size="612">
     <hash>
       <dsig:Transforms>
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
       </dsig:Transforms>
       <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-      <dsig:DigestValue>ckz5FQpLOX8iznL5LlA3hdx62xHSUa+LVeYBaH7LZbM=</dsig:DigestValue>
+      <dsig:DigestValue>BCrLMrY5dADmmaXQUWjZ5aDrw3AWkCM7Kw1d6VklXFw=</dsig:DigestValue>
     </hash>
   </file>
-  <file name="Kato_MoveIcons\Kato_21.png" size="1809">
+  <file name="Kato_MoveIcons\Kato_21.png" size="880">
     <hash>
       <dsig:Transforms>
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
       </dsig:Transforms>
       <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-      <dsig:DigestValue>Z0b6Quw3xgjvHvMgu8102ZBgQQOI366wS/MQhy8fT3E=</dsig:DigestValue>
+      <dsig:DigestValue>mZbdtSZ8r6uSF9RUmxEA+wSvJ18t6KgHfhWIgGzHCQ0=</dsig:DigestValue>
     </hash>
   </file>
-  <file name="Kato_MoveIcons\Kato_22.png" size="2143">
+  <file name="Kato_MoveIcons\Kato_22.png" size="622">
     <hash>
       <dsig:Transforms>
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
       </dsig:Transforms>
       <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-      <dsig:DigestValue>DQL7eoFjIej0pteXjpGKXvDPHdKavJ6t/FcP07O5Nno=</dsig:DigestValue>
+      <dsig:DigestValue>sd2Eo2Bs8NmodI6RNwQEQkpZpTJLmi352gDfR83UN/w=</dsig:DigestValue>
     </hash>
   </file>
-  <file name="Kato_MoveIcons\Kato_3.png" size="2151">
+  <file name="Kato_MoveIcons\Kato_3.png" size="557">
     <hash>
       <dsig:Transforms>
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
       </dsig:Transforms>
       <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-      <dsig:DigestValue>dFTALbf7zSSSsOXslJrK366pZ6hzZJ+XZK66KtCQkL0=</dsig:DigestValue>
+      <dsig:DigestValue>h7suK4OVpsmrrcSObqoZ3pro/xsDHf8ynNL/I6gm9AI=</dsig:DigestValue>
     </hash>
   </file>
-  <file name="Kato_MoveIcons\Kato_4.png" size="2353">
+  <file name="Kato_MoveIcons\Kato_4.png" size="626">
     <hash>
       <dsig:Transforms>
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
       </dsig:Transforms>
       <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-      <dsig:DigestValue>riMzYJfcoY/GEuz9+VzlhMC5kNlpfuQq0XfDuNhtuDU=</dsig:DigestValue>
+      <dsig:DigestValue>wmShB+ygJdX3BJh4p/mqzjX47HZQEDvGX2O9pxT2J2U=</dsig:DigestValue>
     </hash>
   </file>
-  <file name="Kato_MoveIcons\Kato_5.png" size="2207">
+  <file name="Kato_MoveIcons\Kato_5.png" size="569">
     <hash>
       <dsig:Transforms>
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
       </dsig:Transforms>
       <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-      <dsig:DigestValue>0Y+IKB/IC7RQ9jr7CxbA+vdKDNoP+TrpPp1ANeprSok=</dsig:DigestValue>
+      <dsig:DigestValue>OocWOquECh4iQpitM0G0/hPfEbiOVdyhPwx1Lq/JhCQ=</dsig:DigestValue>
     </hash>
   </file>
-  <file name="Kato_MoveIcons\Kato_6.png" size="2123">
+  <file name="Kato_MoveIcons\Kato_6.png" size="598">
     <hash>
       <dsig:Transforms>
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
       </dsig:Transforms>
       <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-      <dsig:DigestValue>KaP7bQtF2nfoV/66uHQ1dkOpXxIredwi/Ybmj2m4O/M=</dsig:DigestValue>
+      <dsig:DigestValue>Osbb3LSDk0DqeNcohF4HAchivgvR6yRKjNtwMNaHDr0=</dsig:DigestValue>
     </hash>
   </file>
-  <file name="Kato_MoveIcons\Kato_7.png" size="2021">
+  <file name="Kato_MoveIcons\Kato_7.png" size="542">
     <hash>
       <dsig:Transforms>
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
       </dsig:Transforms>
       <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-      <dsig:DigestValue>30sk60SL7njrPQSQ0UQu2+IUbP/atm+uiq2Gfd4iBrM=</dsig:DigestValue>
+      <dsig:DigestValue>cLqobOeKFnBlCJVIZfb0mCWo0MP8axBPiGX8PNLuh8Y=</dsig:DigestValue>
     </hash>
   </file>
-  <file name="Kato_MoveIcons\Kato_8.png" size="2297">
+  <file name="Kato_MoveIcons\Kato_8.png" size="814">
     <hash>
       <dsig:Transforms>
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
       </dsig:Transforms>
       <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-      <dsig:DigestValue>LwJJE/H5tOQE5/GXq0ztfjhyPXIy5FJLwyv8RlP9Rb8=</dsig:DigestValue>
+      <dsig:DigestValue>V4qW9unfHU8KSO5q6T7NYScztckOwRiWYKBtMgAhpRo=</dsig:DigestValue>
     </hash>
   </file>
-  <file name="Kato_MoveIcons\Kato_9.png" size="1659">
+  <file name="Kato_MoveIcons\Kato_9.png" size="529">
     <hash>
       <dsig:Transforms>
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
       </dsig:Transforms>
       <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-      <dsig:DigestValue>huRpTX8zM+dB6R4hxJo0acaMEqT7n2J0x/aA1hljAIk=</dsig:DigestValue>
+      <dsig:DigestValue>AnV9e6fG9jkAz+4eM5ubhqfAhBdEj+88h1V5Pq2pyKY=</dsig:DigestValue>
     </hash>
   </file>
   <file name="Metal_MoveIcons\Metal_1.png" size="462">
@@ -3459,166 +3459,166 @@
       <dsig:DigestValue>9aToi2y+V4G7lfXgBzO1Zo8QZCJ+swqPKDyrrudr/UU=</dsig:DigestValue>
     </hash>
   </file>
-  <file name="Mew_MoveIcons\Mew_1.png" size="1812">
+  <file name="Mew_MoveIcons\Mew_1.png" size="524">
     <hash>
       <dsig:Transforms>
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
       </dsig:Transforms>
       <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-      <dsig:DigestValue>PoDxeUsoeiP9Wa7aTB73mGc/6S4ILFSQgSD7pgIa+08=</dsig:DigestValue>
+      <dsig:DigestValue>mr1TH4J6FUQHrDuxn0GV4lRLGWoekQLIThF5apPz1rk=</dsig:DigestValue>
     </hash>
   </file>
-  <file name="Mew_MoveIcons\Mew_10.png" size="2010">
+  <file name="Mew_MoveIcons\Mew_10.png" size="547">
     <hash>
       <dsig:Transforms>
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
       </dsig:Transforms>
       <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-      <dsig:DigestValue>kBezBF4mELpxnyOzpmcfeC4cZP1AaHMzDUBnJtfkF4c=</dsig:DigestValue>
+      <dsig:DigestValue>eHFcmK5bqAV6m83Hr3NSoL7nypG5ZRmvBjJbkuVdeoc=</dsig:DigestValue>
     </hash>
   </file>
-  <file name="Mew_MoveIcons\Mew_11.png" size="1705">
+  <file name="Mew_MoveIcons\Mew_11.png" size="471">
     <hash>
       <dsig:Transforms>
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
       </dsig:Transforms>
       <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-      <dsig:DigestValue>RttwkRSy2k7RY23+IsBiOm1pKEIu1t8ZeRJ+TqE3EX4=</dsig:DigestValue>
+      <dsig:DigestValue>OjGBQeihhxkvQ+pyZgPz3T05y6RqpMeLB5SXn393TLE=</dsig:DigestValue>
     </hash>
   </file>
-  <file name="Mew_MoveIcons\Mew_12.png" size="2157">
+  <file name="Mew_MoveIcons\Mew_12.png" size="727">
     <hash>
       <dsig:Transforms>
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
       </dsig:Transforms>
       <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-      <dsig:DigestValue>kTCXR6oj3nntFWzRFv+/1NocwlzZOuv4Nz/z5Bg0Alw=</dsig:DigestValue>
+      <dsig:DigestValue>OyK+uzOmINN5zRWTIKDZqxopKDcYyq6+Hli3xKbxJmM=</dsig:DigestValue>
     </hash>
   </file>
-  <file name="Mew_MoveIcons\Mew_13.png" size="2020">
+  <file name="Mew_MoveIcons\Mew_13.png" size="574">
     <hash>
       <dsig:Transforms>
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
       </dsig:Transforms>
       <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-      <dsig:DigestValue>rI+GtUtBtkXYAP7/bLylIfDHKM7Dp3XDV4sGVN3zAys=</dsig:DigestValue>
+      <dsig:DigestValue>aaTEP31uVNkyzKAW+lj5PQW/QyUueeXOEiC+AKGlnGI=</dsig:DigestValue>
     </hash>
   </file>
-  <file name="Mew_MoveIcons\Mew_14.png" size="1966">
+  <file name="Mew_MoveIcons\Mew_14.png" size="568">
     <hash>
       <dsig:Transforms>
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
       </dsig:Transforms>
       <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-      <dsig:DigestValue>Vx8r6LI007bzQeCrPvHhpKD3xzUtfVaO1xMQVsDmOoI=</dsig:DigestValue>
+      <dsig:DigestValue>a6lYdTuWLrTa7xM0lGAc9ztr3sO9izu+WEIPazz+i0U=</dsig:DigestValue>
     </hash>
   </file>
-  <file name="Mew_MoveIcons\Mew_15.png" size="2211">
+  <file name="Mew_MoveIcons\Mew_15.png" size="577">
     <hash>
       <dsig:Transforms>
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
       </dsig:Transforms>
       <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-      <dsig:DigestValue>WqJIBSEgZR1Kjby8Y/PT7UB9HN2Yw/PM4ZO6O8x0ozU=</dsig:DigestValue>
+      <dsig:DigestValue>lwem8HEspwRQGdIV9+sZluGBWp8/OThQqOArhNbKEA0=</dsig:DigestValue>
     </hash>
   </file>
-  <file name="Mew_MoveIcons\Mew_16.png" size="2188">
+  <file name="Mew_MoveIcons\Mew_16.png" size="587">
     <hash>
       <dsig:Transforms>
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
       </dsig:Transforms>
       <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-      <dsig:DigestValue>QBCIuMW7wJVl+rG5grT6x4S/HNp8trYbdvJgqjuZy3U=</dsig:DigestValue>
+      <dsig:DigestValue>rrXAXkOInFZVhFsqeXnnwtc2uu0Bj4eVdIbi2otGnoM=</dsig:DigestValue>
     </hash>
   </file>
-  <file name="Mew_MoveIcons\Mew_17.png" size="1513">
+  <file name="Mew_MoveIcons\Mew_17.png" size="491">
     <hash>
       <dsig:Transforms>
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
       </dsig:Transforms>
       <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-      <dsig:DigestValue>Qxtl2EXWB4hqMyXoQzHjyE0DJBuxTaKxn08HAT+omxw=</dsig:DigestValue>
+      <dsig:DigestValue>WCIgFdvdNsnSEM5Wy6bKLNjj+GWiuBqL78qxh8W3iRI=</dsig:DigestValue>
     </hash>
   </file>
-  <file name="Mew_MoveIcons\Mew_18.png" size="2183">
+  <file name="Mew_MoveIcons\Mew_18.png" size="647">
     <hash>
       <dsig:Transforms>
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
       </dsig:Transforms>
       <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-      <dsig:DigestValue>Vu8q/Fd//oT72EZBy1UVVA9LEIdiwns8NfzQSl3RO3A=</dsig:DigestValue>
+      <dsig:DigestValue>X8Vl3ydLCckUoi+wt2RTGi/AWwfdG8Iw69iwoxquoKQ=</dsig:DigestValue>
     </hash>
   </file>
-  <file name="Mew_MoveIcons\Mew_2.png" size="1891">
+  <file name="Mew_MoveIcons\Mew_2.png" size="519">
     <hash>
       <dsig:Transforms>
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
       </dsig:Transforms>
       <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-      <dsig:DigestValue>xYLqtc1ES58BMGRDwKKu6wsNsOBuOJXHrA/mKsZqZbA=</dsig:DigestValue>
+      <dsig:DigestValue>abwWbuDXXHc7ZUMqoA1M8CRdVsWvnAo+zEpBx9tWgDA=</dsig:DigestValue>
     </hash>
   </file>
-  <file name="Mew_MoveIcons\Mew_3.png" size="2085">
+  <file name="Mew_MoveIcons\Mew_3.png" size="588">
     <hash>
       <dsig:Transforms>
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
       </dsig:Transforms>
       <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-      <dsig:DigestValue>aHBFmplGAoldWKU+wHoqNKOsgu5jkx3KvvNHuqgYrKE=</dsig:DigestValue>
+      <dsig:DigestValue>InWgDd/DVuGYSd0uhIxA7dNhF5qlnL+MxNob+bzIJhA=</dsig:DigestValue>
     </hash>
   </file>
-  <file name="Mew_MoveIcons\Mew_4.png" size="1871">
+  <file name="Mew_MoveIcons\Mew_4.png" size="535">
     <hash>
       <dsig:Transforms>
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
       </dsig:Transforms>
       <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-      <dsig:DigestValue>6zdBXyMSp4CHZrDK44Q1mbFGdsPHSSnDLoEOGQFLQgs=</dsig:DigestValue>
+      <dsig:DigestValue>6g12r1dD1CxVu79F58huBQ8SgCyypi5p0ECtgYzdFOM=</dsig:DigestValue>
     </hash>
   </file>
-  <file name="Mew_MoveIcons\Mew_5.png" size="1880">
+  <file name="Mew_MoveIcons\Mew_5.png" size="514">
     <hash>
       <dsig:Transforms>
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
       </dsig:Transforms>
       <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-      <dsig:DigestValue>TkffkhDvKnpV4xbG6PKFn2/vIzWsCugwpic6lW0vVUU=</dsig:DigestValue>
+      <dsig:DigestValue>+GUZFockf2qGMU3irbL0/umeeP/Iquka83+cLE9oJUs=</dsig:DigestValue>
     </hash>
   </file>
-  <file name="Mew_MoveIcons\Mew_6.png" size="1796">
+  <file name="Mew_MoveIcons\Mew_6.png" size="489">
     <hash>
       <dsig:Transforms>
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
       </dsig:Transforms>
       <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-      <dsig:DigestValue>S4qC/HaF2dn3p2RnURqPVOmOqXs0KpmFHB/oODe+DRs=</dsig:DigestValue>
+      <dsig:DigestValue>wuKf5GuBMghc1GPNDtwvVtzm+NfVYrFf6SpHG9sDvnQ=</dsig:DigestValue>
     </hash>
   </file>
-  <file name="Mew_MoveIcons\Mew_7.png" size="1845">
+  <file name="Mew_MoveIcons\Mew_7.png" size="552">
     <hash>
       <dsig:Transforms>
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
       </dsig:Transforms>
       <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-      <dsig:DigestValue>aWWqzGiH9dgqdLM1/dPRQtMRsXyefKLzha2M65WLzt4=</dsig:DigestValue>
+      <dsig:DigestValue>8H3ZPiHT8GVgQczd/nVsSLvPwE6McUQdUYKy/zLTxOY=</dsig:DigestValue>
     </hash>
   </file>
-  <file name="Mew_MoveIcons\Mew_8.png" size="2060">
+  <file name="Mew_MoveIcons\Mew_8.png" size="570">
     <hash>
       <dsig:Transforms>
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
       </dsig:Transforms>
       <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-      <dsig:DigestValue>a73S5J0D5CvLWF1WG0nr8m65a4gf3oNbIiGn6uGvjDk=</dsig:DigestValue>
+      <dsig:DigestValue>p1QYmY5z/DTla+R87HMHZYEY8I2kNqmTtoEh7L+F0HQ=</dsig:DigestValue>
     </hash>
   </file>
-  <file name="Mew_MoveIcons\Mew_9.png" size="1984">
+  <file name="Mew_MoveIcons\Mew_9.png" size="639">
     <hash>
       <dsig:Transforms>
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
       </dsig:Transforms>
       <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-      <dsig:DigestValue>Vo/A25Pl3lW33wuXaapxMDC1m1Lb8CvsjeuXHr36VQ4=</dsig:DigestValue>
+      <dsig:DigestValue>jogIQ7I1QA5sdqGDIkRj5nIC+Yw2xDBW6PCj7Tyb8qA=</dsig:DigestValue>
     </hash>
   </file>
   <file name="Mocch_MoveIcons\Mocch_1.png" size="1844">
@@ -3927,58 +3927,58 @@
       <dsig:DigestValue>LxpDcXeFNr4vZFoeNWA/zMIDZGVEwcl/LkNnMs/EDtM=</dsig:DigestValue>
     </hash>
   </file>
-  <file name="Monol_MoveIcons\Monol_14.png" size="2046">
+  <file name="Monol_MoveIcons\Monol_14.png" size="553">
     <hash>
       <dsig:Transforms>
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
       </dsig:Transforms>
       <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-      <dsig:DigestValue>t47/Uri6VR8Hq9ozkKJULwMr+aIHQ3T2Ar40n5uKWB0=</dsig:DigestValue>
+      <dsig:DigestValue>V2HlQGa0HS5JCh3Pe68gFJ1N0b/ABadaGrjRXC24+6Y=</dsig:DigestValue>
     </hash>
   </file>
-  <file name="Monol_MoveIcons\Monol_15.png" size="1406">
+  <file name="Monol_MoveIcons\Monol_15.png" size="490">
     <hash>
       <dsig:Transforms>
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
       </dsig:Transforms>
       <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-      <dsig:DigestValue>7JJkS91F2wWRHQrA2IBuYSAbqlD8vZdyb+F7ZWNCqL0=</dsig:DigestValue>
+      <dsig:DigestValue>wyHd/F0j0tAi91ws0NR7E1U04feVL+u/bMU/ZX4T7g8=</dsig:DigestValue>
     </hash>
   </file>
-  <file name="Monol_MoveIcons\Monol_16.png" size="1725">
+  <file name="Monol_MoveIcons\Monol_16.png" size="545">
     <hash>
       <dsig:Transforms>
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
       </dsig:Transforms>
       <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-      <dsig:DigestValue>/XpkP1mKC+017XaHVzdnR94dPazgJqvQgRMoVKB62bE=</dsig:DigestValue>
+      <dsig:DigestValue>RS2VlI04HQRdIF99Ni5z4/snC0puvxYRC6c90yO4r20=</dsig:DigestValue>
     </hash>
   </file>
-  <file name="Monol_MoveIcons\Monol_17.png" size="1267">
+  <file name="Monol_MoveIcons\Monol_17.png" size="502">
     <hash>
       <dsig:Transforms>
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
       </dsig:Transforms>
       <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-      <dsig:DigestValue>epzn8F55r2MSUVHoSkkBB/PNTzIr1SjSEl5azqqJXdU=</dsig:DigestValue>
+      <dsig:DigestValue>kyHkwy3L9nTLuhjQgw5EV0RNyI+xnqqstMpxrau8iGU=</dsig:DigestValue>
     </hash>
   </file>
-  <file name="Monol_MoveIcons\Monol_18.png" size="1838">
+  <file name="Monol_MoveIcons\Monol_18.png" size="664">
     <hash>
       <dsig:Transforms>
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
       </dsig:Transforms>
       <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-      <dsig:DigestValue>I2EBgN6F9Ekv6V44FWPNfCw31FIlPDs+0sGRVt61/Oo=</dsig:DigestValue>
+      <dsig:DigestValue>X7a9ZRtDe5JgaviSzv1GUBv8CzrJRF7KFcaxGnRBZX4=</dsig:DigestValue>
     </hash>
   </file>
-  <file name="Monol_MoveIcons\Monol_19.png" size="1675">
+  <file name="Monol_MoveIcons\Monol_19.png" size="551">
     <hash>
       <dsig:Transforms>
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
       </dsig:Transforms>
       <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-      <dsig:DigestValue>w4e46ajUzUgyVYottchv3w3I88BQAuATgugpTZQy63M=</dsig:DigestValue>
+      <dsig:DigestValue>mOhyk7du+VQ+DKBZt7SOxNR+yqYLVGIG/1/BdSFDqRY=</dsig:DigestValue>
     </hash>
   </file>
   <file name="Monol_MoveIcons\Monol_2.png" size="1741">
@@ -3990,22 +3990,22 @@
       <dsig:DigestValue>BTPL2xYHBDkv7g3Flb+EOQSAZBF61giaTDtICYMJbzs=</dsig:DigestValue>
     </hash>
   </file>
-  <file name="Monol_MoveIcons\Monol_20.png" size="2081">
+  <file name="Monol_MoveIcons\Monol_20.png" size="665">
     <hash>
       <dsig:Transforms>
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
       </dsig:Transforms>
       <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-      <dsig:DigestValue>HSvYo1Dcjn0r+FO6p6OH/xnswPCtnMJz7pIDq/rNVtE=</dsig:DigestValue>
+      <dsig:DigestValue>fFKpHou/zJHkPEG42jAc7nc3rilBQM/cVPpBKX/uU9E=</dsig:DigestValue>
     </hash>
   </file>
-  <file name="Monol_MoveIcons\Monol_21.png" size="2318">
+  <file name="Monol_MoveIcons\Monol_21.png" size="664">
     <hash>
       <dsig:Transforms>
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
       </dsig:Transforms>
       <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-      <dsig:DigestValue>uH4fh2z3bOMdVFSt/MS7gUwIciQ4eZjqvhisWGQ4ulc=</dsig:DigestValue>
+      <dsig:DigestValue>o2XAWx+Jk7T4+8gqShLUGwJsi0pZuXU+jGdTW5yfOpI=</dsig:DigestValue>
     </hash>
   </file>
   <file name="Monol_MoveIcons\Monol_3.png" size="2114">
@@ -4215,157 +4215,157 @@
       <dsig:DigestValue>fabOh8EV++Jk0dh3/FMybNRd8wAbi+QhCkpQHmQhSLU=</dsig:DigestValue>
     </hash>
   </file>
-  <file name="Niton_MoveIcons\Niton_1.png" size="1816">
+  <file name="Niton_MoveIcons\Niton_1.png" size="576">
     <hash>
       <dsig:Transforms>
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
       </dsig:Transforms>
       <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-      <dsig:DigestValue>rqZh+KWQRk0DsBnuNO/+GR7Avyjo4aFQm4kaCAGx2PA=</dsig:DigestValue>
+      <dsig:DigestValue>IzE2spVKib3Rz9G+DfjBVtR+gTLDago4/r/XXjMSyn0=</dsig:DigestValue>
     </hash>
   </file>
-  <file name="Niton_MoveIcons\Niton_10.png" size="2388">
+  <file name="Niton_MoveIcons\Niton_10.png" size="699">
     <hash>
       <dsig:Transforms>
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
       </dsig:Transforms>
       <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-      <dsig:DigestValue>7c/er9mKqY48wdSHFO//nfWXdE/o+3OTzcXF7GA4qDc=</dsig:DigestValue>
+      <dsig:DigestValue>s8bobrdiEHBtV2Qpy17sF1cpVAXIgkxcflMXu8c3esM=</dsig:DigestValue>
     </hash>
   </file>
-  <file name="Niton_MoveIcons\Niton_11.png" size="2379">
+  <file name="Niton_MoveIcons\Niton_11.png" size="508">
     <hash>
       <dsig:Transforms>
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
       </dsig:Transforms>
       <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-      <dsig:DigestValue>48/TZUZopJX3gRRxskI8qDouuRqot0KY7+Fv76qGCyU=</dsig:DigestValue>
+      <dsig:DigestValue>C2m8UpqwQz7SIcSJ12x+LchoSvyV3rG5O4aPuY1yAbg=</dsig:DigestValue>
     </hash>
   </file>
-  <file name="Niton_MoveIcons\Niton_12.png" size="2372">
+  <file name="Niton_MoveIcons\Niton_12.png" size="613">
     <hash>
       <dsig:Transforms>
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
       </dsig:Transforms>
       <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-      <dsig:DigestValue>JpsBU2Mvffg8jDSVeYy/c04DNJL/5A+KWtQkA2EuM48=</dsig:DigestValue>
+      <dsig:DigestValue>VOgtQVRvXgiszD0z5ERUUb88NI+1wei2Cr8rWNQ7Cs4=</dsig:DigestValue>
     </hash>
   </file>
-  <file name="Niton_MoveIcons\Niton_13.png" size="2369">
+  <file name="Niton_MoveIcons\Niton_13.png" size="594">
     <hash>
       <dsig:Transforms>
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
       </dsig:Transforms>
       <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-      <dsig:DigestValue>vLfleF5APVbTu0V73bfG9SeQ/yYAM7vOa50vMGIm6Bc=</dsig:DigestValue>
+      <dsig:DigestValue>fygohLTbgrqRw8mymRSgQl1uvc5ZwbceJgxx06/k754=</dsig:DigestValue>
     </hash>
   </file>
-  <file name="Niton_MoveIcons\Niton_14.png" size="2041">
+  <file name="Niton_MoveIcons\Niton_14.png" size="599">
     <hash>
       <dsig:Transforms>
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
       </dsig:Transforms>
       <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-      <dsig:DigestValue>etO1F7tK+fWkDePFgOuX+3ziVjwSJOhVsiN3VY0+iPw=</dsig:DigestValue>
+      <dsig:DigestValue>v5Lt6gHu3pjoCS1hkMSGVpXE5Is/HhsN+bkRWK0UeEo=</dsig:DigestValue>
     </hash>
   </file>
-  <file name="Niton_MoveIcons\Niton_15.png" size="1564">
+  <file name="Niton_MoveIcons\Niton_15.png" size="491">
     <hash>
       <dsig:Transforms>
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
       </dsig:Transforms>
       <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-      <dsig:DigestValue>NCgVDDDv4iT6f0oYqqm4qp8mLNV5zVFlzh0rFq2V8T8=</dsig:DigestValue>
+      <dsig:DigestValue>v2h5S327NabDgGTm77ME+xpJYiVkP4bK1YTtuE0d7n4=</dsig:DigestValue>
     </hash>
   </file>
-  <file name="Niton_MoveIcons\Niton_16.png" size="1892">
+  <file name="Niton_MoveIcons\Niton_16.png" size="532">
     <hash>
       <dsig:Transforms>
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
       </dsig:Transforms>
       <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-      <dsig:DigestValue>eXYAAUIjAaIHrWnQo49FLbcb9Wnz1ossUVK1X2j3r7A=</dsig:DigestValue>
+      <dsig:DigestValue>D4rgNsubds8hzXR4TVGeAZ3lF5NRZY8r1pdC8IhSEe8=</dsig:DigestValue>
     </hash>
   </file>
-  <file name="Niton_MoveIcons\Niton_17.png" size="2300">
+  <file name="Niton_MoveIcons\Niton_17.png" size="663">
     <hash>
       <dsig:Transforms>
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
       </dsig:Transforms>
       <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-      <dsig:DigestValue>jUDB3crjuqbDfi5xfgyJRNoBByhiASSWF7P1xXUDURY=</dsig:DigestValue>
+      <dsig:DigestValue>+e+zkZH3+zUY+bCgSHRnXdEW5XLcHrzh0cfr1H7FLTE=</dsig:DigestValue>
     </hash>
   </file>
-  <file name="Niton_MoveIcons\Niton_2.png" size="1767">
+  <file name="Niton_MoveIcons\Niton_2.png" size="505">
     <hash>
       <dsig:Transforms>
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
       </dsig:Transforms>
       <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-      <dsig:DigestValue>Q8FBC1D1QJjltRdxC8sLUs9vUF/U51FQwgnpFukprvg=</dsig:DigestValue>
+      <dsig:DigestValue>yzg8bB1mj+HNG9L5rgP/WC22i2bvbx//LwuWqfaLOvo=</dsig:DigestValue>
     </hash>
   </file>
-  <file name="Niton_MoveIcons\Niton_3.png" size="2229">
+  <file name="Niton_MoveIcons\Niton_3.png" size="584">
     <hash>
       <dsig:Transforms>
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
       </dsig:Transforms>
       <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-      <dsig:DigestValue>nVoa5t7ONUM+Vnq/w6J08wPHrpCv/POotgPOFLVJHTU=</dsig:DigestValue>
+      <dsig:DigestValue>i/o5nJvLUBfpKLx7ohlN8NGC4ra+B2byxBsugHPdJ8U=</dsig:DigestValue>
     </hash>
   </file>
-  <file name="Niton_MoveIcons\Niton_4.png" size="2074">
+  <file name="Niton_MoveIcons\Niton_4.png" size="659">
     <hash>
       <dsig:Transforms>
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
       </dsig:Transforms>
       <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-      <dsig:DigestValue>kgR+zf+Uap4xNXXlYcjjbpbSQlXzA0ihHz7ORSoTRlM=</dsig:DigestValue>
+      <dsig:DigestValue>SuFVAaQ7DfyM4UUyT+g8/t0mR8HtA5TLnEt5HL04X/Q=</dsig:DigestValue>
     </hash>
   </file>
-  <file name="Niton_MoveIcons\Niton_5.png" size="1760">
+  <file name="Niton_MoveIcons\Niton_5.png" size="582">
     <hash>
       <dsig:Transforms>
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
       </dsig:Transforms>
       <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-      <dsig:DigestValue>BUnvPgX/D2EsZHi2hG6s7HFPwz/nPD5kD57r0JntCmg=</dsig:DigestValue>
+      <dsig:DigestValue>6Y2rMKV3WM7XrY4g2GSyXeewu976Cs2z+pLRQ6ziJYw=</dsig:DigestValue>
     </hash>
   </file>
-  <file name="Niton_MoveIcons\Niton_6.png" size="1794">
+  <file name="Niton_MoveIcons\Niton_6.png" size="556">
     <hash>
       <dsig:Transforms>
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
       </dsig:Transforms>
       <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-      <dsig:DigestValue>doFtKsTXv0ko/MTz/TYvgPo7w2I6Cj1GbBdp+lMgfaQ=</dsig:DigestValue>
+      <dsig:DigestValue>X01EMnsm+zZzAMMz8wH72IXeSQh8JL09fAfMtSnhv58=</dsig:DigestValue>
     </hash>
   </file>
-  <file name="Niton_MoveIcons\Niton_7.png" size="1949">
+  <file name="Niton_MoveIcons\Niton_7.png" size="538">
     <hash>
       <dsig:Transforms>
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
       </dsig:Transforms>
       <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-      <dsig:DigestValue>1SlhbeyUvFzA0gsHbZGllmayrf7j5iO6G+LOtZLXfjI=</dsig:DigestValue>
+      <dsig:DigestValue>M6lk43wz1KVJDSi/Tw7l+udSlnRkSE52jXfCxVtX8Mk=</dsig:DigestValue>
     </hash>
   </file>
-  <file name="Niton_MoveIcons\Niton_8.png" size="2244">
+  <file name="Niton_MoveIcons\Niton_8.png" size="723">
     <hash>
       <dsig:Transforms>
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
       </dsig:Transforms>
       <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-      <dsig:DigestValue>/DqBK1PridXwdmRGdESCdgbLi6Ijq1IrhcApI3W71AU=</dsig:DigestValue>
+      <dsig:DigestValue>1hnSdB6Z9L5gT4V55ERmR5OcTPP81X7liaLemuYFy2g=</dsig:DigestValue>
     </hash>
   </file>
-  <file name="Niton_MoveIcons\Niton_9.png" size="2247">
+  <file name="Niton_MoveIcons\Niton_9.png" size="663">
     <hash>
       <dsig:Transforms>
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
       </dsig:Transforms>
       <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-      <dsig:DigestValue>5g5/+fNRzlguMSyvCvQ1CaMFamv1puHqGidQsE0gnh0=</dsig:DigestValue>
+      <dsig:DigestValue>spZ8R8Yfmk7P8OEE+Dxuy+FbACDWI/ZbymNdq4e8TS0=</dsig:DigestValue>
     </hash>
   </file>
   <file name="No Move.png" size="620">
@@ -4980,193 +4980,193 @@
       <dsig:DigestValue>bMu/t32Lk3UQX549wI87LjQKA5kqHxXx9AskOJVTH/I=</dsig:DigestValue>
     </hash>
   </file>
-  <file name="Undin_MoveIcons\Undin_1.png" size="1610">
+  <file name="Undin_MoveIcons\Undin_1.png" size="533">
     <hash>
       <dsig:Transforms>
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
       </dsig:Transforms>
       <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-      <dsig:DigestValue>88ADVVaJfz6P2VqZN00h02UfDuGK6X17ayHUKAppCrU=</dsig:DigestValue>
+      <dsig:DigestValue>TulirqeBHQWQkZ+Uw8oaFL+IG95bgQDHXMbcVFJOvDM=</dsig:DigestValue>
     </hash>
   </file>
-  <file name="Undin_MoveIcons\Undin_10.png" size="1783">
+  <file name="Undin_MoveIcons\Undin_10.png" size="515">
     <hash>
       <dsig:Transforms>
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
       </dsig:Transforms>
       <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-      <dsig:DigestValue>4AFm5wHn0ZBlnyac377cUh55Mp2uVclgtfJKE/K/QaY=</dsig:DigestValue>
+      <dsig:DigestValue>RWd/0B0BmPA0RhIsls1ZjvH/+quTsG1dcLeRX+mfN4s=</dsig:DigestValue>
     </hash>
   </file>
-  <file name="Undin_MoveIcons\Undin_11.png" size="2022">
+  <file name="Undin_MoveIcons\Undin_11.png" size="599">
     <hash>
       <dsig:Transforms>
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
       </dsig:Transforms>
       <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-      <dsig:DigestValue>x6YQcJjlWWbJjhx5BUlYJ4DpPtx3peuEMBPq0n17x/A=</dsig:DigestValue>
+      <dsig:DigestValue>Nv4zYsKK97dJcHa4+pM0MAW+x1qG6zGQyxRs9kDIHSo=</dsig:DigestValue>
     </hash>
   </file>
-  <file name="Undin_MoveIcons\Undin_12.png" size="2269">
+  <file name="Undin_MoveIcons\Undin_12.png" size="639">
     <hash>
       <dsig:Transforms>
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
       </dsig:Transforms>
       <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-      <dsig:DigestValue>06NPYzouphLwJBRCTCda0gUo3bcZ7VUGw6gsDE+bLQc=</dsig:DigestValue>
+      <dsig:DigestValue>74p6xaTknFgocmRt0qbTL95heKZAgBlu/C9HJmzhEjA=</dsig:DigestValue>
     </hash>
   </file>
-  <file name="Undin_MoveIcons\Undin_13.png" size="1454">
+  <file name="Undin_MoveIcons\Undin_13.png" size="490">
     <hash>
       <dsig:Transforms>
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
       </dsig:Transforms>
       <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-      <dsig:DigestValue>vtoUwr30PZtwrdzU38IRzc3M9xkOYtqoIepufbaW6yM=</dsig:DigestValue>
+      <dsig:DigestValue>TEpBkWtbhqQ7ZV+42Y5aSiIi833MB2IJ4bWl/mKV2TM=</dsig:DigestValue>
     </hash>
   </file>
-  <file name="Undin_MoveIcons\Undin_14.png" size="1883">
+  <file name="Undin_MoveIcons\Undin_14.png" size="626">
     <hash>
       <dsig:Transforms>
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
       </dsig:Transforms>
       <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-      <dsig:DigestValue>MnPZX4/2AZR+hx1c0m+guMifVZ6Z2aub0puywFLu8Lo=</dsig:DigestValue>
+      <dsig:DigestValue>SsT/y53y6ZLUYJDWqEtkvx2zD5ShVbnhL70qR+tPZkQ=</dsig:DigestValue>
     </hash>
   </file>
-  <file name="Undin_MoveIcons\Undin_15.png" size="2130">
+  <file name="Undin_MoveIcons\Undin_15.png" size="597">
     <hash>
       <dsig:Transforms>
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
       </dsig:Transforms>
       <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-      <dsig:DigestValue>a8wbHkfNlzrbiy3VhNFW1SV/M4yROmIMI1qaSzx/b6U=</dsig:DigestValue>
+      <dsig:DigestValue>w46gylbg9tG8TmvyCzflY5iF1fC4XQ+mvN80dmbW4fg=</dsig:DigestValue>
     </hash>
   </file>
-  <file name="Undin_MoveIcons\Undin_16.png" size="1645">
+  <file name="Undin_MoveIcons\Undin_16.png" size="552">
     <hash>
       <dsig:Transforms>
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
       </dsig:Transforms>
       <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-      <dsig:DigestValue>yX8mGguIJEKp7SEms6RQyjCs1h93jw3ZmSEWbbI0bYs=</dsig:DigestValue>
+      <dsig:DigestValue>lbxQ5lwR/5HatjVUXXSuCMaC507V1QNRYFuHSrbbEMw=</dsig:DigestValue>
     </hash>
   </file>
-  <file name="Undin_MoveIcons\Undin_17.png" size="1904">
+  <file name="Undin_MoveIcons\Undin_17.png" size="554">
     <hash>
       <dsig:Transforms>
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
       </dsig:Transforms>
       <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-      <dsig:DigestValue>cG5DoVXG98+BcAZKgLimUDCYBePDyhW+va1RYHXMQ1k=</dsig:DigestValue>
+      <dsig:DigestValue>EPBun5gAuX02Hey4uDnPsajhUrnc+iBdFPxV+AyDYZ4=</dsig:DigestValue>
     </hash>
   </file>
-  <file name="Undin_MoveIcons\Undin_18.png" size="2347">
+  <file name="Undin_MoveIcons\Undin_18.png" size="645">
     <hash>
       <dsig:Transforms>
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
       </dsig:Transforms>
       <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-      <dsig:DigestValue>kktD1Naf1OjKHCuuRXN71EfnbAkCHXPq/Iop8nU0l8I=</dsig:DigestValue>
+      <dsig:DigestValue>RRWxR/z9t3TFJZQsZ5dL2/csaHXWQj1VHL5IgANxeYw=</dsig:DigestValue>
     </hash>
   </file>
-  <file name="Undin_MoveIcons\Undin_19.png" size="1877">
+  <file name="Undin_MoveIcons\Undin_19.png" size="550">
     <hash>
       <dsig:Transforms>
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
       </dsig:Transforms>
       <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-      <dsig:DigestValue>TvUC99oKyvmn81j4oLV9ZGPlkV93KCaI/H2gksKEaWg=</dsig:DigestValue>
+      <dsig:DigestValue>kcFie11qRmzaiNUgGx52kYjIODuMO0oaLZPp2hHkhZM=</dsig:DigestValue>
     </hash>
   </file>
-  <file name="Undin_MoveIcons\Undin_2.png" size="1989">
+  <file name="Undin_MoveIcons\Undin_2.png" size="565">
     <hash>
       <dsig:Transforms>
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
       </dsig:Transforms>
       <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-      <dsig:DigestValue>4sV54A0BTSC/LWRmcmo4vDtVp+UPjf1sPK79PAVz+xM=</dsig:DigestValue>
+      <dsig:DigestValue>PTj8Pf6QF9uKr9dKATXIybq8foobzYsMZJYFksRRwZs=</dsig:DigestValue>
     </hash>
   </file>
-  <file name="Undin_MoveIcons\Undin_20.png" size="2300">
+  <file name="Undin_MoveIcons\Undin_20.png" size="593">
     <hash>
       <dsig:Transforms>
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
       </dsig:Transforms>
       <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-      <dsig:DigestValue>x5DBDrEjL/zxbdKQi1ZmeQkl9njNeooa5ffvRHDFsAI=</dsig:DigestValue>
+      <dsig:DigestValue>VnJDNOF1fo2mlVXGAgMWcbBUZa+lBwoi8BiL12cgJrU=</dsig:DigestValue>
     </hash>
   </file>
-  <file name="Undin_MoveIcons\Undin_21.png" size="2256">
+  <file name="Undin_MoveIcons\Undin_21.png" size="588">
     <hash>
       <dsig:Transforms>
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
       </dsig:Transforms>
       <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-      <dsig:DigestValue>2BbKHuDmebrEVkGzEfI4jMCnC/Oi1qkDrR3qyN130ig=</dsig:DigestValue>
+      <dsig:DigestValue>Lx5PN0pGwUxeu1MxSt/se1jpcC9MPj1xWkxQlBpojns=</dsig:DigestValue>
     </hash>
   </file>
-  <file name="Undin_MoveIcons\Undin_3.png" size="1898">
+  <file name="Undin_MoveIcons\Undin_3.png" size="528">
     <hash>
       <dsig:Transforms>
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
       </dsig:Transforms>
       <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-      <dsig:DigestValue>RR1AwROFuAtoVOpcR5pBjckrn8d0lErVWKkyg2rI7JY=</dsig:DigestValue>
+      <dsig:DigestValue>CC3Ct9xqNNFls4n1KlCkhPpeEGBmwBQf+mjyMKGspmU=</dsig:DigestValue>
     </hash>
   </file>
-  <file name="Undin_MoveIcons\Undin_4.png" size="1961">
+  <file name="Undin_MoveIcons\Undin_4.png" size="613">
     <hash>
       <dsig:Transforms>
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
       </dsig:Transforms>
       <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-      <dsig:DigestValue>3FVQF3LOF3da2letzRajGE19ewEW7QruWOEKxvVPjFE=</dsig:DigestValue>
+      <dsig:DigestValue>vj2Eb//fX98FItSllvnxKFNBKZ2hYsQaSLNPgs2geEc=</dsig:DigestValue>
     </hash>
   </file>
-  <file name="Undin_MoveIcons\Undin_5.png" size="1704">
+  <file name="Undin_MoveIcons\Undin_5.png" size="548">
     <hash>
       <dsig:Transforms>
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
       </dsig:Transforms>
       <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-      <dsig:DigestValue>kadv6cgFpPAtnDEwjPxOZmYC1DW0ZdYX+iNhF8GFs2E=</dsig:DigestValue>
+      <dsig:DigestValue>itkcrmLUI/31z7Zrb/+ULddDEIWkVUcUoD4i6m987FA=</dsig:DigestValue>
     </hash>
   </file>
-  <file name="Undin_MoveIcons\Undin_6.png" size="1711">
+  <file name="Undin_MoveIcons\Undin_6.png" size="521">
     <hash>
       <dsig:Transforms>
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
       </dsig:Transforms>
       <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-      <dsig:DigestValue>ogu7PvHjF1uO5nz9r+ZonSxU6uw8q2ZUHAQLWQC4BPs=</dsig:DigestValue>
+      <dsig:DigestValue>n4+qYXGnuGoIQiNGuNgL1fpJ3eGsiiX4LgH8wC0mg5Q=</dsig:DigestValue>
     </hash>
   </file>
-  <file name="Undin_MoveIcons\Undin_7.png" size="1523">
+  <file name="Undin_MoveIcons\Undin_7.png" size="480">
     <hash>
       <dsig:Transforms>
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
       </dsig:Transforms>
       <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-      <dsig:DigestValue>0ihnhWCWiWA3q+pU33KehTVMBdhxIkW0RA9MWww0Mng=</dsig:DigestValue>
+      <dsig:DigestValue>gtAyVtWFTJKA6QM7G9yiJ818s/bG2idqCbImNsXPoVM=</dsig:DigestValue>
     </hash>
   </file>
-  <file name="Undin_MoveIcons\Undin_8.png" size="1924">
+  <file name="Undin_MoveIcons\Undin_8.png" size="544">
     <hash>
       <dsig:Transforms>
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
       </dsig:Transforms>
       <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-      <dsig:DigestValue>nFWHJkFFvMNNdJOUwL3BkZyQ82y7qB5BUnD0CGJxB8o=</dsig:DigestValue>
+      <dsig:DigestValue>u86IKQq5YogLFQOVBQHDnSG6HMPzzoKlW6wEEkzL/S8=</dsig:DigestValue>
     </hash>
   </file>
-  <file name="Undin_MoveIcons\Undin_9.png" size="1125">
+  <file name="Undin_MoveIcons\Undin_9.png" size="439">
     <hash>
       <dsig:Transforms>
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
       </dsig:Transforms>
       <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-      <dsig:DigestValue>jaMLHWSKNkp00n29XaFfGSGWaldJhtf5mU+ILH8eumU=</dsig:DigestValue>
+      <dsig:DigestValue>XiaJ5dTRESCPl2/f5MbXsRNmWkVoPW0cEyicTNyaNkQ=</dsig:DigestValue>
     </hash>
   </file>
   <file name="Worm_MoveIcons\Worm_1.png" size="560">
@@ -5313,94 +5313,94 @@
       <dsig:DigestValue>4iU+E9q6YyUw2a5vA6ZmAs+ublfLauPAkIPPHxy+tL0=</dsig:DigestValue>
     </hash>
   </file>
-  <file name="Wrack_MoveIcons\Wrack_10.png" size="1898">
+  <file name="Wrack_MoveIcons\Wrack_10.png" size="559">
     <hash>
       <dsig:Transforms>
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
       </dsig:Transforms>
       <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-      <dsig:DigestValue>BjJOdT2xsctAGaEmOMpaE+4uCKEikkRhMWrAvNTwQYw=</dsig:DigestValue>
+      <dsig:DigestValue>Em+Sp+TkbkdTzZ85tAIaSAxHYc1KLIDmMGKbla50SsQ=</dsig:DigestValue>
     </hash>
   </file>
-  <file name="Wrack_MoveIcons\Wrack_11.png" size="1974">
+  <file name="Wrack_MoveIcons\Wrack_11.png" size="575">
     <hash>
       <dsig:Transforms>
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
       </dsig:Transforms>
       <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-      <dsig:DigestValue>Ghdc4mVI/bLoCcmWBqqMK1BaaOdh4NZ0IfjKAXZWSk0=</dsig:DigestValue>
+      <dsig:DigestValue>zvU1R1rv+NvhW3iBL2fGdAtiVENBt+BXmw8B9+J4Dhs=</dsig:DigestValue>
     </hash>
   </file>
-  <file name="Wrack_MoveIcons\Wrack_12.png" size="2228">
+  <file name="Wrack_MoveIcons\Wrack_12.png" size="655">
     <hash>
       <dsig:Transforms>
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
       </dsig:Transforms>
       <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-      <dsig:DigestValue>TkxVYVmD8mm5OR15aBi2l+l1aInKVrG5v0+EISs74pQ=</dsig:DigestValue>
+      <dsig:DigestValue>igVrccle1OOH/Dkn2AoYIOBPOnfmaqqnrran1ThHGfQ=</dsig:DigestValue>
     </hash>
   </file>
-  <file name="Wrack_MoveIcons\Wrack_13.png" size="1500">
+  <file name="Wrack_MoveIcons\Wrack_13.png" size="491">
     <hash>
       <dsig:Transforms>
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
       </dsig:Transforms>
       <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-      <dsig:DigestValue>9ZVlMBSLYfMbKDtmfmOZFzpIiVXMGSVa7z/5LMNCDm0=</dsig:DigestValue>
+      <dsig:DigestValue>Ssd7t2l8VLZyfh4pU2uT2iz94JaPfT4UFRG4sD1HCbw=</dsig:DigestValue>
     </hash>
   </file>
-  <file name="Wrack_MoveIcons\Wrack_14.png" size="2110">
+  <file name="Wrack_MoveIcons\Wrack_14.png" size="622">
     <hash>
       <dsig:Transforms>
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
       </dsig:Transforms>
       <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-      <dsig:DigestValue>MQw97MS9m8u+VkB0+JzV+jmeKzvArWd/G59uWOWtCq0=</dsig:DigestValue>
+      <dsig:DigestValue>ej3S6dmU4VaXrhYkSpbmto9lddcK9CUcLt4FsNgTzNw=</dsig:DigestValue>
     </hash>
   </file>
-  <file name="Wrack_MoveIcons\Wrack_15.png" size="2189">
+  <file name="Wrack_MoveIcons\Wrack_15.png" size="596">
     <hash>
       <dsig:Transforms>
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
       </dsig:Transforms>
       <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-      <dsig:DigestValue>5uY4xc5/cjoEyKLwPjsFgL5HUCWguW8q/5Rk+bprYLQ=</dsig:DigestValue>
+      <dsig:DigestValue>g5Wq66XoifPJbxyz5hZR4fm++gS6PI2gHGZjKRIc4TA=</dsig:DigestValue>
     </hash>
   </file>
-  <file name="Wrack_MoveIcons\Wrack_16.png" size="1839">
+  <file name="Wrack_MoveIcons\Wrack_16.png" size="614">
     <hash>
       <dsig:Transforms>
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
       </dsig:Transforms>
       <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-      <dsig:DigestValue>0RvJRLid21XRKO2XdcypMu1vUwZhEqToWiTCcc/nNdY=</dsig:DigestValue>
+      <dsig:DigestValue>Km5THALjG+7dnvmkbPagv/ogqR51djhKRxxfeTYu7fU=</dsig:DigestValue>
     </hash>
   </file>
-  <file name="Wrack_MoveIcons\Wrack_17.png" size="1439">
+  <file name="Wrack_MoveIcons\Wrack_17.png" size="485">
     <hash>
       <dsig:Transforms>
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
       </dsig:Transforms>
       <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-      <dsig:DigestValue>A9T8fr/UUP4Do5md9goqPhWTJuPaNb0WNVoHDFMivCg=</dsig:DigestValue>
+      <dsig:DigestValue>5+0+sxc2OB0xobjib2z50IVI8k+Pl19S4nI+kCfozBM=</dsig:DigestValue>
     </hash>
   </file>
-  <file name="Wrack_MoveIcons\Wrack_18.png" size="1777">
+  <file name="Wrack_MoveIcons\Wrack_18.png" size="548">
     <hash>
       <dsig:Transforms>
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
       </dsig:Transforms>
       <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-      <dsig:DigestValue>SzHXLpJ6u9S9ghCQdN8h/IbznFxwgNaITnvyP2rsngc=</dsig:DigestValue>
+      <dsig:DigestValue>JgkpfDdXjJmodReZewbdLs5236GYPLdyPCQXfPuWkoU=</dsig:DigestValue>
     </hash>
   </file>
-  <file name="Wrack_MoveIcons\Wrack_19.png" size="1770">
+  <file name="Wrack_MoveIcons\Wrack_19.png" size="568">
     <hash>
       <dsig:Transforms>
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
       </dsig:Transforms>
       <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-      <dsig:DigestValue>WwkbrMkwfjenT5dj9OwPJUbU8ZgjIzt1vdVVKHdHbV4=</dsig:DigestValue>
+      <dsig:DigestValue>dhWI42dB34FB9iPZl0/3kqsbpHBjmYeWADmA8/bJC94=</dsig:DigestValue>
     </hash>
   </file>
   <file name="Wrack_MoveIcons\Wrack_2.png" size="600">
@@ -5412,49 +5412,49 @@
       <dsig:DigestValue>4llyX/bbh9jtL7yw6/qFUQX62bo0dEknTEu4+DrnuVI=</dsig:DigestValue>
     </hash>
   </file>
-  <file name="Wrack_MoveIcons\Wrack_20.png" size="2027">
+  <file name="Wrack_MoveIcons\Wrack_20.png" size="634">
     <hash>
       <dsig:Transforms>
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
       </dsig:Transforms>
       <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-      <dsig:DigestValue>AhSL37+sVLZgjQjIXvsB7Z1FZjfoYf65/YsRM15MG2M=</dsig:DigestValue>
+      <dsig:DigestValue>0RvOIB/zBLMmHjkv94xJGNHK13luoBd8vlacO11TWBw=</dsig:DigestValue>
     </hash>
   </file>
-  <file name="Wrack_MoveIcons\Wrack_21.png" size="2198">
+  <file name="Wrack_MoveIcons\Wrack_21.png" size="575">
     <hash>
       <dsig:Transforms>
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
       </dsig:Transforms>
       <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-      <dsig:DigestValue>P6OYTBg1asVETbTtwIiEXjHg0OZWuYG+Qmygy+jvtIg=</dsig:DigestValue>
+      <dsig:DigestValue>mqpek7RZms2wCMkpi+rxBY+CeJeNtGwymO2XFX/ujjI=</dsig:DigestValue>
     </hash>
   </file>
-  <file name="Wrack_MoveIcons\Wrack_22.png" size="2285">
+  <file name="Wrack_MoveIcons\Wrack_22.png" size="563">
     <hash>
       <dsig:Transforms>
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
       </dsig:Transforms>
       <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-      <dsig:DigestValue>/6EUJTkexvy/n/wyTwkNVZ4JbIWmFHI9dNzqFuY4JqA=</dsig:DigestValue>
+      <dsig:DigestValue>2rNP6yfQOzAt1TOPVkJn8HeFmgLO1BwwF9Spj9XOikU=</dsig:DigestValue>
     </hash>
   </file>
-  <file name="Wrack_MoveIcons\Wrack_23.png" size="1983">
+  <file name="Wrack_MoveIcons\Wrack_23.png" size="525">
     <hash>
       <dsig:Transforms>
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
       </dsig:Transforms>
       <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-      <dsig:DigestValue>vFp/d31lWtGoQ9xkQ2RGTXFyH0c/JtmTyzN2oFMbBkM=</dsig:DigestValue>
+      <dsig:DigestValue>oI/1tsZBQR2oPcSBREE2a+xO+AGS7UAPhoIPnLfRG60=</dsig:DigestValue>
     </hash>
   </file>
-  <file name="Wrack_MoveIcons\Wrack_24.png" size="1539">
+  <file name="Wrack_MoveIcons\Wrack_24.png" size="568">
     <hash>
       <dsig:Transforms>
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
       </dsig:Transforms>
       <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-      <dsig:DigestValue>1k9++XFzt3DOxDAlQkoGoyTnJMAeU7TixiQ2I1sPqVQ=</dsig:DigestValue>
+      <dsig:DigestValue>YxEncP98Ie5prfcOUxTnDh7iagcFn3uGQACD9Gk6x9w=</dsig:DigestValue>
     </hash>
   </file>
   <file name="Wrack_MoveIcons\Wrack_3.png" size="536">
@@ -5475,49 +5475,49 @@
       <dsig:DigestValue>IPM+/WpOVnOkD8oOWV0eQ3paxsHaluB+bRcNl/b5OZw=</dsig:DigestValue>
     </hash>
   </file>
-  <file name="Wrack_MoveIcons\Wrack_5.png" size="1900">
+  <file name="Wrack_MoveIcons\Wrack_5.png" size="534">
     <hash>
       <dsig:Transforms>
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
       </dsig:Transforms>
       <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-      <dsig:DigestValue>e9KpRTbGkkcIg96FAba/apwmMdAE4U6c2c5MAETN5YM=</dsig:DigestValue>
+      <dsig:DigestValue>ALHvW2Xuz7Qz+jGMcKKqI3ux4aDG5y6ZcUY9PKHz1vs=</dsig:DigestValue>
     </hash>
   </file>
-  <file name="Wrack_MoveIcons\Wrack_6.png" size="1968">
+  <file name="Wrack_MoveIcons\Wrack_6.png" size="619">
     <hash>
       <dsig:Transforms>
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
       </dsig:Transforms>
       <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-      <dsig:DigestValue>tmOSAwbzPrJ91Tn9K4cdYjjjFqy5WFHYkn6gGEJ65M0=</dsig:DigestValue>
+      <dsig:DigestValue>vCvYZbK5gnSZbiaiYEjYpP6cbmHcnipPL59IHMV4LTs=</dsig:DigestValue>
     </hash>
   </file>
-  <file name="Wrack_MoveIcons\Wrack_7.png" size="1858">
+  <file name="Wrack_MoveIcons\Wrack_7.png" size="547">
     <hash>
       <dsig:Transforms>
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
       </dsig:Transforms>
       <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-      <dsig:DigestValue>sGGSqANU4G/ii/aKvTWlTXXr7BGVuqkPqhTdbvTvDYQ=</dsig:DigestValue>
+      <dsig:DigestValue>7yijHXUZp5j/XA0thrLnIK1TLS6cQ95D+yuyFbSqkBo=</dsig:DigestValue>
     </hash>
   </file>
-  <file name="Wrack_MoveIcons\Wrack_8.png" size="1864">
+  <file name="Wrack_MoveIcons\Wrack_8.png" size="538">
     <hash>
       <dsig:Transforms>
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
       </dsig:Transforms>
       <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-      <dsig:DigestValue>hy/6fjoXXVlAbC27b06w0CJXM16i3YBLb8vlJfK9Ja0=</dsig:DigestValue>
+      <dsig:DigestValue>dE3ts+C6+rElJPXrd20aICoN4m08614OG1ubxK/KUWU=</dsig:DigestValue>
     </hash>
   </file>
-  <file name="Wrack_MoveIcons\Wrack_9.png" size="1795">
+  <file name="Wrack_MoveIcons\Wrack_9.png" size="586">
     <hash>
       <dsig:Transforms>
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
       </dsig:Transforms>
       <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-      <dsig:DigestValue>014qF9sZfcNyIQSNNErVOmwJ+SaCgvWJGUsdnRNREiM=</dsig:DigestValue>
+      <dsig:DigestValue>0ZZB6ojMDGAElA8P2Fm0Kuv+E8KF9AtxGb8MOfnVBOQ=</dsig:DigestValue>
     </hash>
   </file>
   <file name="Zilla_MoveIcons\Zilla_1.png" size="516">
