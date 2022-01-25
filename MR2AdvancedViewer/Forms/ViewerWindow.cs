@@ -141,7 +141,7 @@ namespace MR2AdvancedViewer
             //Compare the Versions
             //Source: https://stackoverflow.com/questions/7568147/compare-version-numbers-without-using-split-function
             int versionComparison = localVersion.CompareTo(latestGitHubVersion);
-            if (versionComparison < 0) 
+            if (versionComparison < 0)
             {
                 DialogResult result = MessageBox.Show(@"You are currently on an outdated build of MR2AV.
 
@@ -158,12 +158,11 @@ Please visit https://github.com/Lexichu/mr2av_repo/releases/ to download the lat
             }
             else if (versionComparison > 0)
             {
-                MessageBox.Show(@"You are currently on a prerelease build of MR2AV! 
-
-Who do you think you are, Lexichu_?", "MR2AV Version Notice", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                // Do something for being ahead of the curve??
             }
             else
             {
+                // Congrats; you're on the latest version!
             }
         }
 
@@ -196,16 +195,22 @@ Who do you think you are, Lexichu_?", "MR2AV Version Notice", MessageBoxButtons.
             switch (RNGNew)
             {
                 case 1:
+                    StatusBarURL.Text = "https://twitch.tv/lexichu_";
                     return "Visit Lexi's Twitch channel; leave her a follow! :D";
                 case 2:
-                    return "Visit Lexi's Twitch channel; leave her a follow! ;D";
+                    StatusBarURL.Text = "https://legendcup.com";
+                    return "Want more info on Monster Rancher? Check out LegendCup!";
                 case 3:
-                    return "Visit Lexi's Twitch channel; leave her a follow! :3";
+                    StatusBarURL.Text = ">//w//<";
+                    return "If you want to donate to Lexi, click the blushyface... ";
                 case 4:
-                    return "Visit Lexi's Twitch channel; leave her a follow! ^w^";
+                    StatusBarURL.Text = "まとめwiki [MF2 Wiki]";
+                    return "日本人？ いいですよ！日本語のガイド ＠";
                 case 5:
+                    StatusBarURL.Text = "https://twitch.tv/lexichu_";
                     return "Visit Lexi's Twitch channel; leave her a follow! :)";
             }
+            StatusBarURL.Text = "https://twitch.tv/lexichu_";
             return "Visit Lexi's Twitch channel; leave her a follow! :)";
         }
 
@@ -4524,7 +4529,7 @@ Who do you think you are, Lexichu_?", "MR2AV Version Notice", MessageBoxButtons.
 
         public string MonLifeStageNames(int MonLife)
         {
-            if(Mon_Lifespan <= 0/* || [some trigger for death by battle]*/)
+            if (Mon_Lifespan <= 0 && MonBreedNameBox.Text != "No Monster"/* || [some trigger for death by battle]*/)
                 return "11 - Dead";
             switch (MonLife)
             {
@@ -4824,7 +4829,7 @@ Who do you think you are, Lexichu_?", "MR2AV Version Notice", MessageBoxButtons.
 
             if ((BSFL & BattleSpecials.Power) == BattleSpecials.Power)
             {
-                if(Mon_EffNature >= 20)
+                if (Mon_EffNature >= 20)
                     specialList += "[Power]";
                 else
                     specialList += "Power";
@@ -4931,7 +4936,7 @@ Who do you think you are, Lexichu_?", "MR2AV Version Notice", MessageBoxButtons.
         private bool GrabPSXProcess()
         {
             PSXProcess = null;
-            switch(EmuVer)
+            switch (EmuVer)
             {
                 case 0:
                     EmuFileName = "ePSXe"; break;
@@ -5046,7 +5051,7 @@ Who do you think you are, Lexichu_?", "MR2AV Version Notice", MessageBoxButtons.
                 MMW.Close();
                 MMW = null;
             }
-            if(TW != null)
+            if (TW != null)
             {
                 TW.Close();
                 TW = null;
@@ -5236,7 +5241,7 @@ This replaces the old button, skipping the additional window and saving Lexi a l
             }
             LIWButton.Enabled = bViewingMR2;
             TWButton.Enabled = bViewingMR2;
-//          IVButton.Enabled = bViewingMR2;
+            //          IVButton.Enabled = bViewingMR2;
             MVButton.Enabled = bViewingMR2;
             MRDebugButton.Enabled = bViewingMR2;
             ItemViewButton.Enabled = bViewingMR2;
@@ -5349,7 +5354,7 @@ As a precaution, MR2AV has stopped reading from the emulator. To continue, press
                     if (Process.GetProcessesByName(EmuFileName).Length <= 0)
                         KillAttach();
 
-                    if(EmuVer == DXSelectionID) // MR2DX changed locations
+                    if (EmuVer == DXSelectionID) // MR2DX changed locations
                     {
                         // All -8 as of 1.0.0.1
                         Mon_Age = MR2ReadDouble(0x00097A0C);
@@ -5578,7 +5583,7 @@ As a precaution, MR2AV has stopped reading from the emulator. To continue, press
                     MonLifespanBox.Invoke((MethodInvoker)delegate { MonLifespanBox.Text = Mon_Lifespan + "w"; });
                     MonInitLifespanBox.Invoke((MethodInvoker)delegate { MonInitLifespanBox.Text = Mon_InitLifespan + "w"; });
                     MonBreedNameBox.Invoke((MethodInvoker)delegate { MonBreedNameBox.Text = MonBreedNames(); });
-                    if(!bChangingName)  //bedeg
+                    if (!bChangingName)  //bedeg
                         MonGivenNameBox.Invoke((MethodInvoker)delegate { MonGivenNameBox.Text = MonReadGivenName(); });
                     MoneyBox.Invoke((MethodInvoker)delegate { MoneyBox.Text = MonReadMoney(); });
                     if (MonBreedNameBox.Text.Contains("[E]") || MonBreedNameBox.Text.Contains("(N/S)"))
@@ -5619,7 +5624,7 @@ As a precaution, MR2AV has stopped reading from the emulator. To continue, press
                         MonMotiveBox9.Text = "---"; MonMotiveBox9.BackColor = SystemColors.Control;
                         MonMotiveBox10.Text = "---"; MonMotiveBox10.BackColor = SystemColors.Control;
                     }
-                    NextSaleWksBox.Invoke((MethodInvoker)delegate { NextSaleWksBox.Text = Game_NextSale + "w"; } );
+                    NextSaleWksBox.Invoke((MethodInvoker)delegate { NextSaleWksBox.Text = Game_NextSale + "w"; });
                     //NextSaleWksBox.Invoke((MethodInvoker)delegate { NextSaleWksBox.Text = Mon_TrainBoost.ToString(); });
                     if (Mon_OldDrug != Mon_Drug)
                     {
@@ -5729,14 +5734,14 @@ Each increase also decreases SPD and DEF by 10%.
                         CollateMonMoves();
                     }
                     ListItems();
-                    if(il != null)
+                    if (il != null)
                     {
                         il.itemIDs = ItemList;
                         il.ItemListUpdate();
                     }
-                    if(mDBG != null)
+                    if (mDBG != null)
                     {
-                        if(mDBG.bReadOK)
+                        if (mDBG.bReadOK)
                         {
                             for (int d = 0; d < 4; d++)
                             {
@@ -5754,7 +5759,7 @@ Each increase also decreases SPD and DEF by 10%.
                         mDBG.ProcessData();
                     }
                     BananaCount = 0;
-                    for(int i = 0; i < 20; i++)
+                    for (int i = 0; i < 20; i++)
                     {
                         if (MonDesireNames(ItemList[i]) == "Magic Banana")
                             BananaCount++;
@@ -5784,7 +5789,7 @@ Each increase also decreases SPD and DEF by 10%.
                             BananaWin.Play(); // Magic Banana scum success plays a chime.
                             MonLifespanBox.BackColor = Color.LightGreen;
                         }
-                        else if((Mon_LoyalSpoil > Mon_OldLoyalSpoil || Mon_OldLoyalSpoil == 100) && (Mon_LoyalFear < Mon_OldLoyalFear || Mon_LoyalFear == 0))
+                        else if ((Mon_LoyalSpoil > Mon_OldLoyalSpoil || Mon_OldLoyalSpoil == 100) && (Mon_LoyalFear < Mon_OldLoyalFear || Mon_LoyalFear == 0))
                         {
                             // Conversion of Spoil to Fear doesn't ring a bell.
                             MonLifespanBox.BackColor = Color.LightYellow;
@@ -5955,8 +5960,8 @@ Each increase also decreases SPD and DEF by 10%.
 
         private void CycleFeatureDisplay()
         {
-            bShowingExtras=!bShowingExtras;
-            if(bShowingExtras)
+            bShowingExtras = !bShowingExtras;
+            if (bShowingExtras)
             {
                 Width = 740;
                 TWButton.Show();
@@ -5990,7 +5995,24 @@ Each increase also decreases SPD and DEF by 10%.
 
         private void StatusBarURL_Click(object sender, EventArgs e)
         {
-            Process.Start("http://twitch.tv/lexichu_");
+            switch (RNGCur)
+            {
+                case 1:
+                    Process.Start("https://twitch.tv/lexichu_");
+                    break;
+                case 2:
+                    Process.Start("https://legendcup.com/");
+                    break;
+                case 3:
+                    Process.Start("https://streamelements.com/lexichu_/tip");
+                    break;
+                case 4:
+                    Process.Start("https://w.atwiki.jp/mf2_matome/");
+                    break;
+                default:
+                    Process.Start("https://twitch.tv/lexichu_");
+                    break;
+            }
         }
 
         private void DumpGrowths_Click(object sender, EventArgs e)
@@ -6005,7 +6027,7 @@ Each increase also decreases SPD and DEF by 10%.
 
         private void MonGivenNameBox_TextChanged(object sender, EventArgs e)
         {
-            
+
         }
 
         private void MoneyBox_TextChanged(object sender, EventArgs e)
@@ -6074,7 +6096,7 @@ Each increase also decreases SPD and DEF by 10%.
                         offsetIncrement += 1;
                     }
                 }
-                else 
+                else
                 {
                     nameToWrite[offsetIncrement] = 0xb0;                                                                    // write "?" if character is not found
                     offsetIncrement += 1;
@@ -6137,6 +6159,11 @@ If the box is not green, but the 'Cocoon Ready' box is ticked, your Worm will co
         private void MonBanaScumToggle_CheckedChanged(object sender, EventArgs e)
         {
             BananaTicks = 0;
+            if (EmuVer == DXSelectionID && MonBanaScumToggle.Checked == true)
+            {
+                MessageBox.Show("Banana Chimes are not currently enabled for MR2DX.");
+                MonBanaScumToggle.Checked = false;
+            }
         }
     }
 }

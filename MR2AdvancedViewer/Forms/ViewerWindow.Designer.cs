@@ -1095,7 +1095,7 @@
             this.UpdateRate.TabIndex = 221;
             this.ScumTip.SetToolTip(this.UpdateRate, "Control the refresh rate of MR2AV.\r\nUseful if you want to save CPU power.\r\nPuttin" +
         "g it below 2.0 will disable the Banana Chime function.");
-            this.UpdateRate.Value = 2;
+            this.UpdateRate.Value = 1;
             this.UpdateRate.Scroll += new System.EventHandler(this.UpdateRate_Scroll);
             // 
             // MonCJLabel
@@ -1444,7 +1444,7 @@
             this.TickDisplay.Name = "TickDisplay";
             this.TickDisplay.Size = new System.Drawing.Size(22, 13);
             this.TickDisplay.TabIndex = 223;
-            this.TickDisplay.Text = "4.0";
+            this.TickDisplay.Text = "8.0";
             // 
             // ItemViewButton
             // 

@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(TrainingWindow));
             this.label1 = new System.Windows.Forms.Label();
             this.DominoChk = new System.Windows.Forms.CheckBox();
@@ -53,6 +54,7 @@
             this.PrimStatLabel = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.SecStatLabel = new System.Windows.Forms.Label();
+            this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
             this.SuspendLayout();
             // 
             // label1
@@ -243,11 +245,13 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(7, 224);
+            this.label2.Location = new System.Drawing.Point(5, 220);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(184, 13);
+            this.label2.Size = new System.Drawing.Size(228, 26);
             this.label2.TabIndex = 17;
-            this.label2.Text = "A flat +1 is granted to the primary stat!";
+            this.label2.Text = "A flat +1 is granted to the primary stat!\r\nGreats reward +1/+3/+5/+7 to the prima" +
+    "ry stat.\r\n";
+            this.toolTip1.SetToolTip(this.label2, "(Cannot exceed +15 for Light/+20 for Heavy)");
             // 
             // DrillSelect
             // 
@@ -266,7 +270,7 @@
             "Leap",
             "Pool (Vanilla)",
             "Pool (Patched/HM)"});
-            this.DrillSelect.Location = new System.Drawing.Point(72, 253);
+            this.DrillSelect.Location = new System.Drawing.Point(72, 258);
             this.DrillSelect.Name = "DrillSelect";
             this.DrillSelect.Size = new System.Drawing.Size(121, 21);
             this.DrillSelect.TabIndex = 18;
@@ -275,7 +279,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(12, 256);
+            this.label3.Location = new System.Drawing.Point(12, 261);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(54, 13);
             this.label3.TabIndex = 19;
@@ -383,5 +387,6 @@
         private System.Windows.Forms.Label PrimStatLabel;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label SecStatLabel;
+        private System.Windows.Forms.ToolTip toolTip1;
     }
 }

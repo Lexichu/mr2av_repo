@@ -171,4 +171,5 @@ You will also require the latest .net Framework, or at least version 4.7.2. Down
 - The mode switcher for MR2AV currently does nothing. Please leave it on MR2 Vanilla. c:
 - Attaching MR2AV may load incorrect data from NO$PSX, if the emulator has been opened more than once.
 -- In this case: Manually detatch MR2AV, open Task Manager, and close any extra copies of NO$PSX that are running in the background.
-- 
+- Certain MR2DX /??? breeds may display the wrong name, as the Breed Name is currently based off of the MR2(PS1) genus list.
+- Quite a few of the Item Viewer items do not have a listed effect. Mostly because I forgot them.

@@ -43,14 +43,14 @@
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="MR2AdvancedViewer.exe" size="2013696">
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="MR2AdvancedViewer.exe" size="2014720">
       <assemblyIdentity name="MR2AdvancedViewer" version="1.0.0.0" language="neutral" processorArchitecture="msil" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>maHORZZ5fl2RnsORhav04JcN4aTUC8MPWjrPM3kNf2E=</dsig:DigestValue>
+        <dsig:DigestValue>57THdyc/9SBIstIBFT5GWP0a5zjG4xrEZcvFW3d0/gU=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>

@@ -58,7 +58,7 @@ namespace MR2AdvancedViewer
             if (Mon_Genus == 0 && ((MoveSlot >= 2 && MoveSlot <= 6) || (MoveSlot >= 7 && MoveSlot <= 11) || (MoveSlot >= 20 && MoveSlot <= 23))) //pixie is weird
                 MoveSlot -= 1;
 
-            hilightSelect.Parent = (PictureBox)this.Controls[("Slot" + ((MoveSlot / 6) + 1) + "_" + ((MoveSlot % 6) + 1))]; 
+            hilightSelect.Parent = (PictureBox)this.Controls[("Slot" + ((MoveSlot / 6) + 1) + "_" + ((MoveSlot % 6) + 1))];  //bedeg
             hilightSelect.Image = Properties.Resources.hilight;                                                             
             hilightSelect.BackColor = Color.Transparent;                                                                    
             hilightSelect.Location = new Point(0, 0);                                                                       
@@ -82,7 +82,7 @@ namespace MR2AdvancedViewer
 
             for (int i = 0; i <= 23; i++)
             {
-                if (Mon_Genus == 0 && ((i >= 2 && i <= 6) || (i >= 7 && i <= 11) || (i >= 20 && i <= 23))) //pixie is weird
+                if (Mon_Genus == 0 && ((i >= 3 && i <= 6) || (i >= 7 && i <= 11) || (i >= 20 && i <= 23))) //pixie is weird
                 {
                     {
                         childBoxes[i - 1].Parent = parentBoxes[i - 1];

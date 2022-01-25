@@ -108,3 +108,71 @@ Match|Making Fire|This match-like tool is used to make fire.|Decreases Stress by
 Tooth Pick|Tooth Pick|Toothpicks are available in all monster sizes.|Decreases Stress by 1.|50|100
 Playmate|Toy for Monsters|Monsters like to play with this fox-tail toy.|Decreases Stress by 1.|250|500
 Whet Stone|Whet Stone|Some monsters use this to sharpen their claws and teeth.|Decreases Stress by 1.|100|200
+Silk Cloth|Silk|This polishing silk has a very fine texture.|Decreases Stress by 1.|100|200
+Disc Dish|Feast from the Ocean|An abundance of seafood is colourfully served over the disc stone.|Increases Form by 1.|350|700
+Gramophone|Gramophone|Music will play when you flip the switch.|Decreases Stress by 1.|350|700
+Shiny Stone|Unique Stone|Females often use this shiny stone as an accessory.|Sells for 750G, provides no benefit.|750|1500
+Meteorite|Unique Stone|This type of stone falls from the sky on rare occasions.|Sells for 400G, provides no benefit.|400|800
+Steamed Bun|Steamed Bun Made in Colart|This steamed bun from Colart is popular throughout the continent.|Increases Form by 2.|50|100
+Razor Blade|Razor Blade|Actually, this is just a disposable razor blade.|Decreases Stress by 1. (?!?)|10|20
+Ice Candy|Snack|This is the most popular ice candy among Monsters.|Increases Form by 1.|20|40
+Fish Bone|Fish Orts|Some monsters really crave these fish leftovers.|Increases Form by 1.|10|20
+Sun Lamp|Lamp|A wedge of shiny stone is used to create a warm, soft glow.|Decreases Stress by 1.|500|1000
+Silk Hat|Silk Hat|This black silk hat is Ghost's favourite.|Decreases Stress by 1.|350|700
+Half Cake|Half of Apple Cake|This may be only a half portion of Apple Cake.|Increases Spoil by 5, Form by 5. Decreases Fear by 4.|150|-----
+Shaved Ice|Snack|This treat is commonly called 'Blue Hawaii'.|Decreases Stress by 12. Increases Form by 1.|150|-----
+Sweet Potato|Baked Sweet Potato|This hot baked sweet potato is especially good during winter.|Decreases Stress by 5. Increases Form by 10.|150|-----
+Medal|Reward|This medal is awarded for outstanding work.|Sale only, rewarded through PocketStation Job system.|100|-----
+Gold Medal|Reward|This gold medal is awarded for outstanding work.|Sale only, rewarded through PocketStation Job system.|400|-----
+Silver Medal|Reward|This silver medal is awarded for outstanding work.|Sale only, rewarded through PocketStation Job system.|200|-----
+Music Box|Reward|This is a rare item that has a high value among collectors.|Sale only, rewarded through PocketStation Job system.|2500|-----
+Medallion|Reward|This extremely rare item is a very lucky find.|Sale only, rewarded through PocketStation Job system(??).|4500|-----
+No Desire|[blank]|[blank]|Dummy item, used for monster item requests.|-----|-----
+Tourney|[blank]|[blank]|Dummy item, used for monster item requests.|-----|-----
+Rest|[blank]|[blank]|Dummy item, used for monster item requests.|-----|-----
+Play|[blank]|[blank]|Dummy item, used for monster item requests.|-----|-----
+Mirror|Mirror|Monsters are careless and usually break this.|No effect, possibly sale only?|350|700
+Colart Tea|Soft Drink|This fine tea from Colart is very expensive.|Decreases Stress by 5. Increases Form by 5.|200|400
+Galoe Nut|Nut from Tree|This nut comes from the Galoe tree, which grows in Galoe Village.|Decreases Form by 1.|30|60
+Stick of Ice|Remains of Ice Candy|Some monsters love to lick these wooden sticks.|Decreases Stress by 1.|10|20
+Ocean Stone|Unique Stone|This extremely rare, fine blue stone comes from the ocean.|Sells for 1000G. No further use.|1000|2000
+Seaweed|Edible Seaweed|This seaweed has a very good effect on dieting monsters.|Decreases Form by 2.|20|40
+Clay Doll|Clay Doll|You cannot use this to spawn a Gaboo.|Decreases Form by 1. Genuinely cannot spawn a Gaboo.|10|20
+Clay Doll|Clay Doll|You cannot use this to spawn a Gaboo.|Decreases Form by 1. Genuinely cannot spawn a Gaboo.|10|20
+Clay Doll|Clay Doll|You cannot use this to spawn a Gaboo.|Decreases Form by 1. Genuinely cannot spawn a Gaboo.|10|20
+Mock Nut|Nut from Tree|Though it is hard to eat because of its shell, it tastes good.|Increase form by 1.|50|100
+Colt's Cake|Homemade Snack|This cake tastes so sweet that it will surprise even a Monster.|Increases Form by 15. Automatically fed by Colt every 48 weeks (1 year) of your Monster's life.|-----|-----
+Flower|Beautiful Flower|This very beautiful flower has unknown properties.|[find what this does]|10|20
+Pixie Chips|Chips of Pixie's Disc|These chips can be used when combining as a secret seasoning|[effect]|1000|-----
+Dragon Chips|Chips of Dragon's Disc|These chips can be used when combining as a secret seasoning|[effect]|2000|-----
+Centaur Chips|Chips of Centaur's Disc|These chips can be used when combining as a secret seasoning|[effect]|2000|-----
+C.Pandora Chips|Chips of Colorpandora's Disc|These chips can be used when combining as a secret seasoning|[effect]|500|-----
+Beaclon Chips|Chips of Beaclon's Disc|These chips can be used when combining as a secret seasoning|[effect]|500|-----
+Henger Chips|Chips of Henger's Disc|These chips can be used when combining as a secret seasoning|[effect]|1000|-----
+Wracky Chips|Chips of Wracky's Disc|These chips can be used when combining as a secret seasoning|[effect]|1500|-----
+Golem Chips|Chips of Golem's Disc|These chips can be used when combining as a secret seasoning|[effect]|500|-----
+Durahan Chips|Chips of Durahan's Disc|These chips can be used when combining as a secret seasoning|[effect]|1500|-----
+Baku Chips|Chips of Baku's Disc|These chips can be used when combining as a secret seasoning|[effect]|500|-----
+Gali Chips|Chips of Gali's Disc|These chips can be used when combining as a secret seasoning|[effect]|1000|-----
+Zilla Chips|Chips of Zilla's Disc|These chips can be used when combining as a secret seasoning|[effect]|1500|-----
+Bajarl Chips|Chips of Bajarl's Disc|These chips can be used when combining as a secret seasoning|[effect]|1000|-----
+Phoenix Chips|Chips of Phoenix's Disc|These chips can be used when combining as a secret seasoning|[effect]|2000|-----
+Ghost Chips|Chips of Ghost's Disc|These chips can be used when combining as a secret seasoning|[effect]|1000|-----
+Metalner Chips|Chips of Metalner's Disc|These chips can be used when combining as a secret seasoning|[effect]|1500|-----
+Jill Chips|Chips of Jill's Disc|These chips can be used when combining as a secret seasoning|[effect]|1500|-----
+Joker Chips|Chips of Joker's Disc|These chips can be used when combining as a secret seasoning|[effect]|1500|-----
+Undine Chips|Chips of Undine's Disc|These chips can be used when combining as a secret seasoning|[effect]|1000|-----
+Mock Chips|Chips of Mock's Disc|These chips can be used when combining as a secret seasoning|[effect]|2000|-----
+Ducken Chips|Chips of Ducken's Disc|These chips can be used when combining as a secret seasoning|[effect]|1000|-----
+Worm Chips|Chips of Worm's Disc|These chips can be used when combining as a secret seasoning|[effect]|500|-----
+Gali Mask|Monster's Mask|Its design resembles the sun and it is very classy.|Cutscene item for the Joker unlock.|-----|-----
+Crystal|Crystal|The power this stone has is still covered in mystery.|Unlocks Metalners when taken to the Shrine. Cannot be combined.|-----|-----
+Undine Slate|Slate with Inscriptions|This slate was discovered in a hot spring.|Unlocks Undine when used as seasoning. Stealth-unlocks Niton at the same time.|-----|-----
+Reward|Reward|This is meant for a Monster as a reward for its hard work.|G given during expeditions on Great success.|-----|-----
+This is meant for a Monster as a reward for its hard work.|G given during expeditions on Great success.|-----|-----
+Stick|Stick|Both its thickness and weight are perfectly suited for Ghost|Green stick. Unlocks Ghost when used as seasoning.|-----|-----
+Cup Jelly (Dia.)|Common Snack for Monsters|This gelatinous food is for busy monsters.|Decreases Form by 2. Cutscene item for getting a lucky Cup Jelly.|-----|-----
+Spear|Spear|This is a lost article of a Monster.|Unlocks Centaur when used as seasoning.|-----|-----
+Wracky Doll|Mysterious Doll|Some people think this mysterious doll comes to life at night.|Cutscene item, received in the mail from a '''fan'''.|-----|-----
+Quack Doll (Dry)|Wooden Bird Doll|This wooden bird-like doll must be built by hand.|Can be sold, but not combined.|3000|-----
+No item|No Item|No Item|This is an empty item slot.|-----|-----
