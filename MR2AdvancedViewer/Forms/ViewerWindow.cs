@@ -8,6 +8,8 @@ using MR2AdvancedViewer.Forms;
 using Octokit;
 using System.Collections.Generic;
 using System.Threading.Tasks;
+using System.Net.NetworkInformation;
+
 
 namespace MR2AdvancedViewer
 {
@@ -22,7 +24,7 @@ namespace MR2AdvancedViewer
         // Some crap to do with reading memory IDK LOL I just wrote this.
         const int PROCESS_ALLACCESS = 0x1F0FFF;
         const int DXSelectionID = 4;
-        const string VersionID = "0.7.0.0";
+        const string VersionID = "0.7.0.1";
         [DllImport("kernel32.dll")]
         public static extern IntPtr OpenProcess(int dwDesiredAccess, bool bInheritHandle, int dwProcessId);
         [DllImport("kernel32.dll")]
@@ -127,10 +129,38 @@ namespace MR2AdvancedViewer
         public bool bChangingName = false; //bedeg
         public string prevName; //bedeg
 
+        public bool IsConnectedToInternet()
+        {
+            if (!NetworkInterface.GetIsNetworkAvailable()) // Do we even have a network device?
+            {
+                return false;
+            }
+
+            Uri host = new Uri("https://github.com/Lexichu/mr2av_repo"); // Does the AV's repo respond?
+            Ping p = new Ping();
+            try
+            {
+                PingReply reply = p.Send(host.Host, 3000);
+                if (reply.Status == IPStatus.Success)
+                    return true;
+            }
+            catch { }
+            return false;
+        }
+
         private async Task CheckGitHubNewerVersion()
         {
             //Get all releases from GitHub
             //Source: https://octokitnet.readthedocs.io/en/latest/getting-started/
+
+            if (!IsConnectedToInternet())
+            {
+                MessageBox.Show(@"Either GitHub is down, or you are offline. Auto-update check cannot proceed.
+
+Check your connection, but if GitHub is down then disregard this message.", "Auto-update Check Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+
             GitHubClient client = new GitHubClient(new ProductHeaderValue("mr2av_repo"));
             IReadOnlyList<Release> releases = await client.Repository.Release.GetAll("Lexichu", "mr2av_repo");
 
@@ -146,7 +176,7 @@ namespace MR2AdvancedViewer
                 DialogResult result = MessageBox.Show(@"You are currently on an outdated build of MR2AV.
 
 Please visit https://github.com/Lexichu/mr2av_repo/releases/ to download the latest release!
-(clicking OK will close MR2AV and visit the GitHub)", "MR2AV Version Notice", MessageBoxButtons.OKCancel, MessageBoxIcon.Error); ;
+(clicking OK will close MR2AV and visit the GitHub)", "MR2AV Version Notice", MessageBoxButtons.OKCancel, MessageBoxIcon.Error);
                 if (result == DialogResult.OK)
                 {
                     Process.Start("https://github.com/Lexichu/mr2av_repo/releases/");
