@@ -88,3 +88,4 @@ G:\Git_MR2AV\MR2AdvancedViewer\obj\Debug\MR2AdvancedViewer.application
 G:\Git_MR2AV\MR2AdvancedViewer\obj\Debug\MR2AdvancedViewer.csproj.CopyComplete
 G:\Git_MR2AV\MR2AdvancedViewer\obj\Debug\MR2AdvancedViewer.exe
 G:\Git_MR2AV\MR2AdvancedViewer\obj\Debug\MR2AdvancedViewer.pdb
+G:\Git_MR2AV\MR2AdvancedViewer\obj\Debug\MR2AdvancedViewer.csproj.SuggestedBindingRedirects.cache

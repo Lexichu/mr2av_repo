@@ -156,7 +156,6 @@
             this.EXFeaturesChkBox = new System.Windows.Forms.CheckBox();
             this.LIWButton = new System.Windows.Forms.Button();
             this.MVButton = new System.Windows.Forms.Button();
-            this.IVButton = new System.Windows.Forms.Button();
             this.label40 = new System.Windows.Forms.Label();
             this.NextSaleWksBox = new System.Windows.Forms.TextBox();
             this.TWButton = new System.Windows.Forms.Button();
@@ -175,6 +174,8 @@
             this.SaveName = new System.Windows.Forms.Button();
             this.CancelName = new System.Windows.Forms.Button();
             this.label43 = new System.Windows.Forms.Label();
+            this.MonPrizeMoney = new System.Windows.Forms.TextBox();
+            this.label44 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.UpdateRate)).BeginInit();
             this.statusStrip1.SuspendLayout();
             this.SuspendLayout();
@@ -746,7 +747,7 @@
             // 
             // MonNatureModBox
             // 
-            this.MonNatureModBox.Location = new System.Drawing.Point(477, 110);
+            this.MonNatureModBox.Location = new System.Drawing.Point(394, 110);
             this.MonNatureModBox.Name = "MonNatureModBox";
             this.MonNatureModBox.ReadOnly = true;
             this.MonNatureModBox.Size = new System.Drawing.Size(70, 20);
@@ -756,7 +757,7 @@
             // Label2
             // 
             this.Label2.AutoSize = true;
-            this.Label2.Location = new System.Drawing.Point(483, 94);
+            this.Label2.Location = new System.Drawing.Point(403, 95);
             this.Label2.Name = "Label2";
             this.Label2.Size = new System.Drawing.Size(58, 13);
             this.Label2.TabIndex = 115;
@@ -765,7 +766,7 @@
             // 
             // MonNatureBox
             // 
-            this.MonNatureBox.Location = new System.Drawing.Point(408, 110);
+            this.MonNatureBox.Location = new System.Drawing.Point(328, 110);
             this.MonNatureBox.Name = "MonNatureBox";
             this.MonNatureBox.ReadOnly = true;
             this.MonNatureBox.Size = new System.Drawing.Size(60, 20);
@@ -776,7 +777,7 @@
             // Label1
             // 
             this.Label1.AutoSize = true;
-            this.Label1.Location = new System.Drawing.Point(406, 94);
+            this.Label1.Location = new System.Drawing.Point(326, 95);
             this.Label1.Name = "Label1";
             this.Label1.Size = new System.Drawing.Size(66, 13);
             this.Label1.TabIndex = 113;
@@ -786,7 +787,7 @@
             // MonMoveSpdLabel
             // 
             this.MonMoveSpdLabel.AutoSize = true;
-            this.MonMoveSpdLabel.Location = new System.Drawing.Point(345, 94);
+            this.MonMoveSpdLabel.Location = new System.Drawing.Point(267, 95);
             this.MonMoveSpdLabel.Name = "MonMoveSpdLabel";
             this.MonMoveSpdLabel.Size = new System.Drawing.Size(60, 13);
             this.MonMoveSpdLabel.TabIndex = 112;
@@ -794,7 +795,7 @@
             // 
             // MonArenaSpeedBox
             // 
-            this.MonArenaSpeedBox.Location = new System.Drawing.Point(356, 110);
+            this.MonArenaSpeedBox.Location = new System.Drawing.Point(278, 110);
             this.MonArenaSpeedBox.Name = "MonArenaSpeedBox";
             this.MonArenaSpeedBox.ReadOnly = true;
             this.MonArenaSpeedBox.Size = new System.Drawing.Size(40, 20);
@@ -971,7 +972,7 @@
             "pSX 1.13",
             "XEBRA 19/10/02",
             "NO$PSX 2.0",
-            "DX Steam v1.0.0.1"});
+            "Steam (2DX)"});
             this.EmuSelectBox.Location = new System.Drawing.Point(71, 13);
             this.EmuSelectBox.MaxDropDownItems = 4;
             this.EmuSelectBox.Name = "EmuSelectBox";
@@ -1376,24 +1377,13 @@
             // MVButton
             // 
             this.MVButton.Enabled = false;
-            this.MVButton.Location = new System.Drawing.Point(630, 396);
+            this.MVButton.Location = new System.Drawing.Point(630, 399);
             this.MVButton.Name = "MVButton";
             this.MVButton.Size = new System.Drawing.Size(90, 23);
             this.MVButton.TabIndex = 213;
             this.MVButton.Text = "Move Viewer";
             this.MVButton.UseVisualStyleBackColor = true;
             this.MVButton.Click += new System.EventHandler(this.MVButton_Click);
-            // 
-            // IVButton
-            // 
-            this.IVButton.Enabled = false;
-            this.IVButton.Location = new System.Drawing.Point(630, 370);
-            this.IVButton.Name = "IVButton";
-            this.IVButton.Size = new System.Drawing.Size(90, 23);
-            this.IVButton.TabIndex = 214;
-            this.IVButton.Text = "Input Viewer";
-            this.IVButton.UseVisualStyleBackColor = true;
-            this.IVButton.Click += new System.EventHandler(this.IVButton_Click);
             // 
             // label40
             // 
@@ -1418,7 +1408,7 @@
             // TWButton
             // 
             this.TWButton.Enabled = false;
-            this.TWButton.Location = new System.Drawing.Point(630, 344);
+            this.TWButton.Location = new System.Drawing.Point(630, 376);
             this.TWButton.Name = "TWButton";
             this.TWButton.Size = new System.Drawing.Size(90, 23);
             this.TWButton.TabIndex = 217;
@@ -1449,7 +1439,7 @@
             // ItemViewButton
             // 
             this.ItemViewButton.Enabled = false;
-            this.ItemViewButton.Location = new System.Drawing.Point(630, 318);
+            this.ItemViewButton.Location = new System.Drawing.Point(630, 353);
             this.ItemViewButton.Name = "ItemViewButton";
             this.ItemViewButton.Size = new System.Drawing.Size(90, 23);
             this.ItemViewButton.TabIndex = 224;
@@ -1464,13 +1454,13 @@
             this.MR2Mode.Items.AddRange(new object[] {
             "MR2 (Vanilla)",
             "MR2 (Hard Mode)",
-            "モン ファーム2 (1.0)",
-            "モン ファーム2 (The Best)"});
+            "モンスター ファーム2"});
             this.MR2Mode.Location = new System.Drawing.Point(317, 13);
             this.MR2Mode.MaxDropDownItems = 4;
             this.MR2Mode.Name = "MR2Mode";
             this.MR2Mode.Size = new System.Drawing.Size(121, 21);
             this.MR2Mode.TabIndex = 225;
+            this.MR2Mode.SelectedIndexChanged += new System.EventHandler(this.MR2Mode_SelectedIndexChanged);
             // 
             // label42
             // 
@@ -1484,7 +1474,7 @@
             // MRDebugButton
             // 
             this.MRDebugButton.Enabled = false;
-            this.MRDebugButton.Location = new System.Drawing.Point(630, 292);
+            this.MRDebugButton.Location = new System.Drawing.Point(630, 330);
             this.MRDebugButton.Name = "MRDebugButton";
             this.MRDebugButton.Size = new System.Drawing.Size(90, 23);
             this.MRDebugButton.TabIndex = 227;
@@ -1530,7 +1520,7 @@
             // 
             // DumpGrowths
             // 
-            this.DumpGrowths.Location = new System.Drawing.Point(630, 266);
+            this.DumpGrowths.Location = new System.Drawing.Point(630, 307);
             this.DumpGrowths.Name = "DumpGrowths";
             this.DumpGrowths.Size = new System.Drawing.Size(90, 23);
             this.DumpGrowths.TabIndex = 229;
@@ -1579,11 +1569,33 @@
             this.label43.Size = new System.Drawing.Size(0, 13);
             this.label43.TabIndex = 233;
             // 
+            // MonPrizeMoney
+            // 
+            this.MonPrizeMoney.Location = new System.Drawing.Point(470, 110);
+            this.MonPrizeMoney.Name = "MonPrizeMoney";
+            this.MonPrizeMoney.ReadOnly = true;
+            this.MonPrizeMoney.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.MonPrizeMoney.Size = new System.Drawing.Size(90, 20);
+            this.MonPrizeMoney.TabIndex = 234;
+            this.MonPrizeMoney.Text = "0G";
+            this.MonPrizeMoney.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // label44
+            // 
+            this.label44.AutoSize = true;
+            this.label44.Location = new System.Drawing.Point(480, 95);
+            this.label44.Name = "label44";
+            this.label44.Size = new System.Drawing.Size(68, 13);
+            this.label44.TabIndex = 235;
+            this.label44.Text = "Prize Money:";
+            // 
             // ViewerWindow
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(724, 480);
+            this.Controls.Add(this.label44);
+            this.Controls.Add(this.MonPrizeMoney);
             this.Controls.Add(this.label43);
             this.Controls.Add(this.CancelName);
             this.Controls.Add(this.SaveName);
@@ -1603,7 +1615,6 @@
             this.Controls.Add(this.TWButton);
             this.Controls.Add(this.NextSaleWksBox);
             this.Controls.Add(this.label40);
-            this.Controls.Add(this.IVButton);
             this.Controls.Add(this.MVButton);
             this.Controls.Add(this.LIWButton);
             this.Controls.Add(this.EXFeaturesChkBox);
@@ -1728,7 +1739,7 @@
             this.MaximizeBox = false;
             this.Name = "ViewerWindow";
             this.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.Text = "MR2 Advanced Viewer v0.7";
+            this.Text = "MR2 Advanced Viewer v???";
             this.Load += new System.EventHandler(this.ViewerWindow_Load);
             ((System.ComponentModel.ISupportInitialize)(this.UpdateRate)).EndInit();
             this.statusStrip1.ResumeLayout(false);
@@ -1862,7 +1873,6 @@
         private System.Windows.Forms.CheckBox EXFeaturesChkBox;
         private System.Windows.Forms.Button LIWButton;
         private System.Windows.Forms.Button MVButton;
-        private System.Windows.Forms.Button IVButton;
         private System.Windows.Forms.Label label40;
         private System.Windows.Forms.TextBox NextSaleWksBox;
         private System.Windows.Forms.Button TWButton;
@@ -1885,6 +1895,8 @@
         private System.Windows.Forms.Button SaveName;
         private System.Windows.Forms.Button CancelName;
         private System.Windows.Forms.Label label43;
+        internal System.Windows.Forms.TextBox MonPrizeMoney;
+        internal System.Windows.Forms.Label label44;
     }
 }
 

@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ItemLister));
             this.ButtonPanel = new System.Windows.Forms.FlowLayoutPanel();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
@@ -93,7 +94,7 @@
             this.ItemTypeDesc.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ItemTypeDesc.Location = new System.Drawing.Point(7, 157);
             this.ItemTypeDesc.Name = "ItemTypeDesc";
-            this.ItemTypeDesc.Size = new System.Drawing.Size(64, 16);
+            this.ItemTypeDesc.Size = new System.Drawing.Size(63, 16);
             this.ItemTypeDesc.TabIndex = 5;
             this.ItemTypeDesc.Text = "No Item";
             // 
@@ -125,7 +126,7 @@
             this.itemEff_Label.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.itemEff_Label.Location = new System.Drawing.Point(7, 242);
             this.itemEff_Label.Name = "itemEff_Label";
-            this.itemEff_Label.Size = new System.Drawing.Size(88, 16);
+            this.itemEff_Label.Size = new System.Drawing.Size(87, 16);
             this.itemEff_Label.TabIndex = 9;
             this.itemEff_Label.Text = "Item Effect:";
             // 
@@ -144,6 +145,7 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.ButtonPanel);
             this.Cursor = System.Windows.Forms.Cursors.Default;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "ItemLister";

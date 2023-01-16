@@ -24,7 +24,9 @@ namespace MR2AdvancedViewer
         // Some crap to do with reading memory IDK LOL I just wrote this.
         const int PROCESS_ALLACCESS = 0x1F0FFF;
         const int DXSelectionID = 4;
-        const string VersionID = "0.7.0.1";
+        const string VersionID = "0.7.1.0";
+        const string ReadableVersion = "MR2 Adanced Viewer 0.7.1";
+        const string ReadableVersionJP = "MF2 アドバンスド ビューアー 0.7.1";
         [DllImport("kernel32.dll")]
         public static extern IntPtr OpenProcess(int dwDesiredAccess, bool bInheritHandle, int dwProcessId);
         [DllImport("kernel32.dll")]
@@ -35,6 +37,7 @@ namespace MR2AdvancedViewer
         public int PSXBase = 0x00000000;
         int HasRead; // I just use this so ReadProcessMemory stops complaining.
         public IntPtr psxPTR;
+        public bool bJPNMode;
         Process PSXProcess;
         string EmuFileName;
         public byte[] ScratchData = new byte[4];
@@ -87,6 +90,8 @@ namespace MR2AdvancedViewer
         public int P1Input;
         public int Game_NextSale;
         public int Game_ErrantryCD;
+        public int Mon_PrizeMoney;
+        public int[] ActiveMoves = new int[4];
 
         // Motivation Values.
         public int Mon_MotivDom = -1;
@@ -4661,14 +4666,42 @@ Please visit https://github.com/Lexichu/mr2av_repo/releases/ to download the lat
         {
             int PlayerMoney;
             Array.Clear(ScratchData, 0, 4);
+
             if (EmuVer != DXSelectionID)
-                ReadProcessMemory(psxPTR, PSXBase + 0x00098FBC, ScratchData, 4, ref HasRead);
+            {
+                if (MR2Mode.SelectedIndex < 2)
+                    // Monster Rancher 2
+                    ReadProcessMemory(psxPTR, PSXBase + 0x00098FBC, ScratchData, 4, ref HasRead);
+                else if (MR2Mode.SelectedIndex == 2)
+                    ReadProcessMemory(psxPTR, PSXBase + 0x00096F6C, ScratchData, 4, ref HasRead);
+            }
             else
             {
                 ReadProcessMemory(psxPTR, PSXBase + 0x0009A568, ScratchData, 4, ref HasRead);
             }
             PlayerMoney = BitConverter.ToInt32(ScratchData, 0);
             return PlayerMoney.ToString() + "G";
+        }
+
+        private string MonReadPrizeMoney()
+        {
+            int MonsterMoney;
+            Array.Clear(ScratchData, 0, 4);
+
+            if (EmuVer != DXSelectionID)
+            {
+                if (MR2Mode.SelectedIndex < 2)
+                    // Monster Rancher 2
+                    ReadProcessMemory(psxPTR, PSXBase + 0x00097A5C, ScratchData, 4, ref HasRead); // TODO: Find Prize Money for MR2
+                else if (MR2Mode.SelectedIndex == 2)
+                    ReadProcessMemory(psxPTR, PSXBase + 0x00095A0C, ScratchData, 4, ref HasRead); // TODO: Find Prize Money for MF2
+            }
+            else
+            {
+                ReadProcessMemory(psxPTR, PSXBase + 0x00097A54, ScratchData, 4, ref HasRead);
+            }
+            MonsterMoney = BitConverter.ToInt32(ScratchData, 0);
+            return MonsterMoney.ToString() + "G";
         }
 
         private string MonReadGivenName()
@@ -4715,108 +4748,313 @@ Please visit https://github.com/Lexichu/mr2av_repo/releases/ to download the lat
             }
             else
             {
-                for (int i = 0; i < 12; i++)
+                if (MR2Mode.SelectedIndex < 2)
                 {
-                    ReadProcessMemory(psxPTR, PSXBase + 0x00097B78 + i, ScratchData, 1, ref HasRead);
-                    CharaID = ScratchData[0];
-
-                    switch (CharaID)
+                    for (int i = 0; i < 12; i++)
                     {
-                        case 0: MonGivenName += " "; break;
-                        case 1: MonGivenName += "0"; break;
-                        case 2: MonGivenName += "1"; break;
-                        case 3: MonGivenName += "2"; break;
-                        case 4: MonGivenName += "3"; break;
-                        case 5: MonGivenName += "4"; break;
-                        case 6: MonGivenName += "5"; break;
-                        case 7: MonGivenName += "6"; break;
-                        case 8: MonGivenName += "7"; break;
-                        case 9: MonGivenName += "8"; break;
-                        case 10: MonGivenName += "9"; break;
-                        case 11: MonGivenName += "A"; break;
-                        case 12: MonGivenName += "B"; break;
-                        case 13: MonGivenName += "C"; break;
-                        case 14: MonGivenName += "D"; break;
-                        case 15: MonGivenName += "E"; break;
-                        case 16: MonGivenName += "F"; break;
-                        case 17: MonGivenName += "G"; break;
-                        case 18: MonGivenName += "H"; break;
-                        case 19: MonGivenName += "I"; break;
-                        case 20: MonGivenName += "J"; break;
-                        case 21: MonGivenName += "K"; break;
-                        case 22: MonGivenName += "L"; break;
-                        case 23: MonGivenName += "M"; break;
-                        case 24: MonGivenName += "N"; break;
-                        case 25: MonGivenName += "O"; break;
-                        case 26: MonGivenName += "P"; break;
-                        case 27: MonGivenName += "Q"; break;
-                        case 28: MonGivenName += "R"; break;
-                        case 29: MonGivenName += "S"; break;
-                        case 30: MonGivenName += "T"; break;
-                        case 31: MonGivenName += "U"; break;
-                        case 32: MonGivenName += "V"; break;
-                        case 33: MonGivenName += "W"; break;
-                        case 34: MonGivenName += "X"; break;
-                        case 35: MonGivenName += "Y"; break;
-                        case 36: MonGivenName += "Z"; break;
-                        case 37: MonGivenName += "a"; break;
-                        case 38: MonGivenName += "b"; break;
-                        case 39: MonGivenName += "c"; break;
-                        case 40: MonGivenName += "d"; break;
-                        case 41: MonGivenName += "e"; break;
-                        case 42: MonGivenName += "f"; break;
-                        case 43: MonGivenName += "g"; break;
-                        case 44: MonGivenName += "h"; break;
-                        case 45: MonGivenName += "i"; break;
-                        case 46: MonGivenName += "j"; break;
-                        case 47: MonGivenName += "k"; break;
-                        case 48: MonGivenName += "l"; break;
-                        case 49: MonGivenName += "m"; break;
-                        case 50: MonGivenName += "n"; break;
-                        case 51: MonGivenName += "o"; break;
-                        case 52: MonGivenName += "p"; break;
-                        case 53: MonGivenName += "q"; break;
-                        case 54: MonGivenName += "r"; break;
-                        case 55: MonGivenName += "s"; break;
-                        case 56: MonGivenName += "t"; break;
-                        case 57: MonGivenName += "u"; break;
-                        case 58: MonGivenName += "v"; break;
-                        case 59: MonGivenName += "w"; break;
-                        case 60: MonGivenName += "x"; break;
-                        case 61: MonGivenName += "y"; break;
-                        case 62: MonGivenName += "z"; break;
-                        case 63: MonGivenName += "."; break;
-                        case 64: MonGivenName += "·"; break;
-                        case 65: MonGivenName += "!"; break;
-                        case 66: MonGivenName += "?"; break;
-                        case 67: MonGivenName += "-"; break;
-                        case 68: MonGivenName += ","; break;
-                        case 69: MonGivenName += "。"; break;
-                        case 70: MonGivenName += "+"; break;
-                        case 71: MonGivenName += "x"; break;
-                        case 72: MonGivenName += "/"; break;
-                        case 73: MonGivenName += "-"; break;
-                        case 74: MonGivenName += "%"; break;
-                        case 75: MonGivenName += "="; break;
-                        case 76: MonGivenName += "「"; break;
-                        case 77: MonGivenName += "」"; break;
-                        case 78: MonGivenName += "O"; break;
-                        case 79: MonGivenName += "∆"; break;
-                        case 80: MonGivenName += "□"; break;
-                        case 81: MonGivenName += "X"; break;
-                        case 84: MonGivenName += "`"; break;
-                        case 85: MonGivenName += "\""; break;
-                        case 86: MonGivenName += ":"; break;
-                        case 87: MonGivenName += "~"; break;
-                        case 90: MonGivenName += "("; break;
-                        case 91: MonGivenName += ")"; break;
-                        case 92: MonGivenName += "_"; break;
-                        case 255: i = 11; break; // Null Terminate
-                        default: MonGivenName += "_"; break;
+                        ReadProcessMemory(psxPTR, PSXBase + 0x00097B78 + i, ScratchData, 1, ref HasRead);
+                        if (ScratchData[0] == 255)
+                        {
+                            break;
+                        }
+                        MonGivenName += ExportEnglishPS1(ScratchData[0], false);
+                    }
+                }
+                else if (MR2Mode.SelectedIndex == 2)
+                {
+                    for (int i = 0; i < 16; i++)
+                    {
+                        ReadProcessMemory(psxPTR, PSXBase + 0x00095B28 + i, ScratchData, 1, ref HasRead);
+                        CharaID = ScratchData[0];
+
+                        switch (CharaID)
+                        {
+                            case 0: MonGivenName += " "; break; // space
+                                // Hiragana START
+                            case 1: MonGivenName += "あ"; break;
+                            case 2: MonGivenName += "い"; break;
+                            case 3: MonGivenName += "う"; break;
+                            case 4: MonGivenName += "え"; break;
+                            case 5: MonGivenName += "お"; break;
+                            case 6: MonGivenName += "か"; break;
+                            case 7: MonGivenName += "き"; break;
+                            case 8: MonGivenName += "く"; break;
+                            case 9: MonGivenName += "け"; break;
+                            case 10: MonGivenName += "こ"; break;
+                            case 11: MonGivenName += "さ"; break;
+                            case 12: MonGivenName += "し"; break;
+                            case 13: MonGivenName += "す"; break;
+                            case 14: MonGivenName += "せ"; break;
+                            case 15: MonGivenName += "そ"; break;
+                            case 16: MonGivenName += "た"; break;
+                            case 17: MonGivenName += "ち"; break;
+                            case 18: MonGivenName += "つ"; break;
+                            case 19: MonGivenName += "て"; break;
+                            case 20: MonGivenName += "と"; break;
+                            case 21: MonGivenName += "な"; break;
+                            case 22: MonGivenName += "に"; break;
+                            case 23: MonGivenName += "ぬ"; break;
+                            case 24: MonGivenName += "ね"; break;
+                            case 25: MonGivenName += "の"; break;
+                            case 26: MonGivenName += "は"; break;
+                            case 27: MonGivenName += "ひ"; break;
+                            case 28: MonGivenName += "ふ"; break;
+                            case 29: MonGivenName += "へ"; break;
+                            case 30: MonGivenName += "ほ"; break;
+                            case 31: MonGivenName += "ま"; break;
+                            case 32: MonGivenName += "み"; break;
+                            case 33: MonGivenName += "む"; break;
+                            case 34: MonGivenName += "め"; break;
+                            case 35: MonGivenName += "も"; break;
+                            case 36: MonGivenName += "や"; break;
+                            case 37: MonGivenName += "ゆ"; break;
+                            case 38: MonGivenName += "よ"; break;
+                            case 39: MonGivenName += "ら"; break;
+                            case 40: MonGivenName += "り"; break;
+                            case 41: MonGivenName += "る"; break;
+                            case 42: MonGivenName += "れ"; break;
+                            case 43: MonGivenName += "ろ"; break;
+                            case 44: MonGivenName += "わ"; break;
+                            case 45: MonGivenName += "を"; break;
+                            case 46: MonGivenName += "ん"; break;
+                            case 47: MonGivenName += "が"; break;
+                            case 48: MonGivenName += "ぎ"; break;
+                            case 49: MonGivenName += "ぐ"; break;
+                            case 50: MonGivenName += "げ"; break;
+                            case 51: MonGivenName += "ご"; break;
+                            case 52: MonGivenName += "ざ"; break;
+                            case 53: MonGivenName += "じ"; break;
+                            case 54: MonGivenName += "ず"; break;
+                            case 55: MonGivenName += "ぜ"; break;
+                            case 56: MonGivenName += "ぞ"; break;
+                            case 57: MonGivenName += "だ"; break;
+                            case 58: MonGivenName += "ぢ"; break;
+                            case 59: MonGivenName += "づ"; break;
+                            case 60: MonGivenName += "で"; break;
+                            case 61: MonGivenName += "ど"; break;
+                            case 62: MonGivenName += "ば"; break;
+                            case 63: MonGivenName += "び"; break;
+                            case 64: MonGivenName += "ぶ"; break;
+                            case 65: MonGivenName += "べ"; break;
+                            case 66: MonGivenName += "ぼ"; break;
+                            case 67: MonGivenName += "ぁ"; break;
+                            case 68: MonGivenName += "ぃ"; break;
+                            case 69: MonGivenName += "ぅ"; break;
+                            case 70: MonGivenName += "ぇ"; break;
+                            case 71: MonGivenName += "ぉ"; break;
+                            case 72: MonGivenName += "ゃ"; break;
+                            case 73: MonGivenName += "ゅ"; break;
+                            case 74: MonGivenName += "ょ"; break;
+                            case 75: MonGivenName += "ぱ"; break;
+                            case 76: MonGivenName += "ぴ"; break;
+                            case 77: MonGivenName += "ぷ"; break;
+                            case 78: MonGivenName += "ぺ"; break;
+                            case 79: MonGivenName += "ぽ"; break;
+                            case 80: MonGivenName += "っ"; break;
+                                // Katakana START - Hiragana END
+                            case 81: MonGivenName += "ア"; break;
+                            case 82: MonGivenName += "イ"; break;
+                            case 83: MonGivenName += "ウ"; break;
+                            case 84: MonGivenName += "エ"; break;
+                            case 85: MonGivenName += "オ"; break;
+                            case 86: MonGivenName += "カ"; break;
+                            case 87: MonGivenName += "キ"; break;
+                            case 88: MonGivenName += "ク"; break;
+                            case 89: MonGivenName += "ケ"; break;
+                            case 90: MonGivenName += "コ"; break;
+                            case 91: MonGivenName += "サ"; break;
+                            case 92: MonGivenName += "シ"; break;
+                            case 93: MonGivenName += "ス"; break;
+                            case 94: MonGivenName += "セ"; break;
+                            case 95: MonGivenName += "ソ"; break;
+                            case 96: MonGivenName += "た"; break;
+                            case 97: MonGivenName += "チ"; break;
+                            case 98: MonGivenName += "ツ"; break;
+                            case 99: MonGivenName += "テ"; break;
+                            case 100: MonGivenName += "ト"; break;
+                            case 101: MonGivenName += "ナ"; break;
+                            case 102: MonGivenName += "ニ"; break;
+                            case 103: MonGivenName += "ヌ"; break;
+                            case 104: MonGivenName += "ネ"; break;
+                            case 105: MonGivenName += "ノ"; break;
+                            case 106: MonGivenName += "ハ"; break;
+                            case 107: MonGivenName += "ヒ"; break;
+                            case 108: MonGivenName += "フ"; break;
+                            case 109: MonGivenName += "ヘ"; break;
+                            case 110: MonGivenName += "ホ"; break;
+                            case 111: MonGivenName += "マ"; break;
+                            case 112: MonGivenName += "ミ"; break;
+                            case 113: MonGivenName += "ム"; break;
+                            case 114: MonGivenName += "メ"; break;
+                            case 115: MonGivenName += "モ"; break;
+                            case 116: MonGivenName += "ヤ"; break;
+                            case 117: MonGivenName += "ユ"; break;
+                            case 118: MonGivenName += "ヨ"; break;
+                            case 119: MonGivenName += "ラ"; break;
+                            case 120: MonGivenName += "リ"; break;
+                            case 121: MonGivenName += "ル"; break;
+                            case 122: MonGivenName += "レ"; break;
+                            case 123: MonGivenName += "ロ"; break;
+                            case 124: MonGivenName += "わ"; break;
+                            case 125: MonGivenName += "ヲ"; break;
+                            case 126: MonGivenName += "ン"; break;
+                            case 127: MonGivenName += "ガ"; break;
+                            case 128: MonGivenName += "ギ"; break;
+                            case 129: MonGivenName += "グ"; break;
+                            case 130: MonGivenName += "ゲ"; break;
+                            case 131: MonGivenName += "ゴ"; break;
+                            case 132: MonGivenName += "ザ"; break;
+                            case 133: MonGivenName += "ジ"; break;
+                            case 134: MonGivenName += "ズ"; break;
+                            case 135: MonGivenName += "ゼ"; break;
+                            case 136: MonGivenName += "ゾ"; break;
+                            case 137: MonGivenName += "ダ"; break;
+                            case 138: MonGivenName += "ヂ"; break;
+                            case 139: MonGivenName += "ヅ"; break;
+                            case 140: MonGivenName += "デ"; break;
+                            case 141: MonGivenName += "ド"; break;
+                            case 142: MonGivenName += "バ"; break;
+                            case 143: MonGivenName += "ビ"; break;
+                            case 144: MonGivenName += "ブ"; break;
+                            case 145: MonGivenName += "ベ"; break;
+                            case 146: MonGivenName += "ボ"; break;
+                            case 147: MonGivenName += "ァ"; break;
+                            case 148: MonGivenName += "ィ"; break;
+                            case 149: MonGivenName += "ゥ"; break;
+                            case 150: MonGivenName += "ェ"; break;
+                            case 151: MonGivenName += "ォ"; break;
+                            case 152: MonGivenName += "ャ"; break;
+                            case 153: MonGivenName += "ュ"; break;
+                            case 154: MonGivenName += "ョ"; break;
+                            case 155: MonGivenName += "パ"; break;
+                            case 156: MonGivenName += "ピ"; break;
+                            case 157: MonGivenName += "プ"; break;
+                            case 158: MonGivenName += "ペ"; break;
+                            case 159: MonGivenName += "ポ"; break;
+                            case 160: MonGivenName += "ッ"; break;
+                            case 161: MonGivenName += "ヴ"; break;
+                            case 162: MonGivenName += "0"; break;
+                            case 163: MonGivenName += "1"; break;
+                            case 164: MonGivenName += "2"; break;
+                            case 165: MonGivenName += "3"; break;
+                            case 166: MonGivenName += "4"; break;
+                            case 167: MonGivenName += "5"; break;
+                            case 168: MonGivenName += "6"; break;
+                            case 169: MonGivenName += "7"; break;
+                            case 170: MonGivenName += "8"; break;
+                            case 171: MonGivenName += "9"; break;
+                            case 176: i++; ReadProcessMemory(psxPTR, PSXBase + 0x00095B28 + i, ScratchData, 1, ref HasRead); MonGivenName += ExportEnglishPS1(ScratchData[0], true); break; // English Letters.
+                            case 255: i = 15; break; // Null Terminate
+                            default: MonGivenName += "_"; break;
+                        }
                     }
                 }
             }
             return MonGivenName;
+        }
+
+        private string ExportEnglishPS1(int characterID, bool bJapaneseMode)
+        {
+            if (bJapaneseMode)
+                characterID += 11;
+
+            if (characterID > 92)
+                characterID = 92;
+
+            switch (characterID)
+            {
+                case 0: return " ";
+                case 1: return "0";
+                case 2: return "1";
+                case 3: return "2";
+                case 4: return "3";
+                case 5: return "4";
+                case 6: return "5";
+                case 7: return "6";
+                case 8: return "7";
+                case 9: return "8";
+                case 10: return "9";
+                case 11: return "A";
+                case 12: return "B";
+                case 13: return "C";
+                case 14: return "D";
+                case 15: return "E";
+                case 16: return "F";
+                case 17: return "G";
+                case 18: return "H";
+                case 19: return "I";
+                case 20: return "J";
+                case 21: return "K";
+                case 22: return "L";
+                case 23: return "M";
+                case 24: return "N";
+                case 25: return "O";
+                case 26: return "P";
+                case 27: return "Q";
+                case 28: return "R";
+                case 29: return "S";
+                case 30: return "T";
+                case 31: return "U";
+                case 32: return "V";
+                case 33: return "W";
+                case 34: return "X";
+                case 35: return "Y";
+                case 36: return "Z";
+                case 37: return "a";
+                case 38: return "b";
+                case 39: return "c";
+                case 40: return "d";
+                case 41: return "e";
+                case 42: return "f";
+                case 43: return "g";
+                case 44: return "h";
+                case 45: return "i";
+                case 46: return "j";
+                case 47: return "k";
+                case 48: return "l";
+                case 49: return "m";
+                case 50: return "n";
+                case 51: return "o";
+                case 52: return "p";
+                case 53: return "q";
+                case 54: return "r";
+                case 55: return "s";
+                case 56: return "t";
+                case 57: return "u";
+                case 58: return "v";
+                case 59: return "w";
+                case 60: return "x";
+                case 61: return "y";
+                case 62: return "z";
+                case 63: return ".";
+                case 64: return "·";
+                case 65: return "!";
+                case 66: return "?";
+                case 67: return "-";
+                case 68: return ",";
+                case 69: return "。";
+                case 70: return "+";
+                case 71: return "x";
+                case 72: return "/";
+                case 73: return "-";
+                case 74: return "%";
+                case 75: return "=";
+                case 76: return "「";
+                case 77: return "」";
+                case 78: return "O";
+                case 79: return "∆";
+                case 80: return "□";
+                case 81: return "X";
+                case 84: return "`";
+                case 85: return "\"";
+                case 86: return ":";
+                case 87: return "~";
+                case 90: return "(";
+                case 91: return ")";
+                case 92: return "_";
+                default:
+                    return "_";
+            }
         }
 
         private void ReadInput()
@@ -4848,9 +5086,16 @@ Please visit https://github.com/Lexichu/mr2av_repo/releases/ to download the lat
         private string MonReadBattleSpecials()
         {
             if (EmuVer != DXSelectionID) // If this is PS1 emulation
-                ReadProcessMemory(psxPTR, PSXBase + 0x00097BD8, ScratchData, 2, ref HasRead);
+            {
+                if(MR2Mode.SelectedIndex < 2)
+                    ReadProcessMemory(psxPTR, PSXBase + 0x00097BD8, ScratchData, 2, ref HasRead);
+                else if (MR2Mode.SelectedIndex == 2)
+                    ReadProcessMemory(psxPTR, PSXBase + 0x00095B88, ScratchData, 2, ref HasRead);
+            }
             else // If this is MR2DX
+            {
                 ReadProcessMemory(psxPTR, PSXBase + 0x00097BE0, ScratchData, 2, ref HasRead);
+            }
             int SpecialsInt = BitConverter.ToInt16(ScratchData, 0);
             bool bInvalid = false;
             BattleSpecials BSFL = (BattleSpecials)SpecialsInt;
@@ -5056,7 +5301,6 @@ Please visit https://github.com/Lexichu/mr2av_repo/releases/ to download the lat
             EmuSelectBox.Enabled = true;
             EmuAttachButton.Enabled = false;
             LIWButton.Enabled = false;
-            IVButton.Enabled = false;
             TWButton.Enabled = false;
             MVButton.Enabled = false;
             MRDebugButton.Enabled = false;
@@ -5066,11 +5310,15 @@ Please visit https://github.com/Lexichu/mr2av_repo/releases/ to download the lat
             MonCocoonReady.Hide();
             CocoonInfo.Hide();
             EmuSelectBox.SelectedIndex = -1;
+            MR2Mode.SelectedIndex = -1;
             Array.Clear(ScratchData, 0, 4);
             Array.Clear(nameToWrite, 0, 24); //bedeg
             EmuVer = -1;
+            MR2Mode.SelectedIndex = -1;
+            MR2Mode.Enabled = true;
+            bJPNMode = false;
+            Text = ReadableVersion;
 
-            Text = "MR2 Advanced Viewer v0.7";
             if (LIW != null)
             {
                 LIW.Close();
@@ -5118,6 +5366,10 @@ Please visit https://github.com/Lexichu/mr2av_repo/releases/ to download the lat
             bShowingExtras = true;
             CycleFeatureDisplay();
             await CheckGitHubNewerVersion();
+
+            EmuSelectBox.SelectedIndex = -1;
+            MR2Mode.SelectedIndex = -1;
+            Text = ReadableVersion;
 
             ScumTip.SetToolTip(EXFeaturesChkBox, @"Show/Hide the extra features of MR2AV.
 This replaces the old button, skipping the additional window and saving Lexi a lot of code headache.");
@@ -5172,19 +5424,61 @@ This replaces the old button, skipping the additional window and saving Lexi a l
 
         private void CollateMonMoves()
         {
-            for (int i = 0; i < 24; i++)
+            if (EmuVer == DXSelectionID)
             {
-                Mon_Moves[i] = MR2ReadInt(0x00097BA2 + (2 * i));    //bedeg
-                Mon_MoveUsed[i] = MR2ReadInt(0x00097BA3 + (2 * i)); //bedeg
+                for (int i = 0; i < 24; i++) // Thanks to bedeg for this <3
+                {
+                    Mon_Moves[i] = MR2ReadInt(0x00097BA2 + (2 * i));
+                    Mon_MoveUsed[i] = MR2ReadInt(0x00097BA3 + (2 * i));
+                }
+            }
+            else
+            {
+                if (MR2Mode.SelectedIndex < 2)
+                {
+                    for (int i = 0; i < 24; i++)
+                    {
+                        Mon_Moves[i] = MR2ReadInt(0x00097B9A + (2 * i));
+                        Mon_MoveUsed[i] = MR2ReadInt(0x00097B9B + (2 * i));
+                    }
+                }
+                else if (MR2Mode.SelectedIndex == 2)
+                {
+                    for (int i = 0; i < 24; i++)
+                    {
+                        Mon_Moves[i] = MR2ReadInt(0x00095B4A + (2 * i));
+                        Mon_MoveUsed[i] = MR2ReadInt(0x00095B4B + (2 * i));
+                    }
+                }
             }
         }
 
         private void ListItems()
         {
-            for (int i = 0; i < 20; i++)
+            if (EmuVer == DXSelectionID)
             {
-                //ItemList[i] = MR2ReadInt(0x0009923C + (4 * i));
-                ItemList[i] = MR2ReadInt(0x0009A7EC + (4 * i)); //bedeg
+                for (int i = 0; i < 20; i++)
+                {
+                    //ItemList[i] = MR2ReadInt(0x0009923C + (4 * i));
+                    ItemList[i] = MR2ReadInt(0x0009A7EC + (4 * i)); //bedeg
+                }
+            }
+            else
+            {
+                if (MR2Mode.SelectedIndex < 2)
+                {
+                    for (int i = 0; i < 20; i++)
+                    {
+                        ItemList[i] = MR2ReadInt(0x0009923C + (4 * i));
+                    }
+                }
+                else if (MR2Mode.SelectedIndex == 2)
+                {
+                    for (int i = 0; i < 20; i++)
+                    {
+                        ItemList[i] = MR2ReadInt(0x000971EC + (4 * i)); // 971EC
+                    }
+                }
             }
         }
 
@@ -5202,14 +5496,11 @@ This replaces the old button, skipping the additional window and saving Lexi a l
                     psxPTR = OpenProcess(PROCESS_ALLACCESS, false, PSXProcess.Id);
                     PSBase = (int)PSXProcess.MainModule.BaseAddress;
                     EmuAttachButton.Text = "Detach";
-                    Text = " MR2 Advanced Viewer v0.7 - Attached to " + EmuSelectBox.Text;
                     EmuSelectBox.Enabled = false;
                     UnfreezeTicks = 4;
 
                     MainTime.Interval = UpdateRate.Value * 125; ; // specify interval time as you want
                     MainTime.Start();
-                    //Timer2.Interval = 32;
-                    //Timer2.Start();
                     int PointOffset;
                     switch (EmuVer)
                     {
@@ -5233,8 +5524,26 @@ This replaces the old button, skipping the additional window and saving Lexi a l
                             PointOffset = BitConverter.ToInt32(ScratchData, 0);
                             PSXBase = PointOffset;
                             break;
-                        case 4: // MR2DX: "MF2.exe" + 002DEC6C
-                            PSXBase = PSBase + 0x002DEC6C; // 1.001 update
+                        case 4: // MR2DX: "MF2.exe" + 002DEC6C (EN) OR 0x002CA504 (JPN)
+                            DialogResult dialogResult = MessageBox.Show(@"あの… [MF2DX] と [MR2DX] のどちらを使っていますか?
+（［MF2DX］の場合は［はい/Yes］を押してください）
+
+Erm, are you playing MF2DX, or MR2DX?
+(If you're playing MF2DX, press Yes. Otherwise press No.)
+", ReadableVersion + "/" + ReadableVersionJP, MessageBoxButtons.YesNo);
+                            if (dialogResult == DialogResult.Yes)
+                            {
+                                PSXBase = PSBase + 0x002CA504; // 1.001 update
+                                bJPNMode = true;
+                                // arigatou, nyori-san. @NyoriMF2 on Twitter
+                            }
+                            else if (dialogResult == DialogResult.No)
+                            {
+                                PSXBase = PSBase + 0x002DEC6C; // 1.001 update
+                                bJPNMode = false;
+                            }
+                            MR2Mode.SelectedIndex = -1;
+                            MR2Mode.Enabled = false;
                             break;
                         default:
                             break;
@@ -5242,7 +5551,7 @@ This replaces the old button, skipping the additional window and saving Lexi a l
                 }
                 else
                 {
-                    MessageBox.Show("MR2 Advanced Viewer cannot find " + EmuSelectBox.Text + " running on this system. Please run the selected emulator, or try another. (" + EmuVer + ")", "MR2AV Attach Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show("MR2 Advanced Viewer cannot find " + EmuSelectBox.Text + " running on this system. Please run the selected emulator, or try another.", "MR2AV Attach Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     EmuSelectBox.SelectedIndex = -1;
                     EmuVer = -1;
                 }
@@ -5365,6 +5674,7 @@ As a precaution, MR2AV has stopped reading from the emulator. To continue, press
                 case 1: return "Type 2: Precocious";
                 case 2: return "Type 3: Late Bloom";
                 case 3: return "Type 4: Sustainable";
+                case 4: return "Type 5: Prodigy [X]";
                 default: return "Unrecognised";
             }
         }
@@ -5438,7 +5748,11 @@ As a precaution, MR2AV has stopped reading from the emulator. To continue, press
                         Mon_LifeStage = MR2ReadInt(0x00097B9B);
                         Mon_LifeType = MR2ReadInt(0x00097B9C);
                         Mon_ArenaSPD = MR2ReadInt(0x00097BDE);
-                        Mon_GutsRate = MR2ReadInt(0x00097BDF);
+                        Mon_GutsRate = MR2ReadInt(0x00097BDF); // -7 hex from this, for active move selection.
+                        ActiveMoves[0] = MR2ReadInt(0x00097BD8);
+                        ActiveMoves[1] = MR2ReadInt(0x00097BD9);
+                        ActiveMoves[2] = MR2ReadInt(0x00097BDA);
+                        ActiveMoves[3] = MR2ReadInt(0x00097BDB);
 
                         // I have no idea where these are stored.
                         Game_NextSale = MR2ReadInt(0x0009A88E);
@@ -5446,58 +5760,124 @@ As a precaution, MR2AV has stopped reading from the emulator. To continue, press
                     }
                     else
                     {
-                        Mon_Age = MR2ReadDouble(0x00097A14);
-                        MonGenus_Main = MR2ReadInt(0x00097A18);
-                        MonGenus_Sub = MR2ReadInt(0x00097A1C);
-                        Mon_Lif = MR2ReadDouble(0x00097A20);
-                        Mon_Pow = MR2ReadDouble(0x00097A22);
-                        Mon_Int = MR2ReadDouble(0x00097A2A);
-                        Mon_Skl = MR2ReadDouble(0x00097A26);
-                        Mon_Spd = MR2ReadDouble(0x00097A28);
-                        Mon_Def = MR2ReadDouble(0x00097A24);
-                        Mon_Lifespan = MR2ReadDouble(0x00097A30);
-                        Mon_InitLifespan = MR2ReadDouble(0x00097A32);
-                        Mon_Nature = MR2ReadDouble(0x00097A34);
-                        Mon_Fatigue = MR2ReadInt(0x00097A37);
-                        Mon_Fame = MR2ReadInt(0x00097A38);
-                        Mon_Stress = MR2ReadInt(0x00097A3B); // Stress is signed.
-                        Mon_LoyalSpoil = MR2ReadInt(0x00097A3C);
-                        Mon_LoyalFear = MR2ReadInt(0x00097A3D);
-                        Mon_Form = MR2ReadInt(0x00097A3E);
-                        MonGR_Power = MR2ReadInt(0x00097A40);
-                        MonGR_Intelligence = MR2ReadInt(0x00097A41);
-                        MonGR_LIF = MR2ReadInt(0x00097A42);
-                        MonGR_Skill = MR2ReadInt(0x00097A43);
-                        MonGR_Speed = MR2ReadInt(0x00097A44);
-                        MonGR_Defence = MR2ReadInt(0x00097A45);
-                        Mon_NatureBase = MR2ReadInt(0x00097A59);
-                        Mon_TrainBoost = MR2ReadDouble(0x00097A78);
-                        Mon_CupJellies = MR2ReadInt(0x00097AC5);
-                        MonPeach_Gold = MR2ReadBool(0x00097AC6);
-                        MonPeach_Silver = MR2ReadBool(0x00097AC7);
-                        Mon_MotivDom = MR2ReadInt(0x00097AF0);
-                        Mon_MotivStu = MR2ReadInt(0x00097AF1);
-                        Mon_MotivRun = MR2ReadInt(0x00097AF2);
-                        Mon_MotivSho = MR2ReadInt(0x00097AF3);
-                        Mon_MotivDod = MR2ReadInt(0x00097AF4);
-                        Mon_MotivEnd = MR2ReadInt(0x00097AF5);
-                        Mon_MotivPul = MR2ReadInt(0x00097AF6);
-                        Mon_MotivMed = MR2ReadInt(0x00097AF7);
-                        Mon_MotivLea = MR2ReadInt(0x00097AF8);
-                        Mon_MotivSwi = MR2ReadInt(0x00097AF9);
-                        Mon_PlayType = MR2ReadInt(0x00097AFD);
-                        Mon_Drug = MR2ReadInt(0x00097B0A);
-                        Mon_DrugDuration = MR2ReadInt(0x00097B0C);
-                        Mon_ItemUsed = MR2ReadBool(0x00097B0E);
-                        MonItem_Like = MR2ReadInt(0x00097B1A);
-                        MonItem_Dislike = MR2ReadInt(0x00097B1C);
-                        Mon_Rank = MR2ReadInt(0x00097B92);
-                        Mon_LifeStage = MR2ReadInt(0x00097B93);
-                        Mon_LifeType = MR2ReadInt(0x00097B94);
-                        Mon_ArenaSPD = MR2ReadInt(0x00097BD6);
-                        Mon_GutsRate = MR2ReadInt(0x00097BD7);
-                        Game_NextSale = MR2ReadInt(0x000992DE);
-                        Game_ErrantryCD = MR2ReadInt(0x000992E9);
+                        if (MR2Mode.SelectedIndex < 2)
+                        {
+                            Mon_Age = MR2ReadDouble(0x00097A14);
+                            MonGenus_Main = MR2ReadInt(0x00097A18);
+                            MonGenus_Sub = MR2ReadInt(0x00097A1C);
+                            Mon_Lif = MR2ReadDouble(0x00097A20);
+                            Mon_Pow = MR2ReadDouble(0x00097A22);
+                            Mon_Int = MR2ReadDouble(0x00097A2A);
+                            Mon_Skl = MR2ReadDouble(0x00097A26);
+                            Mon_Spd = MR2ReadDouble(0x00097A28);
+                            Mon_Def = MR2ReadDouble(0x00097A24);
+                            Mon_Lifespan = MR2ReadDouble(0x00097A30);
+                            Mon_InitLifespan = MR2ReadDouble(0x00097A32);
+                            Mon_Nature = MR2ReadDouble(0x00097A34);
+                            Mon_Fatigue = MR2ReadInt(0x00097A37);
+                            Mon_Fame = MR2ReadInt(0x00097A38);
+                            Mon_Stress = MR2ReadInt(0x00097A3B); // Stress is signed.
+                            Mon_LoyalSpoil = MR2ReadInt(0x00097A3C);
+                            Mon_LoyalFear = MR2ReadInt(0x00097A3D);
+                            Mon_Form = MR2ReadInt(0x00097A3E);
+                            MonGR_Power = MR2ReadInt(0x00097A40);
+                            MonGR_Intelligence = MR2ReadInt(0x00097A41);
+                            MonGR_LIF = MR2ReadInt(0x00097A42);
+                            MonGR_Skill = MR2ReadInt(0x00097A43);
+                            MonGR_Speed = MR2ReadInt(0x00097A44);
+                            MonGR_Defence = MR2ReadInt(0x00097A45);
+                            Mon_NatureBase = MR2ReadInt(0x00097A59);
+                            Mon_TrainBoost = MR2ReadDouble(0x00097A78);
+                            Mon_CupJellies = MR2ReadInt(0x00097AC5);
+                            MonPeach_Gold = MR2ReadBool(0x00097AC6);
+                            MonPeach_Silver = MR2ReadBool(0x00097AC7);
+                            Mon_MotivDom = MR2ReadInt(0x00097AF0);
+                            Mon_MotivStu = MR2ReadInt(0x00097AF1);
+                            Mon_MotivRun = MR2ReadInt(0x00097AF2);
+                            Mon_MotivSho = MR2ReadInt(0x00097AF3);
+                            Mon_MotivDod = MR2ReadInt(0x00097AF4);
+                            Mon_MotivEnd = MR2ReadInt(0x00097AF5);
+                            Mon_MotivPul = MR2ReadInt(0x00097AF6);
+                            Mon_MotivMed = MR2ReadInt(0x00097AF7);
+                            Mon_MotivLea = MR2ReadInt(0x00097AF8);
+                            Mon_MotivSwi = MR2ReadInt(0x00097AF9);
+                            Mon_PlayType = MR2ReadInt(0x00097AFD);
+                            Mon_Drug = MR2ReadInt(0x00097B0A);
+                            Mon_DrugDuration = MR2ReadInt(0x00097B0C);
+                            Mon_ItemUsed = MR2ReadBool(0x00097B0E);
+                            MonItem_Like = MR2ReadInt(0x00097B1A);
+                            MonItem_Dislike = MR2ReadInt(0x00097B1C);
+                            Mon_Rank = MR2ReadInt(0x00097B92);
+                            Mon_LifeStage = MR2ReadInt(0x00097B93);
+                            Mon_LifeType = MR2ReadInt(0x00097B94);
+                            ActiveMoves[0] = MR2ReadInt(0x00097BD0);
+                            ActiveMoves[1] = MR2ReadInt(0x00097BD1);
+                            ActiveMoves[2] = MR2ReadInt(0x00097BD2);
+                            ActiveMoves[3] = MR2ReadInt(0x00097BD3);
+                            Mon_ArenaSPD = MR2ReadInt(0x00097BD6);
+                            Mon_GutsRate = MR2ReadInt(0x00097BD7); // -7 hex from this, for active move selection.
+                            Game_NextSale = MR2ReadInt(0x000992DE);
+                            Game_ErrantryCD = MR2ReadInt(0x000992E9);
+                        }
+                        else if (MR2Mode.SelectedIndex == 2)
+                        {
+                            Mon_Age = MR2ReadDouble(0x000959C4);
+                            MonGenus_Main = MR2ReadInt(0x000959C8); // MuffinTrain woz ere (15/01/2023)
+                            MonGenus_Sub = MR2ReadInt(0x000959CC);
+                            Mon_Lif = MR2ReadDouble(0x000959D0);
+                            Mon_Pow = MR2ReadDouble(0x000959D2);
+                            Mon_Int = MR2ReadDouble(0x000959DA);
+                            Mon_Skl = MR2ReadDouble(0x000959D6);
+                            Mon_Spd = MR2ReadDouble(0x000959D8);
+                            Mon_Def = MR2ReadDouble(0x000959D4);
+                            Mon_Lifespan = MR2ReadDouble(0x000959E0);
+                            Mon_InitLifespan = MR2ReadDouble(0x000959E2);
+                            Mon_Nature = MR2ReadDouble(0x000959E4);
+                            Mon_Fatigue = MR2ReadInt(0x000959E7);
+                            Mon_Fame = MR2ReadInt(0x000959E8);
+                            Mon_Stress = MR2ReadInt(0x000959EB); // Stress is signed.
+                            Mon_LoyalSpoil = MR2ReadInt(0x000959EC);
+                            Mon_LoyalFear = MR2ReadInt(0x000959ED);
+                            Mon_Form = MR2ReadInt(0x000959EE);
+                            MonGR_Power = MR2ReadInt(0x000959F0);
+                            MonGR_Intelligence = MR2ReadInt(0x000959F1);
+                            MonGR_LIF = MR2ReadInt(0x000959F2);
+                            MonGR_Skill = MR2ReadInt(0x000959F3);
+                            MonGR_Speed = MR2ReadInt(0x000959F4);
+                            MonGR_Defence = MR2ReadInt(0x000959F5);
+                            Mon_NatureBase = MR2ReadInt(0x00095A09);
+                            Mon_TrainBoost = MR2ReadDouble(0x00095A28); 
+                            Mon_CupJellies = MR2ReadInt(0x00095A75);
+                            MonPeach_Gold = MR2ReadBool(0x00095A76);
+                            MonPeach_Silver = MR2ReadBool(0x00095A77);
+                            Mon_MotivDom = MR2ReadInt(0x00095AA0);
+                            Mon_MotivStu = MR2ReadInt(0x00095AA1);
+                            Mon_MotivRun = MR2ReadInt(0x00095AA2);
+                            Mon_MotivSho = MR2ReadInt(0x00095AA3);
+                            Mon_MotivDod = MR2ReadInt(0x00095AA4);
+                            Mon_MotivEnd = MR2ReadInt(0x00095AA5);
+                            Mon_MotivPul = MR2ReadInt(0x00095AA6);
+                            Mon_MotivMed = MR2ReadInt(0x00095AA7);
+                            Mon_MotivLea = MR2ReadInt(0x00095AA8);
+                            Mon_MotivSwi = MR2ReadInt(0x00095AA9);
+                            Mon_PlayType = MR2ReadInt(0x00095AAD);
+                            Mon_Drug = MR2ReadInt(0x00095ABA);
+                            Mon_DrugDuration = MR2ReadInt(0x00095ABC);
+                            Mon_ItemUsed = MR2ReadBool(0x00095ABE);
+                            MonItem_Like = MR2ReadInt(0x00095ACA);
+                            MonItem_Dislike = MR2ReadInt(0x00095ACC); ///
+                            Mon_Rank = MR2ReadInt(0x00095B42);
+                            Mon_LifeStage = MR2ReadInt(0x00095B43);
+                            Mon_LifeType = MR2ReadInt(0x00095B44);
+                            ActiveMoves[0] = MR2ReadInt(0x00095B80);
+                            ActiveMoves[1] = MR2ReadInt(0x00095B81);
+                            ActiveMoves[2] = MR2ReadInt(0x00095B82);
+                            ActiveMoves[3] = MR2ReadInt(0x00095B83);
+                            Mon_ArenaSPD = MR2ReadInt(0x00095B86);
+                            Mon_GutsRate = MR2ReadInt(0x00095B87);
+                            Game_NextSale = MR2ReadInt(0x0009728E);
+                            Game_ErrantryCD = MR2ReadInt(0x00097299);
+                        }
                     }
 
                     if (Mon_NatureBase >= 128) { Mon_NatureBase = (256 - Mon_NatureBase) * -1; } // Nature is signed.
@@ -5516,10 +5896,13 @@ As a precaution, MR2AV has stopped reading from the emulator. To continue, press
                     float fMGR = Mon_GutsRate;
                     if (fMGR > 0)
                         fMGR = 30 / fMGR;
+
                     Mon_EffDef = Mon_Def * (1 + ((float)Mon_Form / 400));
                     Mon_EffDef = Math.Min(Mon_EffDef, 999);
+                    Mon_EffDef = Math.Max(Mon_EffDef, 1);
                     Mon_EffSpd = Mon_Spd * (1 - ((float)Mon_Form / 400));
                     Mon_EffSpd = Math.Min(Mon_EffSpd, 999);
+                    Mon_EffSpd = Math.Max(Mon_EffSpd, 1);
 
                     // Growth Rates
                     if (!HideData.Checked)
@@ -5615,7 +5998,8 @@ As a precaution, MR2AV has stopped reading from the emulator. To continue, press
                     MonBreedNameBox.Invoke((MethodInvoker)delegate { MonBreedNameBox.Text = MonBreedNames(); });
                     if (!bChangingName)  //bedeg
                         MonGivenNameBox.Invoke((MethodInvoker)delegate { MonGivenNameBox.Text = MonReadGivenName(); });
-                    MoneyBox.Invoke((MethodInvoker)delegate { MoneyBox.Text = MonReadMoney(); });
+                    MoneyBox.Text = MonReadMoney();
+                    MonPrizeMoney.Text = MonReadPrizeMoney();
                     if (MonBreedNameBox.Text.Contains("[E]") || MonBreedNameBox.Text.Contains("(N/S)"))
                         MonBreedNameBox.BackColor = Color.LightPink;
                     else
@@ -5703,6 +6087,12 @@ Each increase also decreases SPD and DEF by 10%.
                     }
                     Mon_OldDrug = Mon_Drug;
 
+                    if (bJPNMode && Text != ReadableVersionJP)
+                        Text = ReadableVersionJP;
+
+                    if (!bJPNMode && Text != ReadableVersion)
+                        Text = ReadableVersion;
+
                     if (MonGenus_Main == 36 && Mon_Rank < 3)
                     {
                         MonCJBox.Show();
@@ -5761,6 +6151,7 @@ Each increase also decreases SPD and DEF by 10%.
                         MMW.Mon_Stats[3] = Mon_Skl;
                         MMW.Mon_Stats[4] = Mon_Spd;
                         MMW.Mon_Stats[5] = Mon_Def;
+                        MMW.MonActMoves = ActiveMoves;
                         CollateMonMoves();
                     }
                     ListItems();
@@ -5995,7 +6386,6 @@ Each increase also decreases SPD and DEF by 10%.
             {
                 Width = 740;
                 TWButton.Show();
-                IVButton.Show();
                 LIWButton.Show();
                 MVButton.Show();
                 MRDebugButton.Show();
@@ -6005,7 +6395,6 @@ Each increase also decreases SPD and DEF by 10%.
             {
                 Width = 640;
                 TWButton.Hide();
-                IVButton.Hide();
                 LIWButton.Hide();
                 MVButton.Hide();
                 MRDebugButton.Hide();
@@ -6062,7 +6451,6 @@ Each increase also decreases SPD and DEF by 10%.
 
         private void MoneyBox_TextChanged(object sender, EventArgs e)
         {
-
         }
 
         private void ChangeName_Click(object sender, EventArgs e) //bedeg
@@ -6083,6 +6471,9 @@ Each increase also decreases SPD and DEF by 10%.
 
         private void SaveName_Click(object sender, EventArgs e) //bedeg
         {
+            if (MonGivenNameBox.Text == "")
+                MonGivenNameBox.Text = prevName;
+
             convTextAndWrite();
 
             bChangingName = false;
@@ -6142,10 +6533,17 @@ Each increase also decreases SPD and DEF by 10%.
             WriteProcessMemory(psxPTR, PSXBase + 0x0097B78, nameToWrite, 24, ref HasRead);
         }
 
+        private void MR2Mode_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if(EmuVer != DXSelectionID)
+            {
+                bJPNMode = (MR2Mode.SelectedIndex == 2);
+            }
+        }
+
         private void StatusMessageCycle_Tick(object sender, EventArgs e)
         {
             StatusBarMSG.Text = CycleMessages();
-
         }
 
         private void Label2_Click(object sender, EventArgs e)

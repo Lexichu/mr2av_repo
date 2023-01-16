@@ -28,7 +28,6 @@ namespace MR2AdvancedViewer.Forms
             if (rawdata_item.Length >= arrayslot)
             {
                 string[] scratchdata = rawdata_item[arrayslot].Split('|');
-                ItemButtons[arrayslot].Text = scratchdata[0];
                 ItemTypeDesc.Text = scratchdata[1];
                 ItemDescription.Text = scratchdata[2];
                 ItemEffect.Text = scratchdata[3];
@@ -53,8 +52,10 @@ namespace MR2AdvancedViewer.Forms
             Button button;
             for (int i = 0; i < 20; i++)
             {
-                button = new Button{ };
-                button.Width = 120;
+                button = new Button
+                {
+                    Width = 120
+                };
                 ButtonPanel.Controls.Add(button);
                 ItemButtons[i] = button;
                 ItemButtons[i].Tag = "BTN_ID_" + i;

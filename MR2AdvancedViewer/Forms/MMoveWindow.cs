@@ -20,6 +20,7 @@ namespace MR2AdvancedViewer
         public int rowSelected, colSelected;
         public int[] Mon_Stats = new int[6];
         public int Mon_Nature = -1; //bedeg
+        public int[] MonActMoves = new int[4];
         public Color PowCol = System.Drawing.ColorTranslator.FromHtml("#DAA520");
         public Color IntCol = Color.Green;
         public Random rng = new Random();
@@ -71,10 +72,6 @@ namespace MR2AdvancedViewer
                                         skillChecked_6, skillChecked_7, skillChecked_8, skillChecked_9, skillChecked_10, skillChecked_11,           
                                         skillChecked_12, skillChecked_13, skillChecked_14, skillChecked_15, skillChecked_16, skillChecked_17,       
                                         skillChecked_18, skillChecked_19, skillChecked_20, skillChecked_21, skillChecked_22, skillChecked_23 };     
-            /*PictureBox[] canGetBoxes = { canGet0, canGet1, canGet2, canGet3, canGet4, canGet5,                                                    //too much to handle...
-                                        canGet6, canGet7, canGet8, canGet9, canGet10, canGet11,                                                     //
-                                        canGet12, canGet13, canGet14, canGet15, canGet16, canGet17,                                                 //
-                                        canGet18, canGet19, canGet20, canGet21, canGet22, canGet23 };*/                                             //
             PictureBox[] parentBoxes = { Slot1_1, Slot1_2, Slot1_3, Slot1_4, Slot1_5, Slot1_6,                                                      
                                         Slot2_1, Slot2_2, Slot2_3, Slot2_4, Slot2_5, Slot2_6,                                                      
                                         Slot3_1, Slot3_2, Slot3_3, Slot3_4, Slot3_5, Slot3_6,                                                       
@@ -589,6 +586,7 @@ namespace MR2AdvancedViewer
             GenerateMoveInfo();
             MMITimer.Interval = 500;
             MMITimer.Start();
+
         }
 
         private void MMITimer_Tick(object sender, EventArgs e)
@@ -596,6 +594,66 @@ namespace MR2AdvancedViewer
             if (Mon_Genus != oldGenus)
                 PopulateMoveIcons();
             GenerateMoveInfo();
+
+            int curMove = MonActMoves[0];
+
+            PictureBox[] MoveBoxes = { Slot1_1, Slot1_2, Slot1_3, Slot1_4, Slot1_5, Slot1_6,
+                                        Slot2_1, Slot2_2, Slot2_3, Slot2_4, Slot2_5, Slot2_6,
+                                        Slot3_1, Slot3_2, Slot3_3, Slot3_4, Slot3_5, Slot3_6,
+                                        Slot4_1, Slot4_2, Slot4_3, Slot4_4, Slot4_5, Slot4_6 };
+
+            if (MonActMoves[0] != 24 && MonActMoves[0] < 6)
+            {
+                curMove = MonActMoves[0];
+                if (Mon_Genus == 0 && curMove >= 3 && curMove <= 6)
+                    curMove--;
+
+                ActiveR1.Image = MoveBoxes[curMove].Image;
+            }
+            else
+            {
+                ActiveR1.Image = Properties.Resources.No_Move;
+            }
+
+            if (MonActMoves[1] != 24 && MonActMoves[1] < 12 && MonActMoves[1] > 5)
+            {
+                curMove = MonActMoves[1];
+
+                if (Mon_Genus == 0 && curMove >= 7 && curMove <= 11)
+                    curMove--;
+                ActiveR2.Image = MoveBoxes[curMove].Image;
+            }
+            else
+            {
+                ActiveR2.Image = Properties.Resources.No_Move;
+            }
+
+            if (MonActMoves[2] != 24 && MonActMoves[2] < 18 && MonActMoves[2] > 11)
+            {
+                ActiveR3.Image = MoveBoxes[MonActMoves[2]].Image;
+            }
+            else
+            {
+                ActiveR3.Image = Properties.Resources.No_Move;
+            }
+
+            if (MonActMoves[3] != 24 && MonActMoves[3] < 24 && MonActMoves[3] > 17)
+            {
+                curMove = MonActMoves[3];
+
+                if (Mon_Genus == 0 && curMove >= 20 && curMove <= 23)
+                    curMove--;
+                ActiveR4.Image = MoveBoxes[curMove].Image;
+            }
+            else
+            {
+                ActiveR4.Image = Properties.Resources.No_Move;
+            }
+        }
+
+        private void label2_Click(object sender, EventArgs e)
+        {
+            label2.Text = MonActMoves[3] + " / " + MonActMoves[2] + " / " + MonActMoves[1] + " / " + MonActMoves[0];
         }
 
         private void PopulateMoveIcons()
@@ -3367,7 +3425,7 @@ INT + SKI should total over 650 to unlock.";
 Requires Good (+20) Nature.";
                             break;
                         case 18:
-                            MoveName.Text = "Drill Shot"; MoveName.ForeColor = IntCol;
+                            MoveName.Text = "Drill Shot"; MoveName.ForeColor = PowCol;
                             MoveGuts.Text = "27";
                             MoveDamage.Text = GenerateStatValue(0, 22);
                             MoveHit.Text = GenerateStatValue(1, 0);
@@ -3383,7 +3441,7 @@ Requires Good (+20) Nature.";
 Requires Good (+30) Nature.";
                             break;
                         case 19:
-                            MoveName.Text = "Drill Shots"; MoveName.ForeColor = IntCol;
+                            MoveName.Text = "Drill Shots"; MoveName.ForeColor = PowCol;
                             MoveGuts.Text = "45";
                             MoveDamage.Text = GenerateStatValue(0, 35);
                             MoveHit.Text = GenerateStatValue(1, 4);
@@ -4343,19 +4401,8 @@ Requires Good (+30) Nature.";
                             MoveInfo.Text = "Click on a move to learn more.";
                             break;
                     }
-                    /*if(Mon_MoveUsed[6] >= 30 && Mon_Moves[0] == 0)    //too much to handle...
-                    {
-                        canGetBoxes[0].Image = Properties.Resources.skillget;
-                        canGetBoxes[0].Visible = true;
-                    }
-                    else
-                    {
-                        canGetBoxes[0].Image = null;
-                        canGetBoxes[0].Visible = false;
-                    }*/
 
                     break;
-                //}
 
                 case 10: // Arrow Head
                     switch (MoveSelected)

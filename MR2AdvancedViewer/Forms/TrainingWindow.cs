@@ -114,14 +114,14 @@ namespace MR2AdvancedViewer
                             {
                                 case 1: return "2-4 (2/2/3/4)";
                                 case 3: return "2 (2/2/2/2)";
-                                default: return "1-3 (1/1/2/3)";
+                                default: return "1-3 (0/1/2/3)";
                             }
                         case 1:
                             switch (SValue)
                             {
                                 case 1: return "3-5 (3/3/4/5)";
                                 case 3: return "2 (2/2/2/2)";
-                                default: return "1-3 (1/1/2/3)";
+                                default: return "1-3 (0/1/2/3)";
                             }
                         case 2:
                             switch (SValue)

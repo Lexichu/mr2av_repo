@@ -97,32 +97,13 @@
             this.skillChecked_21 = new System.Windows.Forms.PictureBox();
             this.skillChecked_22 = new System.Windows.Forms.PictureBox();
             this.skillChecked_23 = new System.Windows.Forms.PictureBox();
-            this.canGet0 = new System.Windows.Forms.PictureBox();
-            this.canGet1 = new System.Windows.Forms.PictureBox();
-            this.canGet2 = new System.Windows.Forms.PictureBox();
-            this.canGet3 = new System.Windows.Forms.PictureBox();
-            this.canGet4 = new System.Windows.Forms.PictureBox();
-            this.canGet5 = new System.Windows.Forms.PictureBox();
-            this.canGet6 = new System.Windows.Forms.PictureBox();
-            this.canGet7 = new System.Windows.Forms.PictureBox();
-            this.canGet8 = new System.Windows.Forms.PictureBox();
-            this.canGet9 = new System.Windows.Forms.PictureBox();
-            this.canGet10 = new System.Windows.Forms.PictureBox();
-            this.canGet11 = new System.Windows.Forms.PictureBox();
-            this.canGet12 = new System.Windows.Forms.PictureBox();
-            this.canGet13 = new System.Windows.Forms.PictureBox();
-            this.canGet14 = new System.Windows.Forms.PictureBox();
-            this.canGet15 = new System.Windows.Forms.PictureBox();
-            this.canGet16 = new System.Windows.Forms.PictureBox();
-            this.canGet17 = new System.Windows.Forms.PictureBox();
-            this.canGet18 = new System.Windows.Forms.PictureBox();
-            this.canGet19 = new System.Windows.Forms.PictureBox();
-            this.canGet20 = new System.Windows.Forms.PictureBox();
-            this.canGet21 = new System.Windows.Forms.PictureBox();
-            this.canGet22 = new System.Windows.Forms.PictureBox();
-            this.canGet23 = new System.Windows.Forms.PictureBox();
             this.canGet = new System.Windows.Forms.PictureBox();
             this.hilightSelect = new System.Windows.Forms.PictureBox();
+            this.ActiveR4 = new System.Windows.Forms.PictureBox();
+            this.ActiveR3 = new System.Windows.Forms.PictureBox();
+            this.ActiveR2 = new System.Windows.Forms.PictureBox();
+            this.ActiveR1 = new System.Windows.Forms.PictureBox();
+            this.label2 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.Slot4_1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.Slot4_2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.Slot4_3)).BeginInit();
@@ -171,32 +152,12 @@
             ((System.ComponentModel.ISupportInitialize)(this.skillChecked_21)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.skillChecked_22)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.skillChecked_23)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.canGet0)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.canGet1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.canGet2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.canGet3)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.canGet4)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.canGet5)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.canGet6)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.canGet7)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.canGet8)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.canGet9)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.canGet10)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.canGet11)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.canGet12)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.canGet13)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.canGet14)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.canGet15)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.canGet16)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.canGet17)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.canGet18)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.canGet19)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.canGet20)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.canGet21)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.canGet22)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.canGet23)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.canGet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.hilightSelect)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ActiveR4)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ActiveR3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ActiveR2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ActiveR1)).BeginInit();
             this.SuspendLayout();
             // 
             // Slot4_1
@@ -858,270 +819,6 @@
             this.skillChecked_23.TabIndex = 65;
             this.skillChecked_23.TabStop = false;
             // 
-            // canGet0
-            // 
-            this.canGet0.BackColor = System.Drawing.Color.Transparent;
-            this.canGet0.Enabled = false;
-            this.canGet0.Location = new System.Drawing.Point(174, 28);
-            this.canGet0.Name = "canGet0";
-            this.canGet0.Size = new System.Drawing.Size(16, 16);
-            this.canGet0.TabIndex = 66;
-            this.canGet0.TabStop = false;
-            this.canGet0.Visible = false;
-            // 
-            // canGet1
-            // 
-            this.canGet1.BackColor = System.Drawing.Color.Transparent;
-            this.canGet1.Enabled = false;
-            this.canGet1.Location = new System.Drawing.Point(174, 60);
-            this.canGet1.Name = "canGet1";
-            this.canGet1.Size = new System.Drawing.Size(16, 16);
-            this.canGet1.TabIndex = 67;
-            this.canGet1.TabStop = false;
-            this.canGet1.Visible = false;
-            // 
-            // canGet2
-            // 
-            this.canGet2.BackColor = System.Drawing.Color.Transparent;
-            this.canGet2.Enabled = false;
-            this.canGet2.Location = new System.Drawing.Point(174, 92);
-            this.canGet2.Name = "canGet2";
-            this.canGet2.Size = new System.Drawing.Size(16, 16);
-            this.canGet2.TabIndex = 68;
-            this.canGet2.TabStop = false;
-            this.canGet2.Visible = false;
-            // 
-            // canGet3
-            // 
-            this.canGet3.BackColor = System.Drawing.Color.Transparent;
-            this.canGet3.Enabled = false;
-            this.canGet3.Location = new System.Drawing.Point(174, 124);
-            this.canGet3.Name = "canGet3";
-            this.canGet3.Size = new System.Drawing.Size(16, 16);
-            this.canGet3.TabIndex = 69;
-            this.canGet3.TabStop = false;
-            this.canGet3.Visible = false;
-            // 
-            // canGet4
-            // 
-            this.canGet4.BackColor = System.Drawing.Color.Transparent;
-            this.canGet4.Enabled = false;
-            this.canGet4.Location = new System.Drawing.Point(174, 156);
-            this.canGet4.Name = "canGet4";
-            this.canGet4.Size = new System.Drawing.Size(16, 16);
-            this.canGet4.TabIndex = 70;
-            this.canGet4.TabStop = false;
-            this.canGet4.Visible = false;
-            // 
-            // canGet5
-            // 
-            this.canGet5.BackColor = System.Drawing.Color.Transparent;
-            this.canGet5.Enabled = false;
-            this.canGet5.Location = new System.Drawing.Point(174, 188);
-            this.canGet5.Name = "canGet5";
-            this.canGet5.Size = new System.Drawing.Size(16, 16);
-            this.canGet5.TabIndex = 71;
-            this.canGet5.TabStop = false;
-            this.canGet5.Visible = false;
-            // 
-            // canGet6
-            // 
-            this.canGet6.BackColor = System.Drawing.Color.Transparent;
-            this.canGet6.Enabled = false;
-            this.canGet6.Location = new System.Drawing.Point(120, 28);
-            this.canGet6.Name = "canGet6";
-            this.canGet6.Size = new System.Drawing.Size(16, 16);
-            this.canGet6.TabIndex = 72;
-            this.canGet6.TabStop = false;
-            this.canGet6.Visible = false;
-            // 
-            // canGet7
-            // 
-            this.canGet7.BackColor = System.Drawing.Color.Transparent;
-            this.canGet7.Enabled = false;
-            this.canGet7.Location = new System.Drawing.Point(120, 60);
-            this.canGet7.Name = "canGet7";
-            this.canGet7.Size = new System.Drawing.Size(16, 16);
-            this.canGet7.TabIndex = 73;
-            this.canGet7.TabStop = false;
-            this.canGet7.Visible = false;
-            // 
-            // canGet8
-            // 
-            this.canGet8.BackColor = System.Drawing.Color.Transparent;
-            this.canGet8.Enabled = false;
-            this.canGet8.Location = new System.Drawing.Point(120, 92);
-            this.canGet8.Name = "canGet8";
-            this.canGet8.Size = new System.Drawing.Size(16, 16);
-            this.canGet8.TabIndex = 74;
-            this.canGet8.TabStop = false;
-            this.canGet8.Visible = false;
-            // 
-            // canGet9
-            // 
-            this.canGet9.BackColor = System.Drawing.Color.Transparent;
-            this.canGet9.Enabled = false;
-            this.canGet9.Location = new System.Drawing.Point(120, 124);
-            this.canGet9.Name = "canGet9";
-            this.canGet9.Size = new System.Drawing.Size(16, 16);
-            this.canGet9.TabIndex = 75;
-            this.canGet9.TabStop = false;
-            this.canGet9.Visible = false;
-            // 
-            // canGet10
-            // 
-            this.canGet10.BackColor = System.Drawing.Color.Transparent;
-            this.canGet10.Enabled = false;
-            this.canGet10.Location = new System.Drawing.Point(120, 156);
-            this.canGet10.Name = "canGet10";
-            this.canGet10.Size = new System.Drawing.Size(16, 16);
-            this.canGet10.TabIndex = 76;
-            this.canGet10.TabStop = false;
-            this.canGet10.Visible = false;
-            // 
-            // canGet11
-            // 
-            this.canGet11.BackColor = System.Drawing.Color.Transparent;
-            this.canGet11.Enabled = false;
-            this.canGet11.Location = new System.Drawing.Point(120, 188);
-            this.canGet11.Name = "canGet11";
-            this.canGet11.Size = new System.Drawing.Size(16, 16);
-            this.canGet11.TabIndex = 77;
-            this.canGet11.TabStop = false;
-            this.canGet11.Visible = false;
-            // 
-            // canGet12
-            // 
-            this.canGet12.BackColor = System.Drawing.Color.Transparent;
-            this.canGet12.Enabled = false;
-            this.canGet12.Location = new System.Drawing.Point(66, 28);
-            this.canGet12.Name = "canGet12";
-            this.canGet12.Size = new System.Drawing.Size(16, 16);
-            this.canGet12.TabIndex = 78;
-            this.canGet12.TabStop = false;
-            this.canGet12.Visible = false;
-            // 
-            // canGet13
-            // 
-            this.canGet13.BackColor = System.Drawing.Color.Transparent;
-            this.canGet13.Enabled = false;
-            this.canGet13.Location = new System.Drawing.Point(66, 60);
-            this.canGet13.Name = "canGet13";
-            this.canGet13.Size = new System.Drawing.Size(16, 16);
-            this.canGet13.TabIndex = 79;
-            this.canGet13.TabStop = false;
-            this.canGet13.Visible = false;
-            // 
-            // canGet14
-            // 
-            this.canGet14.BackColor = System.Drawing.Color.Transparent;
-            this.canGet14.Enabled = false;
-            this.canGet14.Location = new System.Drawing.Point(66, 92);
-            this.canGet14.Name = "canGet14";
-            this.canGet14.Size = new System.Drawing.Size(16, 16);
-            this.canGet14.TabIndex = 80;
-            this.canGet14.TabStop = false;
-            this.canGet14.Visible = false;
-            // 
-            // canGet15
-            // 
-            this.canGet15.BackColor = System.Drawing.Color.Transparent;
-            this.canGet15.Enabled = false;
-            this.canGet15.Location = new System.Drawing.Point(66, 124);
-            this.canGet15.Name = "canGet15";
-            this.canGet15.Size = new System.Drawing.Size(16, 16);
-            this.canGet15.TabIndex = 81;
-            this.canGet15.TabStop = false;
-            this.canGet15.Visible = false;
-            // 
-            // canGet16
-            // 
-            this.canGet16.BackColor = System.Drawing.Color.Transparent;
-            this.canGet16.Enabled = false;
-            this.canGet16.Location = new System.Drawing.Point(66, 156);
-            this.canGet16.Name = "canGet16";
-            this.canGet16.Size = new System.Drawing.Size(16, 16);
-            this.canGet16.TabIndex = 82;
-            this.canGet16.TabStop = false;
-            this.canGet16.Visible = false;
-            // 
-            // canGet17
-            // 
-            this.canGet17.BackColor = System.Drawing.Color.Transparent;
-            this.canGet17.Enabled = false;
-            this.canGet17.Location = new System.Drawing.Point(66, 188);
-            this.canGet17.Name = "canGet17";
-            this.canGet17.Size = new System.Drawing.Size(16, 16);
-            this.canGet17.TabIndex = 83;
-            this.canGet17.TabStop = false;
-            this.canGet17.Visible = false;
-            // 
-            // canGet18
-            // 
-            this.canGet18.BackColor = System.Drawing.Color.Transparent;
-            this.canGet18.Enabled = false;
-            this.canGet18.Location = new System.Drawing.Point(12, 28);
-            this.canGet18.Name = "canGet18";
-            this.canGet18.Size = new System.Drawing.Size(16, 16);
-            this.canGet18.TabIndex = 84;
-            this.canGet18.TabStop = false;
-            this.canGet18.Visible = false;
-            // 
-            // canGet19
-            // 
-            this.canGet19.BackColor = System.Drawing.Color.Transparent;
-            this.canGet19.Enabled = false;
-            this.canGet19.Location = new System.Drawing.Point(12, 60);
-            this.canGet19.Name = "canGet19";
-            this.canGet19.Size = new System.Drawing.Size(16, 16);
-            this.canGet19.TabIndex = 85;
-            this.canGet19.TabStop = false;
-            this.canGet19.Visible = false;
-            // 
-            // canGet20
-            // 
-            this.canGet20.BackColor = System.Drawing.Color.Transparent;
-            this.canGet20.Enabled = false;
-            this.canGet20.Location = new System.Drawing.Point(12, 92);
-            this.canGet20.Name = "canGet20";
-            this.canGet20.Size = new System.Drawing.Size(16, 16);
-            this.canGet20.TabIndex = 86;
-            this.canGet20.TabStop = false;
-            this.canGet20.Visible = false;
-            // 
-            // canGet21
-            // 
-            this.canGet21.BackColor = System.Drawing.Color.Transparent;
-            this.canGet21.Enabled = false;
-            this.canGet21.Location = new System.Drawing.Point(12, 124);
-            this.canGet21.Name = "canGet21";
-            this.canGet21.Size = new System.Drawing.Size(16, 16);
-            this.canGet21.TabIndex = 87;
-            this.canGet21.TabStop = false;
-            this.canGet21.Visible = false;
-            // 
-            // canGet22
-            // 
-            this.canGet22.BackColor = System.Drawing.Color.Transparent;
-            this.canGet22.Enabled = false;
-            this.canGet22.Location = new System.Drawing.Point(12, 156);
-            this.canGet22.Name = "canGet22";
-            this.canGet22.Size = new System.Drawing.Size(16, 16);
-            this.canGet22.TabIndex = 88;
-            this.canGet22.TabStop = false;
-            this.canGet22.Visible = false;
-            // 
-            // canGet23
-            // 
-            this.canGet23.BackColor = System.Drawing.Color.Transparent;
-            this.canGet23.Enabled = false;
-            this.canGet23.Location = new System.Drawing.Point(12, 188);
-            this.canGet23.Name = "canGet23";
-            this.canGet23.Size = new System.Drawing.Size(16, 16);
-            this.canGet23.TabIndex = 89;
-            this.canGet23.TabStop = false;
-            this.canGet23.Visible = false;
-            // 
             // canGet
             // 
             this.canGet.BackColor = System.Drawing.Color.Transparent;
@@ -1142,37 +839,64 @@
             this.hilightSelect.TabStop = false;
             this.hilightSelect.Visible = false;
             // 
+            // ActiveR4
+            // 
+            this.ActiveR4.InitialImage = ((System.Drawing.Image)(resources.GetObject("ActiveR4.InitialImage")));
+            this.ActiveR4.Location = new System.Drawing.Point(12, 210);
+            this.ActiveR4.Name = "ActiveR4";
+            this.ActiveR4.Size = new System.Drawing.Size(48, 32);
+            this.ActiveR4.TabIndex = 92;
+            this.ActiveR4.TabStop = false;
+            // 
+            // ActiveR3
+            // 
+            this.ActiveR3.InitialImage = ((System.Drawing.Image)(resources.GetObject("ActiveR3.InitialImage")));
+            this.ActiveR3.Location = new System.Drawing.Point(66, 210);
+            this.ActiveR3.Name = "ActiveR3";
+            this.ActiveR3.Size = new System.Drawing.Size(48, 32);
+            this.ActiveR3.TabIndex = 93;
+            this.ActiveR3.TabStop = false;
+            // 
+            // ActiveR2
+            // 
+            this.ActiveR2.InitialImage = ((System.Drawing.Image)(resources.GetObject("ActiveR2.InitialImage")));
+            this.ActiveR2.Location = new System.Drawing.Point(120, 210);
+            this.ActiveR2.Name = "ActiveR2";
+            this.ActiveR2.Size = new System.Drawing.Size(48, 32);
+            this.ActiveR2.TabIndex = 94;
+            this.ActiveR2.TabStop = false;
+            // 
+            // ActiveR1
+            // 
+            this.ActiveR1.InitialImage = ((System.Drawing.Image)(resources.GetObject("ActiveR1.InitialImage")));
+            this.ActiveR1.Location = new System.Drawing.Point(174, 210);
+            this.ActiveR1.Name = "ActiveR1";
+            this.ActiveR1.Size = new System.Drawing.Size(48, 32);
+            this.ActiveR1.TabIndex = 95;
+            this.ActiveR1.TabStop = false;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(228, 229);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(55, 13);
+            this.label2.TabIndex = 96;
+            this.label2.Text = "                ";
+            this.label2.Click += new System.EventHandler(this.label2_Click);
+            // 
             // MonMoveWindow
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(496, 301);
+            this.Controls.Add(this.label2);
+            this.Controls.Add(this.ActiveR1);
+            this.Controls.Add(this.ActiveR2);
+            this.Controls.Add(this.ActiveR3);
+            this.Controls.Add(this.ActiveR4);
             this.Controls.Add(this.hilightSelect);
             this.Controls.Add(this.canGet);
-            this.Controls.Add(this.canGet23);
-            this.Controls.Add(this.canGet22);
-            this.Controls.Add(this.canGet21);
-            this.Controls.Add(this.canGet20);
-            this.Controls.Add(this.canGet19);
-            this.Controls.Add(this.canGet18);
-            this.Controls.Add(this.canGet17);
-            this.Controls.Add(this.canGet16);
-            this.Controls.Add(this.canGet15);
-            this.Controls.Add(this.canGet14);
-            this.Controls.Add(this.canGet13);
-            this.Controls.Add(this.canGet12);
-            this.Controls.Add(this.canGet11);
-            this.Controls.Add(this.canGet10);
-            this.Controls.Add(this.canGet9);
-            this.Controls.Add(this.canGet8);
-            this.Controls.Add(this.canGet7);
-            this.Controls.Add(this.canGet6);
-            this.Controls.Add(this.canGet5);
-            this.Controls.Add(this.canGet4);
-            this.Controls.Add(this.canGet3);
-            this.Controls.Add(this.canGet2);
-            this.Controls.Add(this.canGet1);
-            this.Controls.Add(this.canGet0);
             this.Controls.Add(this.skillChecked_23);
             this.Controls.Add(this.skillChecked_22);
             this.Controls.Add(this.skillChecked_21);
@@ -1245,7 +969,7 @@
             this.MinimizeBox = false;
             this.Name = "MonMoveWindow";
             this.SizeGripStyle = System.Windows.Forms.SizeGripStyle.Hide;
-            this.Text = "MR2AV: Monster Move Index";
+            this.Text = "Monster Move Viewer";
             this.Load += new System.EventHandler(this.MonMoveWindow_Load);
             ((System.ComponentModel.ISupportInitialize)(this.Slot4_1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.Slot4_2)).EndInit();
@@ -1295,32 +1019,12 @@
             ((System.ComponentModel.ISupportInitialize)(this.skillChecked_21)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.skillChecked_22)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.skillChecked_23)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.canGet0)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.canGet1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.canGet2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.canGet3)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.canGet4)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.canGet5)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.canGet6)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.canGet7)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.canGet8)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.canGet9)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.canGet10)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.canGet11)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.canGet12)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.canGet13)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.canGet14)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.canGet15)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.canGet16)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.canGet17)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.canGet18)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.canGet19)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.canGet20)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.canGet21)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.canGet22)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.canGet23)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.canGet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.hilightSelect)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ActiveR4)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ActiveR3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ActiveR2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ActiveR1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -1395,31 +1099,12 @@
         private System.Windows.Forms.PictureBox skillChecked_21;
         private System.Windows.Forms.PictureBox skillChecked_22;
         private System.Windows.Forms.PictureBox skillChecked_23;
-        private System.Windows.Forms.PictureBox canGet0;
-        private System.Windows.Forms.PictureBox canGet1;
-        private System.Windows.Forms.PictureBox canGet2;
-        private System.Windows.Forms.PictureBox canGet3;
-        private System.Windows.Forms.PictureBox canGet4;
-        private System.Windows.Forms.PictureBox canGet5;
-        private System.Windows.Forms.PictureBox canGet6;
-        private System.Windows.Forms.PictureBox canGet7;
-        private System.Windows.Forms.PictureBox canGet8;
-        private System.Windows.Forms.PictureBox canGet9;
-        private System.Windows.Forms.PictureBox canGet10;
-        private System.Windows.Forms.PictureBox canGet11;
-        private System.Windows.Forms.PictureBox canGet12;
-        private System.Windows.Forms.PictureBox canGet13;
-        private System.Windows.Forms.PictureBox canGet14;
-        private System.Windows.Forms.PictureBox canGet15;
-        private System.Windows.Forms.PictureBox canGet16;
-        private System.Windows.Forms.PictureBox canGet17;
-        private System.Windows.Forms.PictureBox canGet18;
-        private System.Windows.Forms.PictureBox canGet19;
-        private System.Windows.Forms.PictureBox canGet20;
-        private System.Windows.Forms.PictureBox canGet21;
-        private System.Windows.Forms.PictureBox canGet22;
-        private System.Windows.Forms.PictureBox canGet23;
         private System.Windows.Forms.PictureBox canGet;
         private System.Windows.Forms.PictureBox hilightSelect;
+        private System.Windows.Forms.PictureBox ActiveR4;
+        private System.Windows.Forms.PictureBox ActiveR3;
+        private System.Windows.Forms.PictureBox ActiveR2;
+        private System.Windows.Forms.PictureBox ActiveR1;
+        private System.Windows.Forms.Label label2;
     }
 }

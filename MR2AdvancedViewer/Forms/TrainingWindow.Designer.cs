@@ -268,8 +268,8 @@
             "Pull",
             "Meditate",
             "Leap",
-            "Pool (Vanilla)",
-            "Pool (Patched/HM)"});
+            "Swim (Vanilla)",
+            "Swim (Patched/HM)"});
             this.DrillSelect.Location = new System.Drawing.Point(72, 258);
             this.DrillSelect.Name = "DrillSelect";
             this.DrillSelect.Size = new System.Drawing.Size(121, 21);
