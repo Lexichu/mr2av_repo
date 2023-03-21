@@ -5525,23 +5525,11 @@ This replaces the old button, skipping the additional window and saving Lexi a l
                             PSXBase = PointOffset;
                             break;
                         case 4: // MR2DX: "MF2.exe" + 002DEC6C (EN) OR 0x002CA504 (JPN)
-                            DialogResult dialogResult = MessageBox.Show(@"あの… [MF2DX] と [MR2DX] のどちらを使っていますか?
-（［MF2DX］の場合は［はい/Yes］を押してください）
-
-Erm, are you playing MF2DX, or MR2DX?
-(If you're playing MF2DX, press Yes. Otherwise press No.)
-", ReadableVersion + "/" + ReadableVersionJP, MessageBoxButtons.YesNo);
-                            if (dialogResult == DialogResult.Yes)
-                            {
-                                PSXBase = PSBase + 0x002CA504; // 1.001 update
-                                bJPNMode = true;
-                                // arigatou, nyori-san. @NyoriMF2 on Twitter
-                            }
-                            else if (dialogResult == DialogResult.No)
-                            {
-                                PSXBase = PSBase + 0x002DEC6C; // 1.001 update
-                                bJPNMode = false;
-                            }
+                            // The Japanese release has the file description "モンスターファーム１＆２ DX"
+                            // so we can differentiate between the US and JPN release just by checking the exe's FileDescription
+                            bJPNMode = PSXProcess.MainModule.FileVersionInfo.FileDescription != "MonsterRancher 1&2 DX";
+                            // arigatou, nyori-san. @NyoriMF2 on Twitter
+                            PSXBase = PSBase + (bJPNMode ? 0x002CA504 : 0x002DEC6C);
                             MR2Mode.SelectedIndex = -1;
                             MR2Mode.Enabled = false;
                             break;
