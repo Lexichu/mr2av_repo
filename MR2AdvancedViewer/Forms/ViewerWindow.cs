@@ -14,6 +14,16 @@ using System.Net.NetworkInformation;
 
 namespace MR2AdvancedViewer
 {
+    public enum Emulator
+    {
+        None = -1,
+        ePSXe = 0,
+        pSX,
+        XEBRA,
+        NOPSX,
+        Steam,
+    }
+
     public partial class ViewerWindow : Form
     {
         public ViewerWindow()
@@ -24,7 +34,6 @@ namespace MR2AdvancedViewer
 
         // Some crap to do with reading memory IDK LOL I just wrote this.
         const int PROCESS_ALLACCESS = 0x1F0FFF;
-        const int DXSelectionID = 4;
         const string VersionID = "0.7.1.0";
         const string ReadableVersion = "MR2 Adanced Viewer 0.7.1";
         const string ReadableVersionJP = "MF2 アドバンスド ビューアー 0.7.1";
@@ -113,7 +122,7 @@ namespace MR2AdvancedViewer
 
         // Internal Variables
         public int pleasestoppokingme;
-        public int EmuVer = -1;
+        public Emulator EmuVer = Emulator.None;
         public bool bViewingMR2 = false;
         public bool emuLoaded = false;
         public bool AgeWeeksOnly;
@@ -289,7 +298,7 @@ Please visit https://github.com/Lexichu/mr2av_repo/releases/ to download the lat
             if (MonGenus_Main == 5 && MonGenus_Sub == 15) // Slated Henger/Gali revived
             {
                 MonGutsRateBox.BackColor = SystemColors.Control;
-                if (EmuVer == DXSelectionID)
+                if (EmuVer == Emulator.Steam)
                     return "Protomessiah";
                 else
                     return "「プロト」の力わからないwww!";
@@ -4668,7 +4677,7 @@ Please visit https://github.com/Lexichu/mr2av_repo/releases/ to download the lat
             int PlayerMoney;
             Array.Clear(ScratchData, 0, 4);
 
-            if (EmuVer != DXSelectionID)
+            if (EmuVer != Emulator.Steam)
             {
                 if (MR2Mode.SelectedIndex < 2)
                     // Monster Rancher 2
@@ -4689,7 +4698,7 @@ Please visit https://github.com/Lexichu/mr2av_repo/releases/ to download the lat
             int MonsterMoney;
             Array.Clear(ScratchData, 0, 4);
 
-            if (EmuVer != DXSelectionID)
+            if (EmuVer != Emulator.Steam)
             {
                 if (MR2Mode.SelectedIndex < 2)
                     // Monster Rancher 2
@@ -4710,7 +4719,7 @@ Please visit https://github.com/Lexichu/mr2av_repo/releases/ to download the lat
             string MonGivenName = "";
             int CharaID;
 
-            if (EmuVer == DXSelectionID)
+            if (EmuVer == Emulator.Steam)
             {
                 for (int i = 0; i < 24; i++)                                                                                                            //24 bytes long //bedeg
                 {
@@ -5086,7 +5095,7 @@ Please visit https://github.com/Lexichu/mr2av_repo/releases/ to download the lat
 
         private string MonReadBattleSpecials()
         {
-            if (EmuVer != DXSelectionID) // If this is PS1 emulation
+            if (EmuVer != Emulator.Steam) // If this is PS1 emulation
             {
                 if(MR2Mode.SelectedIndex < 2)
                     ReadProcessMemory(psxPTR, PSXBase + 0x00097BD8, ScratchData, 2, ref HasRead);
@@ -5214,15 +5223,15 @@ Please visit https://github.com/Lexichu/mr2av_repo/releases/ to download the lat
             PSXProcess = null;
             switch (EmuVer)
             {
-                case 0:
+                case Emulator.ePSXe:
                     EmuFileName = "ePSXe"; break;
-                case 1:
+                case Emulator.pSX:
                     EmuFileName = "psxfin"; break;
-                case 2:
+                case Emulator.XEBRA:
                     EmuFileName = "XEBRA"; break;
-                case 3:
+                case Emulator.NOPSX:
                     EmuFileName = "NO$PSX"; break;
-                case 4:
+                case Emulator.Steam:
                     EmuFileName = "MF2"; break;
                 default:
                     break;
@@ -5315,7 +5324,7 @@ Please visit https://github.com/Lexichu/mr2av_repo/releases/ to download the lat
             MR2Mode.SelectedIndex = -1;
             Array.Clear(ScratchData, 0, 4);
             Array.Clear(nameToWrite, 0, 24); //bedeg
-            EmuVer = -1;
+            EmuVer = Emulator.None;
             MR2Mode.SelectedIndex = -1;
             MR2Mode.Enabled = true;
             bJPNMode = false;
@@ -5426,7 +5435,7 @@ This replaces the old button, skipping the additional window and saving Lexi a l
 
         private void CollateMonMoves()
         {
-            if (EmuVer == DXSelectionID)
+            if (EmuVer == Emulator.Steam)
             {
                 for (int i = 0; i < 24; i++) // Thanks to bedeg for this <3
                 {
@@ -5457,7 +5466,7 @@ This replaces the old button, skipping the additional window and saving Lexi a l
 
         private void ListItems()
         {
-            if (EmuVer == DXSelectionID)
+            if (EmuVer == Emulator.Steam)
             {
                 for (int i = 0; i < 20; i++)
                 {
@@ -5488,7 +5497,7 @@ This replaces the old button, skipping the additional window and saving Lexi a l
         {
             //765A7346
             int PSBase;
-            EmuVer = EmuSelectBox.SelectedIndex;
+            EmuVer = (Emulator)EmuSelectBox.SelectedIndex;
 
             if (EmuSelectBox.SelectedIndex >= 0)
             {
@@ -5506,27 +5515,27 @@ This replaces the old button, skipping the additional window and saving Lexi a l
                     int PointOffset;
                     switch (EmuVer)
                     {
-                        case 0: // ePSXe: check pointer at 0x0004E8E8
+                        case Emulator.ePSXe: // ePSXe: check pointer at 0x0004E8E8
                             ReadProcessMemory(psxPTR, PSBase + 0x0004e8e8, ScratchData, 4, ref HasRead);
                             PointOffset = BitConverter.ToInt32(ScratchData, 0);
                             PSXBase = PointOffset;
                             break;
-                        case 1: // pSX: Check pointer at 0x00571A5C.
+                        case Emulator.pSX: // pSX: Check pointer at 0x00571A5C.
                             ReadProcessMemory(psxPTR, 0x00571A5C, ScratchData, 4, ref HasRead);
                             PointOffset = BitConverter.ToInt32(ScratchData, 0);
                             PSXBase = PointOffset;
                             break;
-                        case 2: // XEBRA latest: Check pointer at 0x000A5DF8.
+                        case Emulator.XEBRA: // XEBRA latest: Check pointer at 0x000A5DF8.
                             ReadProcessMemory(psxPTR, 0x004A5DF8, ScratchData, 4, ref HasRead);
                             PointOffset = BitConverter.ToInt32(ScratchData, 0);
                             PSXBase = PointOffset;
                             break;
-                        case 3: // NOCashPSX: "NO$PSX.EXE" + 00091C80
+                        case Emulator.NOPSX: // NOCashPSX: "NO$PSX.EXE" + 00091C80
                             ReadProcessMemory(psxPTR, PSBase + 0x00091C80, ScratchData, 4, ref HasRead);
                             PointOffset = BitConverter.ToInt32(ScratchData, 0);
                             PSXBase = PointOffset;
                             break;
-                        case 4: // MR2DX: "MF2.exe" + 002DEC6C (EN) OR 0x002CA504 (JPN)
+                        case Emulator.Steam: // MR2DX: "MF2.exe" + 002DEC6C (EN) OR 0x002CA504 (JPN)
                             // The Japanese release has the file description "モンスターファーム１＆２ DX"
                             // so we can differentiate between the US and JPN release just by checking the exe's FileDescription
                             bJPNMode = PSXProcess.MainModule.FileVersionInfo.FileDescription != "MonsterRancher 1&2 DX";
@@ -5543,7 +5552,7 @@ This replaces the old button, skipping the additional window and saving Lexi a l
                 {
                     MessageBox.Show("MR2 Advanced Viewer cannot find " + EmuSelectBox.Text + " running on this system. Please run the selected emulator, or try another.", "MR2AV Attach Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     EmuSelectBox.SelectedIndex = -1;
-                    EmuVer = -1;
+                    EmuVer = Emulator.None;
                 }
             }
         }
@@ -5679,12 +5688,12 @@ As a precaution, MR2AV has stopped reading from the emulator. To continue, press
             }
             if (emuLoaded && bViewingMR2)
             {
-                if (EmuVer != -1)
+                if (EmuVer != Emulator.None)
                 {
                     if (Process.GetProcessesByName(EmuFileName).Length <= 0)
                         KillAttach();
 
-                    if (EmuVer == DXSelectionID) // MR2DX changed locations
+                    if (EmuVer == Emulator.Steam) // MR2DX changed locations
                     {
                         // All -8 as of 1.0.0.1
                         Mon_Age = MR2ReadDouble(0x00097A0C);
@@ -6525,7 +6534,7 @@ Each increase also decreases SPD and DEF by 10%.
 
         private void MR2Mode_SelectedIndexChanged(object sender, EventArgs e)
         {
-            if(EmuVer != DXSelectionID)
+            if(EmuVer != Emulator.Steam)
             {
                 bJPNMode = (MR2Mode.SelectedIndex == 2);
             }
@@ -6577,7 +6586,7 @@ If the box is not green, but the 'Cocoon Ready' box is ticked, your Worm will co
         private void MonBanaScumToggle_CheckedChanged(object sender, EventArgs e)
         {
             BananaTicks = 0;
-            if (EmuVer == DXSelectionID && MonBanaScumToggle.Checked == true)
+            if (EmuVer == Emulator.Steam && MonBanaScumToggle.Checked == true)
             {
                 MessageBox.Show("Banana Chimes are not currently enabled for MR2DX.");
                 MonBanaScumToggle.Checked = false;
