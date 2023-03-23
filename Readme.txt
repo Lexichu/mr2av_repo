@@ -6,15 +6,17 @@ Monster Rancher 2 Advanced Viewer
 Currently, Monster Rancher 2 Advanced Viewer (MR2AV) supports:
 - ePSXe 2.0.5, 
 - XEBRA 19/10/02, 
-- no$psx 2.0,
+- no$psx 2.0 [specifically, the debugger],
 - pSX 1.13
 - MR2DX v1.0.0.1 (and 1.0.0.2)
+- Duckstation (finally!)
 
 
 ----- Special Thanks to:
 - Jack of Hearts/JD; for asking me to make this in the first place, knocking on for four years ago!
 - Fad; for showing me how to set up a GitHub page, and making the Name Viewer section work with MR2DX!
 - anon; for fixing the Move Viewer to work with every monster, as well as adding a Name Edit feature!
+- jroweboy; for various GitHub cleanup fixes, automating the MF/MR2DX PC check, as well as adding Duckstation support!
 - You; for actually reading this!
 
 
@@ -150,26 +152,55 @@ You will also require the latest .net Framework, or at least version 4.7.2. Down
 - Several fixes for previously unworking 0.621 provisional content, such as the Errantry Sale tickbox and the Shop Sale counter.
 - E numbers have been removed from this update!
 
+-- v0.7.1
+- Removed Input Viewer. I could never get it to work with DX and it was kinda pointless anyway. :sweat_smile:
+- Fixed functionality of Move Viewer and Item Viewer with MR2 (PS1).
+- Fixed Item Viewer crash due to an on array out of bounds error, hopefully.
+- Added support for Monster Farm 2 DX whilst playing in Japanese, thanks to @NyoriMF2 on Twitter.
+-- Added an extra check window when selecting DX (Steam). It now asks if you're playing Monster Farm 2; click No if not.
+- All windows now have the appropriate Saucer Stone icon.
+- Fixed small bug regarding Henger moves being flagged as incorrect attack types.
+- Added support for Monster Farm 2 on emulator. (PS The Best release may work, but use a 1.0 ISO to be sure)
+- Added support for Japanese names in MF2 (PS1).
+- Added support for showing the active moves in Move Viewer.
+- Added a Prize Money counter.
+- Fixed a bug where sub-1 effective Defence or Speed was reported as 0.
+- Fixed a bug with the Item Viewer, caused by forgetting to add Polish to the list of items...
+- Removed unused "Can learn" lights from the Move Viewer.
+- Shuffled the UI around slightly to allow adding more functions in later updates.
+- Finally reminded myself how to push things to Github.
+
+-- v0.7.1.1:
+- Japanese/English request for 2DX has been automated, mitigating confusion.
+- Duckstation support has been added!
+- Clarified that NO$PSX 2.0 specifically requires the debugger release.
+-- This was to assist testing how the CD offsets worked, back in 0.61EX.
+- ...fixed the RNG command so that the fifth status bar message would actually show.
+
+
 ----------------
 -- Mostly Useless Features:
-- Attempting to generate a Henger/Gali will give a custom Breed Name of "「プロト」の力わからないwww!" ("[Proto]'s power is unknown LOLOLOL") instead of "Game Crash".
--- ...shit, I need to do something with this now DX actually *gave us* Proto.
+- Attempting to generate a Henger/Gali will give a custom Breed Name of "「プロト」の力わからないwww!" ("[Proto]'s power is unknown LOLOLOL") instead of "Game Crash" on PS1 copies.
 - Clicking the "Eff. Nature" label will show the raw nature adjustment value instead.
 - Clicking the "Age" label will switch the Age display from "xY, yM, zW" to simply display in weeks.
 - There is a 2% chance that the icon for Magic Card (Ghost tech) will change from greyscale to a Yu-Gi-Oh style for 0.5 seconds.
-- The entirety of the input viewer. It's really just a proof-of-concept.
+
 
 ---- To-Do:
 - Confirm if Errantry Sale Ready is also ready at 0, or only when it hits 255.
 - The new Banana Chime method is currently largely untested. Please report any bugs with it!
 
----- Bugs (as of 0.7)
+
+---- Bugs (as of 0.711)
 - /??? monsters (except Moo, slate exclusives, and DNA Capsule monsters) have no stat checking to see if they're non-standard growth stats.
 -- They also have no checks for Guts Rate aside from Moo, Ghost and Phoenix.
+
 - Hard Mode generated monsters may be considered non-standard. This will be patched in due time.
 -- MR2DX special spawns may also be considered non-standard.
-- The mode switcher for MR2AV currently does nothing. Please leave it on MR2 Vanilla. c:
-- Attaching MR2AV may load incorrect data from NO$PSX, if the emulator has been opened more than once.
--- In this case: Manually detatch MR2AV, open Task Manager, and close any extra copies of NO$PSX that are running in the background.
+
+- Attaching MR2AV may load incorrect data from NO$PSX Debugger, if the emulator has been opened more than once.
+-- In this case: Manually detatch MR2AV, open Task Manager, and close any extra copies of NO$PSX Debugger that are running in the background.
+
 - Certain MR2DX /??? breeds may display the wrong name, as the Breed Name is currently based off of the MR2(PS1) genus list.
-- Quite a few of the Item Viewer items do not have a listed effect. Mostly because I forgot them.
+
+- Quite a few of the Item Viewer items do not have a listed effect. I forgot them. D:
