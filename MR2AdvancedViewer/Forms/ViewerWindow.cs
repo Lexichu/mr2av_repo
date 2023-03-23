@@ -5,6 +5,7 @@ using Microsoft.Win32;
 using System.Diagnostics;
 using System.Runtime.InteropServices;
 using MR2AdvancedViewer.Forms;
+using System.Linq;
 using Octokit;
 using System.Collections.Generic;
 using System.Threading.Tasks;
@@ -5227,8 +5228,9 @@ Please visit https://github.com/Lexichu/mr2av_repo/releases/ to download the lat
                     break;
             }
 
-            if (Process.GetProcessesByName(EmuFileName).Length > 0)
-                PSXProcess = Process.GetProcessesByName(EmuFileName)[0];
+            PSXProcess = Process.GetProcesses()
+                .Where(process => process.ProcessName.StartsWith(EmuFileName, StringComparison.OrdinalIgnoreCase))
+                .First();
             return PSXProcess != null;
         }
 
