@@ -972,7 +972,8 @@
             "pSX 1.13",
             "XEBRA 19/10/02",
             "NO$PSX 2.0",
-            "Steam (2DX)"});
+            "Steam (2DX)",
+            "Duckstation"});
             this.EmuSelectBox.Location = new System.Drawing.Point(71, 13);
             this.EmuSelectBox.MaxDropDownItems = 4;
             this.EmuSelectBox.Name = "EmuSelectBox";

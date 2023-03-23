@@ -5,14 +5,26 @@ using Microsoft.Win32;
 using System.Diagnostics;
 using System.Runtime.InteropServices;
 using MR2AdvancedViewer.Forms;
+using System.Linq;
 using Octokit;
 using System.Collections.Generic;
 using System.Threading.Tasks;
 using System.Net.NetworkInformation;
-
+using System.ComponentModel;
 
 namespace MR2AdvancedViewer
 {
+    public enum Emulator
+    {
+        None = -1,
+        ePSXe = 0,
+        pSX,
+        XEBRA,
+        NOPSX,
+        Steam,
+        Duckstation,
+    }
+
     public partial class ViewerWindow : Form
     {
         public ViewerWindow()
@@ -23,24 +35,33 @@ namespace MR2AdvancedViewer
 
         // Some crap to do with reading memory IDK LOL I just wrote this.
         const int PROCESS_ALLACCESS = 0x1F0FFF;
-        const int DXSelectionID = 4;
         const string VersionID = "0.7.1.0";
         const string ReadableVersion = "MR2 Adanced Viewer 0.7.1";
         const string ReadableVersionJP = "MF2 アドバンスド ビューアー 0.7.1";
         [DllImport("kernel32.dll")]
         public static extern IntPtr OpenProcess(int dwDesiredAccess, bool bInheritHandle, int dwProcessId);
-        [DllImport("kernel32.dll")]
-        public static extern bool ReadProcessMemory(IntPtr hProcess, int lpBaseAddress, byte[] lpBuffer, int dwSize, ref int lpNumberOfBytesRead);
-        [DllImport("kernel32.dll")]
-        public static extern bool WriteProcessMemory(IntPtr hProcess, int lpBaseAddress, byte[] lpBuffer, int dwSize, ref int lpNumberOfBytesWritten);
+        // Add Read/WriteProcessMemory definitions from P/Invoke
+        [DllImport("kernel32.dll", SetLastError = true)]
+        static extern bool ReadProcessMemory(IntPtr hProcess,IntPtr lpBaseAddress,[Out] byte[] lpBuffer,int dwSize, out IntPtr lpNumberOfBytesRead);
+        [DllImport("kernel32.dll", SetLastError = true)]
+        static extern bool ReadProcessMemory(IntPtr hProcess,IntPtr lpBaseAddress,[Out, MarshalAs(UnmanagedType.AsAny)] object lpBuffer,int dwSize,out IntPtr lpNumberOfBytesRead);
+        [DllImport("kernel32.dll", SetLastError = true)]
+        static extern bool ReadProcessMemory(IntPtr hProcess,IntPtr lpBaseAddress,[Out] IntPtr lpBuffer,int dwSize,out IntPtr lpNumberOfBytesRead);
+        [DllImport("kernel32.dll", SetLastError = true)]
+        public static extern bool WriteProcessMemory(IntPtr hProcess,IntPtr lpBaseAddress,byte[] lpBuffer,Int32 nSize,out IntPtr lpNumberOfBytesWritten);
+        [DllImport("kernel32.dll", SetLastError = true)]
+        public static extern bool WriteProcessMemory(IntPtr hProcess,IntPtr lpBaseAddress,[MarshalAs(UnmanagedType.AsAny)] object lpBuffer,int dwSize,out IntPtr lpNumberOfBytesWritten);
+        // Used to access 64bit modules from a 32bit application
+        [DllImport("psapi.dll", SetLastError = true)]
+        public static extern bool EnumProcessModules(IntPtr hProcess,[MarshalAs(UnmanagedType.LPArray, ArraySubType = UnmanagedType.U4)][In][Out] uint[] lphModule, uint cb, [MarshalAs(UnmanagedType.U4)] out uint lpcbNeeded);
 
-        public int PSXBase = 0x00000000;
-        int HasRead; // I just use this so ReadProcessMemory stops complaining.
+        public IntPtr PSXBase = IntPtr.Zero;
+        IntPtr HasRead; // I just use this so ReadProcessMemory stops complaining.
         public IntPtr psxPTR;
         public bool bJPNMode;
         Process PSXProcess;
         string EmuFileName;
-        public byte[] ScratchData = new byte[4];
+        public byte[] ScratchData = new byte[8];
         public byte[] nameToWrite = new byte[24]; //bedeg
 
         // Loaded Memory
@@ -112,7 +133,7 @@ namespace MR2AdvancedViewer
 
         // Internal Variables
         public int pleasestoppokingme;
-        public int EmuVer = -1;
+        public Emulator EmuVer = Emulator.None;
         public bool bViewingMR2 = false;
         public bool emuLoaded = false;
         public bool AgeWeeksOnly;
@@ -288,7 +309,7 @@ Please visit https://github.com/Lexichu/mr2av_repo/releases/ to download the lat
             if (MonGenus_Main == 5 && MonGenus_Sub == 15) // Slated Henger/Gali revived
             {
                 MonGutsRateBox.BackColor = SystemColors.Control;
-                if (EmuVer == DXSelectionID)
+                if (EmuVer == Emulator.Steam)
                     return "Protomessiah";
                 else
                     return "「プロト」の力わからないwww!";
@@ -4640,25 +4661,25 @@ Please visit https://github.com/Lexichu/mr2av_repo/releases/ to download the lat
 
         private bool MR2ReadBool(int Addr)
         {
-            ReadProcessMemory(psxPTR, PSXBase + Addr, ScratchData, 1, ref HasRead);
+            ReadProcessMemory(psxPTR, IntPtr.Add(PSXBase, Addr), ScratchData, 1, out HasRead);
             return Convert.ToBoolean(ScratchData[0]);
         }
 
         private int MR2ReadInt(int Addr)
         {
-            ReadProcessMemory(psxPTR, PSXBase + Addr, ScratchData, 1, ref HasRead);
+            ReadProcessMemory(psxPTR, IntPtr.Add(PSXBase, Addr), ScratchData, 1, out HasRead);
             return Convert.ToInt16(ScratchData[0]);
         }
 
         private int MR2ReadDouble(int Addr)
         {
-            ReadProcessMemory(psxPTR, PSXBase + Addr, ScratchData, 2, ref HasRead);
+            ReadProcessMemory(psxPTR, IntPtr.Add(PSXBase, Addr), ScratchData, 2, out HasRead);
             return BitConverter.ToInt16(ScratchData, 0);
         }
 
         private int MR2ReadQuad(int Addr)
         {
-            ReadProcessMemory(psxPTR, PSXBase + Addr, ScratchData, 4, ref HasRead);
+            ReadProcessMemory(psxPTR, IntPtr.Add(PSXBase, Addr), ScratchData, 4, out HasRead);
             return BitConverter.ToInt32(ScratchData, 0);
         }
 
@@ -4667,17 +4688,17 @@ Please visit https://github.com/Lexichu/mr2av_repo/releases/ to download the lat
             int PlayerMoney;
             Array.Clear(ScratchData, 0, 4);
 
-            if (EmuVer != DXSelectionID)
+            if (EmuVer != Emulator.Steam)
             {
                 if (MR2Mode.SelectedIndex < 2)
                     // Monster Rancher 2
-                    ReadProcessMemory(psxPTR, PSXBase + 0x00098FBC, ScratchData, 4, ref HasRead);
+                    ReadProcessMemory(psxPTR, IntPtr.Add(PSXBase, 0x00098FBC), ScratchData, 4, out HasRead);
                 else if (MR2Mode.SelectedIndex == 2)
-                    ReadProcessMemory(psxPTR, PSXBase + 0x00096F6C, ScratchData, 4, ref HasRead);
+                    ReadProcessMemory(psxPTR, IntPtr.Add(PSXBase, 0x00096F6C), ScratchData, 4, out HasRead);
             }
             else
             {
-                ReadProcessMemory(psxPTR, PSXBase + 0x0009A568, ScratchData, 4, ref HasRead);
+                ReadProcessMemory(psxPTR, IntPtr.Add(PSXBase, 0x0009A568), ScratchData, 4, out HasRead);
             }
             PlayerMoney = BitConverter.ToInt32(ScratchData, 0);
             return PlayerMoney.ToString() + "G";
@@ -4688,17 +4709,17 @@ Please visit https://github.com/Lexichu/mr2av_repo/releases/ to download the lat
             int MonsterMoney;
             Array.Clear(ScratchData, 0, 4);
 
-            if (EmuVer != DXSelectionID)
+            if (EmuVer != Emulator.Steam)
             {
                 if (MR2Mode.SelectedIndex < 2)
                     // Monster Rancher 2
-                    ReadProcessMemory(psxPTR, PSXBase + 0x00097A5C, ScratchData, 4, ref HasRead); // TODO: Find Prize Money for MR2
+                    ReadProcessMemory(psxPTR, IntPtr.Add(PSXBase, 0x00097A5C), ScratchData, 4, out HasRead); // TODO: Find Prize Money for MR2
                 else if (MR2Mode.SelectedIndex == 2)
-                    ReadProcessMemory(psxPTR, PSXBase + 0x00095A0C, ScratchData, 4, ref HasRead); // TODO: Find Prize Money for MF2
+                    ReadProcessMemory(psxPTR, IntPtr.Add(PSXBase, 0x00095A0C), ScratchData, 4, out HasRead); // TODO: Find Prize Money for MF2
             }
             else
             {
-                ReadProcessMemory(psxPTR, PSXBase + 0x00097A54, ScratchData, 4, ref HasRead);
+                ReadProcessMemory(psxPTR, IntPtr.Add(PSXBase, 0x00097A54), ScratchData, 4, out HasRead);
             }
             MonsterMoney = BitConverter.ToInt32(ScratchData, 0);
             return MonsterMoney.ToString() + "G";
@@ -4709,15 +4730,15 @@ Please visit https://github.com/Lexichu/mr2av_repo/releases/ to download the lat
             string MonGivenName = "";
             int CharaID;
 
-            if (EmuVer == DXSelectionID)
+            if (EmuVer == Emulator.Steam)
             {
                 for (int i = 0; i < 24; i++)                                                                                                            //24 bytes long //bedeg
                 {
-                    ReadProcessMemory(psxPTR, PSXBase + 0x0097B78 + i/* * 2*/, ScratchData, 1/*2*/, ref HasRead);
+                    ReadProcessMemory(psxPTR, IntPtr.Add(PSXBase, 0x0097B78) + i/* * 2*/, ScratchData, 1/*2*/, out HasRead);
                     CharaID = (ScratchData[0]);                                                                                                         //read 1 byte first
                     if (CharaID == 0xb0 | CharaID == 0xb1 | CharaID == 0xb2 | CharaID == 0xb3 | CharaID == 0xb4 | CharaID == 0xb5 | CharaID == 0xb6)    //if it's any of these read 2 bytes
                     {
-                        ReadProcessMemory(psxPTR, PSXBase + 0x0097B78 + i, ScratchData, 2, ref HasRead);
+                        ReadProcessMemory(psxPTR, PSXBase + 0x0097B78 + i, ScratchData, 2, out HasRead);
                         CharaID = ((ScratchData[0] << 8) + ScratchData[1]);
                         if (CharaID == 0xFFFF)
                             break;
@@ -4752,7 +4773,7 @@ Please visit https://github.com/Lexichu/mr2av_repo/releases/ to download the lat
                 {
                     for (int i = 0; i < 12; i++)
                     {
-                        ReadProcessMemory(psxPTR, PSXBase + 0x00097B78 + i, ScratchData, 1, ref HasRead);
+                        ReadProcessMemory(psxPTR, IntPtr.Add(PSXBase, 0x00097B78 + i), ScratchData, 1, out HasRead);
                         if (ScratchData[0] == 255)
                         {
                             break;
@@ -4764,7 +4785,7 @@ Please visit https://github.com/Lexichu/mr2av_repo/releases/ to download the lat
                 {
                     for (int i = 0; i < 16; i++)
                     {
-                        ReadProcessMemory(psxPTR, PSXBase + 0x00095B28 + i, ScratchData, 1, ref HasRead);
+                        ReadProcessMemory(psxPTR, IntPtr.Add(PSXBase, 0x00095B28 + i), ScratchData, 1, out HasRead);
                         CharaID = ScratchData[0];
 
                         switch (CharaID)
@@ -4943,7 +4964,8 @@ Please visit https://github.com/Lexichu/mr2av_repo/releases/ to download the lat
                             case 169: MonGivenName += "7"; break;
                             case 170: MonGivenName += "8"; break;
                             case 171: MonGivenName += "9"; break;
-                            case 176: i++; ReadProcessMemory(psxPTR, PSXBase + 0x00095B28 + i, ScratchData, 1, ref HasRead); MonGivenName += ExportEnglishPS1(ScratchData[0], true); break; // English Letters.
+                            case 176: i++; 
+                                ReadProcessMemory(psxPTR, IntPtr.Add(PSXBase, 0x00095B28 + i), ScratchData, 1, out HasRead); MonGivenName += ExportEnglishPS1(ScratchData[0], true);break; // English Letters.
                             case 255: i = 15; break; // Null Terminate
                             default: MonGivenName += "_"; break;
                         }
@@ -5062,7 +5084,7 @@ Please visit https://github.com/Lexichu/mr2av_repo/releases/ to download the lat
             if (cv == null)
                 return;
 
-            ReadProcessMemory(psxPTR, PSXBase + 0x000938AE, ScratchData, 2, ref HasRead);
+            ReadProcessMemory(psxPTR, IntPtr.Add(PSXBase, 0x000938AE), ScratchData, 2, out HasRead);
             P1Input = BitConverter.ToInt16(ScratchData, 0);
             CInput P1 = (CInput)P1Input;
             Con1Input[0] = (P1 & CInput.L2) == CInput.L2;
@@ -5085,16 +5107,16 @@ Please visit https://github.com/Lexichu/mr2av_repo/releases/ to download the lat
 
         private string MonReadBattleSpecials()
         {
-            if (EmuVer != DXSelectionID) // If this is PS1 emulation
+            if (EmuVer != Emulator.Steam) // If this is PS1 emulation
             {
                 if(MR2Mode.SelectedIndex < 2)
-                    ReadProcessMemory(psxPTR, PSXBase + 0x00097BD8, ScratchData, 2, ref HasRead);
+                    ReadProcessMemory(psxPTR, IntPtr.Add(PSXBase, 0x00097BD8), ScratchData, 2, out HasRead);
                 else if (MR2Mode.SelectedIndex == 2)
-                    ReadProcessMemory(psxPTR, PSXBase + 0x00095B88, ScratchData, 2, ref HasRead);
+                    ReadProcessMemory(psxPTR, IntPtr.Add(PSXBase, 0x00095B88), ScratchData, 2, out HasRead);
             }
             else // If this is MR2DX
             {
-                ReadProcessMemory(psxPTR, PSXBase + 0x00097BE0, ScratchData, 2, ref HasRead);
+                ReadProcessMemory(psxPTR, IntPtr.Add(PSXBase, 0x00097BE0), ScratchData, 2, out HasRead);
             }
             int SpecialsInt = BitConverter.ToInt16(ScratchData, 0);
             bool bInvalid = false;
@@ -5213,23 +5235,29 @@ Please visit https://github.com/Lexichu/mr2av_repo/releases/ to download the lat
             PSXProcess = null;
             switch (EmuVer)
             {
-                case 0:
+                case Emulator.ePSXe:
                     EmuFileName = "ePSXe"; break;
-                case 1:
+                case Emulator.pSX:
                     EmuFileName = "psxfin"; break;
-                case 2:
+                case Emulator.XEBRA:
                     EmuFileName = "XEBRA"; break;
-                case 3:
+                case Emulator.NOPSX:
                     EmuFileName = "NO$PSX"; break;
-                case 4:
+                case Emulator.Steam:
                     EmuFileName = "MF2"; break;
+                case Emulator.Duckstation:
+                    EmuFileName = "duckstation"; break;
                 default:
                     break;
             }
-
-            if (Process.GetProcessesByName(EmuFileName).Length > 0)
-                PSXProcess = Process.GetProcessesByName(EmuFileName)[0];
+            PSXProcess = FindProcess();
             return PSXProcess != null;
+        }
+
+        private Process FindProcess()
+        {
+            return Process.GetProcesses()
+                .FirstOrDefault(process => process.ProcessName.StartsWith(EmuFileName, StringComparison.OrdinalIgnoreCase));
         }
 
         private void KillAttach()
@@ -5313,7 +5341,7 @@ Please visit https://github.com/Lexichu/mr2av_repo/releases/ to download the lat
             MR2Mode.SelectedIndex = -1;
             Array.Clear(ScratchData, 0, 4);
             Array.Clear(nameToWrite, 0, 24); //bedeg
-            EmuVer = -1;
+            EmuVer = Emulator.None;
             MR2Mode.SelectedIndex = -1;
             MR2Mode.Enabled = true;
             bJPNMode = false;
@@ -5424,7 +5452,7 @@ This replaces the old button, skipping the additional window and saving Lexi a l
 
         private void CollateMonMoves()
         {
-            if (EmuVer == DXSelectionID)
+            if (EmuVer == Emulator.Steam)
             {
                 for (int i = 0; i < 24; i++) // Thanks to bedeg for this <3
                 {
@@ -5455,7 +5483,7 @@ This replaces the old button, skipping the additional window and saving Lexi a l
 
         private void ListItems()
         {
-            if (EmuVer == DXSelectionID)
+            if (EmuVer == Emulator.Steam)
             {
                 for (int i = 0; i < 20; i++)
                 {
@@ -5485,8 +5513,8 @@ This replaces the old button, skipping the additional window and saving Lexi a l
         private void EmuSelectBox_SelectedIndexChanged(object sender, EventArgs e)
         {
             //765A7346
-            int PSBase;
-            EmuVer = EmuSelectBox.SelectedIndex;
+            IntPtr PSBase;
+            EmuVer = (Emulator)EmuSelectBox.SelectedIndex;
 
             if (EmuSelectBox.SelectedIndex >= 0)
             {
@@ -5494,37 +5522,37 @@ This replaces the old button, skipping the additional window and saving Lexi a l
                 if (emuLoaded)
                 {
                     psxPTR = OpenProcess(PROCESS_ALLACCESS, false, PSXProcess.Id);
-                    PSBase = (int)PSXProcess.MainModule.BaseAddress;
+                    PSBase = PSXProcess.MainModule.BaseAddress;
                     EmuAttachButton.Text = "Detach";
                     EmuSelectBox.Enabled = false;
                     UnfreezeTicks = 4;
 
                     MainTime.Interval = UpdateRate.Value * 125; ; // specify interval time as you want
                     MainTime.Start();
-                    int PointOffset;
+                    IntPtr PointOffset = IntPtr.Zero;
                     switch (EmuVer)
                     {
-                        case 0: // ePSXe: check pointer at 0x0004E8E8
-                            ReadProcessMemory(psxPTR, PSBase + 0x0004e8e8, ScratchData, 4, ref HasRead);
-                            PointOffset = BitConverter.ToInt32(ScratchData, 0);
+                        case Emulator.ePSXe: // ePSXe: check pointer at 0x0004E8E8
+                            ReadProcessMemory(psxPTR, IntPtr.Add(PSBase, 0x0004e8e8), ScratchData, 4, out HasRead);
+                            PointOffset = new IntPtr(BitConverter.ToInt32(ScratchData, 0));
                             PSXBase = PointOffset;
                             break;
-                        case 1: // pSX: Check pointer at 0x00571A5C.
-                            ReadProcessMemory(psxPTR, 0x00571A5C, ScratchData, 4, ref HasRead);
-                            PointOffset = BitConverter.ToInt32(ScratchData, 0);
+                        case Emulator.pSX: // pSX: Check pointer at 0x00571A5C.
+                            ReadProcessMemory(psxPTR, new IntPtr(0x00571A5C), ScratchData, 4, out HasRead);
+                            PointOffset = new IntPtr(BitConverter.ToInt32(ScratchData, 0));
                             PSXBase = PointOffset;
                             break;
-                        case 2: // XEBRA latest: Check pointer at 0x000A5DF8.
-                            ReadProcessMemory(psxPTR, 0x004A5DF8, ScratchData, 4, ref HasRead);
-                            PointOffset = BitConverter.ToInt32(ScratchData, 0);
+                        case Emulator.XEBRA: // XEBRA latest: Check pointer at 0x000A5DF8.
+                            ReadProcessMemory(psxPTR, new IntPtr(0x004A5DF8), ScratchData, 4, out HasRead);
+                            PointOffset = new IntPtr(BitConverter.ToInt32(ScratchData, 0));
                             PSXBase = PointOffset;
                             break;
-                        case 3: // NOCashPSX: "NO$PSX.EXE" + 00091C80
-                            ReadProcessMemory(psxPTR, PSBase + 0x00091C80, ScratchData, 4, ref HasRead);
-                            PointOffset = BitConverter.ToInt32(ScratchData, 0);
+                        case Emulator.NOPSX: // NOCashPSX: "NO$PSX.EXE" + 00091C80
+                            ReadProcessMemory(psxPTR, IntPtr.Add(PSBase, 0x00091C80), ScratchData, 4, out HasRead);
+                            PointOffset = new IntPtr(BitConverter.ToInt32(ScratchData, 0));
                             PSXBase = PointOffset;
                             break;
-                        case 4: // MR2DX: "MF2.exe" + 002DEC6C (EN) OR 0x002CA504 (JPN)
+                        case Emulator.Steam: // MR2DX: "MF2.exe" + 002DEC6C (EN) OR 0x002CA504 (JPN)
                             // The Japanese release has the file description "モンスターファーム１＆２ DX"
                             // so we can differentiate between the US and JPN release just by checking the exe's FileDescription
                             bJPNMode = PSXProcess.MainModule.FileVersionInfo.FileDescription != "MonsterRancher 1&2 DX";
@@ -5533,15 +5561,25 @@ This replaces the old button, skipping the additional window and saving Lexi a l
                             MR2Mode.SelectedIndex = -1;
                             MR2Mode.Enabled = false;
                             break;
+                        case Emulator.Duckstation:
+                            // Duckstation: doesn't have a fixed offset, but the RAM location is listed in the PE (exe) header
+                            // A bit more of a challenge, but since we are a 32bit process accessing a 64 bit process memory, we need to do somethings different
+                            var header = new PeNet.PeFile(PSXProcess.MainModule.FileName);
+                            uint exportedoffset = header.ExportedFunctions.First(fun => fun.Name == "RAM").Address;
+                            if (!ReadProcessMemory(psxPTR, IntPtr.Add(PSBase, (int)exportedoffset), ScratchData, IntPtr.Size, out HasRead))
+                                break;
+                            PointOffset = new IntPtr(BitConverter.ToInt64(ScratchData, 0));
+                            PSXBase = PointOffset;
+                            break;
                         default:
                             break;
                     }
                 }
-                else
+                if (PSXBase == IntPtr.Zero)
                 {
                     MessageBox.Show("MR2 Advanced Viewer cannot find " + EmuSelectBox.Text + " running on this system. Please run the selected emulator, or try another.", "MR2AV Attach Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     EmuSelectBox.SelectedIndex = -1;
-                    EmuVer = -1;
+                    EmuVer = Emulator.None;
                 }
             }
         }
@@ -5677,12 +5715,12 @@ As a precaution, MR2AV has stopped reading from the emulator. To continue, press
             }
             if (emuLoaded && bViewingMR2)
             {
-                if (EmuVer != -1)
+                if (EmuVer != Emulator.None)
                 {
-                    if (Process.GetProcessesByName(EmuFileName).Length <= 0)
+                    if (FindProcess() == null)
                         KillAttach();
 
-                    if (EmuVer == DXSelectionID) // MR2DX changed locations
+                    if (EmuVer == Emulator.Steam) // MR2DX changed locations
                     {
                         // All -8 as of 1.0.0.1
                         Mon_Age = MR2ReadDouble(0x00097A0C);
@@ -6518,12 +6556,12 @@ Each increase also decreases SPD and DEF by 10%.
                 for (int i = offsetIncrement; i < 24; i++)
                     nameToWrite[i] = 0xFF;
             }
-            WriteProcessMemory(psxPTR, PSXBase + 0x0097B78, nameToWrite, 24, ref HasRead);
+            WriteProcessMemory(psxPTR, IntPtr.Add(PSXBase, 0x0097B78), nameToWrite, 24, out HasRead);
         }
 
         private void MR2Mode_SelectedIndexChanged(object sender, EventArgs e)
         {
-            if(EmuVer != DXSelectionID)
+            if(EmuVer != Emulator.Steam)
             {
                 bJPNMode = (MR2Mode.SelectedIndex == 2);
             }
@@ -6575,7 +6613,7 @@ If the box is not green, but the 'Cocoon Ready' box is ticked, your Worm will co
         private void MonBanaScumToggle_CheckedChanged(object sender, EventArgs e)
         {
             BananaTicks = 0;
-            if (EmuVer == DXSelectionID && MonBanaScumToggle.Checked == true)
+            if (EmuVer == Emulator.Steam && MonBanaScumToggle.Checked == true)
             {
                 MessageBox.Show("Banana Chimes are not currently enabled for MR2DX.");
                 MonBanaScumToggle.Checked = false;
