@@ -971,7 +971,7 @@
             "ePSXe 2.0.5",
             "pSX 1.13",
             "XEBRA 19/10/02",
-            "NO$PSX 2.0",
+            "NO$PSX 2.0 Debugger",
             "Steam (2DX)",
             "Duckstation"});
             this.EmuSelectBox.Location = new System.Drawing.Point(71, 13);
@@ -1516,7 +1516,7 @@
             // StatusMessageCycle
             // 
             this.StatusMessageCycle.Enabled = true;
-            this.StatusMessageCycle.Interval = 30000;
+            this.StatusMessageCycle.Interval = 20000;
             this.StatusMessageCycle.Tick += new System.EventHandler(this.StatusMessageCycle_Tick);
             // 
             // DumpGrowths
@@ -1740,7 +1740,7 @@
             this.MaximizeBox = false;
             this.Name = "ViewerWindow";
             this.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.Text = "MR2 Advanced Viewer v???";
+            this.Text = "MR2 Advanced Viewer";
             this.Load += new System.EventHandler(this.ViewerWindow_Load);
             ((System.ComponentModel.ISupportInitialize)(this.UpdateRate)).EndInit();
             this.statusStrip1.ResumeLayout(false);

@@ -33,11 +33,10 @@ namespace MR2AdvancedViewer
             MR2Mode.SelectedIndex = 0;
         }
 
-        // Some crap to do with reading memory IDK LOL I just wrote this.
         const int PROCESS_ALLACCESS = 0x1F0FFF;
-        const string VersionID = "0.7.1.0";
-        const string ReadableVersion = "MR2 Adanced Viewer 0.7.1";
-        const string ReadableVersionJP = "MF2 アドバンスド ビューアー 0.7.1";
+        const string VersionID = "0.7.1.1";
+        const string ReadableVersion = "MR2 Adanced Viewer 0.7.1.1";
+        const string ReadableVersionJP = "MF2 アドバンスド ビューアー 0.7.1.1";
         [DllImport("kernel32.dll")]
         public static extern IntPtr OpenProcess(int dwDesiredAccess, bool bInheritHandle, int dwProcessId);
         // Add Read/WriteProcessMemory definitions from P/Invoke
@@ -245,7 +244,7 @@ Please visit https://github.com/Lexichu/mr2av_repo/releases/ to download the lat
         {
             while (RNGNew == RNGCur)
             {
-                RNGNew = rng.Next(1, 5);
+                RNGNew = rng.Next(1, 6);
             }
             RNGCur = RNGNew;
             switch (RNGNew)
@@ -263,8 +262,8 @@ Please visit https://github.com/Lexichu/mr2av_repo/releases/ to download the lat
                     StatusBarURL.Text = "まとめwiki [MF2 Wiki]";
                     return "日本人？ いいですよ！日本語のガイド ＠";
                 case 5:
-                    StatusBarURL.Text = "https://twitch.tv/lexichu_";
-                    return "Visit Lexi's Twitch channel; leave her a follow! :)";
+                    StatusBarURL.Text = "@Lexichu2";
+                    return "Have a bug/error? Message Lexi on Twitter:";
             }
             StatusBarURL.Text = "https://twitch.tv/lexichu_";
             return "Visit Lexi's Twitch channel; leave her a follow! :)";
@@ -6453,6 +6452,9 @@ Each increase also decreases SPD and DEF by 10%.
                     break;
                 case 4:
                     Process.Start("https://w.atwiki.jp/mf2_matome/");
+                    break;
+                case 5:
+                    Process.Start("https://twitter.com/Lexichu2/");
                     break;
                 default:
                     Process.Start("https://twitch.tv/lexichu_");
