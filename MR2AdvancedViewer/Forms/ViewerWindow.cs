@@ -34,9 +34,9 @@ namespace MR2AdvancedViewer
         }
 
         const int PROCESS_ALLACCESS = 0x1F0FFF;
-        const string VersionID = "0.7.1.1";
-        const string ReadableVersion = "MR2 Adanced Viewer 0.7.1.1";
-        const string ReadableVersionJP = "MF2 アドバンスド ビューアー 0.7.1.1";
+        const string VersionID = "0.7.1.2";
+        const string ReadableVersion = "MR2 Adanced Viewer 0.7.1.2";
+        const string ReadableVersionJP = "MF2 アドバンスド ビューアー 0.7.1.2";
         [DllImport("kernel32.dll")]
         public static extern IntPtr OpenProcess(int dwDesiredAccess, bool bInheritHandle, int dwProcessId);
         // Add Read/WriteProcessMemory definitions from P/Invoke
@@ -198,6 +198,9 @@ Check your connection, but if GitHub is down then disregard this message.", "Aut
             int versionComparison = localVersion.CompareTo(latestGitHubVersion);
             if (versionComparison < 0)
             {
+                StatusMessageCycle.Enabled = false;
+                StatusBarMSG.Text = "You are running an outdated build of MR2AV.";
+                StatusBarURL.Text = "Update here!";
                 DialogResult result = MessageBox.Show(@"You are currently on an outdated build of MR2AV.
 
 Please visit https://github.com/Lexichu/mr2av_repo/releases/ to download the latest release!
@@ -207,17 +210,16 @@ Please visit https://github.com/Lexichu/mr2av_repo/releases/ to download the lat
                     Process.Start("https://github.com/Lexichu/mr2av_repo/releases/");
                     this.Close();
                 }
-                else
-                {
-                }
             }
             else if (versionComparison > 0)
             {
-                // Do something for being ahead of the curve??
+                StatusBarMSG.Text = "Greetings coder. Good job on being ahead of the curve!";
+                StatusBarURL.Text = "";
             }
             else
             {
-                // Congrats; you're on the latest version!
+                StatusBarMSG.Text = "You're on the latest version of MR2AV. Lexi is pleased. :)";
+                StatusBarURL.Text = "";
             }
         }
 
@@ -6457,7 +6459,7 @@ Each increase also decreases SPD and DEF by 10%.
                     Process.Start("https://twitter.com/Lexichu2/");
                     break;
                 default:
-                    Process.Start("https://twitch.tv/lexichu_");
+                    Process.Start("https://github.com/Lexichu/mr2av_repo/releases");
                     break;
             }
         }

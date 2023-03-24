@@ -1499,8 +1499,8 @@
             // 
             this.StatusBarMSG.LinkBehavior = System.Windows.Forms.LinkBehavior.NeverUnderline;
             this.StatusBarMSG.Name = "StatusBarMSG";
-            this.StatusBarMSG.Size = new System.Drawing.Size(254, 17);
-            this.StatusBarMSG.Text = "Visit Lexi\'s Twitch channel; leave her a follow! :)";
+            this.StatusBarMSG.Size = new System.Drawing.Size(122, 17);
+            this.StatusBarMSG.Text = "This is a test message.";
             this.StatusBarMSG.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.StatusBarMSG.Click += new System.EventHandler(this.ToolStripStatusLabel1_Click);
             // 
@@ -1509,8 +1509,8 @@
             this.StatusBarURL.DoubleClickEnabled = true;
             this.StatusBarURL.IsLink = true;
             this.StatusBarURL.Name = "StatusBarURL";
-            this.StatusBarURL.Size = new System.Drawing.Size(141, 17);
-            this.StatusBarURL.Text = "https://twitch.tv/lexichu_";
+            this.StatusBarURL.Size = new System.Drawing.Size(172, 17);
+            this.StatusBarURL.Text = "This is a test URL link to Github.";
             this.StatusBarURL.Click += new System.EventHandler(this.StatusBarURL_Click);
             // 
             // StatusMessageCycle
