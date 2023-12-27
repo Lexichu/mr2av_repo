@@ -177,6 +177,11 @@ You will also require the latest .net Framework, or at least version 4.7.2. Down
 -- This was to assist testing how the CD offsets worked, back in 0.61EX.
 - ...fixed the RNG command so that the fifth status bar message would actually show.
 
+-- v0.7.2:
+- Fixed a bug where selecting Shoes in the item viewer would crash the viewer with an array out of range error. I forgot to write its effect.
+- Added a button to create a backup of your save directory.
+- Added the feature to change your Rancher/Breeder name. This is found under the new Player Info. button.
+- Changed the maths for Effective Nature from "Truncate" to "Round" to attempt to fix the -19 being Bad nature error.
 
 ----------------
 -- Mostly Useless Features:
