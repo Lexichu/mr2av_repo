@@ -11,6 +11,15 @@ using System.Collections.Generic;
 using System.Threading.Tasks;
 using System.Net.NetworkInformation;
 using System.ComponentModel;
+using System.IO;
+
+// For my own reference;
+// condensed, single operation if/else work like so.
+//
+// "is this condition true ? yes : no"
+
+#pragma warning disable IDE0052 // Stop the compiler alerting me to HasRead being unused.
+#pragma warning disable IDE1006 // Stop the compiler criticising me for using functions not beginning with uppercase.
 
 namespace MR2AdvancedViewer
 {
@@ -21,8 +30,8 @@ namespace MR2AdvancedViewer
         pSX,
         XEBRA,
         NOPSX,
-        Steam,
         Duckstation,
+        Steam,
     }
 
     public partial class ViewerWindow : Form
@@ -34,9 +43,10 @@ namespace MR2AdvancedViewer
         }
 
         const int PROCESS_ALLACCESS = 0x1F0FFF;
-        const string VersionID = "0.7.1.2";
-        const string ReadableVersion = "MR2 Adanced Viewer 0.7.1.2";
-        const string ReadableVersionJP = "MF2 アドバンスド ビューアー 0.7.1.2";
+        const string VersionID = "0.7.2";
+        const string ReadableVersion = "MR2 Advanced Viewer 0.7.2";
+        const string ReadableVersionJP = "MF2 アドバンスド ビューアー 0.7.2";
+
         [DllImport("kernel32.dll")]
         public static extern IntPtr OpenProcess(int dwDesiredAccess, bool bInheritHandle, int dwProcessId);
         // Add Read/WriteProcessMemory definitions from P/Invoke
@@ -140,6 +150,8 @@ namespace MR2AdvancedViewer
         public bool bShowingExtras;
         public int BananaTicks;
         public int UnfreezeTicks;
+        public bool bEffStats;
+        public int StatFlickTicks;
         public string interVER;
         public MonLifeIndexWindow LIW;
         public MonMoveWindow MMW;
@@ -147,12 +159,47 @@ namespace MR2AdvancedViewer
         public TrainingWindow TW;
         public ItemLister il;
         public MRDebug mDBG;
+        public PlayerInfo pINFO;
         readonly System.Media.SoundPlayer BananaWin = new System.Media.SoundPlayer(Properties.Resources.MR2_Banana_Success);
         readonly System.Media.SoundPlayer BananaLose = new System.Media.SoundPlayer(Properties.Resources.MR2_Banana_Fail);
         public Random rng = new Random();
         public int RNGNew, RNGCur = -1;
+        public string MR2SaveDir, MF2SaveDir; // Standard directories for saving games for MR2/MF2DX.
         public bool bChangingName = false; //bedeg
         public string prevName; //bedeg
+
+        static void CopyDirectory(string sourceDir, string destinationDir, bool recursive)
+        {
+            // Get information about the source directory
+            var dir = new DirectoryInfo(sourceDir);
+
+            // Check if the source directory exists
+            if (!dir.Exists)
+                throw new DirectoryNotFoundException($"Source directory not found: {dir.FullName}");
+
+            // Cache directories before we start copying
+            DirectoryInfo[] dirs = dir.GetDirectories();
+
+            // Create the destination directory
+            Directory.CreateDirectory(destinationDir);
+
+            // Get the files in the source directory and copy to the destination directory
+            foreach (FileInfo file in dir.GetFiles())
+            {
+                string targetFilePath = Path.Combine(destinationDir, file.Name);
+                file.CopyTo(targetFilePath, true);
+            }
+
+            // If recursive and copying subdirectories, recursively call this method
+            if (recursive)
+            {
+                foreach (DirectoryInfo subDir in dirs)
+                {
+                    string newDestinationDir = Path.Combine(destinationDir, subDir.Name);
+                    CopyDirectory(subDir.FullName, newDestinationDir, true);
+                }
+            }
+        }
 
         public bool IsConnectedToInternet()
         {
@@ -191,7 +238,7 @@ Check your connection, but if GitHub is down then disregard this message.", "Aut
 
             //Setup the versions
             Version latestGitHubVersion = new Version(releases[0].TagName);
-            Version localVersion = new Version(VersionID); //Replace this with your local version.
+            Version localVersion = new Version(VersionID);
 
             //Compare the Versions
             //Source: https://stackoverflow.com/questions/7568147/compare-version-numbers-without-using-split-function
@@ -258,17 +305,17 @@ Please visit https://github.com/Lexichu/mr2av_repo/releases/ to download the lat
                     StatusBarURL.Text = "https://legendcup.com";
                     return "Want more info on Monster Rancher? Check out LegendCup!";
                 case 3:
-                    StatusBarURL.Text = ">//w//<";
-                    return "If you want to donate to Lexi, click the blushyface... ";
+                    StatusBarURL.Text = "[Donate to LegendCup]";
+                    return "Help support the legacy of MR/MF! ";
                 case 4:
-                    StatusBarURL.Text = "まとめwiki [MF2 Wiki]";
+                    StatusBarURL.Text = "[まとめ MF2 Wiki]";
                     return "日本人？ いいですよ！日本語のガイド ＠";
                 case 5:
-                    StatusBarURL.Text = "@Lexichu2";
-                    return "Have a bug/error? Message Lexi on Twitter:";
+                    StatusBarURL.Text = "[Links]";
+                    return "Have a bug/error? Message Lexi:";
             }
-            StatusBarURL.Text = "https://twitch.tv/lexichu_";
-            return "Visit Lexi's Twitch channel; leave her a follow! :)";
+            StatusBarURL.Text = "Github";
+            return "Find the latest version of the MR2 Advanced Viewer on GitHub";
         }
 
         public bool PossibleCocoon()
@@ -4726,20 +4773,25 @@ Please visit https://github.com/Lexichu/mr2av_repo/releases/ to download the lat
             return MonsterMoney.ToString() + "G";
         }
 
-        private string MonReadGivenName()
+        public string MonReadGivenName(bool bBreederName = false)
         {
             string MonGivenName = "";
             int CharaID;
+            int offsetHex;
 
             if (EmuVer == Emulator.Steam)
             {
+                offsetHex = (bBreederName ? 0x009A54A : 0x0097B78);
                 for (int i = 0; i < 24; i++)                                                                                                            //24 bytes long //bedeg
                 {
-                    ReadProcessMemory(psxPTR, IntPtr.Add(PSXBase, 0x0097B78) + i/* * 2*/, ScratchData, 1/*2*/, out HasRead);
+                    if (bBreederName)
+                        ReadProcessMemory(psxPTR, IntPtr.Add(PSXBase, offsetHex) + i, ScratchData, 1, out HasRead);
+                    else
+                        ReadProcessMemory(psxPTR, IntPtr.Add(PSXBase, offsetHex) + i, ScratchData, 1, out HasRead);
                     CharaID = (ScratchData[0]);                                                                                                         //read 1 byte first
                     if (CharaID == 0xb0 | CharaID == 0xb1 | CharaID == 0xb2 | CharaID == 0xb3 | CharaID == 0xb4 | CharaID == 0xb5 | CharaID == 0xb6)    //if it's any of these read 2 bytes
                     {
-                        ReadProcessMemory(psxPTR, PSXBase + 0x0097B78 + i, ScratchData, 2, out HasRead);
+                        ReadProcessMemory(psxPTR, IntPtr.Add(PSXBase, offsetHex) + i, ScratchData, 2, out HasRead);
                         CharaID = ((ScratchData[0] << 8) + ScratchData[1]);
                         if (CharaID == 0xFFFF)
                             break;
@@ -5334,6 +5386,8 @@ Please visit https://github.com/Lexichu/mr2av_repo/releases/ to download the lat
             MVButton.Enabled = false;
             MRDebugButton.Enabled = false;
             ItemViewButton.Enabled = false;
+            BreederInfo.Enabled = false;
+            BackupButton.Enabled = false;
             MonCJLabel.Hide();
             MonCJBox.Hide();
             MonCocoonReady.Hide();
@@ -5400,9 +5454,44 @@ Please visit https://github.com/Lexichu/mr2av_repo/releases/ to download the lat
             MR2Mode.SelectedIndex = -1;
             Text = ReadableVersion;
 
+            MR2SaveDir = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments) + "\\KoeiTecmo\\mfdx_en";
+            MF2SaveDir = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments) + "\\KoeiTecmo\\mfdx";
+
             ScumTip.SetToolTip(EXFeaturesChkBox, @"Show/Hide the extra features of MR2AV.
 This replaces the old button, skipping the additional window and saving Lexi a lot of code headache.");
             ScumTip.SetToolTip(MonGPSCheck, "Switches Guts Rate display between Frames per Guts point, and Guts per Second.");
+        }
+
+        private void RunBackup(bool bAppendDate)
+        {
+            if (EmuVer != Emulator.Steam)
+            {
+                MessageBox.Show(@"Currently, backup is only supported for Steam 2DX.
+ファイルコピーはSteam DX版のみ");
+            }
+            if (bAppendDate)
+            {
+                string CurrentTim = DateTime.Now.ToString("yyyy MM dd HH-mm-ss", System.Globalization.CultureInfo.InvariantCulture);
+                if (!bJPNMode)
+                {
+                    CopyDirectory(MR2SaveDir, MR2SaveDir + "_backup-(" + CurrentTim + ")", true);
+                    MessageBox.Show(@"Saved a backup of your mfdx_en directory to:
+
+" + MR2SaveDir + "_backup-(" + CurrentTim + ")");
+                }
+                else
+                {
+                    CopyDirectory(MF2SaveDir, MF2SaveDir + "_backup-(" + CurrentTim + ")", true);
+                    MessageBox.Show(@"「mfdx」 セーブフォルダをコピーした：
+
+" + MF2SaveDir + "_backup-(" + CurrentTim + ")");
+                }
+            }
+            else
+            {
+                CopyDirectory(MR2SaveDir, MR2SaveDir + "_backup", true);
+                CopyDirectory(MF2SaveDir, MF2SaveDir + "_backup", true);
+            }
         }
 
         private string HumanNETFramework(int netFrameID)
@@ -5611,6 +5700,8 @@ This replaces the old button, skipping the additional window and saving Lexi a l
             MVButton.Enabled = bViewingMR2;
             MRDebugButton.Enabled = bViewingMR2;
             ItemViewButton.Enabled = bViewingMR2;
+            BreederInfo.Enabled = bViewingMR2;
+            BackupButton.Enabled = bViewingMR2;
         }
 
         private void MR2LIWeeks()
@@ -5972,8 +6063,16 @@ As a precaution, MR2AV has stopped reading from the emulator. To continue, press
                     MonIntBox.Invoke((MethodInvoker)delegate { MonIntBox.Text = Mon_Int.ToString(); });
                     MonSkiBox.Invoke((MethodInvoker)delegate { MonSkiBox.Text = Mon_Skl.ToString(); });
                     BaseStatTotal.Invoke((MethodInvoker)delegate { BaseStatTotal.Text = (Mon_Lif + Mon_Pow + Mon_Int + Mon_Skl + Mon_Def + Mon_Spd).ToString(); });
-                    MonDefBox.Invoke((MethodInvoker)delegate { MonDefBox.Text = Mon_Def + "(" + (int)Mon_EffDef + ")"; });
-                    MonSpdBox.Invoke((MethodInvoker)delegate { MonSpdBox.Text = Mon_Spd + "(" + (int)Mon_EffSpd + ")"; });
+                    if (bEffStats)
+                    {
+                        MonDefBox.Invoke((MethodInvoker)delegate { MonDefBox.Text = "[" + ((int)Mon_EffDef).ToString() + "]"; });
+                        MonSpdBox.Invoke((MethodInvoker)delegate { MonSpdBox.Text = "[" + ((int)Mon_EffSpd).ToString() + "]"; });
+                    }
+                    else
+                    {
+                        MonDefBox.Invoke((MethodInvoker)delegate { MonDefBox.Text = Mon_Def.ToString(); });
+                        MonSpdBox.Invoke((MethodInvoker)delegate { MonSpdBox.Text = Mon_Spd.ToString(); });
+                    }
 
                     MonLoyaltyBox.Invoke((MethodInvoker)delegate { MonLoyaltyBox.Text = (Mon_LoyalSpoil / 2 + Mon_LoyalFear / 2).ToString(); });
 
@@ -6223,6 +6322,15 @@ Each increase also decreases SPD and DEF by 10%.
                         }
                     }
 
+                    if (StatFlickTicks > 0)
+                        StatFlickTicks--;
+
+                    if (StatFlickTicks <= 0)
+                    {
+                        bEffStats = !bEffStats;
+                        StatFlickTicks = Convert.ToInt32(4000.0 / MainTime.Interval);
+                    }
+
                     if (MonBanaScumToggle.Checked && (OldBananaCount - BananaCount == 1))
                     {
                         BananaTicks = Convert.ToInt32(1000.0 / MainTime.Interval);
@@ -6346,7 +6454,7 @@ Each increase also decreases SPD and DEF by 10%.
             MonGoldPeachBox.Checked = MonPeach_Gold;
         }
 
-        private void UpdateRate_Scroll(object sender, EventArgs e)
+        private void UpdateRate_Scroll(object sender, EventArgs e) //do a thing
         {
             MainTime.Interval = UpdateRate.Value * 125; // specify interval time as you want
             float fTickRate = Convert.ToSingle(1000.0 / MainTime.Interval);
@@ -6406,6 +6514,19 @@ Each increase also decreases SPD and DEF by 10%.
             }
         }
 
+        private void BreederInfo_Click(object sender, EventArgs e)
+        {
+            if (pINFO == null)
+            {
+                pINFO = new PlayerInfo
+                {
+                    AVW = this
+                };
+                pINFO.FormClosing += FManage_pINFOClose;
+                pINFO.Show();
+            }
+        }
+
         private void CycleFeatureDisplay()
         {
             bShowingExtras = !bShowingExtras;
@@ -6417,6 +6538,8 @@ Each increase also decreases SPD and DEF by 10%.
                 MVButton.Show();
                 MRDebugButton.Show();
                 ItemViewButton.Show();
+                BreederInfo.Show();
+                BackupButton.Show();
             }
             else
             {
@@ -6426,12 +6549,18 @@ Each increase also decreases SPD and DEF by 10%.
                 MVButton.Hide();
                 MRDebugButton.Hide();
                 ItemViewButton.Hide();
+                BreederInfo.Hide();
+                BackupButton.Hide();
             }
         }
 
         private void ToolStripStatusLabel1_Click(object sender, EventArgs e)
         {
-
+            StatusMessageCycle.Enabled = !StatusMessageCycle.Enabled;
+            if (!StatusMessageCycle.Enabled)
+                StatusBarMSG.Text = "|| " + StatusBarMSG.Text;
+            else
+                StatusBarMSG.Text = CycleMessages();
         }
 
         private void label40_Click(object sender, EventArgs e)
@@ -6450,13 +6579,13 @@ Each increase also decreases SPD and DEF by 10%.
                     Process.Start("https://legendcup.com/");
                     break;
                 case 3:
-                    Process.Start("https://streamelements.com/lexichu_/tip");
+                    Process.Start("https://legendcup.com/donatetolcmrm.php#donate");
                     break;
                 case 4:
                     Process.Start("https://w.atwiki.jp/mf2_matome/");
                     break;
                 case 5:
-                    Process.Start("https://twitter.com/Lexichu2/");
+                    Process.Start("https://linktr.ee/lexichu_");
                     break;
                 default:
                     Process.Start("https://github.com/Lexichu/mr2av_repo/releases");
@@ -6487,11 +6616,11 @@ Each increase also decreases SPD and DEF by 10%.
         {
             bChangingName = true;
             ChangeName.Visible = false;
-            ChangeName.Location = new Point(69, 245);
+            ChangeName.Location = new Point(182, 218);
             SaveName.Visible = true;
-            SaveName.Location = new Point(26, 245);
+            SaveName.Location = new Point(182, 218);
             CancelName.Visible = true;
-            CancelName.Location = new Point(116, 245);
+            CancelName.Location = new Point(270, 218);
 
             prevName = MonGivenNameBox.Text;
 
@@ -6504,7 +6633,7 @@ Each increase also decreases SPD and DEF by 10%.
             if (MonGivenNameBox.Text == "")
                 MonGivenNameBox.Text = prevName;
 
-            convTextAndWrite();
+            convTextAndWrite(MonGivenNameBox.Text);
 
             bChangingName = false;
             ChangeName.Visible = true;
@@ -6524,43 +6653,48 @@ Each increase also decreases SPD and DEF by 10%.
             MonGivenNameBox.ReadOnly = true;
         }
 
-        private void convTextAndWrite() //bedeg
+        public void convTextAndWrite(string convName, bool bBreederName = false) //bedeg
         {
             int offsetIncrement = 0;
+            int offsetHex;
             Array.Clear(nameToWrite, 0, 24);
 
-            foreach (char c in MonGivenNameBox.Text)
+            if (EmuVer == Emulator.Steam)
             {
-                string r = Convert.ToString(c);
-                if (ReverseCharMapping.reverseCharMap.ContainsKey(r))
+                offsetHex = bBreederName ? 0x009A54A : 0x0097B78;
+                foreach (char c in convName)
                 {
-                    if (ReverseCharMapping.reverseCharMap[r] <= 0xab)                                                       // 1 byte
+                    string r = Convert.ToString(c);
+                    if (ReverseCharMapping.reverseCharMap.ContainsKey(r))
                     {
-                        nameToWrite[offsetIncrement] = BitConverter.GetBytes(ReverseCharMapping.reverseCharMap[r])[0];
-                        offsetIncrement += 1;
+                        if (ReverseCharMapping.reverseCharMap[r] <= 0xab)                                                       // 1 byte
+                        {
+                            nameToWrite[offsetIncrement] = BitConverter.GetBytes(ReverseCharMapping.reverseCharMap[r])[0];
+                            offsetIncrement += 1;
+                        }
+                        else                                                                                                    // 2 bytes
+                        {
+                            nameToWrite[offsetIncrement] = BitConverter.GetBytes(ReverseCharMapping.reverseCharMap[r])[1];      // endianness madness
+                            offsetIncrement += 1;
+                            nameToWrite[offsetIncrement] = BitConverter.GetBytes(ReverseCharMapping.reverseCharMap[r])[0];
+                            offsetIncrement += 1;
+                        }
                     }
-                    else                                                                                                    // 2 bytes
+                    else
                     {
-                        nameToWrite[offsetIncrement] = BitConverter.GetBytes(ReverseCharMapping.reverseCharMap[r])[1];      // endianness madness
+                        nameToWrite[offsetIncrement] = 0xb0;                                                                    // write "?" if character is not found
                         offsetIncrement += 1;
-                        nameToWrite[offsetIncrement] = BitConverter.GetBytes(ReverseCharMapping.reverseCharMap[r])[0];
+                        nameToWrite[offsetIncrement] = 0x37;
                         offsetIncrement += 1;
                     }
                 }
-                else
+                if (offsetIncrement < 24)                                                                                       // append FFFF to the end
                 {
-                    nameToWrite[offsetIncrement] = 0xb0;                                                                    // write "?" if character is not found
-                    offsetIncrement += 1;
-                    nameToWrite[offsetIncrement] = 0x37;
-                    offsetIncrement += 1;
+                    for (int i = offsetIncrement; i < 24; i++)
+                        nameToWrite[i] = 0xFF;
                 }
+                WriteProcessMemory(psxPTR, IntPtr.Add(PSXBase, offsetHex), nameToWrite, 24, out HasRead);
             }
-            if (offsetIncrement < 24)                                                                                       // append FFFF to the end
-            {
-                for (int i = offsetIncrement; i < 24; i++)
-                    nameToWrite[i] = 0xFF;
-            }
-            WriteProcessMemory(psxPTR, IntPtr.Add(PSXBase, 0x0097B78), nameToWrite, 24, out HasRead);
         }
 
         private void MR2Mode_SelectedIndexChanged(object sender, EventArgs e)
@@ -6569,6 +6703,16 @@ Each increase also decreases SPD and DEF by 10%.
             {
                 bJPNMode = (MR2Mode.SelectedIndex == 2);
             }
+        }
+
+        private void MonDefBox_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void BackupButton_Click(object sender, EventArgs e)
+        {
+            RunBackup(true);
         }
 
         private void StatusMessageCycle_Tick(object sender, EventArgs e)
@@ -6580,9 +6724,9 @@ Each increase also decreases SPD and DEF by 10%.
         {
             RawNatureMod = !RawNatureMod;
             if (RawNatureMod)
-                Label2.Text = "Nat. Shift";
+                Label2.Text = "Nat. Shift *";
             else
-                Label2.Text = "Eff. Nature";
+                Label2.Text = "Eff. Nature *";
         }
 
         private void CocoonInfo_Click(object sender, EventArgs e)
@@ -6613,6 +6757,7 @@ If the box is not green, but the 'Cocoon Ready' box is ticked, your Worm will co
         public void FManage_TWClose(object sender, FormClosingEventArgs e) => TW = null;
         public void FManage_ilClose(object sender, FormClosingEventArgs e) => il = null;
         public void FManage_mDBGClose(object sender, FormClosingEventArgs e) => mDBG = null;
+        public void FManage_pINFOClose(object sender, FormClosingEventArgs e) => pINFO = null;
 
         private void MonBanaScumToggle_CheckedChanged(object sender, EventArgs e)
         {

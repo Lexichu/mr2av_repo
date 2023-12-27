@@ -112,6 +112,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Forms\PlayerInfo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\PlayerInfo.Designer.cs">
+      <DependentUpon>PlayerInfo.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\ReverseCharMapping.cs" />
     <Compile Include="Forms\CharMapping.cs" />
     <Compile Include="Forms\ItemLister.cs">
@@ -158,6 +164,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\MRDebug.resx">
       <DependentUpon>MRDebug.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\PlayerInfo.resx">
+      <DependentUpon>PlayerInfo.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\TrainingWindow.resx">
       <DependentUpon>TrainingWindow.cs</DependentUpon>
