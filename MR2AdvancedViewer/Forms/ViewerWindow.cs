@@ -7,10 +7,8 @@ using System.Runtime.InteropServices;
 using MR2AdvancedViewer.Forms;
 using System.Linq;
 using Octokit;
-using System.Collections.Generic;
 using System.Threading.Tasks;
 using System.Net.NetworkInformation;
-using System.ComponentModel;
 using System.IO;
 
 // For my own reference;
@@ -234,7 +232,7 @@ Check your connection, but if GitHub is down then disregard this message.", "Aut
             }
 
             GitHubClient client = new GitHubClient(new ProductHeaderValue("mr2av_repo"));
-            IReadOnlyList<Release> releases = await client.Repository.Release.GetAll("Lexichu", "mr2av_repo");
+            var releases = await client.Repository.Release.GetAll("Lexichu", "mr2av_repo");
 
             //Setup the versions
             Version latestGitHubVersion = new Version(releases[0].TagName);

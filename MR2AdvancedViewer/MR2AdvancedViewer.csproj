@@ -1,14 +1,16 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
-<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+﻿<Project Sdk="Microsoft.NET.Sdk">
   <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProjectGuid>{E3BC3A29-81CD-4525-8210-BCD89A03CF17}</ProjectGuid>
     <OutputType>WinExe</OutputType>
+	<PublishSingleFile>true</PublishSingleFile>
+	<SelfContained>false</SelfContained>
+	<RuntimeIdentifier>win-x64</RuntimeIdentifier>
     <RootNamespace>MR2AdvancedViewer</RootNamespace>
     <AssemblyName>MR2AdvancedViewer</AssemblyName>
-    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <TargetFramework>net8.0-windows</TargetFramework>
     <FileAlignment>512</FileAlignment>
     <TargetFrameworkProfile />
     <IsWebBootstrapper>false</IsWebBootstrapper>
@@ -27,6 +29,8 @@
     <UseApplicationTrust>false</UseApplicationTrust>
     <PublishWizardCompleted>true</PublishWizardCompleted>
     <BootstrapperEnabled>true</BootstrapperEnabled>
+	<GenerateAssemblyInfo>false</GenerateAssemblyInfo>
+	<UseWindowsForms>true</UseWindowsForms>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -73,147 +77,9 @@
     <ApplicationManifest>Properties\app.manifest</ApplicationManifest>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="Octokit, Version=0.50.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\Octokit.0.50.0\lib\net46\Octokit.dll</HintPath>
-    </Reference>
-    <Reference Include="PeNet, Version=3.0.0.0, Culture=neutral, PublicKeyToken=6cf2bfba59bcfb3f, processorArchitecture=MSIL">
-      <HintPath>..\packages\PeNet.3.0.0\lib\netstandard2.0\PeNet.dll</HintPath>
-    </Reference>
-    <Reference Include="PeNet.Asn1, Version=2.0.1.0, Culture=neutral, PublicKeyToken=1e2e3568f0050bf5, processorArchitecture=MSIL">
-      <HintPath>..\packages\PeNet.Asn1.2.0.1\lib\net461\PeNet.Asn1.dll</HintPath>
-    </Reference>
-    <Reference Include="System" />
-    <Reference Include="System.Buffers, Version=4.0.3.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
-      <HintPath>..\packages\System.Buffers.4.5.1\lib\net461\System.Buffers.dll</HintPath>
-    </Reference>
-    <Reference Include="System.Core" />
-    <Reference Include="System.Memory, Version=4.0.1.2, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
-      <HintPath>..\packages\System.Memory.4.5.5\lib\net461\System.Memory.dll</HintPath>
-    </Reference>
-    <Reference Include="System.Numerics" />
-    <Reference Include="System.Numerics.Vectors, Version=4.1.4.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
-      <HintPath>..\packages\System.Numerics.Vectors.4.5.0\lib\net46\System.Numerics.Vectors.dll</HintPath>
-    </Reference>
-    <Reference Include="System.Runtime.CompilerServices.Unsafe, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
-      <HintPath>..\packages\System.Runtime.CompilerServices.Unsafe.6.0.0\lib\net461\System.Runtime.CompilerServices.Unsafe.dll</HintPath>
-    </Reference>
-    <Reference Include="System.Security" />
-    <Reference Include="System.Security.Cryptography.Pkcs, Version=7.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
-      <HintPath>..\packages\System.Security.Cryptography.Pkcs.7.0.0\lib\net462\System.Security.Cryptography.Pkcs.dll</HintPath>
-    </Reference>
-    <Reference Include="System.Xml.Linq" />
-    <Reference Include="System.Data.DataSetExtensions" />
-    <Reference Include="Microsoft.CSharp" />
-    <Reference Include="System.Data" />
-    <Reference Include="System.Deployment" />
-    <Reference Include="System.Drawing" />
-    <Reference Include="System.Net.Http" />
-    <Reference Include="System.Windows.Forms" />
-    <Reference Include="System.Xml" />
-  </ItemGroup>
-  <ItemGroup>
-    <Compile Include="Forms\PlayerInfo.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Forms\PlayerInfo.Designer.cs">
-      <DependentUpon>PlayerInfo.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Forms\ReverseCharMapping.cs" />
-    <Compile Include="Forms\CharMapping.cs" />
-    <Compile Include="Forms\ItemLister.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Forms\ItemLister.Designer.cs">
-      <DependentUpon>ItemLister.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Forms\MRDebug.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Forms\MRDebug.Designer.cs">
-      <DependentUpon>MRDebug.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Forms\TrainingWindow.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Forms\TrainingWindow.Designer.cs">
-      <DependentUpon>TrainingWindow.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Forms\ViewerWindow.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Forms\ViewerWindow.Designer.cs">
-      <DependentUpon>ViewerWindow.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Forms\MLifeIndexWindow.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Forms\MLifeIndexWindow.Designer.cs">
-      <DependentUpon>MLifeIndexWindow.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Forms\MMoveWindow.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Forms\MMoveWindow.Designer.cs">
-      <DependentUpon>MMoveWindow.cs</DependentUpon>
-    </Compile>
-    <Compile Include="GlobalSuppressions.cs" />
-    <Compile Include="Program.cs" />
-    <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="Forms\ItemLister.resx">
-      <DependentUpon>ItemLister.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Forms\MRDebug.resx">
-      <DependentUpon>MRDebug.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Forms\PlayerInfo.resx">
-      <DependentUpon>PlayerInfo.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Forms\TrainingWindow.resx">
-      <DependentUpon>TrainingWindow.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Forms\ViewerWindow.resx">
-      <DependentUpon>ViewerWindow.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Forms\MLifeIndexWindow.resx">
-      <DependentUpon>MLifeIndexWindow.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Forms\MMoveWindow.resx">
-      <DependentUpon>MMoveWindow.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Forms\ControllerView.resx">
-      <DependentUpon>ControllerView.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Properties\Resources.resx">
-      <Generator>ResXFileCodeGenerator</Generator>
-      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
-      <SubType>Designer</SubType>
-    </EmbeddedResource>
-    <Compile Include="Forms\ControllerView.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Forms\ControllerView.Designer.cs">
-      <DependentUpon>ControllerView.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Properties\Resources.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DependentUpon>Resources.resx</DependentUpon>
-      <DesignTime>True</DesignTime>
-    </Compile>
     <None Include="..\.editorconfig">
       <Link>.editorconfig</Link>
     </None>
-    <None Include="MR2AdvancedViewer_TemporaryKey.pfx" />
-    <None Include="packages.config" />
-    <None Include="Properties\app.manifest" />
-    <None Include="Properties\Settings.settings">
-      <Generator>SettingsSingleFileGenerator</Generator>
-      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
-    </None>
-    <Compile Include="Properties\Settings.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DependentUpon>Settings.settings</DependentUpon>
-      <DesignTimeSharedInput>True</DesignTimeSharedInput>
-    </Compile>
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
@@ -881,5 +747,13 @@
       <Install>false</Install>
     </BootstrapperPackage>
   </ItemGroup>
-  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <ItemGroup>
+    <PackageReference Include="Microsoft.CSharp" Version="4.7.0" />
+    <PackageReference Include="Octokit" Version="9.1.2" />
+    <PackageReference Include="PeNet" Version="4.0.4" />
+    <PackageReference Include="PeNet.Asn1" Version="2.0.1" />
+    <PackageReference Include="System.Data.DataSetExtensions" Version="4.5.0" />
+    <PackageReference Include="System.Runtime.CompilerServices.Unsafe" Version="6.0.0" />
+    <PackageReference Include="System.Security.Cryptography.Pkcs" Version="8.0.0" />
+  </ItemGroup>
 </Project>
