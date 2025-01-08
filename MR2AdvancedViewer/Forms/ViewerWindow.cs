@@ -10,6 +10,7 @@ using Octokit;
 using System.Threading.Tasks;
 using System.Net.NetworkInformation;
 using System.IO;
+using System.Runtime.Versioning;
 
 // For my own reference;
 // condensed, single operation if/else work like so.
@@ -35,6 +36,7 @@ namespace MR2AdvancedViewer
         Steam,
     }
 
+    [SupportedOSPlatform("windows")]
     public partial class ViewerWindow : Form
     {
         public ViewerWindow()
@@ -49,17 +51,17 @@ namespace MR2AdvancedViewer
         const string ReadableVersionJP = "MF2 アドバンスド ビューアー " + VersionID;
 
         [LibraryImport("kernel32.dll")]
-        public static extern partial IntPtr OpenProcess(int dwDesiredAccess, bool bInheritHandle, int dwProcessId);
+        internal static partial IntPtr OpenProcess(int dwDesiredAccess, bool bInheritHandle, int dwProcessId);
         // Add Read/WriteProcessMemory definitions from P/Invoke
         [LibraryImport("kernel32.dll", SetLastError = true)]
-        static extern bool ReadProcessMemory(IntPtr hProcess,IntPtr lpBaseAddress,[Out] byte[] lpBuffer,int dwSize, out IntPtr lpNumberOfBytesRead);
+        internal static partial bool ReadProcessMemory(IntPtr hProcess,IntPtr lpBaseAddress,[Out] byte[] lpBuffer,int dwSize, out IntPtr lpNumberOfBytesRead);
         [LibraryImport("kernel32.dll", SetLastError = true)]
-        static extern bool ReadProcessMemory(IntPtr hProcess,IntPtr lpBaseAddress,[Out] IntPtr lpBuffer,int dwSize,out IntPtr lpNumberOfBytesRead);
+        internal static partial bool ReadProcessMemory(IntPtr hProcess,IntPtr lpBaseAddress,[Out] IntPtr lpBuffer,int dwSize,out IntPtr lpNumberOfBytesRead);
         [LibraryImport("kernel32.dll", SetLastError = true)]
-        public static extern bool WriteProcessMemory(IntPtr hProcess,IntPtr lpBaseAddress,byte[] lpBuffer,Int32 nSize,out IntPtr lpNumberOfBytesWritten);
+        internal static partial bool WriteProcessMemory(IntPtr hProcess,IntPtr lpBaseAddress,byte[] lpBuffer,Int32 nSize,out IntPtr lpNumberOfBytesWritten);
         // Used to access 64bit modules from a 32bit application
         [LibraryImport("psapi.dll", SetLastError = true)]
-        public static extern bool EnumProcessModules(IntPtr hProcess,[MarshalAs(UnmanagedType.LPArray, ArraySubType = UnmanagedType.U4)][In][Out] uint[] lphModule, uint cb, [MarshalAs(UnmanagedType.U4)] out uint lpcbNeeded);
+        internal static partial bool EnumProcessModules(IntPtr hProcess,[MarshalAs(UnmanagedType.LPArray, ArraySubType = UnmanagedType.U4)][In][Out] uint[] lphModule, uint cb, [MarshalAs(UnmanagedType.U4)] out uint lpcbNeeded);
 
         public IntPtr PSXBase = IntPtr.Zero;
         IntPtr HasRead; // I just use this so ReadProcessMemory stops complaining.
