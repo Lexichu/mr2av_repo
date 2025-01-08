@@ -28,1814 +28,1877 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
+            components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ViewerWindow));
-            this.MonPlayBox = new System.Windows.Forms.TextBox();
-            this.Label29 = new System.Windows.Forms.Label();
-            this.MonDislikeItemBox = new System.Windows.Forms.TextBox();
-            this.Label28 = new System.Windows.Forms.Label();
-            this.MonLikeItemBox = new System.Windows.Forms.TextBox();
-            this.Label27 = new System.Windows.Forms.Label();
-            this.MR2AVValueUpdate = new System.Windows.Forms.Button();
-            this.MonSpecialsBox = new System.Windows.Forms.TextBox();
-            this.Label26 = new System.Windows.Forms.Label();
-            this.MonFormBox = new System.Windows.Forms.TextBox();
-            this.Label25 = new System.Windows.Forms.Label();
-            this.MonLifeIndexBox = new System.Windows.Forms.TextBox();
-            this.Label24 = new System.Windows.Forms.Label();
-            this.MonFatigueBox = new System.Windows.Forms.TextBox();
-            this.Label23 = new System.Windows.Forms.Label();
-            this.MonStressBox = new System.Windows.Forms.TextBox();
-            this.Label22 = new System.Windows.Forms.Label();
-            this.MonFearBox = new System.Windows.Forms.TextBox();
-            this.Label21 = new System.Windows.Forms.Label();
-            this.MonSpoilBox = new System.Windows.Forms.TextBox();
-            this.Label20 = new System.Windows.Forms.Label();
-            this.Label19 = new System.Windows.Forms.Label();
-            this.Label18 = new System.Windows.Forms.Label();
-            this.MonMotiveBox10 = new System.Windows.Forms.TextBox();
-            this.Label17 = new System.Windows.Forms.Label();
-            this.MonMotiveBox9 = new System.Windows.Forms.TextBox();
-            this.Label16 = new System.Windows.Forms.Label();
-            this.MonMotiveBox8 = new System.Windows.Forms.TextBox();
-            this.Label15 = new System.Windows.Forms.Label();
-            this.MonMotiveBox7 = new System.Windows.Forms.TextBox();
-            this.Label9 = new System.Windows.Forms.Label();
-            this.Label10 = new System.Windows.Forms.Label();
-            this.Label11 = new System.Windows.Forms.Label();
-            this.Label12 = new System.Windows.Forms.Label();
-            this.Label13 = new System.Windows.Forms.Label();
-            this.Label14 = new System.Windows.Forms.Label();
-            this.MonMotiveBox6 = new System.Windows.Forms.TextBox();
-            this.MonMotiveBox5 = new System.Windows.Forms.TextBox();
-            this.MonMotiveBox4 = new System.Windows.Forms.TextBox();
-            this.MonMotiveBox3 = new System.Windows.Forms.TextBox();
-            this.MonMotiveBox2 = new System.Windows.Forms.TextBox();
-            this.MonMotiveBox1 = new System.Windows.Forms.TextBox();
-            this.MonLifeTypeBox = new System.Windows.Forms.TextBox();
-            this.Label8 = new System.Windows.Forms.Label();
-            this.MonLifeStageBox = new System.Windows.Forms.TextBox();
-            this.Label7 = new System.Windows.Forms.Label();
-            this.MonSilverPeachBox = new System.Windows.Forms.CheckBox();
-            this.MonGoldPeachBox = new System.Windows.Forms.CheckBox();
-            this.MonInitLifespanBox = new System.Windows.Forms.TextBox();
-            this.Label6 = new System.Windows.Forms.Label();
-            this.MonLifespanBox = new System.Windows.Forms.TextBox();
-            this.Label5 = new System.Windows.Forms.Label();
-            this.MonAgeBox = new System.Windows.Forms.TextBox();
-            this.Label4 = new System.Windows.Forms.Label();
-            this.MonFameBox = new System.Windows.Forms.TextBox();
-            this.MonGutsRateBox = new System.Windows.Forms.TextBox();
-            this.MonFameLabel = new System.Windows.Forms.Label();
-            this.MonGRNumToggle = new System.Windows.Forms.CheckBox();
-            this.MonGRTitleLabel = new System.Windows.Forms.Label();
-            this.MonBreedNameBox = new System.Windows.Forms.TextBox();
-            this.MonBNLabel = new System.Windows.Forms.Label();
-            this.MonNatureModBox = new System.Windows.Forms.TextBox();
-            this.Label2 = new System.Windows.Forms.Label();
-            this.MonNatureBox = new System.Windows.Forms.TextBox();
-            this.Label1 = new System.Windows.Forms.Label();
-            this.MonMoveSpdLabel = new System.Windows.Forms.Label();
-            this.MonArenaSpeedBox = new System.Windows.Forms.TextBox();
-            this.MonDEFGrLabel = new System.Windows.Forms.Label();
-            this.MonSPDGrLabel = new System.Windows.Forms.Label();
-            this.MonSKIGrLabel = new System.Windows.Forms.Label();
-            this.MonINTGrLabel = new System.Windows.Forms.Label();
-            this.MonPOWGrLabel = new System.Windows.Forms.Label();
-            this.Label3 = new System.Windows.Forms.Label();
-            this.MonLIFGrLabel = new System.Windows.Forms.Label();
-            this.MonDEFGRBox = new System.Windows.Forms.TextBox();
-            this.MonSPDGRBox = new System.Windows.Forms.TextBox();
-            this.MonSKLGRBox = new System.Windows.Forms.TextBox();
-            this.MonINTGRBox = new System.Windows.Forms.TextBox();
-            this.MonPOWGRBox = new System.Windows.Forms.TextBox();
-            this.MonLIFGRBox = new System.Windows.Forms.TextBox();
-            this.MonGRLabel = new System.Windows.Forms.Label();
-            this.SubBreedLabel = new System.Windows.Forms.Label();
-            this.MonsterBreedDiv = new System.Windows.Forms.Label();
-            this.MainBreedLabel = new System.Windows.Forms.Label();
-            this.MonsterBreedLabel = new System.Windows.Forms.Label();
-            this.EmuSelectBox = new System.Windows.Forms.ComboBox();
-            this.EmuSelectLabel = new System.Windows.Forms.Label();
-            this.EmuAttachButton = new System.Windows.Forms.Button();
-            this.MonItemUsedBox = new System.Windows.Forms.CheckBox();
-            this.MainTime = new System.Windows.Forms.Timer(this.components);
-            this.MonGPSCheck = new System.Windows.Forms.CheckBox();
-            this.ScumTip = new System.Windows.Forms.ToolTip(this.components);
-            this.MonBanaScumToggle = new System.Windows.Forms.CheckBox();
-            this.ErrSaleBox = new System.Windows.Forms.CheckBox();
-            this.HideData = new System.Windows.Forms.CheckBox();
-            this.BaseStatTotal = new System.Windows.Forms.Label();
-            this.UpdateRate = new System.Windows.Forms.TrackBar();
-            this.MonSpdBox = new System.Windows.Forms.TextBox();
-            this.MonDefBox = new System.Windows.Forms.TextBox();
-            this.LIWButton = new System.Windows.Forms.Button();
-            this.MVButton = new System.Windows.Forms.Button();
-            this.TWButton = new System.Windows.Forms.Button();
-            this.ItemViewButton = new System.Windows.Forms.Button();
-            this.BreederInfo = new System.Windows.Forms.Button();
-            this.BackupButton = new System.Windows.Forms.Button();
-            this.MonCJLabel = new System.Windows.Forms.Label();
-            this.MonCocoonReady = new System.Windows.Forms.CheckBox();
-            this.MonCJBox = new System.Windows.Forms.TextBox();
-            this.MonLoyaltyBox = new System.Windows.Forms.TextBox();
-            this.label31 = new System.Windows.Forms.Label();
-            this.CocoonInfo = new System.Windows.Forms.Button();
-            this.label32 = new System.Windows.Forms.Label();
-            this.MonGivenNameBox = new System.Windows.Forms.TextBox();
-            this.MonLifBox = new System.Windows.Forms.TextBox();
-            this.MonPowBox = new System.Windows.Forms.TextBox();
-            this.MonIntBox = new System.Windows.Forms.TextBox();
-            this.MonSkiBox = new System.Windows.Forms.TextBox();
-            this.MoneyBox = new System.Windows.Forms.TextBox();
-            this.label34 = new System.Windows.Forms.Label();
-            this.label30 = new System.Windows.Forms.Label();
-            this.MonDrugsLabel = new System.Windows.Forms.Label();
-            this.MonDrugsWeeks = new System.Windows.Forms.Label();
-            this.ControllerTime = new System.Windows.Forms.Timer(this.components);
-            this.EXFeaturesChkBox = new System.Windows.Forms.CheckBox();
-            this.label40 = new System.Windows.Forms.Label();
-            this.NextSaleWksBox = new System.Windows.Forms.TextBox();
-            this.label41 = new System.Windows.Forms.Label();
-            this.TickDisplay = new System.Windows.Forms.Label();
-            this.MR2Mode = new System.Windows.Forms.ComboBox();
-            this.label42 = new System.Windows.Forms.Label();
-            this.MRDebugButton = new System.Windows.Forms.Button();
-            this.statusStrip1 = new System.Windows.Forms.StatusStrip();
-            this.StatusBarMSG = new System.Windows.Forms.ToolStripStatusLabel();
-            this.StatusBarURL = new System.Windows.Forms.ToolStripStatusLabel();
-            this.StatusMessageCycle = new System.Windows.Forms.Timer(this.components);
-            this.DumpGrowths = new System.Windows.Forms.Button();
-            this.ChangeName = new System.Windows.Forms.Button();
-            this.SaveName = new System.Windows.Forms.Button();
-            this.CancelName = new System.Windows.Forms.Button();
-            this.label43 = new System.Windows.Forms.Label();
-            this.MonPrizeMoney = new System.Windows.Forms.TextBox();
-            this.label44 = new System.Windows.Forms.Label();
-            this.BSTLabel = new System.Windows.Forms.Label();
-            ((System.ComponentModel.ISupportInitialize)(this.UpdateRate)).BeginInit();
-            this.statusStrip1.SuspendLayout();
-            this.SuspendLayout();
+            MonPlayBox = new System.Windows.Forms.TextBox();
+            Label29 = new System.Windows.Forms.Label();
+            MonDislikeItemBox = new System.Windows.Forms.TextBox();
+            Label28 = new System.Windows.Forms.Label();
+            MonLikeItemBox = new System.Windows.Forms.TextBox();
+            Label27 = new System.Windows.Forms.Label();
+            MR2AVValueUpdate = new System.Windows.Forms.Button();
+            MonSpecialsBox = new System.Windows.Forms.TextBox();
+            Label26 = new System.Windows.Forms.Label();
+            MonFormBox = new System.Windows.Forms.TextBox();
+            Label25 = new System.Windows.Forms.Label();
+            MonLifeIndexBox = new System.Windows.Forms.TextBox();
+            Label24 = new System.Windows.Forms.Label();
+            MonFatigueBox = new System.Windows.Forms.TextBox();
+            Label23 = new System.Windows.Forms.Label();
+            MonStressBox = new System.Windows.Forms.TextBox();
+            Label22 = new System.Windows.Forms.Label();
+            MonFearBox = new System.Windows.Forms.TextBox();
+            Label21 = new System.Windows.Forms.Label();
+            MonSpoilBox = new System.Windows.Forms.TextBox();
+            Label20 = new System.Windows.Forms.Label();
+            Label19 = new System.Windows.Forms.Label();
+            Label18 = new System.Windows.Forms.Label();
+            MonMotiveBox10 = new System.Windows.Forms.TextBox();
+            Label17 = new System.Windows.Forms.Label();
+            MonMotiveBox9 = new System.Windows.Forms.TextBox();
+            Label16 = new System.Windows.Forms.Label();
+            MonMotiveBox8 = new System.Windows.Forms.TextBox();
+            Label15 = new System.Windows.Forms.Label();
+            MonMotiveBox7 = new System.Windows.Forms.TextBox();
+            Label9 = new System.Windows.Forms.Label();
+            Label10 = new System.Windows.Forms.Label();
+            Label11 = new System.Windows.Forms.Label();
+            Label12 = new System.Windows.Forms.Label();
+            Label13 = new System.Windows.Forms.Label();
+            Label14 = new System.Windows.Forms.Label();
+            MonMotiveBox6 = new System.Windows.Forms.TextBox();
+            MonMotiveBox5 = new System.Windows.Forms.TextBox();
+            MonMotiveBox4 = new System.Windows.Forms.TextBox();
+            MonMotiveBox3 = new System.Windows.Forms.TextBox();
+            MonMotiveBox2 = new System.Windows.Forms.TextBox();
+            MonMotiveBox1 = new System.Windows.Forms.TextBox();
+            MonLifeTypeBox = new System.Windows.Forms.TextBox();
+            Label8 = new System.Windows.Forms.Label();
+            MonLifeStageBox = new System.Windows.Forms.TextBox();
+            Label7 = new System.Windows.Forms.Label();
+            MonSilverPeachBox = new System.Windows.Forms.CheckBox();
+            MonGoldPeachBox = new System.Windows.Forms.CheckBox();
+            MonInitLifespanBox = new System.Windows.Forms.TextBox();
+            Label6 = new System.Windows.Forms.Label();
+            MonLifespanBox = new System.Windows.Forms.TextBox();
+            Label5 = new System.Windows.Forms.Label();
+            MonAgeBox = new System.Windows.Forms.TextBox();
+            Label4 = new System.Windows.Forms.Label();
+            MonFameBox = new System.Windows.Forms.TextBox();
+            MonGutsRateBox = new System.Windows.Forms.TextBox();
+            MonFameLabel = new System.Windows.Forms.Label();
+            MonGRNumToggle = new System.Windows.Forms.CheckBox();
+            MonGRTitleLabel = new System.Windows.Forms.Label();
+            MonBreedNameBox = new System.Windows.Forms.TextBox();
+            MonBNLabel = new System.Windows.Forms.Label();
+            MonNatureModBox = new System.Windows.Forms.TextBox();
+            Label2 = new System.Windows.Forms.Label();
+            MonNatureBox = new System.Windows.Forms.TextBox();
+            Label1 = new System.Windows.Forms.Label();
+            MonMoveSpdLabel = new System.Windows.Forms.Label();
+            MonArenaSpeedBox = new System.Windows.Forms.TextBox();
+            MonDEFGrLabel = new System.Windows.Forms.Label();
+            MonSPDGrLabel = new System.Windows.Forms.Label();
+            MonSKIGrLabel = new System.Windows.Forms.Label();
+            MonINTGrLabel = new System.Windows.Forms.Label();
+            MonPOWGrLabel = new System.Windows.Forms.Label();
+            Label3 = new System.Windows.Forms.Label();
+            MonLIFGrLabel = new System.Windows.Forms.Label();
+            MonDEFGRBox = new System.Windows.Forms.TextBox();
+            MonSPDGRBox = new System.Windows.Forms.TextBox();
+            MonSKLGRBox = new System.Windows.Forms.TextBox();
+            MonINTGRBox = new System.Windows.Forms.TextBox();
+            MonPOWGRBox = new System.Windows.Forms.TextBox();
+            MonLIFGRBox = new System.Windows.Forms.TextBox();
+            MonGRLabel = new System.Windows.Forms.Label();
+            SubBreedLabel = new System.Windows.Forms.Label();
+            MonsterBreedDiv = new System.Windows.Forms.Label();
+            MainBreedLabel = new System.Windows.Forms.Label();
+            MonsterBreedLabel = new System.Windows.Forms.Label();
+            EmuSelectBox = new System.Windows.Forms.ComboBox();
+            EmuSelectLabel = new System.Windows.Forms.Label();
+            EmuAttachButton = new System.Windows.Forms.Button();
+            MonItemUsedBox = new System.Windows.Forms.CheckBox();
+            MainTime = new System.Windows.Forms.Timer(components);
+            MonGPSCheck = new System.Windows.Forms.CheckBox();
+            ScumTip = new System.Windows.Forms.ToolTip(components);
+            MonBanaScumToggle = new System.Windows.Forms.CheckBox();
+            ErrSaleBox = new System.Windows.Forms.CheckBox();
+            HideData = new System.Windows.Forms.CheckBox();
+            BaseStatTotal = new System.Windows.Forms.Label();
+            UpdateRate = new System.Windows.Forms.TrackBar();
+            MonSpdBox = new System.Windows.Forms.TextBox();
+            MonDefBox = new System.Windows.Forms.TextBox();
+            LIWButton = new System.Windows.Forms.Button();
+            MVButton = new System.Windows.Forms.Button();
+            TWButton = new System.Windows.Forms.Button();
+            ItemViewButton = new System.Windows.Forms.Button();
+            BreederInfo = new System.Windows.Forms.Button();
+            BackupButton = new System.Windows.Forms.Button();
+            MonCJLabel = new System.Windows.Forms.Label();
+            MonCocoonReady = new System.Windows.Forms.CheckBox();
+            MonCJBox = new System.Windows.Forms.TextBox();
+            MonLoyaltyBox = new System.Windows.Forms.TextBox();
+            label31 = new System.Windows.Forms.Label();
+            CocoonInfo = new System.Windows.Forms.Button();
+            label32 = new System.Windows.Forms.Label();
+            MonGivenNameBox = new System.Windows.Forms.TextBox();
+            MonLifBox = new System.Windows.Forms.TextBox();
+            MonPowBox = new System.Windows.Forms.TextBox();
+            MonIntBox = new System.Windows.Forms.TextBox();
+            MonSkiBox = new System.Windows.Forms.TextBox();
+            MoneyBox = new System.Windows.Forms.TextBox();
+            label34 = new System.Windows.Forms.Label();
+            label30 = new System.Windows.Forms.Label();
+            MonDrugsLabel = new System.Windows.Forms.Label();
+            MonDrugsWeeks = new System.Windows.Forms.Label();
+            ControllerTime = new System.Windows.Forms.Timer(components);
+            EXFeaturesChkBox = new System.Windows.Forms.CheckBox();
+            label40 = new System.Windows.Forms.Label();
+            NextSaleWksBox = new System.Windows.Forms.TextBox();
+            label41 = new System.Windows.Forms.Label();
+            TickDisplay = new System.Windows.Forms.Label();
+            MR2Mode = new System.Windows.Forms.ComboBox();
+            label42 = new System.Windows.Forms.Label();
+            MRDebugButton = new System.Windows.Forms.Button();
+            statusStrip1 = new System.Windows.Forms.StatusStrip();
+            StatusBarMSG = new System.Windows.Forms.ToolStripStatusLabel();
+            StatusBarURL = new System.Windows.Forms.ToolStripStatusLabel();
+            StatusMessageCycle = new System.Windows.Forms.Timer(components);
+            DumpGrowths = new System.Windows.Forms.Button();
+            ChangeName = new System.Windows.Forms.Button();
+            SaveName = new System.Windows.Forms.Button();
+            CancelName = new System.Windows.Forms.Button();
+            label43 = new System.Windows.Forms.Label();
+            MonPrizeMoney = new System.Windows.Forms.TextBox();
+            label44 = new System.Windows.Forms.Label();
+            BSTLabel = new System.Windows.Forms.Label();
+            ((System.ComponentModel.ISupportInitialize)UpdateRate).BeginInit();
+            statusStrip1.SuspendLayout();
+            SuspendLayout();
             // 
             // MonPlayBox
             // 
-            this.MonPlayBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.MonPlayBox.Cursor = System.Windows.Forms.Cursors.Arrow;
-            this.MonPlayBox.Location = new System.Drawing.Point(404, 245);
-            this.MonPlayBox.Name = "MonPlayBox";
-            this.MonPlayBox.ReadOnly = true;
-            this.MonPlayBox.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.MonPlayBox.Size = new System.Drawing.Size(90, 20);
-            this.MonPlayBox.TabIndex = 177;
-            this.MonPlayBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            MonPlayBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            MonPlayBox.Location = new System.Drawing.Point(471, 283);
+            MonPlayBox.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            MonPlayBox.Name = "MonPlayBox";
+            MonPlayBox.ReadOnly = true;
+            MonPlayBox.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            MonPlayBox.Size = new System.Drawing.Size(105, 23);
+            MonPlayBox.TabIndex = 177;
+            MonPlayBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // Label29
             // 
-            this.Label29.AutoSize = true;
-            this.Label29.Location = new System.Drawing.Point(346, 248);
-            this.Label29.Name = "Label29";
-            this.Label29.Size = new System.Drawing.Size(57, 13);
-            this.Label29.TabIndex = 176;
-            this.Label29.Text = "Play Type:";
+            Label29.AutoSize = true;
+            Label29.Location = new System.Drawing.Point(404, 286);
+            Label29.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            Label29.Name = "Label29";
+            Label29.Size = new System.Drawing.Size(59, 15);
+            Label29.TabIndex = 176;
+            Label29.Text = "Play Type:";
             // 
             // MonDislikeItemBox
             // 
-            this.MonDislikeItemBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.MonDislikeItemBox.Cursor = System.Windows.Forms.Cursors.Arrow;
-            this.MonDislikeItemBox.Location = new System.Drawing.Point(254, 245);
-            this.MonDislikeItemBox.Name = "MonDislikeItemBox";
-            this.MonDislikeItemBox.ReadOnly = true;
-            this.MonDislikeItemBox.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.MonDislikeItemBox.Size = new System.Drawing.Size(90, 20);
-            this.MonDislikeItemBox.TabIndex = 175;
-            this.MonDislikeItemBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            MonDislikeItemBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            MonDislikeItemBox.Location = new System.Drawing.Point(296, 283);
+            MonDislikeItemBox.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            MonDislikeItemBox.Name = "MonDislikeItemBox";
+            MonDislikeItemBox.ReadOnly = true;
+            MonDislikeItemBox.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            MonDislikeItemBox.Size = new System.Drawing.Size(105, 23);
+            MonDislikeItemBox.TabIndex = 175;
+            MonDislikeItemBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // Label28
             // 
-            this.Label28.AutoSize = true;
-            this.Label28.Location = new System.Drawing.Point(172, 248);
-            this.Label28.Name = "Label28";
-            this.Label28.Size = new System.Drawing.Size(81, 13);
-            this.Label28.TabIndex = 174;
-            this.Label28.Text = "Undesired Item:";
+            Label28.AutoSize = true;
+            Label28.Location = new System.Drawing.Point(201, 286);
+            Label28.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            Label28.Name = "Label28";
+            Label28.Size = new System.Drawing.Size(90, 15);
+            Label28.TabIndex = 174;
+            Label28.Text = "Undesired Item:";
             // 
             // MonLikeItemBox
             // 
-            this.MonLikeItemBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.MonLikeItemBox.Cursor = System.Windows.Forms.Cursors.Arrow;
-            this.MonLikeItemBox.Location = new System.Drawing.Point(80, 245);
-            this.MonLikeItemBox.Name = "MonLikeItemBox";
-            this.MonLikeItemBox.ReadOnly = true;
-            this.MonLikeItemBox.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.MonLikeItemBox.Size = new System.Drawing.Size(90, 20);
-            this.MonLikeItemBox.TabIndex = 173;
-            this.MonLikeItemBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            MonLikeItemBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            MonLikeItemBox.Location = new System.Drawing.Point(93, 283);
+            MonLikeItemBox.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            MonLikeItemBox.Name = "MonLikeItemBox";
+            MonLikeItemBox.ReadOnly = true;
+            MonLikeItemBox.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            MonLikeItemBox.Size = new System.Drawing.Size(105, 23);
+            MonLikeItemBox.TabIndex = 173;
+            MonLikeItemBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // Label27
             // 
-            this.Label27.AutoSize = true;
-            this.Label27.Location = new System.Drawing.Point(10, 248);
-            this.Label27.Name = "Label27";
-            this.Label27.Size = new System.Drawing.Size(69, 13);
-            this.Label27.TabIndex = 172;
-            this.Label27.Text = "Desired Item:";
+            Label27.AutoSize = true;
+            Label27.Location = new System.Drawing.Point(12, 286);
+            Label27.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            Label27.Name = "Label27";
+            Label27.Size = new System.Drawing.Size(76, 15);
+            Label27.TabIndex = 172;
+            Label27.Text = "Desired Item:";
             // 
             // MR2AVValueUpdate
             // 
-            this.MR2AVValueUpdate.Location = new System.Drawing.Point(539, 422);
-            this.MR2AVValueUpdate.Name = "MR2AVValueUpdate";
-            this.MR2AVValueUpdate.Size = new System.Drawing.Size(75, 23);
-            this.MR2AVValueUpdate.TabIndex = 171;
-            this.MR2AVValueUpdate.Text = "Start Viewer";
-            this.MR2AVValueUpdate.UseVisualStyleBackColor = true;
-            this.MR2AVValueUpdate.Click += new System.EventHandler(this.MR2AVValueUpdate_Click);
+            MR2AVValueUpdate.Location = new System.Drawing.Point(629, 487);
+            MR2AVValueUpdate.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            MR2AVValueUpdate.Name = "MR2AVValueUpdate";
+            MR2AVValueUpdate.Size = new System.Drawing.Size(88, 27);
+            MR2AVValueUpdate.TabIndex = 171;
+            MR2AVValueUpdate.Text = "Start Viewer";
+            MR2AVValueUpdate.UseVisualStyleBackColor = true;
+            MR2AVValueUpdate.Click += MR2AVValueUpdate_Click;
             // 
             // MonSpecialsBox
             // 
-            this.MonSpecialsBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.MonSpecialsBox.Cursor = System.Windows.Forms.Cursors.Arrow;
-            this.MonSpecialsBox.Location = new System.Drawing.Point(90, 270);
-            this.MonSpecialsBox.Name = "MonSpecialsBox";
-            this.MonSpecialsBox.ReadOnly = true;
-            this.MonSpecialsBox.Size = new System.Drawing.Size(300, 20);
-            this.MonSpecialsBox.TabIndex = 170;
-            this.MonSpecialsBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            MonSpecialsBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            MonSpecialsBox.Location = new System.Drawing.Point(105, 312);
+            MonSpecialsBox.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            MonSpecialsBox.Name = "MonSpecialsBox";
+            MonSpecialsBox.ReadOnly = true;
+            MonSpecialsBox.Size = new System.Drawing.Size(350, 23);
+            MonSpecialsBox.TabIndex = 170;
+            MonSpecialsBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // Label26
             // 
-            this.Label26.AutoSize = true;
-            this.Label26.Location = new System.Drawing.Point(10, 273);
-            this.Label26.Name = "Label26";
-            this.Label26.Size = new System.Drawing.Size(80, 13);
-            this.Label26.TabIndex = 169;
-            this.Label26.Text = "Battle Specials:";
+            Label26.AutoSize = true;
+            Label26.Location = new System.Drawing.Point(12, 315);
+            Label26.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            Label26.Name = "Label26";
+            Label26.Size = new System.Drawing.Size(85, 15);
+            Label26.TabIndex = 169;
+            Label26.Text = "Battle Specials:";
             // 
             // MonFormBox
             // 
-            this.MonFormBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.MonFormBox.Cursor = System.Windows.Forms.Cursors.Arrow;
-            this.MonFormBox.Location = new System.Drawing.Point(421, 167);
-            this.MonFormBox.Name = "MonFormBox";
-            this.MonFormBox.ReadOnly = true;
-            this.MonFormBox.Size = new System.Drawing.Size(70, 20);
-            this.MonFormBox.TabIndex = 168;
-            this.MonFormBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            MonFormBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            MonFormBox.Location = new System.Drawing.Point(491, 193);
+            MonFormBox.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            MonFormBox.Name = "MonFormBox";
+            MonFormBox.ReadOnly = true;
+            MonFormBox.Size = new System.Drawing.Size(81, 23);
+            MonFormBox.TabIndex = 168;
+            MonFormBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // Label25
             // 
-            this.Label25.AutoSize = true;
-            this.Label25.Location = new System.Drawing.Point(389, 170);
-            this.Label25.Name = "Label25";
-            this.Label25.Size = new System.Drawing.Size(33, 13);
-            this.Label25.TabIndex = 167;
-            this.Label25.Text = "Form:";
+            Label25.AutoSize = true;
+            Label25.Location = new System.Drawing.Point(454, 196);
+            Label25.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            Label25.Name = "Label25";
+            Label25.Size = new System.Drawing.Size(38, 15);
+            Label25.TabIndex = 167;
+            Label25.Text = "Form:";
             // 
             // MonLifeIndexBox
             // 
-            this.MonLifeIndexBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.MonLifeIndexBox.Cursor = System.Windows.Forms.Cursors.Arrow;
-            this.MonLifeIndexBox.Location = new System.Drawing.Point(242, 193);
-            this.MonLifeIndexBox.Name = "MonLifeIndexBox";
-            this.MonLifeIndexBox.ReadOnly = true;
-            this.MonLifeIndexBox.Size = new System.Drawing.Size(78, 20);
-            this.MonLifeIndexBox.TabIndex = 166;
-            this.MonLifeIndexBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            MonLifeIndexBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            MonLifeIndexBox.Location = new System.Drawing.Point(282, 223);
+            MonLifeIndexBox.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            MonLifeIndexBox.Name = "MonLifeIndexBox";
+            MonLifeIndexBox.ReadOnly = true;
+            MonLifeIndexBox.Size = new System.Drawing.Size(91, 23);
+            MonLifeIndexBox.TabIndex = 166;
+            MonLifeIndexBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // Label24
             // 
-            this.Label24.AutoSize = true;
-            this.Label24.Location = new System.Drawing.Point(185, 196);
-            this.Label24.Name = "Label24";
-            this.Label24.Size = new System.Drawing.Size(56, 13);
-            this.Label24.TabIndex = 165;
-            this.Label24.Text = "Life Index:";
+            Label24.AutoSize = true;
+            Label24.Location = new System.Drawing.Point(216, 226);
+            Label24.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            Label24.Name = "Label24";
+            Label24.Size = new System.Drawing.Size(61, 15);
+            Label24.TabIndex = 165;
+            Label24.Text = "Life Index:";
             // 
             // MonFatigueBox
             // 
-            this.MonFatigueBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.MonFatigueBox.Cursor = System.Windows.Forms.Cursors.Arrow;
-            this.MonFatigueBox.Location = new System.Drawing.Point(140, 193);
-            this.MonFatigueBox.Name = "MonFatigueBox";
-            this.MonFatigueBox.ReadOnly = true;
-            this.MonFatigueBox.Size = new System.Drawing.Size(40, 20);
-            this.MonFatigueBox.TabIndex = 164;
-            this.MonFatigueBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            MonFatigueBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            MonFatigueBox.Location = new System.Drawing.Point(163, 223);
+            MonFatigueBox.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            MonFatigueBox.Name = "MonFatigueBox";
+            MonFatigueBox.ReadOnly = true;
+            MonFatigueBox.Size = new System.Drawing.Size(46, 23);
+            MonFatigueBox.TabIndex = 164;
+            MonFatigueBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // Label23
             // 
-            this.Label23.AutoSize = true;
-            this.Label23.Location = new System.Drawing.Point(94, 196);
-            this.Label23.Name = "Label23";
-            this.Label23.Size = new System.Drawing.Size(45, 13);
-            this.Label23.TabIndex = 163;
-            this.Label23.Text = "Fatigue:";
+            Label23.AutoSize = true;
+            Label23.Location = new System.Drawing.Point(110, 226);
+            Label23.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            Label23.Name = "Label23";
+            Label23.Size = new System.Drawing.Size(49, 15);
+            Label23.TabIndex = 163;
+            Label23.Text = "Fatigue:";
             // 
             // MonStressBox
             // 
-            this.MonStressBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.MonStressBox.Cursor = System.Windows.Forms.Cursors.Arrow;
-            this.MonStressBox.Location = new System.Drawing.Point(50, 193);
-            this.MonStressBox.Name = "MonStressBox";
-            this.MonStressBox.ReadOnly = true;
-            this.MonStressBox.Size = new System.Drawing.Size(40, 20);
-            this.MonStressBox.TabIndex = 162;
-            this.MonStressBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            MonStressBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            MonStressBox.Location = new System.Drawing.Point(58, 223);
+            MonStressBox.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            MonStressBox.Name = "MonStressBox";
+            MonStressBox.ReadOnly = true;
+            MonStressBox.Size = new System.Drawing.Size(46, 23);
+            MonStressBox.TabIndex = 162;
+            MonStressBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // Label22
             // 
-            this.Label22.AutoSize = true;
-            this.Label22.Location = new System.Drawing.Point(10, 196);
-            this.Label22.Name = "Label22";
-            this.Label22.Size = new System.Drawing.Size(39, 13);
-            this.Label22.TabIndex = 161;
-            this.Label22.Text = "Stress:";
+            Label22.AutoSize = true;
+            Label22.Location = new System.Drawing.Point(12, 226);
+            Label22.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            Label22.Name = "Label22";
+            Label22.Size = new System.Drawing.Size(40, 15);
+            Label22.TabIndex = 161;
+            Label22.Text = "Stress:";
             // 
             // MonFearBox
             // 
-            this.MonFearBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.MonFearBox.Cursor = System.Windows.Forms.Cursors.Arrow;
-            this.MonFearBox.Location = new System.Drawing.Point(282, 167);
-            this.MonFearBox.Name = "MonFearBox";
-            this.MonFearBox.ReadOnly = true;
-            this.MonFearBox.Size = new System.Drawing.Size(30, 20);
-            this.MonFearBox.TabIndex = 160;
-            this.MonFearBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            MonFearBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            MonFearBox.Location = new System.Drawing.Point(329, 193);
+            MonFearBox.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            MonFearBox.Name = "MonFearBox";
+            MonFearBox.ReadOnly = true;
+            MonFearBox.Size = new System.Drawing.Size(35, 23);
+            MonFearBox.TabIndex = 160;
+            MonFearBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // Label21
             // 
-            this.Label21.AutoSize = true;
-            this.Label21.Location = new System.Drawing.Point(252, 170);
-            this.Label21.Name = "Label21";
-            this.Label21.Size = new System.Drawing.Size(31, 13);
-            this.Label21.TabIndex = 159;
-            this.Label21.Text = "Fear:";
+            Label21.AutoSize = true;
+            Label21.Location = new System.Drawing.Point(294, 196);
+            Label21.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            Label21.Name = "Label21";
+            Label21.Size = new System.Drawing.Size(32, 15);
+            Label21.TabIndex = 159;
+            Label21.Text = "Fear:";
             // 
             // MonSpoilBox
             // 
-            this.MonSpoilBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.MonSpoilBox.Cursor = System.Windows.Forms.Cursors.Arrow;
-            this.MonSpoilBox.Location = new System.Drawing.Point(220, 167);
-            this.MonSpoilBox.Name = "MonSpoilBox";
-            this.MonSpoilBox.ReadOnly = true;
-            this.MonSpoilBox.Size = new System.Drawing.Size(30, 20);
-            this.MonSpoilBox.TabIndex = 158;
-            this.MonSpoilBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            MonSpoilBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            MonSpoilBox.Location = new System.Drawing.Point(257, 193);
+            MonSpoilBox.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            MonSpoilBox.Name = "MonSpoilBox";
+            MonSpoilBox.ReadOnly = true;
+            MonSpoilBox.Size = new System.Drawing.Size(35, 23);
+            MonSpoilBox.TabIndex = 158;
+            MonSpoilBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // Label20
             // 
-            this.Label20.AutoSize = true;
-            this.Label20.Location = new System.Drawing.Point(188, 170);
-            this.Label20.Name = "Label20";
-            this.Label20.Size = new System.Drawing.Size(33, 13);
-            this.Label20.TabIndex = 157;
-            this.Label20.Text = "Spoil:";
+            Label20.AutoSize = true;
+            Label20.Location = new System.Drawing.Point(219, 196);
+            Label20.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            Label20.Name = "Label20";
+            Label20.Size = new System.Drawing.Size(36, 15);
+            Label20.TabIndex = 157;
+            Label20.Text = "Spoil:";
             // 
             // Label19
             // 
-            this.Label19.AutoSize = true;
-            this.Label19.Location = new System.Drawing.Point(12, 393);
-            this.Label19.Name = "Label19";
-            this.Label19.Size = new System.Drawing.Size(120, 13);
-            this.Label19.TabIndex = 156;
-            this.Label19.Text = "Monster Drill Motivation:";
+            Label19.AutoSize = true;
+            Label19.Location = new System.Drawing.Point(14, 453);
+            Label19.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            Label19.Name = "Label19";
+            Label19.Size = new System.Drawing.Size(139, 15);
+            Label19.TabIndex = 156;
+            Label19.Text = "Monster Drill Motivation:";
             // 
             // Label18
             // 
-            this.Label18.AutoSize = true;
-            this.Label18.Location = new System.Drawing.Point(397, 410);
-            this.Label18.Name = "Label18";
-            this.Label18.Size = new System.Drawing.Size(32, 13);
-            this.Label18.TabIndex = 155;
-            this.Label18.Text = "Swim";
+            Label18.AutoSize = true;
+            Label18.Location = new System.Drawing.Point(463, 473);
+            Label18.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            Label18.Name = "Label18";
+            Label18.Size = new System.Drawing.Size(36, 15);
+            Label18.TabIndex = 155;
+            Label18.Text = "Swim";
             // 
             // MonMotiveBox10
             // 
-            this.MonMotiveBox10.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.MonMotiveBox10.Cursor = System.Windows.Forms.Cursors.Arrow;
-            this.MonMotiveBox10.Location = new System.Drawing.Point(392, 426);
-            this.MonMotiveBox10.Name = "MonMotiveBox10";
-            this.MonMotiveBox10.ReadOnly = true;
-            this.MonMotiveBox10.Size = new System.Drawing.Size(40, 20);
-            this.MonMotiveBox10.TabIndex = 154;
-            this.MonMotiveBox10.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            MonMotiveBox10.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            MonMotiveBox10.Location = new System.Drawing.Point(457, 492);
+            MonMotiveBox10.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            MonMotiveBox10.Name = "MonMotiveBox10";
+            MonMotiveBox10.ReadOnly = true;
+            MonMotiveBox10.Size = new System.Drawing.Size(46, 23);
+            MonMotiveBox10.TabIndex = 154;
+            MonMotiveBox10.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // Label17
             // 
-            this.Label17.AutoSize = true;
-            this.Label17.Location = new System.Drawing.Point(355, 410);
-            this.Label17.Name = "Label17";
-            this.Label17.Size = new System.Drawing.Size(31, 13);
-            this.Label17.TabIndex = 153;
-            this.Label17.Text = "Leap";
+            Label17.AutoSize = true;
+            Label17.Location = new System.Drawing.Point(414, 473);
+            Label17.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            Label17.Name = "Label17";
+            Label17.Size = new System.Drawing.Size(32, 15);
+            Label17.TabIndex = 153;
+            Label17.Text = "Leap";
             // 
             // MonMotiveBox9
             // 
-            this.MonMotiveBox9.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.MonMotiveBox9.Cursor = System.Windows.Forms.Cursors.Arrow;
-            this.MonMotiveBox9.Location = new System.Drawing.Point(350, 426);
-            this.MonMotiveBox9.Name = "MonMotiveBox9";
-            this.MonMotiveBox9.ReadOnly = true;
-            this.MonMotiveBox9.Size = new System.Drawing.Size(40, 20);
-            this.MonMotiveBox9.TabIndex = 152;
-            this.MonMotiveBox9.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            MonMotiveBox9.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            MonMotiveBox9.Location = new System.Drawing.Point(408, 492);
+            MonMotiveBox9.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            MonMotiveBox9.Name = "MonMotiveBox9";
+            MonMotiveBox9.ReadOnly = true;
+            MonMotiveBox9.Size = new System.Drawing.Size(46, 23);
+            MonMotiveBox9.TabIndex = 152;
+            MonMotiveBox9.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // Label16
             // 
-            this.Label16.AutoSize = true;
-            this.Label16.Location = new System.Drawing.Point(305, 410);
-            this.Label16.Name = "Label16";
-            this.Label16.Size = new System.Drawing.Size(48, 13);
-            this.Label16.TabIndex = 151;
-            this.Label16.Text = "Meditate";
+            Label16.AutoSize = true;
+            Label16.Location = new System.Drawing.Point(356, 473);
+            Label16.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            Label16.Name = "Label16";
+            Label16.Size = new System.Drawing.Size(54, 15);
+            Label16.TabIndex = 151;
+            Label16.Text = "Meditate";
             // 
             // MonMotiveBox8
             // 
-            this.MonMotiveBox8.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.MonMotiveBox8.Cursor = System.Windows.Forms.Cursors.Arrow;
-            this.MonMotiveBox8.Location = new System.Drawing.Point(308, 426);
-            this.MonMotiveBox8.Name = "MonMotiveBox8";
-            this.MonMotiveBox8.ReadOnly = true;
-            this.MonMotiveBox8.Size = new System.Drawing.Size(40, 20);
-            this.MonMotiveBox8.TabIndex = 150;
-            this.MonMotiveBox8.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            MonMotiveBox8.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            MonMotiveBox8.Location = new System.Drawing.Point(359, 492);
+            MonMotiveBox8.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            MonMotiveBox8.Name = "MonMotiveBox8";
+            MonMotiveBox8.ReadOnly = true;
+            MonMotiveBox8.Size = new System.Drawing.Size(46, 23);
+            MonMotiveBox8.TabIndex = 150;
+            MonMotiveBox8.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // Label15
             // 
-            this.Label15.AutoSize = true;
-            this.Label15.Location = new System.Drawing.Point(274, 410);
-            this.Label15.Name = "Label15";
-            this.Label15.Size = new System.Drawing.Size(24, 13);
-            this.Label15.TabIndex = 149;
-            this.Label15.Text = "Pull";
+            Label15.AutoSize = true;
+            Label15.Location = new System.Drawing.Point(320, 473);
+            Label15.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            Label15.Name = "Label15";
+            Label15.Size = new System.Drawing.Size(27, 15);
+            Label15.TabIndex = 149;
+            Label15.Text = "Pull";
             // 
             // MonMotiveBox7
             // 
-            this.MonMotiveBox7.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.MonMotiveBox7.Cursor = System.Windows.Forms.Cursors.Arrow;
-            this.MonMotiveBox7.Location = new System.Drawing.Point(266, 426);
-            this.MonMotiveBox7.Name = "MonMotiveBox7";
-            this.MonMotiveBox7.ReadOnly = true;
-            this.MonMotiveBox7.Size = new System.Drawing.Size(40, 20);
-            this.MonMotiveBox7.TabIndex = 148;
-            this.MonMotiveBox7.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            MonMotiveBox7.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            MonMotiveBox7.Location = new System.Drawing.Point(310, 492);
+            MonMotiveBox7.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            MonMotiveBox7.Name = "MonMotiveBox7";
+            MonMotiveBox7.ReadOnly = true;
+            MonMotiveBox7.Size = new System.Drawing.Size(46, 23);
+            MonMotiveBox7.TabIndex = 148;
+            MonMotiveBox7.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // Label9
             // 
-            this.Label9.AutoSize = true;
-            this.Label9.Location = new System.Drawing.Point(225, 410);
-            this.Label9.Name = "Label9";
-            this.Label9.Size = new System.Drawing.Size(41, 13);
-            this.Label9.TabIndex = 147;
-            this.Label9.Text = "Endure";
+            Label9.AutoSize = true;
+            Label9.Location = new System.Drawing.Point(262, 473);
+            Label9.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            Label9.Name = "Label9";
+            Label9.Size = new System.Drawing.Size(44, 15);
+            Label9.TabIndex = 147;
+            Label9.Text = "Endure";
             // 
             // Label10
             // 
-            this.Label10.AutoSize = true;
-            this.Label10.Location = new System.Drawing.Point(183, 410);
-            this.Label10.Name = "Label10";
-            this.Label10.Size = new System.Drawing.Size(39, 13);
-            this.Label10.TabIndex = 146;
-            this.Label10.Text = "Dodge";
+            Label10.AutoSize = true;
+            Label10.Location = new System.Drawing.Point(214, 473);
+            Label10.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            Label10.Name = "Label10";
+            Label10.Size = new System.Drawing.Size(42, 15);
+            Label10.TabIndex = 146;
+            Label10.Text = "Dodge";
             // 
             // Label11
             // 
-            this.Label11.AutoSize = true;
-            this.Label11.Location = new System.Drawing.Point(143, 410);
-            this.Label11.Name = "Label11";
-            this.Label11.Size = new System.Drawing.Size(35, 13);
-            this.Label11.TabIndex = 145;
-            this.Label11.Text = "Shoot";
+            Label11.AutoSize = true;
+            Label11.Location = new System.Drawing.Point(167, 473);
+            Label11.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            Label11.Name = "Label11";
+            Label11.Size = new System.Drawing.Size(38, 15);
+            Label11.TabIndex = 145;
+            Label11.Text = "Shoot";
             // 
             // Label12
             // 
-            this.Label12.AutoSize = true;
-            this.Label12.Location = new System.Drawing.Point(105, 410);
-            this.Label12.Name = "Label12";
-            this.Label12.Size = new System.Drawing.Size(27, 13);
-            this.Label12.TabIndex = 144;
-            this.Label12.Text = "Run";
+            Label12.AutoSize = true;
+            Label12.Location = new System.Drawing.Point(122, 473);
+            Label12.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            Label12.Name = "Label12";
+            Label12.Size = new System.Drawing.Size(28, 15);
+            Label12.TabIndex = 144;
+            Label12.Text = "Run";
             // 
             // Label13
             // 
-            this.Label13.AutoSize = true;
-            this.Label13.Location = new System.Drawing.Point(59, 410);
-            this.Label13.Name = "Label13";
-            this.Label13.Size = new System.Drawing.Size(34, 13);
-            this.Label13.TabIndex = 143;
-            this.Label13.Text = "Study";
+            Label13.AutoSize = true;
+            Label13.Location = new System.Drawing.Point(69, 473);
+            Label13.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            Label13.Name = "Label13";
+            Label13.Size = new System.Drawing.Size(37, 15);
+            Label13.TabIndex = 143;
+            Label13.Text = "Study";
             // 
             // Label14
             // 
-            this.Label14.AutoSize = true;
-            this.Label14.Location = new System.Drawing.Point(13, 410);
-            this.Label14.Name = "Label14";
-            this.Label14.Size = new System.Drawing.Size(43, 13);
-            this.Label14.TabIndex = 142;
-            this.Label14.Text = "Domino";
+            Label14.AutoSize = true;
+            Label14.Location = new System.Drawing.Point(15, 473);
+            Label14.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            Label14.Name = "Label14";
+            Label14.Size = new System.Drawing.Size(50, 15);
+            Label14.TabIndex = 142;
+            Label14.Text = "Domino";
             // 
             // MonMotiveBox6
             // 
-            this.MonMotiveBox6.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.MonMotiveBox6.Cursor = System.Windows.Forms.Cursors.Arrow;
-            this.MonMotiveBox6.Location = new System.Drawing.Point(224, 426);
-            this.MonMotiveBox6.Name = "MonMotiveBox6";
-            this.MonMotiveBox6.ReadOnly = true;
-            this.MonMotiveBox6.Size = new System.Drawing.Size(40, 20);
-            this.MonMotiveBox6.TabIndex = 141;
-            this.MonMotiveBox6.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            MonMotiveBox6.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            MonMotiveBox6.Location = new System.Drawing.Point(261, 492);
+            MonMotiveBox6.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            MonMotiveBox6.Name = "MonMotiveBox6";
+            MonMotiveBox6.ReadOnly = true;
+            MonMotiveBox6.Size = new System.Drawing.Size(46, 23);
+            MonMotiveBox6.TabIndex = 141;
+            MonMotiveBox6.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // MonMotiveBox5
             // 
-            this.MonMotiveBox5.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.MonMotiveBox5.Cursor = System.Windows.Forms.Cursors.Arrow;
-            this.MonMotiveBox5.Location = new System.Drawing.Point(182, 426);
-            this.MonMotiveBox5.Name = "MonMotiveBox5";
-            this.MonMotiveBox5.ReadOnly = true;
-            this.MonMotiveBox5.Size = new System.Drawing.Size(40, 20);
-            this.MonMotiveBox5.TabIndex = 140;
-            this.MonMotiveBox5.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            MonMotiveBox5.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            MonMotiveBox5.Location = new System.Drawing.Point(212, 492);
+            MonMotiveBox5.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            MonMotiveBox5.Name = "MonMotiveBox5";
+            MonMotiveBox5.ReadOnly = true;
+            MonMotiveBox5.Size = new System.Drawing.Size(46, 23);
+            MonMotiveBox5.TabIndex = 140;
+            MonMotiveBox5.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // MonMotiveBox4
             // 
-            this.MonMotiveBox4.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.MonMotiveBox4.Cursor = System.Windows.Forms.Cursors.Arrow;
-            this.MonMotiveBox4.Location = new System.Drawing.Point(140, 426);
-            this.MonMotiveBox4.Name = "MonMotiveBox4";
-            this.MonMotiveBox4.ReadOnly = true;
-            this.MonMotiveBox4.Size = new System.Drawing.Size(40, 20);
-            this.MonMotiveBox4.TabIndex = 139;
-            this.MonMotiveBox4.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            MonMotiveBox4.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            MonMotiveBox4.Location = new System.Drawing.Point(163, 492);
+            MonMotiveBox4.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            MonMotiveBox4.Name = "MonMotiveBox4";
+            MonMotiveBox4.ReadOnly = true;
+            MonMotiveBox4.Size = new System.Drawing.Size(46, 23);
+            MonMotiveBox4.TabIndex = 139;
+            MonMotiveBox4.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // MonMotiveBox3
             // 
-            this.MonMotiveBox3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.MonMotiveBox3.Cursor = System.Windows.Forms.Cursors.Arrow;
-            this.MonMotiveBox3.Location = new System.Drawing.Point(98, 426);
-            this.MonMotiveBox3.Name = "MonMotiveBox3";
-            this.MonMotiveBox3.ReadOnly = true;
-            this.MonMotiveBox3.Size = new System.Drawing.Size(40, 20);
-            this.MonMotiveBox3.TabIndex = 138;
-            this.MonMotiveBox3.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            MonMotiveBox3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            MonMotiveBox3.Location = new System.Drawing.Point(114, 492);
+            MonMotiveBox3.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            MonMotiveBox3.Name = "MonMotiveBox3";
+            MonMotiveBox3.ReadOnly = true;
+            MonMotiveBox3.Size = new System.Drawing.Size(46, 23);
+            MonMotiveBox3.TabIndex = 138;
+            MonMotiveBox3.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // MonMotiveBox2
             // 
-            this.MonMotiveBox2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.MonMotiveBox2.Cursor = System.Windows.Forms.Cursors.Arrow;
-            this.MonMotiveBox2.Location = new System.Drawing.Point(56, 426);
-            this.MonMotiveBox2.Name = "MonMotiveBox2";
-            this.MonMotiveBox2.ReadOnly = true;
-            this.MonMotiveBox2.Size = new System.Drawing.Size(40, 20);
-            this.MonMotiveBox2.TabIndex = 137;
-            this.MonMotiveBox2.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            MonMotiveBox2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            MonMotiveBox2.Location = new System.Drawing.Point(65, 492);
+            MonMotiveBox2.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            MonMotiveBox2.Name = "MonMotiveBox2";
+            MonMotiveBox2.ReadOnly = true;
+            MonMotiveBox2.Size = new System.Drawing.Size(46, 23);
+            MonMotiveBox2.TabIndex = 137;
+            MonMotiveBox2.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // MonMotiveBox1
             // 
-            this.MonMotiveBox1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.MonMotiveBox1.Cursor = System.Windows.Forms.Cursors.Arrow;
-            this.MonMotiveBox1.Location = new System.Drawing.Point(14, 426);
-            this.MonMotiveBox1.Name = "MonMotiveBox1";
-            this.MonMotiveBox1.ReadOnly = true;
-            this.MonMotiveBox1.Size = new System.Drawing.Size(40, 20);
-            this.MonMotiveBox1.TabIndex = 136;
-            this.MonMotiveBox1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            MonMotiveBox1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            MonMotiveBox1.Location = new System.Drawing.Point(16, 492);
+            MonMotiveBox1.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            MonMotiveBox1.Name = "MonMotiveBox1";
+            MonMotiveBox1.ReadOnly = true;
+            MonMotiveBox1.Size = new System.Drawing.Size(46, 23);
+            MonMotiveBox1.TabIndex = 136;
+            MonMotiveBox1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // MonLifeTypeBox
             // 
-            this.MonLifeTypeBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.MonLifeTypeBox.Cursor = System.Windows.Forms.Cursors.Arrow;
-            this.MonLifeTypeBox.Location = new System.Drawing.Point(303, 319);
-            this.MonLifeTypeBox.Name = "MonLifeTypeBox";
-            this.MonLifeTypeBox.ReadOnly = true;
-            this.MonLifeTypeBox.Size = new System.Drawing.Size(100, 20);
-            this.MonLifeTypeBox.TabIndex = 135;
-            this.MonLifeTypeBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            MonLifeTypeBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            MonLifeTypeBox.Location = new System.Drawing.Point(354, 368);
+            MonLifeTypeBox.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            MonLifeTypeBox.Name = "MonLifeTypeBox";
+            MonLifeTypeBox.ReadOnly = true;
+            MonLifeTypeBox.Size = new System.Drawing.Size(116, 23);
+            MonLifeTypeBox.TabIndex = 135;
+            MonLifeTypeBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // Label8
             // 
-            this.Label8.AutoSize = true;
-            this.Label8.Location = new System.Drawing.Point(198, 323);
-            this.Label8.Name = "Label8";
-            this.Label8.Size = new System.Drawing.Size(105, 13);
-            this.Label8.TabIndex = 134;
-            this.Label8.Text = "Monster Aging Type:";
+            Label8.AutoSize = true;
+            Label8.Location = new System.Drawing.Point(231, 373);
+            Label8.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            Label8.Name = "Label8";
+            Label8.Size = new System.Drawing.Size(116, 15);
+            Label8.TabIndex = 134;
+            Label8.Text = "Monster Aging Type:";
             // 
             // MonLifeStageBox
             // 
-            this.MonLifeStageBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.MonLifeStageBox.Cursor = System.Windows.Forms.Cursors.Arrow;
-            this.MonLifeStageBox.Location = new System.Drawing.Point(109, 319);
-            this.MonLifeStageBox.Name = "MonLifeStageBox";
-            this.MonLifeStageBox.ReadOnly = true;
-            this.MonLifeStageBox.Size = new System.Drawing.Size(85, 20);
-            this.MonLifeStageBox.TabIndex = 133;
-            this.MonLifeStageBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            MonLifeStageBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            MonLifeStageBox.Location = new System.Drawing.Point(127, 368);
+            MonLifeStageBox.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            MonLifeStageBox.Name = "MonLifeStageBox";
+            MonLifeStageBox.ReadOnly = true;
+            MonLifeStageBox.Size = new System.Drawing.Size(99, 23);
+            MonLifeStageBox.TabIndex = 133;
+            MonLifeStageBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // Label7
             // 
-            this.Label7.AutoSize = true;
-            this.Label7.Location = new System.Drawing.Point(10, 323);
-            this.Label7.Name = "Label7";
-            this.Label7.Size = new System.Drawing.Size(99, 13);
-            this.Label7.TabIndex = 132;
-            this.Label7.Text = "Monster Life Stage:";
+            Label7.AutoSize = true;
+            Label7.Location = new System.Drawing.Point(12, 373);
+            Label7.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            Label7.Name = "Label7";
+            Label7.Size = new System.Drawing.Size(108, 15);
+            Label7.TabIndex = 132;
+            Label7.Text = "Monster Life Stage:";
             // 
             // MonSilverPeachBox
             // 
-            this.MonSilverPeachBox.AutoSize = true;
-            this.MonSilverPeachBox.Location = new System.Drawing.Point(304, 297);
-            this.MonSilverPeachBox.Name = "MonSilverPeachBox";
-            this.MonSilverPeachBox.Size = new System.Drawing.Size(86, 17);
-            this.MonSilverPeachBox.TabIndex = 131;
-            this.MonSilverPeachBox.Text = "Silver Peach";
-            this.ScumTip.SetToolTip(this.MonSilverPeachBox, "Has this Monster consumed a Silver Peach?");
-            this.MonSilverPeachBox.UseVisualStyleBackColor = true;
-            this.MonSilverPeachBox.CheckedChanged += new System.EventHandler(this.MonSilverPeachBox_CheckedChanged);
+            MonSilverPeachBox.AutoSize = true;
+            MonSilverPeachBox.Location = new System.Drawing.Point(355, 343);
+            MonSilverPeachBox.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            MonSilverPeachBox.Name = "MonSilverPeachBox";
+            MonSilverPeachBox.Size = new System.Drawing.Size(89, 19);
+            MonSilverPeachBox.TabIndex = 131;
+            MonSilverPeachBox.Text = "Silver Peach";
+            ScumTip.SetToolTip(MonSilverPeachBox, "Has this Monster consumed a Silver Peach?");
+            MonSilverPeachBox.UseVisualStyleBackColor = true;
+            MonSilverPeachBox.CheckedChanged += MonSilverPeachBox_CheckedChanged;
             // 
             // MonGoldPeachBox
             // 
-            this.MonGoldPeachBox.AutoSize = true;
-            this.MonGoldPeachBox.Location = new System.Drawing.Point(224, 297);
-            this.MonGoldPeachBox.Name = "MonGoldPeachBox";
-            this.MonGoldPeachBox.Size = new System.Drawing.Size(82, 17);
-            this.MonGoldPeachBox.TabIndex = 130;
-            this.MonGoldPeachBox.Text = "Gold Peach";
-            this.ScumTip.SetToolTip(this.MonGoldPeachBox, "Has this Monster consumed a Gold Peach?");
-            this.MonGoldPeachBox.UseVisualStyleBackColor = true;
-            this.MonGoldPeachBox.CheckedChanged += new System.EventHandler(this.MonGoldPeachBox_CheckedChanged);
+            MonGoldPeachBox.AutoSize = true;
+            MonGoldPeachBox.Location = new System.Drawing.Point(261, 343);
+            MonGoldPeachBox.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            MonGoldPeachBox.Name = "MonGoldPeachBox";
+            MonGoldPeachBox.Size = new System.Drawing.Size(86, 19);
+            MonGoldPeachBox.TabIndex = 130;
+            MonGoldPeachBox.Text = "Gold Peach";
+            ScumTip.SetToolTip(MonGoldPeachBox, "Has this Monster consumed a Gold Peach?");
+            MonGoldPeachBox.UseVisualStyleBackColor = true;
+            MonGoldPeachBox.CheckedChanged += MonGoldPeachBox_CheckedChanged;
             // 
             // MonInitLifespanBox
             // 
-            this.MonInitLifespanBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.MonInitLifespanBox.Cursor = System.Windows.Forms.Cursors.Arrow;
-            this.MonInitLifespanBox.Location = new System.Drawing.Point(180, 294);
-            this.MonInitLifespanBox.Name = "MonInitLifespanBox";
-            this.MonInitLifespanBox.ReadOnly = true;
-            this.MonInitLifespanBox.Size = new System.Drawing.Size(40, 20);
-            this.MonInitLifespanBox.TabIndex = 129;
-            this.MonInitLifespanBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            MonInitLifespanBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            MonInitLifespanBox.Location = new System.Drawing.Point(210, 339);
+            MonInitLifespanBox.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            MonInitLifespanBox.Name = "MonInitLifespanBox";
+            MonInitLifespanBox.ReadOnly = true;
+            MonInitLifespanBox.Size = new System.Drawing.Size(46, 23);
+            MonInitLifespanBox.TabIndex = 129;
+            MonInitLifespanBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // Label6
             // 
-            this.Label6.AutoSize = true;
-            this.Label6.Location = new System.Drawing.Point(104, 297);
-            this.Label6.Name = "Label6";
-            this.Label6.Size = new System.Drawing.Size(77, 13);
-            this.Label6.TabIndex = 128;
-            this.Label6.Text = "Initial Lifespan:";
+            Label6.AutoSize = true;
+            Label6.Location = new System.Drawing.Point(121, 343);
+            Label6.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            Label6.Name = "Label6";
+            Label6.Size = new System.Drawing.Size(86, 15);
+            Label6.TabIndex = 128;
+            Label6.Text = "Initial Lifespan:";
             // 
             // MonLifespanBox
             // 
-            this.MonLifespanBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.MonLifespanBox.Cursor = System.Windows.Forms.Cursors.Arrow;
-            this.MonLifespanBox.Location = new System.Drawing.Point(60, 294);
-            this.MonLifespanBox.Name = "MonLifespanBox";
-            this.MonLifespanBox.ReadOnly = true;
-            this.MonLifespanBox.Size = new System.Drawing.Size(40, 20);
-            this.MonLifespanBox.TabIndex = 127;
-            this.MonLifespanBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            MonLifespanBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            MonLifespanBox.Location = new System.Drawing.Point(70, 339);
+            MonLifespanBox.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            MonLifespanBox.Name = "MonLifespanBox";
+            MonLifespanBox.ReadOnly = true;
+            MonLifespanBox.Size = new System.Drawing.Size(46, 23);
+            MonLifespanBox.TabIndex = 127;
+            MonLifespanBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // Label5
             // 
-            this.Label5.AutoSize = true;
-            this.Label5.Location = new System.Drawing.Point(10, 297);
-            this.Label5.Name = "Label5";
-            this.Label5.Size = new System.Drawing.Size(50, 13);
-            this.Label5.TabIndex = 126;
-            this.Label5.Text = "Lifespan:";
+            Label5.AutoSize = true;
+            Label5.Location = new System.Drawing.Point(12, 343);
+            Label5.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            Label5.Name = "Label5";
+            Label5.Size = new System.Drawing.Size(54, 15);
+            Label5.TabIndex = 126;
+            Label5.Text = "Lifespan:";
             // 
             // MonAgeBox
             // 
-            this.MonAgeBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.MonAgeBox.Cursor = System.Windows.Forms.Cursors.Arrow;
-            this.MonAgeBox.Location = new System.Drawing.Point(116, 167);
-            this.MonAgeBox.Name = "MonAgeBox";
-            this.MonAgeBox.ReadOnly = true;
-            this.MonAgeBox.Size = new System.Drawing.Size(70, 20);
-            this.MonAgeBox.TabIndex = 125;
-            this.MonAgeBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            MonAgeBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            MonAgeBox.Location = new System.Drawing.Point(135, 193);
+            MonAgeBox.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            MonAgeBox.Name = "MonAgeBox";
+            MonAgeBox.ReadOnly = true;
+            MonAgeBox.Size = new System.Drawing.Size(81, 23);
+            MonAgeBox.TabIndex = 125;
+            MonAgeBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // Label4
             // 
-            this.Label4.AutoSize = true;
-            this.Label4.Location = new System.Drawing.Point(87, 170);
-            this.Label4.Name = "Label4";
-            this.Label4.Size = new System.Drawing.Size(29, 13);
-            this.Label4.TabIndex = 124;
-            this.Label4.Text = "Age:";
-            this.Label4.Click += new System.EventHandler(this.Label4_Click);
+            Label4.AutoSize = true;
+            Label4.Location = new System.Drawing.Point(102, 196);
+            Label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            Label4.Name = "Label4";
+            Label4.Size = new System.Drawing.Size(31, 15);
+            Label4.TabIndex = 124;
+            Label4.Text = "Age:";
+            Label4.Click += Label4_Click;
             // 
             // MonFameBox
             // 
-            this.MonFameBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.MonFameBox.Cursor = System.Windows.Forms.Cursors.Arrow;
-            this.MonFameBox.Location = new System.Drawing.Point(45, 167);
-            this.MonFameBox.Name = "MonFameBox";
-            this.MonFameBox.ReadOnly = true;
-            this.MonFameBox.Size = new System.Drawing.Size(40, 20);
-            this.MonFameBox.TabIndex = 123;
-            this.MonFameBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            MonFameBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            MonFameBox.Location = new System.Drawing.Point(52, 193);
+            MonFameBox.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            MonFameBox.Name = "MonFameBox";
+            MonFameBox.ReadOnly = true;
+            MonFameBox.Size = new System.Drawing.Size(46, 23);
+            MonFameBox.TabIndex = 123;
+            MonFameBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // MonGutsRateBox
             // 
-            this.MonGutsRateBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.MonGutsRateBox.Cursor = System.Windows.Forms.Cursors.Arrow;
-            this.MonGutsRateBox.Location = new System.Drawing.Point(369, 38);
-            this.MonGutsRateBox.Name = "MonGutsRateBox";
-            this.MonGutsRateBox.ReadOnly = true;
-            this.MonGutsRateBox.Size = new System.Drawing.Size(40, 20);
-            this.MonGutsRateBox.TabIndex = 122;
-            this.MonGutsRateBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.ScumTip.SetToolTip(this.MonGutsRateBox, "Guts Rate");
+            MonGutsRateBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            MonGutsRateBox.Location = new System.Drawing.Point(430, 44);
+            MonGutsRateBox.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            MonGutsRateBox.Name = "MonGutsRateBox";
+            MonGutsRateBox.ReadOnly = true;
+            MonGutsRateBox.Size = new System.Drawing.Size(46, 23);
+            MonGutsRateBox.TabIndex = 122;
+            MonGutsRateBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            ScumTip.SetToolTip(MonGutsRateBox, "Guts Rate");
             // 
             // MonFameLabel
             // 
-            this.MonFameLabel.AutoSize = true;
-            this.MonFameLabel.Location = new System.Drawing.Point(10, 170);
-            this.MonFameLabel.Name = "MonFameLabel";
-            this.MonFameLabel.Size = new System.Drawing.Size(36, 13);
-            this.MonFameLabel.TabIndex = 121;
-            this.MonFameLabel.Text = "Fame:";
+            MonFameLabel.AutoSize = true;
+            MonFameLabel.Location = new System.Drawing.Point(12, 196);
+            MonFameLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            MonFameLabel.Name = "MonFameLabel";
+            MonFameLabel.Size = new System.Drawing.Size(39, 15);
+            MonFameLabel.TabIndex = 121;
+            MonFameLabel.Text = "Fame:";
             // 
             // MonGRNumToggle
             // 
-            this.MonGRNumToggle.AutoSize = true;
-            this.MonGRNumToggle.Location = new System.Drawing.Point(109, 74);
-            this.MonGRNumToggle.Name = "MonGRNumToggle";
-            this.MonGRNumToggle.Size = new System.Drawing.Size(172, 17);
-            this.MonGRNumToggle.TabIndex = 120;
-            this.MonGRNumToggle.Text = "Use Internal Values (0-4 Scale)";
-            this.ScumTip.SetToolTip(this.MonGRNumToggle, "I don\'t know why 1-5 was adopted as a standard, but this shows the values as they" +
-        " are in memory.");
-            this.MonGRNumToggle.UseVisualStyleBackColor = true;
+            MonGRNumToggle.AutoSize = true;
+            MonGRNumToggle.Location = new System.Drawing.Point(127, 85);
+            MonGRNumToggle.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            MonGRNumToggle.Name = "MonGRNumToggle";
+            MonGRNumToggle.Size = new System.Drawing.Size(182, 19);
+            MonGRNumToggle.TabIndex = 120;
+            MonGRNumToggle.Text = "Use Internal Values (0-4 Scale)";
+            ScumTip.SetToolTip(MonGRNumToggle, "I don't know why 1-5 was adopted as a standard, but this shows the values as they are in memory.");
+            MonGRNumToggle.UseVisualStyleBackColor = true;
             // 
             // MonGRTitleLabel
             // 
-            this.MonGRTitleLabel.AutoSize = true;
-            this.MonGRTitleLabel.Location = new System.Drawing.Point(11, 75);
-            this.MonGRTitleLabel.Name = "MonGRTitleLabel";
-            this.MonGRTitleLabel.Size = new System.Drawing.Size(90, 13);
-            this.MonGRTitleLabel.TabIndex = 119;
-            this.MonGRTitleLabel.Text = "Monster Growths:";
+            MonGRTitleLabel.AutoSize = true;
+            MonGRTitleLabel.Location = new System.Drawing.Point(13, 87);
+            MonGRTitleLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            MonGRTitleLabel.Name = "MonGRTitleLabel";
+            MonGRTitleLabel.Size = new System.Drawing.Size(101, 15);
+            MonGRTitleLabel.TabIndex = 119;
+            MonGRTitleLabel.Text = "Monster Growths:";
             // 
             // MonBreedNameBox
             // 
-            this.MonBreedNameBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.MonBreedNameBox.Cursor = System.Windows.Forms.Cursors.Arrow;
-            this.MonBreedNameBox.Location = new System.Drawing.Point(484, 37);
-            this.MonBreedNameBox.Name = "MonBreedNameBox";
-            this.MonBreedNameBox.ReadOnly = true;
-            this.MonBreedNameBox.Size = new System.Drawing.Size(130, 20);
-            this.MonBreedNameBox.TabIndex = 118;
-            this.MonBreedNameBox.Text = "No Monster";
-            this.MonBreedNameBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            MonBreedNameBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            MonBreedNameBox.Location = new System.Drawing.Point(565, 43);
+            MonBreedNameBox.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            MonBreedNameBox.Name = "MonBreedNameBox";
+            MonBreedNameBox.ReadOnly = true;
+            MonBreedNameBox.Size = new System.Drawing.Size(151, 23);
+            MonBreedNameBox.TabIndex = 118;
+            MonBreedNameBox.Text = "No Monster";
+            MonBreedNameBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // MonBNLabel
             // 
-            this.MonBNLabel.AutoSize = true;
-            this.MonBNLabel.Location = new System.Drawing.Point(416, 41);
-            this.MonBNLabel.Name = "MonBNLabel";
-            this.MonBNLabel.Size = new System.Drawing.Size(69, 13);
-            this.MonBNLabel.TabIndex = 117;
-            this.MonBNLabel.Text = "Breed Name:";
+            MonBNLabel.AutoSize = true;
+            MonBNLabel.Location = new System.Drawing.Point(485, 47);
+            MonBNLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            MonBNLabel.Name = "MonBNLabel";
+            MonBNLabel.Size = new System.Drawing.Size(75, 15);
+            MonBNLabel.TabIndex = 117;
+            MonBNLabel.Text = "Breed Name:";
             // 
             // MonNatureModBox
             // 
-            this.MonNatureModBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.MonNatureModBox.Cursor = System.Windows.Forms.Cursors.Arrow;
-            this.MonNatureModBox.Location = new System.Drawing.Point(394, 110);
-            this.MonNatureModBox.Name = "MonNatureModBox";
-            this.MonNatureModBox.ReadOnly = true;
-            this.MonNatureModBox.Size = new System.Drawing.Size(70, 20);
-            this.MonNatureModBox.TabIndex = 116;
-            this.MonNatureModBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            MonNatureModBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            MonNatureModBox.Location = new System.Drawing.Point(460, 127);
+            MonNatureModBox.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            MonNatureModBox.Name = "MonNatureModBox";
+            MonNatureModBox.ReadOnly = true;
+            MonNatureModBox.Size = new System.Drawing.Size(81, 23);
+            MonNatureModBox.TabIndex = 116;
+            MonNatureModBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // Label2
             // 
-            this.Label2.AutoSize = true;
-            this.Label2.Location = new System.Drawing.Point(398, 94);
-            this.Label2.Name = "Label2";
-            this.Label2.Size = new System.Drawing.Size(65, 13);
-            this.Label2.TabIndex = 115;
-            this.Label2.Text = "Eff. Nature *";
-            this.ScumTip.SetToolTip(this.Label2, "Please be aware: Rounding on the Radian to +/- 100 maths is not entirely accurate" +
-        ".\r\n\r\nDouble check natures with the in-game monster stats page to be certain.");
-            this.Label2.Click += new System.EventHandler(this.Label2_Click);
+            Label2.AutoSize = true;
+            Label2.Location = new System.Drawing.Point(464, 108);
+            Label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            Label2.Name = "Label2";
+            Label2.Size = new System.Drawing.Size(71, 15);
+            Label2.TabIndex = 115;
+            Label2.Text = "Eff. Nature *";
+            ScumTip.SetToolTip(Label2, "Please be aware: Rounding on the Radian to +/- 100 maths is not entirely accurate.\r\n\r\nDouble check natures with the in-game monster stats page to be certain.");
+            Label2.Click += Label2_Click;
             // 
             // MonNatureBox
             // 
-            this.MonNatureBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.MonNatureBox.Cursor = System.Windows.Forms.Cursors.Arrow;
-            this.MonNatureBox.Location = new System.Drawing.Point(328, 110);
-            this.MonNatureBox.Name = "MonNatureBox";
-            this.MonNatureBox.ReadOnly = true;
-            this.MonNatureBox.Size = new System.Drawing.Size(60, 20);
-            this.MonNatureBox.TabIndex = 114;
-            this.MonNatureBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.MonNatureBox.TextChanged += new System.EventHandler(this.MonNatureBox_TextChanged);
+            MonNatureBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            MonNatureBox.Location = new System.Drawing.Point(383, 127);
+            MonNatureBox.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            MonNatureBox.Name = "MonNatureBox";
+            MonNatureBox.ReadOnly = true;
+            MonNatureBox.Size = new System.Drawing.Size(70, 23);
+            MonNatureBox.TabIndex = 114;
+            MonNatureBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            MonNatureBox.TextChanged += MonNatureBox_TextChanged;
             // 
             // Label1
             // 
-            this.Label1.AutoSize = true;
-            this.Label1.Location = new System.Drawing.Point(325, 94);
-            this.Label1.Name = "Label1";
-            this.Label1.Size = new System.Drawing.Size(66, 13);
-            this.Label1.TabIndex = 113;
-            this.Label1.Text = "Base Nature";
-            this.Label1.Click += new System.EventHandler(this.Label1_Click);
+            Label1.AutoSize = true;
+            Label1.Location = new System.Drawing.Point(379, 108);
+            Label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            Label1.Name = "Label1";
+            Label1.Size = new System.Drawing.Size(70, 15);
+            Label1.TabIndex = 113;
+            Label1.Text = "Base Nature";
+            Label1.Click += Label1_Click;
             // 
             // MonMoveSpdLabel
             // 
-            this.MonMoveSpdLabel.AutoSize = true;
-            this.MonMoveSpdLabel.Location = new System.Drawing.Point(268, 94);
-            this.MonMoveSpdLabel.Name = "MonMoveSpdLabel";
-            this.MonMoveSpdLabel.Size = new System.Drawing.Size(60, 13);
-            this.MonMoveSpdLabel.TabIndex = 112;
-            this.MonMoveSpdLabel.Text = "Arena SPD";
+            MonMoveSpdLabel.AutoSize = true;
+            MonMoveSpdLabel.Location = new System.Drawing.Point(313, 108);
+            MonMoveSpdLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            MonMoveSpdLabel.Name = "MonMoveSpdLabel";
+            MonMoveSpdLabel.Size = new System.Drawing.Size(62, 15);
+            MonMoveSpdLabel.TabIndex = 112;
+            MonMoveSpdLabel.Text = "Arena SPD";
             // 
             // MonArenaSpeedBox
             // 
-            this.MonArenaSpeedBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.MonArenaSpeedBox.Cursor = System.Windows.Forms.Cursors.Arrow;
-            this.MonArenaSpeedBox.Location = new System.Drawing.Point(278, 110);
-            this.MonArenaSpeedBox.Name = "MonArenaSpeedBox";
-            this.MonArenaSpeedBox.ReadOnly = true;
-            this.MonArenaSpeedBox.Size = new System.Drawing.Size(40, 20);
-            this.MonArenaSpeedBox.TabIndex = 111;
-            this.MonArenaSpeedBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            MonArenaSpeedBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            MonArenaSpeedBox.Location = new System.Drawing.Point(324, 127);
+            MonArenaSpeedBox.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            MonArenaSpeedBox.Name = "MonArenaSpeedBox";
+            MonArenaSpeedBox.ReadOnly = true;
+            MonArenaSpeedBox.Size = new System.Drawing.Size(46, 23);
+            MonArenaSpeedBox.TabIndex = 111;
+            MonArenaSpeedBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // MonDEFGrLabel
             // 
-            this.MonDEFGrLabel.AutoSize = true;
-            this.MonDEFGrLabel.Location = new System.Drawing.Point(221, 94);
-            this.MonDEFGrLabel.Name = "MonDEFGrLabel";
-            this.MonDEFGrLabel.Size = new System.Drawing.Size(28, 13);
-            this.MonDEFGrLabel.TabIndex = 110;
-            this.MonDEFGrLabel.Text = "DEF";
+            MonDEFGrLabel.AutoSize = true;
+            MonDEFGrLabel.Location = new System.Drawing.Point(258, 108);
+            MonDEFGrLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            MonDEFGrLabel.Name = "MonDEFGrLabel";
+            MonDEFGrLabel.Size = new System.Drawing.Size(27, 15);
+            MonDEFGrLabel.TabIndex = 110;
+            MonDEFGrLabel.Text = "DEF";
             // 
             // MonSPDGrLabel
             // 
-            this.MonSPDGrLabel.AutoSize = true;
-            this.MonSPDGrLabel.Location = new System.Drawing.Point(179, 94);
-            this.MonSPDGrLabel.Name = "MonSPDGrLabel";
-            this.MonSPDGrLabel.Size = new System.Drawing.Size(29, 13);
-            this.MonSPDGrLabel.TabIndex = 109;
-            this.MonSPDGrLabel.Text = "SPD";
+            MonSPDGrLabel.AutoSize = true;
+            MonSPDGrLabel.Location = new System.Drawing.Point(209, 108);
+            MonSPDGrLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            MonSPDGrLabel.Name = "MonSPDGrLabel";
+            MonSPDGrLabel.Size = new System.Drawing.Size(28, 15);
+            MonSPDGrLabel.TabIndex = 109;
+            MonSPDGrLabel.Text = "SPD";
             // 
             // MonSKIGrLabel
             // 
-            this.MonSKIGrLabel.AutoSize = true;
-            this.MonSKIGrLabel.Location = new System.Drawing.Point(137, 94);
-            this.MonSKIGrLabel.Name = "MonSKIGrLabel";
-            this.MonSKIGrLabel.Size = new System.Drawing.Size(24, 13);
-            this.MonSKIGrLabel.TabIndex = 108;
-            this.MonSKIGrLabel.Text = "SKI";
+            MonSKIGrLabel.AutoSize = true;
+            MonSKIGrLabel.Location = new System.Drawing.Point(160, 108);
+            MonSKIGrLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            MonSKIGrLabel.Name = "MonSKIGrLabel";
+            MonSKIGrLabel.Size = new System.Drawing.Size(23, 15);
+            MonSKIGrLabel.TabIndex = 108;
+            MonSKIGrLabel.Text = "SKI";
             // 
             // MonINTGrLabel
             // 
-            this.MonINTGrLabel.AutoSize = true;
-            this.MonINTGrLabel.Location = new System.Drawing.Point(98, 94);
-            this.MonINTGrLabel.Name = "MonINTGrLabel";
-            this.MonINTGrLabel.Size = new System.Drawing.Size(25, 13);
-            this.MonINTGrLabel.TabIndex = 107;
-            this.MonINTGrLabel.Text = "INT";
+            MonINTGrLabel.AutoSize = true;
+            MonINTGrLabel.Location = new System.Drawing.Point(114, 108);
+            MonINTGrLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            MonINTGrLabel.Name = "MonINTGrLabel";
+            MonINTGrLabel.Size = new System.Drawing.Size(25, 15);
+            MonINTGrLabel.TabIndex = 107;
+            MonINTGrLabel.Text = "INT";
             // 
             // MonPOWGrLabel
             // 
-            this.MonPOWGrLabel.AutoSize = true;
-            this.MonPOWGrLabel.Location = new System.Drawing.Point(53, 94);
-            this.MonPOWGrLabel.Name = "MonPOWGrLabel";
-            this.MonPOWGrLabel.Size = new System.Drawing.Size(33, 13);
-            this.MonPOWGrLabel.TabIndex = 106;
-            this.MonPOWGrLabel.Text = "POW";
+            MonPOWGrLabel.AutoSize = true;
+            MonPOWGrLabel.Location = new System.Drawing.Point(62, 108);
+            MonPOWGrLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            MonPOWGrLabel.Name = "MonPOWGrLabel";
+            MonPOWGrLabel.Size = new System.Drawing.Size(34, 15);
+            MonPOWGrLabel.TabIndex = 106;
+            MonPOWGrLabel.Text = "POW";
             // 
             // Label3
             // 
-            this.Label3.AutoSize = true;
-            this.Label3.Location = new System.Drawing.Point(53, 94);
-            this.Label3.Name = "Label3";
-            this.Label3.Size = new System.Drawing.Size(0, 13);
-            this.Label3.TabIndex = 105;
+            Label3.AutoSize = true;
+            Label3.Location = new System.Drawing.Point(62, 108);
+            Label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            Label3.Name = "Label3";
+            Label3.Size = new System.Drawing.Size(0, 15);
+            Label3.TabIndex = 105;
             // 
             // MonLIFGrLabel
             // 
-            this.MonLIFGrLabel.AutoSize = true;
-            this.MonLIFGrLabel.Location = new System.Drawing.Point(13, 94);
-            this.MonLIFGrLabel.Name = "MonLIFGrLabel";
-            this.MonLIFGrLabel.Size = new System.Drawing.Size(22, 13);
-            this.MonLIFGrLabel.TabIndex = 104;
-            this.MonLIFGrLabel.Text = "LIF";
+            MonLIFGrLabel.AutoSize = true;
+            MonLIFGrLabel.Location = new System.Drawing.Point(15, 108);
+            MonLIFGrLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            MonLIFGrLabel.Name = "MonLIFGrLabel";
+            MonLIFGrLabel.Size = new System.Drawing.Size(22, 15);
+            MonLIFGrLabel.TabIndex = 104;
+            MonLIFGrLabel.Text = "LIF";
             // 
             // MonDEFGRBox
             // 
-            this.MonDEFGRBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.MonDEFGRBox.Cursor = System.Windows.Forms.Cursors.Arrow;
-            this.MonDEFGRBox.Location = new System.Drawing.Point(224, 110);
-            this.MonDEFGRBox.Name = "MonDEFGRBox";
-            this.MonDEFGRBox.ReadOnly = true;
-            this.MonDEFGRBox.Size = new System.Drawing.Size(40, 20);
-            this.MonDEFGRBox.TabIndex = 103;
-            this.MonDEFGRBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            MonDEFGRBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            MonDEFGRBox.Location = new System.Drawing.Point(261, 127);
+            MonDEFGRBox.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            MonDEFGRBox.Name = "MonDEFGRBox";
+            MonDEFGRBox.ReadOnly = true;
+            MonDEFGRBox.Size = new System.Drawing.Size(46, 23);
+            MonDEFGRBox.TabIndex = 103;
+            MonDEFGRBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // MonSPDGRBox
             // 
-            this.MonSPDGRBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.MonSPDGRBox.Cursor = System.Windows.Forms.Cursors.Arrow;
-            this.MonSPDGRBox.Location = new System.Drawing.Point(182, 110);
-            this.MonSPDGRBox.Name = "MonSPDGRBox";
-            this.MonSPDGRBox.ReadOnly = true;
-            this.MonSPDGRBox.Size = new System.Drawing.Size(40, 20);
-            this.MonSPDGRBox.TabIndex = 102;
-            this.MonSPDGRBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            MonSPDGRBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            MonSPDGRBox.Location = new System.Drawing.Point(212, 127);
+            MonSPDGRBox.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            MonSPDGRBox.Name = "MonSPDGRBox";
+            MonSPDGRBox.ReadOnly = true;
+            MonSPDGRBox.Size = new System.Drawing.Size(46, 23);
+            MonSPDGRBox.TabIndex = 102;
+            MonSPDGRBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // MonSKLGRBox
             // 
-            this.MonSKLGRBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.MonSKLGRBox.Cursor = System.Windows.Forms.Cursors.Arrow;
-            this.MonSKLGRBox.Location = new System.Drawing.Point(140, 110);
-            this.MonSKLGRBox.Name = "MonSKLGRBox";
-            this.MonSKLGRBox.ReadOnly = true;
-            this.MonSKLGRBox.Size = new System.Drawing.Size(40, 20);
-            this.MonSKLGRBox.TabIndex = 101;
-            this.MonSKLGRBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            MonSKLGRBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            MonSKLGRBox.Location = new System.Drawing.Point(163, 127);
+            MonSKLGRBox.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            MonSKLGRBox.Name = "MonSKLGRBox";
+            MonSKLGRBox.ReadOnly = true;
+            MonSKLGRBox.Size = new System.Drawing.Size(46, 23);
+            MonSKLGRBox.TabIndex = 101;
+            MonSKLGRBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // MonINTGRBox
             // 
-            this.MonINTGRBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.MonINTGRBox.Cursor = System.Windows.Forms.Cursors.Arrow;
-            this.MonINTGRBox.Location = new System.Drawing.Point(98, 110);
-            this.MonINTGRBox.Name = "MonINTGRBox";
-            this.MonINTGRBox.ReadOnly = true;
-            this.MonINTGRBox.Size = new System.Drawing.Size(40, 20);
-            this.MonINTGRBox.TabIndex = 100;
-            this.MonINTGRBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            MonINTGRBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            MonINTGRBox.Location = new System.Drawing.Point(114, 127);
+            MonINTGRBox.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            MonINTGRBox.Name = "MonINTGRBox";
+            MonINTGRBox.ReadOnly = true;
+            MonINTGRBox.Size = new System.Drawing.Size(46, 23);
+            MonINTGRBox.TabIndex = 100;
+            MonINTGRBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // MonPOWGRBox
             // 
-            this.MonPOWGRBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.MonPOWGRBox.Cursor = System.Windows.Forms.Cursors.Arrow;
-            this.MonPOWGRBox.Location = new System.Drawing.Point(56, 110);
-            this.MonPOWGRBox.Name = "MonPOWGRBox";
-            this.MonPOWGRBox.ReadOnly = true;
-            this.MonPOWGRBox.Size = new System.Drawing.Size(40, 20);
-            this.MonPOWGRBox.TabIndex = 99;
-            this.MonPOWGRBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            MonPOWGRBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            MonPOWGRBox.Location = new System.Drawing.Point(65, 127);
+            MonPOWGRBox.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            MonPOWGRBox.Name = "MonPOWGRBox";
+            MonPOWGRBox.ReadOnly = true;
+            MonPOWGRBox.Size = new System.Drawing.Size(46, 23);
+            MonPOWGRBox.TabIndex = 99;
+            MonPOWGRBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // MonLIFGRBox
             // 
-            this.MonLIFGRBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.MonLIFGRBox.Cursor = System.Windows.Forms.Cursors.Arrow;
-            this.MonLIFGRBox.Location = new System.Drawing.Point(14, 110);
-            this.MonLIFGRBox.Name = "MonLIFGRBox";
-            this.MonLIFGRBox.ReadOnly = true;
-            this.MonLIFGRBox.Size = new System.Drawing.Size(40, 20);
-            this.MonLIFGRBox.TabIndex = 98;
-            this.MonLIFGRBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            MonLIFGRBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            MonLIFGRBox.Location = new System.Drawing.Point(16, 127);
+            MonLIFGRBox.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            MonLIFGRBox.Name = "MonLIFGRBox";
+            MonLIFGRBox.ReadOnly = true;
+            MonLIFGRBox.Size = new System.Drawing.Size(46, 23);
+            MonLIFGRBox.TabIndex = 98;
+            MonLIFGRBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // MonGRLabel
             // 
-            this.MonGRLabel.AutoSize = true;
-            this.MonGRLabel.Location = new System.Drawing.Point(309, 42);
-            this.MonGRLabel.Name = "MonGRLabel";
-            this.MonGRLabel.Size = new System.Drawing.Size(58, 13);
-            this.MonGRLabel.TabIndex = 97;
-            this.MonGRLabel.Text = "Guts Rate:";
+            MonGRLabel.AutoSize = true;
+            MonGRLabel.Location = new System.Drawing.Point(360, 48);
+            MonGRLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            MonGRLabel.Name = "MonGRLabel";
+            MonGRLabel.Size = new System.Drawing.Size(60, 15);
+            MonGRLabel.TabIndex = 97;
+            MonGRLabel.Text = "Guts Rate:";
             // 
             // SubBreedLabel
             // 
-            this.SubBreedLabel.AutoSize = true;
-            this.SubBreedLabel.Location = new System.Drawing.Point(173, 42);
-            this.SubBreedLabel.Name = "SubBreedLabel";
-            this.SubBreedLabel.Size = new System.Drawing.Size(33, 13);
-            this.SubBreedLabel.TabIndex = 96;
-            this.SubBreedLabel.Text = "None";
+            SubBreedLabel.AutoSize = true;
+            SubBreedLabel.Location = new System.Drawing.Point(202, 48);
+            SubBreedLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            SubBreedLabel.Name = "SubBreedLabel";
+            SubBreedLabel.Size = new System.Drawing.Size(36, 15);
+            SubBreedLabel.TabIndex = 96;
+            SubBreedLabel.Text = "None";
             // 
             // MonsterBreedDiv
             // 
-            this.MonsterBreedDiv.AutoSize = true;
-            this.MonsterBreedDiv.Location = new System.Drawing.Point(155, 42);
-            this.MonsterBreedDiv.Name = "MonsterBreedDiv";
-            this.MonsterBreedDiv.Size = new System.Drawing.Size(12, 13);
-            this.MonsterBreedDiv.TabIndex = 95;
-            this.MonsterBreedDiv.Text = "/";
+            MonsterBreedDiv.AutoSize = true;
+            MonsterBreedDiv.Location = new System.Drawing.Point(181, 48);
+            MonsterBreedDiv.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            MonsterBreedDiv.Name = "MonsterBreedDiv";
+            MonsterBreedDiv.Size = new System.Drawing.Size(12, 15);
+            MonsterBreedDiv.TabIndex = 95;
+            MonsterBreedDiv.Text = "/";
             // 
             // MainBreedLabel
             // 
-            this.MainBreedLabel.AutoSize = true;
-            this.MainBreedLabel.Location = new System.Drawing.Point(100, 42);
-            this.MainBreedLabel.Name = "MainBreedLabel";
-            this.MainBreedLabel.Size = new System.Drawing.Size(33, 13);
-            this.MainBreedLabel.TabIndex = 94;
-            this.MainBreedLabel.Text = "None";
+            MainBreedLabel.AutoSize = true;
+            MainBreedLabel.Location = new System.Drawing.Point(117, 48);
+            MainBreedLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            MainBreedLabel.Name = "MainBreedLabel";
+            MainBreedLabel.Size = new System.Drawing.Size(36, 15);
+            MainBreedLabel.TabIndex = 94;
+            MainBreedLabel.Text = "None";
             // 
             // MonsterBreedLabel
             // 
-            this.MonsterBreedLabel.AutoSize = true;
-            this.MonsterBreedLabel.Location = new System.Drawing.Point(15, 42);
-            this.MonsterBreedLabel.Name = "MonsterBreedLabel";
-            this.MonsterBreedLabel.Size = new System.Drawing.Size(79, 13);
-            this.MonsterBreedLabel.TabIndex = 93;
-            this.MonsterBreedLabel.Text = "Monster Breed:";
+            MonsterBreedLabel.AutoSize = true;
+            MonsterBreedLabel.Location = new System.Drawing.Point(18, 48);
+            MonsterBreedLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            MonsterBreedLabel.Name = "MonsterBreedLabel";
+            MonsterBreedLabel.Size = new System.Drawing.Size(87, 15);
+            MonsterBreedLabel.TabIndex = 93;
+            MonsterBreedLabel.Text = "Monster Breed:";
             // 
             // EmuSelectBox
             // 
-            this.EmuSelectBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.EmuSelectBox.FormattingEnabled = true;
-            this.EmuSelectBox.Items.AddRange(new object[] {
-            "ePSXe 2.0.5",
-            "pSX 1.13",
-            "XEBRA 19/10/02",
-            "NO$PSX 2.0 Debugger",
-            "Duckstation",
-            "Steam (2DX)"});
-            this.EmuSelectBox.Location = new System.Drawing.Point(71, 13);
-            this.EmuSelectBox.MaxDropDownItems = 4;
-            this.EmuSelectBox.Name = "EmuSelectBox";
-            this.EmuSelectBox.Size = new System.Drawing.Size(121, 21);
-            this.EmuSelectBox.TabIndex = 92;
-            this.EmuSelectBox.SelectedIndexChanged += new System.EventHandler(this.EmuSelectBox_SelectedIndexChanged);
+            EmuSelectBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            EmuSelectBox.FormattingEnabled = true;
+            EmuSelectBox.Items.AddRange(new object[] { "ePSXe 2.0.5", "pSX 1.13", "XEBRA 19/10/02", "NO$PSX 2.0 Debugger", "Duckstation", "Steam (2DX)" });
+            EmuSelectBox.Location = new System.Drawing.Point(83, 15);
+            EmuSelectBox.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            EmuSelectBox.MaxDropDownItems = 4;
+            EmuSelectBox.Name = "EmuSelectBox";
+            EmuSelectBox.Size = new System.Drawing.Size(140, 23);
+            EmuSelectBox.TabIndex = 92;
+            EmuSelectBox.SelectedIndexChanged += EmuSelectBox_SelectedIndexChanged;
             // 
             // EmuSelectLabel
             // 
-            this.EmuSelectLabel.AutoSize = true;
-            this.EmuSelectLabel.Location = new System.Drawing.Point(16, 16);
-            this.EmuSelectLabel.Name = "EmuSelectLabel";
-            this.EmuSelectLabel.Size = new System.Drawing.Size(51, 13);
-            this.EmuSelectLabel.TabIndex = 91;
-            this.EmuSelectLabel.Text = "Emulator:";
+            EmuSelectLabel.AutoSize = true;
+            EmuSelectLabel.Location = new System.Drawing.Point(19, 18);
+            EmuSelectLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            EmuSelectLabel.Name = "EmuSelectLabel";
+            EmuSelectLabel.Size = new System.Drawing.Size(58, 15);
+            EmuSelectLabel.TabIndex = 91;
+            EmuSelectLabel.Text = "Emulator:";
             // 
             // EmuAttachButton
             // 
-            this.EmuAttachButton.Enabled = false;
-            this.EmuAttachButton.Location = new System.Drawing.Point(196, 12);
-            this.EmuAttachButton.Name = "EmuAttachButton";
-            this.EmuAttachButton.Size = new System.Drawing.Size(75, 23);
-            this.EmuAttachButton.TabIndex = 90;
-            this.EmuAttachButton.Text = "Detach";
-            this.EmuAttachButton.UseVisualStyleBackColor = true;
-            this.EmuAttachButton.Click += new System.EventHandler(this.EmuAttachButton_Click);
+            EmuAttachButton.Enabled = false;
+            EmuAttachButton.Location = new System.Drawing.Point(229, 14);
+            EmuAttachButton.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            EmuAttachButton.Name = "EmuAttachButton";
+            EmuAttachButton.Size = new System.Drawing.Size(88, 27);
+            EmuAttachButton.TabIndex = 90;
+            EmuAttachButton.Text = "Detach";
+            EmuAttachButton.UseVisualStyleBackColor = true;
+            EmuAttachButton.Click += EmuAttachButton_Click;
             // 
             // MonItemUsedBox
             // 
-            this.MonItemUsedBox.AutoSize = true;
-            this.MonItemUsedBox.Location = new System.Drawing.Point(496, 169);
-            this.MonItemUsedBox.Name = "MonItemUsedBox";
-            this.MonItemUsedBox.Size = new System.Drawing.Size(74, 17);
-            this.MonItemUsedBox.TabIndex = 180;
-            this.MonItemUsedBox.Text = "Item Used";
-            this.ScumTip.SetToolTip(this.MonItemUsedBox, "Have you used an item on this Monster this week?");
-            this.MonItemUsedBox.UseVisualStyleBackColor = true;
-            this.MonItemUsedBox.CheckedChanged += new System.EventHandler(this.MonItemUsedBox_CheckedChanged);
+            MonItemUsedBox.AutoSize = true;
+            MonItemUsedBox.Location = new System.Drawing.Point(579, 195);
+            MonItemUsedBox.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            MonItemUsedBox.Name = "MonItemUsedBox";
+            MonItemUsedBox.Size = new System.Drawing.Size(79, 19);
+            MonItemUsedBox.TabIndex = 180;
+            MonItemUsedBox.Text = "Item Used";
+            ScumTip.SetToolTip(MonItemUsedBox, "Have you used an item on this Monster this week?");
+            MonItemUsedBox.UseVisualStyleBackColor = true;
+            MonItemUsedBox.CheckedChanged += MonItemUsedBox_CheckedChanged;
             // 
             // MainTime
             // 
-            this.MainTime.Tick += new System.EventHandler(this.Timer1_Tick);
+            MainTime.Tick += Timer1_Tick;
             // 
             // MonGPSCheck
             // 
-            this.MonGPSCheck.AutoSize = true;
-            this.MonGPSCheck.Location = new System.Drawing.Point(312, 62);
-            this.MonGPSCheck.Name = "MonGPSCheck";
-            this.MonGPSCheck.Size = new System.Drawing.Size(102, 17);
-            this.MonGPSCheck.TabIndex = 181;
-            this.MonGPSCheck.Text = "Show as Guts/s";
-            this.MonGPSCheck.UseVisualStyleBackColor = true;
+            MonGPSCheck.AutoSize = true;
+            MonGPSCheck.Location = new System.Drawing.Point(364, 72);
+            MonGPSCheck.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            MonGPSCheck.Name = "MonGPSCheck";
+            MonGPSCheck.Size = new System.Drawing.Size(106, 19);
+            MonGPSCheck.TabIndex = 181;
+            MonGPSCheck.Text = "Show as Guts/s";
+            MonGPSCheck.UseVisualStyleBackColor = true;
             // 
             // ScumTip
             // 
-            this.ScumTip.AutomaticDelay = 200;
-            this.ScumTip.AutoPopDelay = 20000;
-            this.ScumTip.InitialDelay = 200;
-            this.ScumTip.ReshowDelay = 40;
-            this.ScumTip.ShowAlways = true;
+            ScumTip.AutomaticDelay = 200;
+            ScumTip.AutoPopDelay = 20000;
+            ScumTip.InitialDelay = 200;
+            ScumTip.ReshowDelay = 40;
+            ScumTip.ShowAlways = true;
             // 
             // MonBanaScumToggle
             // 
-            this.MonBanaScumToggle.AutoSize = true;
-            this.MonBanaScumToggle.Location = new System.Drawing.Point(390, 297);
-            this.MonBanaScumToggle.Name = "MonBanaScumToggle";
-            this.MonBanaScumToggle.Size = new System.Drawing.Size(100, 17);
-            this.MonBanaScumToggle.TabIndex = 189;
-            this.MonBanaScumToggle.Text = "Banana Chimes";
-            this.ScumTip.SetToolTip(this.MonBanaScumToggle, "MR2AV will play chimes on increased/decresed lifespan using Magic Bananas.\r\nThis " +
-        "will be disabled if you set the Ticks/sec to below 2.0.\r\nNote: The updated code " +
-        "for this is still in beta.");
-            this.MonBanaScumToggle.UseVisualStyleBackColor = true;
-            this.MonBanaScumToggle.CheckedChanged += new System.EventHandler(this.MonBanaScumToggle_CheckedChanged);
+            MonBanaScumToggle.AutoSize = true;
+            MonBanaScumToggle.Location = new System.Drawing.Point(455, 343);
+            MonBanaScumToggle.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            MonBanaScumToggle.Name = "MonBanaScumToggle";
+            MonBanaScumToggle.Size = new System.Drawing.Size(108, 19);
+            MonBanaScumToggle.TabIndex = 189;
+            MonBanaScumToggle.Text = "Banana Chimes";
+            ScumTip.SetToolTip(MonBanaScumToggle, "MR2AV will play chimes on increased/decresed lifespan using Magic Bananas.\r\nThis will be disabled if you set the Ticks/sec to below 2.0.\r\nNote: The updated code for this is still in beta.");
+            MonBanaScumToggle.UseVisualStyleBackColor = true;
+            MonBanaScumToggle.CheckedChanged += MonBanaScumToggle_CheckedChanged;
             // 
             // ErrSaleBox
             // 
-            this.ErrSaleBox.AutoSize = true;
-            this.ErrSaleBox.Location = new System.Drawing.Point(520, 62);
-            this.ErrSaleBox.Name = "ErrSaleBox";
-            this.ErrSaleBox.Size = new System.Drawing.Size(100, 17);
-            this.ErrSaleBox.TabIndex = 218;
-            this.ErrSaleBox.Text = "Err. Sale Ready";
-            this.ScumTip.SetToolTip(this.ErrSaleBox, "When this is checked, a Sale can be received for Errantry.");
-            this.ErrSaleBox.UseVisualStyleBackColor = true;
-            this.ErrSaleBox.CheckedChanged += new System.EventHandler(this.ErrSaleBox_CheckedChanged);
+            ErrSaleBox.AutoSize = true;
+            ErrSaleBox.Location = new System.Drawing.Point(607, 72);
+            ErrSaleBox.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            ErrSaleBox.Name = "ErrSaleBox";
+            ErrSaleBox.Size = new System.Drawing.Size(102, 19);
+            ErrSaleBox.TabIndex = 218;
+            ErrSaleBox.Text = "Err. Sale Ready";
+            ScumTip.SetToolTip(ErrSaleBox, "When this is checked, a Sale can be received for Errantry.");
+            ErrSaleBox.UseVisualStyleBackColor = true;
+            ErrSaleBox.CheckedChanged += ErrSaleBox_CheckedChanged;
             // 
             // HideData
             // 
-            this.HideData.AutoSize = true;
-            this.HideData.Location = new System.Drawing.Point(630, 12);
-            this.HideData.Name = "HideData";
-            this.HideData.Size = new System.Drawing.Size(74, 17);
-            this.HideData.TabIndex = 219;
-            this.HideData.Text = "Hide Data";
-            this.ScumTip.SetToolTip(this.HideData, "Disables the \"Monster Growths\" and \"Drill Motivation\" displays.");
-            this.HideData.UseVisualStyleBackColor = true;
+            HideData.AutoSize = true;
+            HideData.Location = new System.Drawing.Point(735, 14);
+            HideData.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            HideData.Name = "HideData";
+            HideData.Size = new System.Drawing.Size(78, 19);
+            HideData.TabIndex = 219;
+            HideData.Text = "Hide Data";
+            ScumTip.SetToolTip(HideData, "Disables the \"Monster Growths\" and \"Drill Motivation\" displays.");
+            HideData.UseVisualStyleBackColor = true;
             // 
             // BaseStatTotal
             // 
-            this.BaseStatTotal.AutoSize = true;
-            this.BaseStatTotal.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.BaseStatTotal.Location = new System.Drawing.Point(305, 135);
-            this.BaseStatTotal.Name = "BaseStatTotal";
-            this.BaseStatTotal.Size = new System.Drawing.Size(14, 16);
-            this.BaseStatTotal.TabIndex = 220;
-            this.BaseStatTotal.Text = "0";
-            this.ScumTip.SetToolTip(this.BaseStatTotal, "This is your Monster\'s BST - or Base Stat Total.\r\nNote: It does not take into acc" +
-        "ount modifications from Form.\r\n\r\nThis is just here to save you time with a calcu" +
-        "lator for tournaments.");
+            BaseStatTotal.AutoSize = true;
+            BaseStatTotal.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, 0);
+            BaseStatTotal.Location = new System.Drawing.Point(356, 156);
+            BaseStatTotal.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            BaseStatTotal.Name = "BaseStatTotal";
+            BaseStatTotal.Size = new System.Drawing.Size(14, 16);
+            BaseStatTotal.TabIndex = 220;
+            BaseStatTotal.Text = "0";
+            ScumTip.SetToolTip(BaseStatTotal, "This is your Monster's BST - or Base Stat Total.\r\nNote: It does not take into account modifications from Form.\r\n\r\nThis is just here to save you time with a calculator for tournaments.");
             // 
             // UpdateRate
             // 
-            this.UpdateRate.AutoSize = false;
-            this.UpdateRate.BackColor = System.Drawing.SystemColors.Control;
-            this.UpdateRate.LargeChange = 1;
-            this.UpdateRate.Location = new System.Drawing.Point(630, 31);
-            this.UpdateRate.Maximum = 8;
-            this.UpdateRate.Minimum = 1;
-            this.UpdateRate.Name = "UpdateRate";
-            this.UpdateRate.Size = new System.Drawing.Size(90, 25);
-            this.UpdateRate.TabIndex = 221;
-            this.ScumTip.SetToolTip(this.UpdateRate, "Control the refresh rate of MR2AV.\r\nUseful if you want to save CPU power.\r\nPuttin" +
-        "g it below 2.0 will disable the Banana Chime function.");
-            this.UpdateRate.Value = 1;
-            this.UpdateRate.Scroll += new System.EventHandler(this.UpdateRate_Scroll);
+            UpdateRate.AutoSize = false;
+            UpdateRate.BackColor = System.Drawing.SystemColors.Control;
+            UpdateRate.LargeChange = 1;
+            UpdateRate.Location = new System.Drawing.Point(735, 36);
+            UpdateRate.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            UpdateRate.Maximum = 8;
+            UpdateRate.Minimum = 1;
+            UpdateRate.Name = "UpdateRate";
+            UpdateRate.Size = new System.Drawing.Size(105, 29);
+            UpdateRate.TabIndex = 221;
+            ScumTip.SetToolTip(UpdateRate, "Control the refresh rate of MR2AV.\r\nUseful if you want to save CPU power.\r\nPutting it below 2.0 will disable the Banana Chime function.");
+            UpdateRate.Value = 1;
+            UpdateRate.Scroll += UpdateRate_Scroll;
             // 
             // MonSpdBox
             // 
-            this.MonSpdBox.BackColor = System.Drawing.Color.LightSkyBlue;
-            this.MonSpdBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.MonSpdBox.Cursor = System.Windows.Forms.Cursors.Arrow;
-            this.MonSpdBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.MonSpdBox.Location = new System.Drawing.Point(182, 133);
-            this.MonSpdBox.Margin = new System.Windows.Forms.Padding(1);
-            this.MonSpdBox.Name = "MonSpdBox";
-            this.MonSpdBox.ReadOnly = true;
-            this.MonSpdBox.Size = new System.Drawing.Size(40, 20);
-            this.MonSpdBox.TabIndex = 197;
-            this.MonSpdBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.ScumTip.SetToolTip(this.MonSpdBox, "No brackets : Displayed Stats.\r\n[Brackets] : Effective Stats.\r\n");
+            MonSpdBox.BackColor = System.Drawing.Color.LightSkyBlue;
+            MonSpdBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            MonSpdBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, 0);
+            MonSpdBox.Location = new System.Drawing.Point(212, 153);
+            MonSpdBox.Margin = new System.Windows.Forms.Padding(1);
+            MonSpdBox.Name = "MonSpdBox";
+            MonSpdBox.ReadOnly = true;
+            MonSpdBox.Size = new System.Drawing.Size(46, 20);
+            MonSpdBox.TabIndex = 197;
+            MonSpdBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            ScumTip.SetToolTip(MonSpdBox, "No brackets : Displayed Stats.\r\n[Brackets] : Effective Stats.\r\n");
             // 
             // MonDefBox
             // 
-            this.MonDefBox.BackColor = System.Drawing.Color.CornflowerBlue;
-            this.MonDefBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.MonDefBox.Cursor = System.Windows.Forms.Cursors.Arrow;
-            this.MonDefBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.MonDefBox.ForeColor = System.Drawing.Color.Black;
-            this.MonDefBox.Location = new System.Drawing.Point(224, 133);
-            this.MonDefBox.Margin = new System.Windows.Forms.Padding(1);
-            this.MonDefBox.Name = "MonDefBox";
-            this.MonDefBox.ReadOnly = true;
-            this.MonDefBox.Size = new System.Drawing.Size(40, 20);
-            this.MonDefBox.TabIndex = 198;
-            this.MonDefBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.ScumTip.SetToolTip(this.MonDefBox, "No brackets : Displayed Stats.\r\n[Brackets] : Effective Stats.");
-            this.MonDefBox.TextChanged += new System.EventHandler(this.MonDefBox_TextChanged);
+            MonDefBox.BackColor = System.Drawing.Color.CornflowerBlue;
+            MonDefBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            MonDefBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, 0);
+            MonDefBox.ForeColor = System.Drawing.Color.Black;
+            MonDefBox.Location = new System.Drawing.Point(261, 153);
+            MonDefBox.Margin = new System.Windows.Forms.Padding(1);
+            MonDefBox.Name = "MonDefBox";
+            MonDefBox.ReadOnly = true;
+            MonDefBox.Size = new System.Drawing.Size(46, 20);
+            MonDefBox.TabIndex = 198;
+            MonDefBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            ScumTip.SetToolTip(MonDefBox, "No brackets : Displayed Stats.\r\n[Brackets] : Effective Stats.");
+            MonDefBox.TextChanged += MonDefBox_TextChanged;
             // 
             // LIWButton
             // 
-            this.LIWButton.Enabled = false;
-            this.LIWButton.Location = new System.Drawing.Point(630, 422);
-            this.LIWButton.Name = "LIWButton";
-            this.LIWButton.Size = new System.Drawing.Size(90, 23);
-            this.LIWButton.TabIndex = 212;
-            this.LIWButton.Text = "Life Index Win.";
-            this.ScumTip.SetToolTip(this.LIWButton, "Pops out a large scale window, showing your Stress, Fatigue, Life Index, and Life" +
-        "span.");
-            this.LIWButton.UseVisualStyleBackColor = true;
-            this.LIWButton.Click += new System.EventHandler(this.LIWButton_Click);
+            LIWButton.Enabled = false;
+            LIWButton.Location = new System.Drawing.Point(735, 487);
+            LIWButton.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            LIWButton.Name = "LIWButton";
+            LIWButton.Size = new System.Drawing.Size(105, 27);
+            LIWButton.TabIndex = 212;
+            LIWButton.Text = "Life Index Win.";
+            ScumTip.SetToolTip(LIWButton, "Pops out a large scale window, showing your Stress, Fatigue, Life Index, and Lifespan.");
+            LIWButton.UseVisualStyleBackColor = true;
+            LIWButton.Click += LIWButton_Click;
             // 
             // MVButton
             // 
-            this.MVButton.Enabled = false;
-            this.MVButton.Location = new System.Drawing.Point(630, 399);
-            this.MVButton.Name = "MVButton";
-            this.MVButton.Size = new System.Drawing.Size(90, 23);
-            this.MVButton.TabIndex = 213;
-            this.MVButton.Text = "Move Viewer";
-            this.ScumTip.SetToolTip(this.MVButton, "Displays your monster\'s acquired and active moves.\r\n[Move acquisition requirement" +
-        "s is currently still WIP]");
-            this.MVButton.UseVisualStyleBackColor = true;
-            this.MVButton.Click += new System.EventHandler(this.MVButton_Click);
+            MVButton.Enabled = false;
+            MVButton.Location = new System.Drawing.Point(735, 460);
+            MVButton.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            MVButton.Name = "MVButton";
+            MVButton.Size = new System.Drawing.Size(105, 27);
+            MVButton.TabIndex = 213;
+            MVButton.Text = "Move Viewer";
+            ScumTip.SetToolTip(MVButton, "Displays your monster's acquired and active moves.\r\n[Move acquisition requirements is currently still WIP]");
+            MVButton.UseVisualStyleBackColor = true;
+            MVButton.Click += MVButton_Click;
             // 
             // TWButton
             // 
-            this.TWButton.Enabled = false;
-            this.TWButton.Location = new System.Drawing.Point(630, 376);
-            this.TWButton.Name = "TWButton";
-            this.TWButton.Size = new System.Drawing.Size(90, 23);
-            this.TWButton.TabIndex = 217;
-            this.TWButton.Text = "Training Check";
-            this.ScumTip.SetToolTip(this.TWButton, "Check the amount of stats your monster can get from Training.\r\n[Monsters with 1/1" +
-        "/2/3 for a drill may get 1 even if they have a +1 in that drill. The first 1 is " +
-        "rolling a 0.]");
-            this.TWButton.UseVisualStyleBackColor = true;
-            this.TWButton.Click += new System.EventHandler(this.TWButton_Click);
+            TWButton.Enabled = false;
+            TWButton.Location = new System.Drawing.Point(735, 434);
+            TWButton.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            TWButton.Name = "TWButton";
+            TWButton.Size = new System.Drawing.Size(105, 27);
+            TWButton.TabIndex = 217;
+            TWButton.Text = "Training Check";
+            ScumTip.SetToolTip(TWButton, "Check the amount of stats your monster can get from Training.\r\n[Monsters with 1/1/2/3 for a drill may get 1 even if they have a +1 in that drill. The first 1 is rolling a 0.]");
+            TWButton.UseVisualStyleBackColor = true;
+            TWButton.Click += TWButton_Click;
             // 
             // ItemViewButton
             // 
-            this.ItemViewButton.Enabled = false;
-            this.ItemViewButton.Location = new System.Drawing.Point(630, 353);
-            this.ItemViewButton.Name = "ItemViewButton";
-            this.ItemViewButton.Size = new System.Drawing.Size(90, 23);
-            this.ItemViewButton.TabIndex = 224;
-            this.ItemViewButton.Text = "Item Viewer";
-            this.ScumTip.SetToolTip(this.ItemViewButton, "View the items in your posession.");
-            this.ItemViewButton.UseVisualStyleBackColor = true;
-            this.ItemViewButton.Click += new System.EventHandler(this.ItemViewButton_Click);
+            ItemViewButton.Enabled = false;
+            ItemViewButton.Location = new System.Drawing.Point(735, 407);
+            ItemViewButton.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            ItemViewButton.Name = "ItemViewButton";
+            ItemViewButton.Size = new System.Drawing.Size(105, 27);
+            ItemViewButton.TabIndex = 224;
+            ItemViewButton.Text = "Item Viewer";
+            ScumTip.SetToolTip(ItemViewButton, "View the items in your posession.");
+            ItemViewButton.UseVisualStyleBackColor = true;
+            ItemViewButton.Click += ItemViewButton_Click;
             // 
             // BreederInfo
             // 
-            this.BreederInfo.Enabled = false;
-            this.BreederInfo.Location = new System.Drawing.Point(630, 284);
-            this.BreederInfo.Name = "BreederInfo";
-            this.BreederInfo.Size = new System.Drawing.Size(90, 23);
-            this.BreederInfo.TabIndex = 236;
-            this.BreederInfo.Text = "Player Info.";
-            this.ScumTip.SetToolTip(this.BreederInfo, "View/Change your Breeder Name.\r\n[Other features coming soon™]\r\n");
-            this.BreederInfo.UseVisualStyleBackColor = true;
-            this.BreederInfo.Click += new System.EventHandler(this.BreederInfo_Click);
+            BreederInfo.Enabled = false;
+            BreederInfo.Location = new System.Drawing.Point(735, 328);
+            BreederInfo.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            BreederInfo.Name = "BreederInfo";
+            BreederInfo.Size = new System.Drawing.Size(105, 27);
+            BreederInfo.TabIndex = 236;
+            BreederInfo.Text = "Player Info.";
+            ScumTip.SetToolTip(BreederInfo, "View/Change your Breeder Name.\r\n[Other features coming soon™]\r\n");
+            BreederInfo.UseVisualStyleBackColor = true;
+            BreederInfo.Click += BreederInfo_Click;
             // 
             // BackupButton
             // 
-            this.BackupButton.Enabled = false;
-            this.BackupButton.Location = new System.Drawing.Point(630, 261);
-            this.BackupButton.Name = "BackupButton";
-            this.BackupButton.Size = new System.Drawing.Size(90, 23);
-            this.BackupButton.TabIndex = 238;
-            this.BackupButton.Text = "Backup Saves";
-            this.ScumTip.SetToolTip(this.BackupButton, "Create a backup of your Monster Rancher 2 save directory, with timestamp.");
-            this.BackupButton.UseVisualStyleBackColor = true;
-            this.BackupButton.Click += new System.EventHandler(this.BackupButton_Click);
+            BackupButton.Enabled = false;
+            BackupButton.Location = new System.Drawing.Point(735, 301);
+            BackupButton.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            BackupButton.Name = "BackupButton";
+            BackupButton.Size = new System.Drawing.Size(105, 27);
+            BackupButton.TabIndex = 238;
+            BackupButton.Text = "Backup Saves";
+            ScumTip.SetToolTip(BackupButton, "Create a backup of your Monster Rancher 2 save directory, with timestamp.");
+            BackupButton.UseVisualStyleBackColor = true;
+            BackupButton.Click += BackupButton_Click;
             // 
             // MonCJLabel
             // 
-            this.MonCJLabel.AutoSize = true;
-            this.MonCJLabel.ForeColor = System.Drawing.Color.Brown;
-            this.MonCJLabel.Location = new System.Drawing.Point(327, 196);
-            this.MonCJLabel.Name = "MonCJLabel";
-            this.MonCJLabel.Size = new System.Drawing.Size(91, 13);
-            this.MonCJLabel.TabIndex = 182;
-            this.MonCJLabel.Text = "Cup Jellies Eaten:";
-            this.MonCJLabel.Visible = false;
+            MonCJLabel.AutoSize = true;
+            MonCJLabel.ForeColor = System.Drawing.Color.Brown;
+            MonCJLabel.Location = new System.Drawing.Point(382, 226);
+            MonCJLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            MonCJLabel.Name = "MonCJLabel";
+            MonCJLabel.Size = new System.Drawing.Size(97, 15);
+            MonCJLabel.TabIndex = 182;
+            MonCJLabel.Text = "Cup Jellies Eaten:";
+            MonCJLabel.Visible = false;
             // 
             // MonCocoonReady
             // 
-            this.MonCocoonReady.AutoSize = true;
-            this.MonCocoonReady.ForeColor = System.Drawing.Color.Brown;
-            this.MonCocoonReady.Location = new System.Drawing.Point(464, 195);
-            this.MonCocoonReady.Name = "MonCocoonReady";
-            this.MonCocoonReady.Size = new System.Drawing.Size(85, 17);
-            this.MonCocoonReady.TabIndex = 186;
-            this.MonCocoonReady.Text = "Can Cocoon";
-            this.MonCocoonReady.UseVisualStyleBackColor = true;
-            this.MonCocoonReady.Visible = false;
-            this.MonCocoonReady.CheckedChanged += new System.EventHandler(this.MonCocoonReady_CheckedChanged);
+            MonCocoonReady.AutoSize = true;
+            MonCocoonReady.ForeColor = System.Drawing.Color.Brown;
+            MonCocoonReady.Location = new System.Drawing.Point(541, 225);
+            MonCocoonReady.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            MonCocoonReady.Name = "MonCocoonReady";
+            MonCocoonReady.Size = new System.Drawing.Size(92, 19);
+            MonCocoonReady.TabIndex = 186;
+            MonCocoonReady.Text = "Can Cocoon";
+            MonCocoonReady.UseVisualStyleBackColor = true;
+            MonCocoonReady.Visible = false;
+            MonCocoonReady.CheckedChanged += MonCocoonReady_CheckedChanged;
             // 
             // MonCJBox
             // 
-            this.MonCJBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.MonCJBox.Cursor = System.Windows.Forms.Cursors.Arrow;
-            this.MonCJBox.Location = new System.Drawing.Point(419, 193);
-            this.MonCJBox.Name = "MonCJBox";
-            this.MonCJBox.ReadOnly = true;
-            this.MonCJBox.Size = new System.Drawing.Size(40, 20);
-            this.MonCJBox.TabIndex = 183;
-            this.MonCJBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.MonCJBox.Visible = false;
+            MonCJBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            MonCJBox.Location = new System.Drawing.Point(489, 223);
+            MonCJBox.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            MonCJBox.Name = "MonCJBox";
+            MonCJBox.ReadOnly = true;
+            MonCJBox.Size = new System.Drawing.Size(46, 23);
+            MonCJBox.TabIndex = 183;
+            MonCJBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            MonCJBox.Visible = false;
             // 
             // MonLoyaltyBox
             // 
-            this.MonLoyaltyBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.MonLoyaltyBox.Cursor = System.Windows.Forms.Cursors.Arrow;
-            this.MonLoyaltyBox.Location = new System.Drawing.Point(357, 167);
-            this.MonLoyaltyBox.Name = "MonLoyaltyBox";
-            this.MonLoyaltyBox.ReadOnly = true;
-            this.MonLoyaltyBox.Size = new System.Drawing.Size(30, 20);
-            this.MonLoyaltyBox.TabIndex = 184;
-            this.MonLoyaltyBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            MonLoyaltyBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            MonLoyaltyBox.Location = new System.Drawing.Point(416, 193);
+            MonLoyaltyBox.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            MonLoyaltyBox.Name = "MonLoyaltyBox";
+            MonLoyaltyBox.ReadOnly = true;
+            MonLoyaltyBox.Size = new System.Drawing.Size(35, 23);
+            MonLoyaltyBox.TabIndex = 184;
+            MonLoyaltyBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // label31
             // 
-            this.label31.AutoSize = true;
-            this.label31.Location = new System.Drawing.Point(314, 170);
-            this.label31.Name = "label31";
-            this.label31.Size = new System.Drawing.Size(43, 13);
-            this.label31.TabIndex = 185;
-            this.label31.Text = "Loyalty:";
+            label31.AutoSize = true;
+            label31.Location = new System.Drawing.Point(366, 196);
+            label31.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            label31.Name = "label31";
+            label31.Size = new System.Drawing.Size(48, 15);
+            label31.TabIndex = 185;
+            label31.Text = "Loyalty:";
             // 
             // CocoonInfo
             // 
-            this.CocoonInfo.Location = new System.Drawing.Point(550, 192);
-            this.CocoonInfo.Name = "CocoonInfo";
-            this.CocoonInfo.Size = new System.Drawing.Size(50, 20);
-            this.CocoonInfo.TabIndex = 187;
-            this.CocoonInfo.Text = "Info";
-            this.CocoonInfo.UseVisualStyleBackColor = true;
-            this.CocoonInfo.Visible = false;
-            this.CocoonInfo.Click += new System.EventHandler(this.CocoonInfo_Click);
+            CocoonInfo.Location = new System.Drawing.Point(642, 222);
+            CocoonInfo.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            CocoonInfo.Name = "CocoonInfo";
+            CocoonInfo.Size = new System.Drawing.Size(58, 23);
+            CocoonInfo.TabIndex = 187;
+            CocoonInfo.Text = "Info";
+            CocoonInfo.UseVisualStyleBackColor = true;
+            CocoonInfo.Visible = false;
+            CocoonInfo.Click += CocoonInfo_Click;
             // 
             // label32
             // 
-            this.label32.AutoSize = true;
-            this.label32.Location = new System.Drawing.Point(10, 222);
-            this.label32.Name = "label32";
-            this.label32.Size = new System.Drawing.Size(38, 13);
-            this.label32.TabIndex = 190;
-            this.label32.Text = "Name:";
+            label32.AutoSize = true;
+            label32.Location = new System.Drawing.Point(12, 256);
+            label32.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            label32.Name = "label32";
+            label32.Size = new System.Drawing.Size(42, 15);
+            label32.TabIndex = 190;
+            label32.Text = "Name:";
             // 
             // MonGivenNameBox
             // 
-            this.MonGivenNameBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.MonGivenNameBox.Location = new System.Drawing.Point(48, 219);
-            this.MonGivenNameBox.MaxLength = 12;
-            this.MonGivenNameBox.Name = "MonGivenNameBox";
-            this.MonGivenNameBox.ReadOnly = true;
-            this.MonGivenNameBox.Size = new System.Drawing.Size(130, 20);
-            this.MonGivenNameBox.TabIndex = 191;
-            this.MonGivenNameBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.MonGivenNameBox.TextChanged += new System.EventHandler(this.MonGivenNameBox_TextChanged);
+            MonGivenNameBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            MonGivenNameBox.Location = new System.Drawing.Point(56, 253);
+            MonGivenNameBox.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            MonGivenNameBox.MaxLength = 12;
+            MonGivenNameBox.Name = "MonGivenNameBox";
+            MonGivenNameBox.ReadOnly = true;
+            MonGivenNameBox.Size = new System.Drawing.Size(151, 23);
+            MonGivenNameBox.TabIndex = 191;
+            MonGivenNameBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            MonGivenNameBox.TextChanged += MonGivenNameBox_TextChanged;
             // 
             // MonLifBox
             // 
-            this.MonLifBox.BackColor = System.Drawing.Color.Yellow;
-            this.MonLifBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.MonLifBox.Cursor = System.Windows.Forms.Cursors.Arrow;
-            this.MonLifBox.ForeColor = System.Drawing.SystemColors.WindowText;
-            this.MonLifBox.Location = new System.Drawing.Point(14, 133);
-            this.MonLifBox.Name = "MonLifBox";
-            this.MonLifBox.ReadOnly = true;
-            this.MonLifBox.Size = new System.Drawing.Size(40, 20);
-            this.MonLifBox.TabIndex = 193;
-            this.MonLifBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            MonLifBox.BackColor = System.Drawing.Color.Yellow;
+            MonLifBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            MonLifBox.ForeColor = System.Drawing.SystemColors.WindowText;
+            MonLifBox.Location = new System.Drawing.Point(16, 153);
+            MonLifBox.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            MonLifBox.Name = "MonLifBox";
+            MonLifBox.ReadOnly = true;
+            MonLifBox.Size = new System.Drawing.Size(46, 23);
+            MonLifBox.TabIndex = 193;
+            MonLifBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // MonPowBox
             // 
-            this.MonPowBox.BackColor = System.Drawing.Color.IndianRed;
-            this.MonPowBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.MonPowBox.Cursor = System.Windows.Forms.Cursors.Arrow;
-            this.MonPowBox.Location = new System.Drawing.Point(56, 133);
-            this.MonPowBox.Name = "MonPowBox";
-            this.MonPowBox.ReadOnly = true;
-            this.MonPowBox.Size = new System.Drawing.Size(40, 20);
-            this.MonPowBox.TabIndex = 194;
-            this.MonPowBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            MonPowBox.BackColor = System.Drawing.Color.IndianRed;
+            MonPowBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            MonPowBox.Location = new System.Drawing.Point(65, 153);
+            MonPowBox.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            MonPowBox.Name = "MonPowBox";
+            MonPowBox.ReadOnly = true;
+            MonPowBox.Size = new System.Drawing.Size(46, 23);
+            MonPowBox.TabIndex = 194;
+            MonPowBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // MonIntBox
             // 
-            this.MonIntBox.BackColor = System.Drawing.Color.Chartreuse;
-            this.MonIntBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.MonIntBox.Cursor = System.Windows.Forms.Cursors.Arrow;
-            this.MonIntBox.Location = new System.Drawing.Point(98, 133);
-            this.MonIntBox.Name = "MonIntBox";
-            this.MonIntBox.ReadOnly = true;
-            this.MonIntBox.Size = new System.Drawing.Size(40, 20);
-            this.MonIntBox.TabIndex = 195;
-            this.MonIntBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            MonIntBox.BackColor = System.Drawing.Color.Chartreuse;
+            MonIntBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            MonIntBox.Location = new System.Drawing.Point(114, 153);
+            MonIntBox.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            MonIntBox.Name = "MonIntBox";
+            MonIntBox.ReadOnly = true;
+            MonIntBox.Size = new System.Drawing.Size(46, 23);
+            MonIntBox.TabIndex = 195;
+            MonIntBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // MonSkiBox
             // 
-            this.MonSkiBox.BackColor = System.Drawing.Color.MediumOrchid;
-            this.MonSkiBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.MonSkiBox.Cursor = System.Windows.Forms.Cursors.Arrow;
-            this.MonSkiBox.Location = new System.Drawing.Point(140, 133);
-            this.MonSkiBox.Name = "MonSkiBox";
-            this.MonSkiBox.ReadOnly = true;
-            this.MonSkiBox.Size = new System.Drawing.Size(40, 20);
-            this.MonSkiBox.TabIndex = 196;
-            this.MonSkiBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            MonSkiBox.BackColor = System.Drawing.Color.MediumOrchid;
+            MonSkiBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            MonSkiBox.Location = new System.Drawing.Point(163, 153);
+            MonSkiBox.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            MonSkiBox.Name = "MonSkiBox";
+            MonSkiBox.ReadOnly = true;
+            MonSkiBox.Size = new System.Drawing.Size(46, 23);
+            MonSkiBox.TabIndex = 196;
+            MonSkiBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // MoneyBox
             // 
-            this.MoneyBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.MoneyBox.Cursor = System.Windows.Forms.Cursors.Arrow;
-            this.MoneyBox.Location = new System.Drawing.Point(524, 12);
-            this.MoneyBox.Name = "MoneyBox";
-            this.MoneyBox.ReadOnly = true;
-            this.MoneyBox.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.MoneyBox.Size = new System.Drawing.Size(90, 20);
-            this.MoneyBox.TabIndex = 199;
-            this.MoneyBox.Text = "0G";
-            this.MoneyBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.MoneyBox.TextChanged += new System.EventHandler(this.MoneyBox_TextChanged);
+            MoneyBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            MoneyBox.Location = new System.Drawing.Point(611, 14);
+            MoneyBox.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            MoneyBox.Name = "MoneyBox";
+            MoneyBox.ReadOnly = true;
+            MoneyBox.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            MoneyBox.Size = new System.Drawing.Size(105, 23);
+            MoneyBox.TabIndex = 199;
+            MoneyBox.Text = "0G";
+            MoneyBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            MoneyBox.TextChanged += MoneyBox_TextChanged;
             // 
             // label34
             // 
-            this.label34.AutoSize = true;
-            this.label34.Location = new System.Drawing.Point(448, 16);
-            this.label34.Name = "label34";
-            this.label34.Size = new System.Drawing.Size(74, 13);
-            this.label34.TabIndex = 200;
-            this.label34.Text = "Player Money:";
+            label34.AutoSize = true;
+            label34.Location = new System.Drawing.Point(523, 18);
+            label34.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            label34.Name = "label34";
+            label34.Size = new System.Drawing.Size(82, 15);
+            label34.TabIndex = 200;
+            label34.Text = "Player Money:";
             // 
             // label30
             // 
-            this.label30.AutoSize = true;
-            this.label30.Location = new System.Drawing.Point(408, 323);
-            this.label30.Name = "label30";
-            this.label30.Size = new System.Drawing.Size(79, 13);
-            this.label30.TabIndex = 208;
-            this.label30.Text = "Monster Drugs:";
+            label30.AutoSize = true;
+            label30.Location = new System.Drawing.Point(476, 373);
+            label30.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            label30.Name = "label30";
+            label30.Size = new System.Drawing.Size(88, 15);
+            label30.TabIndex = 208;
+            label30.Text = "Monster Drugs:";
             // 
             // MonDrugsLabel
             // 
-            this.MonDrugsLabel.AutoSize = true;
-            this.MonDrugsLabel.Location = new System.Drawing.Point(488, 323);
-            this.MonDrugsLabel.Name = "MonDrugsLabel";
-            this.MonDrugsLabel.Size = new System.Drawing.Size(16, 13);
-            this.MonDrugsLabel.TabIndex = 209;
-            this.MonDrugsLabel.Text = "---";
+            MonDrugsLabel.AutoSize = true;
+            MonDrugsLabel.Location = new System.Drawing.Point(569, 373);
+            MonDrugsLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            MonDrugsLabel.Name = "MonDrugsLabel";
+            MonDrugsLabel.Size = new System.Drawing.Size(22, 15);
+            MonDrugsLabel.TabIndex = 209;
+            MonDrugsLabel.Text = "---";
             // 
             // MonDrugsWeeks
             // 
-            this.MonDrugsWeeks.AutoSize = true;
-            this.MonDrugsWeeks.Location = new System.Drawing.Point(510, 323);
-            this.MonDrugsWeeks.Name = "MonDrugsWeeks";
-            this.MonDrugsWeeks.Size = new System.Drawing.Size(10, 13);
-            this.MonDrugsWeeks.TabIndex = 210;
-            this.MonDrugsWeeks.Text = ".";
+            MonDrugsWeeks.AutoSize = true;
+            MonDrugsWeeks.Location = new System.Drawing.Point(595, 373);
+            MonDrugsWeeks.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            MonDrugsWeeks.Name = "MonDrugsWeeks";
+            MonDrugsWeeks.Size = new System.Drawing.Size(10, 15);
+            MonDrugsWeeks.TabIndex = 210;
+            MonDrugsWeeks.Text = ".";
             // 
             // ControllerTime
             // 
-            this.ControllerTime.Interval = 16;
-            this.ControllerTime.Tick += new System.EventHandler(this.Timer2_Tick);
+            ControllerTime.Interval = 16;
+            ControllerTime.Tick += Timer2_Tick;
             // 
             // EXFeaturesChkBox
             // 
-            this.EXFeaturesChkBox.AutoSize = true;
-            this.EXFeaturesChkBox.Location = new System.Drawing.Point(438, 427);
-            this.EXFeaturesChkBox.Name = "EXFeaturesChkBox";
-            this.EXFeaturesChkBox.Size = new System.Drawing.Size(94, 17);
-            this.EXFeaturesChkBox.TabIndex = 211;
-            this.EXFeaturesChkBox.Text = "Extra Features";
-            this.EXFeaturesChkBox.UseVisualStyleBackColor = true;
-            this.EXFeaturesChkBox.CheckedChanged += new System.EventHandler(this.EXFeaturesChkBox_CheckedChanged);
+            EXFeaturesChkBox.AutoSize = true;
+            EXFeaturesChkBox.Location = new System.Drawing.Point(511, 493);
+            EXFeaturesChkBox.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            EXFeaturesChkBox.Name = "EXFeaturesChkBox";
+            EXFeaturesChkBox.Size = new System.Drawing.Size(99, 19);
+            EXFeaturesChkBox.TabIndex = 211;
+            EXFeaturesChkBox.Text = "Extra Features";
+            EXFeaturesChkBox.UseVisualStyleBackColor = true;
+            EXFeaturesChkBox.CheckedChanged += EXFeaturesChkBox_CheckedChanged;
             // 
             // label40
             // 
-            this.label40.AutoSize = true;
-            this.label40.Location = new System.Drawing.Point(415, 63);
-            this.label40.Name = "label40";
-            this.label40.Size = new System.Drawing.Size(70, 13);
-            this.label40.TabIndex = 215;
-            this.label40.Text = "Shop Sale in:";
-            this.label40.Click += new System.EventHandler(this.label40_Click);
+            label40.AutoSize = true;
+            label40.Location = new System.Drawing.Point(484, 73);
+            label40.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            label40.Name = "label40";
+            label40.Size = new System.Drawing.Size(74, 15);
+            label40.TabIndex = 215;
+            label40.Text = "Shop Sale in:";
+            label40.Click += label40_Click;
             // 
             // NextSaleWksBox
             // 
-            this.NextSaleWksBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.NextSaleWksBox.Cursor = System.Windows.Forms.Cursors.Arrow;
-            this.NextSaleWksBox.Location = new System.Drawing.Point(484, 60);
-            this.NextSaleWksBox.Name = "NextSaleWksBox";
-            this.NextSaleWksBox.ReadOnly = true;
-            this.NextSaleWksBox.Size = new System.Drawing.Size(30, 20);
-            this.NextSaleWksBox.TabIndex = 216;
-            this.NextSaleWksBox.Text = "0w";
-            this.NextSaleWksBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            NextSaleWksBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            NextSaleWksBox.Location = new System.Drawing.Point(565, 69);
+            NextSaleWksBox.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            NextSaleWksBox.Name = "NextSaleWksBox";
+            NextSaleWksBox.ReadOnly = true;
+            NextSaleWksBox.Size = new System.Drawing.Size(35, 23);
+            NextSaleWksBox.TabIndex = 216;
+            NextSaleWksBox.Text = "0w";
+            NextSaleWksBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // label41
             // 
-            this.label41.AutoSize = true;
-            this.label41.Location = new System.Drawing.Point(630, 59);
-            this.label41.Margin = new System.Windows.Forms.Padding(0);
-            this.label41.Name = "label41";
-            this.label41.Size = new System.Drawing.Size(58, 13);
-            this.label41.TabIndex = 222;
-            this.label41.Text = "Ticks/sec:";
+            label41.AutoSize = true;
+            label41.Location = new System.Drawing.Point(735, 68);
+            label41.Margin = new System.Windows.Forms.Padding(0);
+            label41.Name = "label41";
+            label41.Size = new System.Drawing.Size(58, 15);
+            label41.TabIndex = 222;
+            label41.Text = "Ticks/sec:";
             // 
             // TickDisplay
             // 
-            this.TickDisplay.AutoSize = true;
-            this.TickDisplay.Location = new System.Drawing.Point(684, 59);
-            this.TickDisplay.Margin = new System.Windows.Forms.Padding(0);
-            this.TickDisplay.Name = "TickDisplay";
-            this.TickDisplay.Size = new System.Drawing.Size(22, 13);
-            this.TickDisplay.TabIndex = 223;
-            this.TickDisplay.Text = "8.0";
+            TickDisplay.AutoSize = true;
+            TickDisplay.Location = new System.Drawing.Point(798, 68);
+            TickDisplay.Margin = new System.Windows.Forms.Padding(0);
+            TickDisplay.Name = "TickDisplay";
+            TickDisplay.Size = new System.Drawing.Size(22, 15);
+            TickDisplay.TabIndex = 223;
+            TickDisplay.Text = "8.0";
             // 
             // MR2Mode
             // 
-            this.MR2Mode.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.MR2Mode.FormattingEnabled = true;
-            this.MR2Mode.Items.AddRange(new object[] {
-            "MR2 (Vanilla)",
-            "MR2 (Hard Mode)",
-            "モンスター ファーム2"});
-            this.MR2Mode.Location = new System.Drawing.Point(317, 13);
-            this.MR2Mode.MaxDropDownItems = 4;
-            this.MR2Mode.Name = "MR2Mode";
-            this.MR2Mode.Size = new System.Drawing.Size(121, 21);
-            this.MR2Mode.TabIndex = 225;
-            this.MR2Mode.SelectedIndexChanged += new System.EventHandler(this.MR2Mode_SelectedIndexChanged);
+            MR2Mode.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            MR2Mode.FormattingEnabled = true;
+            MR2Mode.Items.AddRange(new object[] { "MR2 (Vanilla)", "MR2 (Hard Mode)", "モンスター ファーム2" });
+            MR2Mode.Location = new System.Drawing.Point(370, 15);
+            MR2Mode.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            MR2Mode.MaxDropDownItems = 4;
+            MR2Mode.Name = "MR2Mode";
+            MR2Mode.Size = new System.Drawing.Size(140, 23);
+            MR2Mode.TabIndex = 225;
+            MR2Mode.SelectedIndexChanged += MR2Mode_SelectedIndexChanged;
             // 
             // label42
             // 
-            this.label42.AutoSize = true;
-            this.label42.Location = new System.Drawing.Point(278, 16);
-            this.label42.Name = "label42";
-            this.label42.Size = new System.Drawing.Size(37, 13);
-            this.label42.TabIndex = 226;
-            this.label42.Text = "Mode:";
+            label42.AutoSize = true;
+            label42.Location = new System.Drawing.Point(324, 18);
+            label42.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            label42.Name = "label42";
+            label42.Size = new System.Drawing.Size(41, 15);
+            label42.TabIndex = 226;
+            label42.Text = "Mode:";
             // 
             // MRDebugButton
             // 
-            this.MRDebugButton.Enabled = false;
-            this.MRDebugButton.Location = new System.Drawing.Point(630, 330);
-            this.MRDebugButton.Name = "MRDebugButton";
-            this.MRDebugButton.Size = new System.Drawing.Size(90, 23);
-            this.MRDebugButton.TabIndex = 227;
-            this.MRDebugButton.Text = "MR Debugger";
-            this.MRDebugButton.UseVisualStyleBackColor = true;
-            this.MRDebugButton.Click += new System.EventHandler(this.MRDebugButton_Click);
+            MRDebugButton.Enabled = false;
+            MRDebugButton.Location = new System.Drawing.Point(735, 381);
+            MRDebugButton.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            MRDebugButton.Name = "MRDebugButton";
+            MRDebugButton.Size = new System.Drawing.Size(105, 27);
+            MRDebugButton.TabIndex = 227;
+            MRDebugButton.Text = "MR Debugger";
+            MRDebugButton.UseVisualStyleBackColor = true;
+            MRDebugButton.Click += MRDebugButton_Click;
             // 
             // statusStrip1
             // 
-            this.statusStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.StatusBarMSG,
-            this.StatusBarURL});
-            this.statusStrip1.Location = new System.Drawing.Point(0, 458);
-            this.statusStrip1.Name = "statusStrip1";
-            this.statusStrip1.Size = new System.Drawing.Size(724, 22);
-            this.statusStrip1.SizingGrip = false;
-            this.statusStrip1.TabIndex = 228;
-            this.statusStrip1.Text = "statusStrip1";
+            statusStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] { StatusBarMSG, StatusBarURL });
+            statusStrip1.Location = new System.Drawing.Point(0, 532);
+            statusStrip1.Name = "statusStrip1";
+            statusStrip1.Padding = new System.Windows.Forms.Padding(1, 0, 16, 0);
+            statusStrip1.Size = new System.Drawing.Size(724, 22);
+            statusStrip1.SizingGrip = false;
+            statusStrip1.TabIndex = 228;
+            statusStrip1.Text = "statusStrip1";
             // 
             // StatusBarMSG
             // 
-            this.StatusBarMSG.LinkBehavior = System.Windows.Forms.LinkBehavior.NeverUnderline;
-            this.StatusBarMSG.Name = "StatusBarMSG";
-            this.StatusBarMSG.Size = new System.Drawing.Size(122, 17);
-            this.StatusBarMSG.Text = "This is a test message.";
-            this.StatusBarMSG.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.StatusBarMSG.Click += new System.EventHandler(this.ToolStripStatusLabel1_Click);
+            StatusBarMSG.LinkBehavior = System.Windows.Forms.LinkBehavior.NeverUnderline;
+            StatusBarMSG.Name = "StatusBarMSG";
+            StatusBarMSG.Size = new System.Drawing.Size(122, 17);
+            StatusBarMSG.Text = "This is a test message.";
+            StatusBarMSG.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            StatusBarMSG.Click += ToolStripStatusLabel1_Click;
             // 
             // StatusBarURL
             // 
-            this.StatusBarURL.DoubleClickEnabled = true;
-            this.StatusBarURL.IsLink = true;
-            this.StatusBarURL.Name = "StatusBarURL";
-            this.StatusBarURL.Size = new System.Drawing.Size(172, 17);
-            this.StatusBarURL.Text = "This is a test URL link to Github.";
-            this.StatusBarURL.Click += new System.EventHandler(this.StatusBarURL_Click);
+            StatusBarURL.DoubleClickEnabled = true;
+            StatusBarURL.IsLink = true;
+            StatusBarURL.Name = "StatusBarURL";
+            StatusBarURL.Size = new System.Drawing.Size(172, 17);
+            StatusBarURL.Text = "This is a test URL link to Github.";
+            StatusBarURL.Click += StatusBarURL_Click;
             // 
             // StatusMessageCycle
             // 
-            this.StatusMessageCycle.Enabled = true;
-            this.StatusMessageCycle.Interval = 20000;
-            this.StatusMessageCycle.Tick += new System.EventHandler(this.StatusMessageCycle_Tick);
+            StatusMessageCycle.Enabled = true;
+            StatusMessageCycle.Interval = 20000;
+            StatusMessageCycle.Tick += StatusMessageCycle_Tick;
             // 
             // DumpGrowths
             // 
-            this.DumpGrowths.Location = new System.Drawing.Point(630, 307);
-            this.DumpGrowths.Name = "DumpGrowths";
-            this.DumpGrowths.Size = new System.Drawing.Size(90, 23);
-            this.DumpGrowths.TabIndex = 229;
-            this.DumpGrowths.Text = "Copy Growths";
-            this.DumpGrowths.UseVisualStyleBackColor = true;
-            this.DumpGrowths.Click += new System.EventHandler(this.DumpGrowths_Click);
+            DumpGrowths.Location = new System.Drawing.Point(735, 354);
+            DumpGrowths.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            DumpGrowths.Name = "DumpGrowths";
+            DumpGrowths.Size = new System.Drawing.Size(105, 27);
+            DumpGrowths.TabIndex = 229;
+            DumpGrowths.Text = "Copy Growths";
+            DumpGrowths.UseVisualStyleBackColor = true;
+            DumpGrowths.Click += DumpGrowths_Click;
             // 
             // ChangeName
             // 
-            this.ChangeName.Location = new System.Drawing.Point(182, 218);
-            this.ChangeName.Name = "ChangeName";
-            this.ChangeName.Size = new System.Drawing.Size(86, 23);
-            this.ChangeName.TabIndex = 230;
-            this.ChangeName.Text = "Change Name";
-            this.ChangeName.UseVisualStyleBackColor = true;
-            this.ChangeName.Visible = false;
-            this.ChangeName.Click += new System.EventHandler(this.ChangeName_Click);
+            ChangeName.Location = new System.Drawing.Point(212, 252);
+            ChangeName.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            ChangeName.Name = "ChangeName";
+            ChangeName.Size = new System.Drawing.Size(100, 27);
+            ChangeName.TabIndex = 230;
+            ChangeName.Text = "Change Name";
+            ChangeName.UseVisualStyleBackColor = true;
+            ChangeName.Visible = false;
+            ChangeName.Click += ChangeName_Click;
             // 
             // SaveName
             // 
-            this.SaveName.Location = new System.Drawing.Point(270, 218);
-            this.SaveName.Name = "SaveName";
-            this.SaveName.Size = new System.Drawing.Size(86, 23);
-            this.SaveName.TabIndex = 231;
-            this.SaveName.Text = "Save Change";
-            this.SaveName.UseVisualStyleBackColor = true;
-            this.SaveName.Visible = false;
-            this.SaveName.Click += new System.EventHandler(this.SaveName_Click);
+            SaveName.Location = new System.Drawing.Point(315, 252);
+            SaveName.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            SaveName.Name = "SaveName";
+            SaveName.Size = new System.Drawing.Size(100, 27);
+            SaveName.TabIndex = 231;
+            SaveName.Text = "Save Change";
+            SaveName.UseVisualStyleBackColor = true;
+            SaveName.Visible = false;
+            SaveName.Click += SaveName_Click;
             // 
             // CancelName
             // 
-            this.CancelName.Location = new System.Drawing.Point(358, 218);
-            this.CancelName.Name = "CancelName";
-            this.CancelName.Size = new System.Drawing.Size(86, 23);
-            this.CancelName.TabIndex = 232;
-            this.CancelName.Text = "Cancel";
-            this.CancelName.UseVisualStyleBackColor = true;
-            this.CancelName.Visible = false;
-            this.CancelName.Click += new System.EventHandler(this.CancelName_Click);
+            CancelName.Location = new System.Drawing.Point(418, 252);
+            CancelName.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            CancelName.Name = "CancelName";
+            CancelName.Size = new System.Drawing.Size(100, 27);
+            CancelName.TabIndex = 232;
+            CancelName.Text = "Cancel";
+            CancelName.UseVisualStyleBackColor = true;
+            CancelName.Visible = false;
+            CancelName.Click += CancelName_Click;
             // 
             // label43
             // 
-            this.label43.AutoSize = true;
-            this.label43.Location = new System.Drawing.Point(539, 142);
-            this.label43.Name = "label43";
-            this.label43.Size = new System.Drawing.Size(0, 13);
-            this.label43.TabIndex = 233;
+            label43.AutoSize = true;
+            label43.Location = new System.Drawing.Point(629, 164);
+            label43.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            label43.Name = "label43";
+            label43.Size = new System.Drawing.Size(0, 15);
+            label43.TabIndex = 233;
             // 
             // MonPrizeMoney
             // 
-            this.MonPrizeMoney.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.MonPrizeMoney.Cursor = System.Windows.Forms.Cursors.Arrow;
-            this.MonPrizeMoney.Location = new System.Drawing.Point(470, 110);
-            this.MonPrizeMoney.Name = "MonPrizeMoney";
-            this.MonPrizeMoney.ReadOnly = true;
-            this.MonPrizeMoney.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.MonPrizeMoney.Size = new System.Drawing.Size(90, 20);
-            this.MonPrizeMoney.TabIndex = 234;
-            this.MonPrizeMoney.Text = "0G";
-            this.MonPrizeMoney.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            MonPrizeMoney.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            MonPrizeMoney.Location = new System.Drawing.Point(548, 127);
+            MonPrizeMoney.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            MonPrizeMoney.Name = "MonPrizeMoney";
+            MonPrizeMoney.ReadOnly = true;
+            MonPrizeMoney.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            MonPrizeMoney.Size = new System.Drawing.Size(105, 23);
+            MonPrizeMoney.TabIndex = 234;
+            MonPrizeMoney.Text = "0G";
+            MonPrizeMoney.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // label44
             // 
-            this.label44.AutoSize = true;
-            this.label44.Location = new System.Drawing.Point(480, 95);
-            this.label44.Name = "label44";
-            this.label44.Size = new System.Drawing.Size(68, 13);
-            this.label44.TabIndex = 235;
-            this.label44.Text = "Prize Money:";
+            label44.AutoSize = true;
+            label44.Location = new System.Drawing.Point(560, 110);
+            label44.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            label44.Name = "label44";
+            label44.Size = new System.Drawing.Size(75, 15);
+            label44.TabIndex = 235;
+            label44.Text = "Prize Money:";
             // 
             // BSTLabel
             // 
-            this.BSTLabel.AutoSize = true;
-            this.BSTLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.BSTLabel.Location = new System.Drawing.Point(275, 137);
-            this.BSTLabel.Name = "BSTLabel";
-            this.BSTLabel.Size = new System.Drawing.Size(31, 13);
-            this.BSTLabel.TabIndex = 237;
-            this.BSTLabel.Text = "BST:";
+            BSTLabel.AutoSize = true;
+            BSTLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, 0);
+            BSTLabel.Location = new System.Drawing.Point(321, 158);
+            BSTLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            BSTLabel.Name = "BSTLabel";
+            BSTLabel.Size = new System.Drawing.Size(31, 13);
+            BSTLabel.TabIndex = 237;
+            BSTLabel.Text = "BST:";
             // 
             // ViewerWindow
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(724, 480);
-            this.Controls.Add(this.BackupButton);
-            this.Controls.Add(this.BSTLabel);
-            this.Controls.Add(this.BreederInfo);
-            this.Controls.Add(this.label44);
-            this.Controls.Add(this.MonPrizeMoney);
-            this.Controls.Add(this.label43);
-            this.Controls.Add(this.CancelName);
-            this.Controls.Add(this.SaveName);
-            this.Controls.Add(this.ChangeName);
-            this.Controls.Add(this.DumpGrowths);
-            this.Controls.Add(this.statusStrip1);
-            this.Controls.Add(this.MRDebugButton);
-            this.Controls.Add(this.label42);
-            this.Controls.Add(this.MR2Mode);
-            this.Controls.Add(this.ItemViewButton);
-            this.Controls.Add(this.TickDisplay);
-            this.Controls.Add(this.label41);
-            this.Controls.Add(this.UpdateRate);
-            this.Controls.Add(this.BaseStatTotal);
-            this.Controls.Add(this.HideData);
-            this.Controls.Add(this.ErrSaleBox);
-            this.Controls.Add(this.TWButton);
-            this.Controls.Add(this.NextSaleWksBox);
-            this.Controls.Add(this.label40);
-            this.Controls.Add(this.MVButton);
-            this.Controls.Add(this.LIWButton);
-            this.Controls.Add(this.EXFeaturesChkBox);
-            this.Controls.Add(this.MonDrugsWeeks);
-            this.Controls.Add(this.MonDrugsLabel);
-            this.Controls.Add(this.label30);
-            this.Controls.Add(this.label34);
-            this.Controls.Add(this.MoneyBox);
-            this.Controls.Add(this.MonDefBox);
-            this.Controls.Add(this.MonSpdBox);
-            this.Controls.Add(this.MonSkiBox);
-            this.Controls.Add(this.MonIntBox);
-            this.Controls.Add(this.MonPowBox);
-            this.Controls.Add(this.MonLifBox);
-            this.Controls.Add(this.MonGivenNameBox);
-            this.Controls.Add(this.label32);
-            this.Controls.Add(this.MonBanaScumToggle);
-            this.Controls.Add(this.CocoonInfo);
-            this.Controls.Add(this.MonCocoonReady);
-            this.Controls.Add(this.label31);
-            this.Controls.Add(this.MonLoyaltyBox);
-            this.Controls.Add(this.MonCJBox);
-            this.Controls.Add(this.MonCJLabel);
-            this.Controls.Add(this.MonGPSCheck);
-            this.Controls.Add(this.MonItemUsedBox);
-            this.Controls.Add(this.MonPlayBox);
-            this.Controls.Add(this.Label29);
-            this.Controls.Add(this.MonDislikeItemBox);
-            this.Controls.Add(this.Label28);
-            this.Controls.Add(this.MonLikeItemBox);
-            this.Controls.Add(this.Label27);
-            this.Controls.Add(this.MR2AVValueUpdate);
-            this.Controls.Add(this.MonSpecialsBox);
-            this.Controls.Add(this.Label26);
-            this.Controls.Add(this.MonFormBox);
-            this.Controls.Add(this.Label25);
-            this.Controls.Add(this.MonLifeIndexBox);
-            this.Controls.Add(this.Label24);
-            this.Controls.Add(this.MonFatigueBox);
-            this.Controls.Add(this.Label23);
-            this.Controls.Add(this.MonStressBox);
-            this.Controls.Add(this.Label22);
-            this.Controls.Add(this.MonFearBox);
-            this.Controls.Add(this.Label21);
-            this.Controls.Add(this.MonSpoilBox);
-            this.Controls.Add(this.Label20);
-            this.Controls.Add(this.Label19);
-            this.Controls.Add(this.Label18);
-            this.Controls.Add(this.MonMotiveBox10);
-            this.Controls.Add(this.Label17);
-            this.Controls.Add(this.MonMotiveBox9);
-            this.Controls.Add(this.Label16);
-            this.Controls.Add(this.MonMotiveBox8);
-            this.Controls.Add(this.Label15);
-            this.Controls.Add(this.MonMotiveBox7);
-            this.Controls.Add(this.Label9);
-            this.Controls.Add(this.Label10);
-            this.Controls.Add(this.Label11);
-            this.Controls.Add(this.Label12);
-            this.Controls.Add(this.Label13);
-            this.Controls.Add(this.Label14);
-            this.Controls.Add(this.MonMotiveBox6);
-            this.Controls.Add(this.MonMotiveBox5);
-            this.Controls.Add(this.MonMotiveBox4);
-            this.Controls.Add(this.MonMotiveBox3);
-            this.Controls.Add(this.MonMotiveBox2);
-            this.Controls.Add(this.MonMotiveBox1);
-            this.Controls.Add(this.MonLifeTypeBox);
-            this.Controls.Add(this.Label8);
-            this.Controls.Add(this.MonLifeStageBox);
-            this.Controls.Add(this.Label7);
-            this.Controls.Add(this.MonSilverPeachBox);
-            this.Controls.Add(this.MonGoldPeachBox);
-            this.Controls.Add(this.MonInitLifespanBox);
-            this.Controls.Add(this.Label6);
-            this.Controls.Add(this.MonLifespanBox);
-            this.Controls.Add(this.Label5);
-            this.Controls.Add(this.MonAgeBox);
-            this.Controls.Add(this.Label4);
-            this.Controls.Add(this.MonFameBox);
-            this.Controls.Add(this.MonGutsRateBox);
-            this.Controls.Add(this.MonFameLabel);
-            this.Controls.Add(this.MonGRNumToggle);
-            this.Controls.Add(this.MonGRTitleLabel);
-            this.Controls.Add(this.MonBreedNameBox);
-            this.Controls.Add(this.MonBNLabel);
-            this.Controls.Add(this.MonNatureModBox);
-            this.Controls.Add(this.Label2);
-            this.Controls.Add(this.MonNatureBox);
-            this.Controls.Add(this.Label1);
-            this.Controls.Add(this.MonMoveSpdLabel);
-            this.Controls.Add(this.MonArenaSpeedBox);
-            this.Controls.Add(this.MonDEFGrLabel);
-            this.Controls.Add(this.MonSPDGrLabel);
-            this.Controls.Add(this.MonSKIGrLabel);
-            this.Controls.Add(this.MonINTGrLabel);
-            this.Controls.Add(this.MonPOWGrLabel);
-            this.Controls.Add(this.Label3);
-            this.Controls.Add(this.MonLIFGrLabel);
-            this.Controls.Add(this.MonDEFGRBox);
-            this.Controls.Add(this.MonSPDGRBox);
-            this.Controls.Add(this.MonSKLGRBox);
-            this.Controls.Add(this.MonINTGRBox);
-            this.Controls.Add(this.MonPOWGRBox);
-            this.Controls.Add(this.MonLIFGRBox);
-            this.Controls.Add(this.MonGRLabel);
-            this.Controls.Add(this.SubBreedLabel);
-            this.Controls.Add(this.MonsterBreedDiv);
-            this.Controls.Add(this.MainBreedLabel);
-            this.Controls.Add(this.MonsterBreedLabel);
-            this.Controls.Add(this.EmuSelectBox);
-            this.Controls.Add(this.EmuSelectLabel);
-            this.Controls.Add(this.EmuAttachButton);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
-            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.MaximizeBox = false;
-            this.Name = "ViewerWindow";
-            this.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.Text = "MR2 Advanced Viewer";
-            this.Load += new System.EventHandler(this.ViewerWindow_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.UpdateRate)).EndInit();
-            this.statusStrip1.ResumeLayout(false);
-            this.statusStrip1.PerformLayout();
-            this.ResumeLayout(false);
-            this.PerformLayout();
-
+            AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
+            AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            ClientSize = new System.Drawing.Size(724, 554);
+            Controls.Add(BackupButton);
+            Controls.Add(BSTLabel);
+            Controls.Add(BreederInfo);
+            Controls.Add(label44);
+            Controls.Add(MonPrizeMoney);
+            Controls.Add(label43);
+            Controls.Add(CancelName);
+            Controls.Add(SaveName);
+            Controls.Add(ChangeName);
+            Controls.Add(DumpGrowths);
+            Controls.Add(statusStrip1);
+            Controls.Add(MRDebugButton);
+            Controls.Add(label42);
+            Controls.Add(MR2Mode);
+            Controls.Add(ItemViewButton);
+            Controls.Add(TickDisplay);
+            Controls.Add(label41);
+            Controls.Add(UpdateRate);
+            Controls.Add(BaseStatTotal);
+            Controls.Add(HideData);
+            Controls.Add(ErrSaleBox);
+            Controls.Add(TWButton);
+            Controls.Add(NextSaleWksBox);
+            Controls.Add(label40);
+            Controls.Add(MVButton);
+            Controls.Add(LIWButton);
+            Controls.Add(EXFeaturesChkBox);
+            Controls.Add(MonDrugsWeeks);
+            Controls.Add(MonDrugsLabel);
+            Controls.Add(label30);
+            Controls.Add(label34);
+            Controls.Add(MoneyBox);
+            Controls.Add(MonDefBox);
+            Controls.Add(MonSpdBox);
+            Controls.Add(MonSkiBox);
+            Controls.Add(MonIntBox);
+            Controls.Add(MonPowBox);
+            Controls.Add(MonLifBox);
+            Controls.Add(MonGivenNameBox);
+            Controls.Add(label32);
+            Controls.Add(MonBanaScumToggle);
+            Controls.Add(CocoonInfo);
+            Controls.Add(MonCocoonReady);
+            Controls.Add(label31);
+            Controls.Add(MonLoyaltyBox);
+            Controls.Add(MonCJBox);
+            Controls.Add(MonCJLabel);
+            Controls.Add(MonGPSCheck);
+            Controls.Add(MonItemUsedBox);
+            Controls.Add(MonPlayBox);
+            Controls.Add(Label29);
+            Controls.Add(MonDislikeItemBox);
+            Controls.Add(Label28);
+            Controls.Add(MonLikeItemBox);
+            Controls.Add(Label27);
+            Controls.Add(MR2AVValueUpdate);
+            Controls.Add(MonSpecialsBox);
+            Controls.Add(Label26);
+            Controls.Add(MonFormBox);
+            Controls.Add(Label25);
+            Controls.Add(MonLifeIndexBox);
+            Controls.Add(Label24);
+            Controls.Add(MonFatigueBox);
+            Controls.Add(Label23);
+            Controls.Add(MonStressBox);
+            Controls.Add(Label22);
+            Controls.Add(MonFearBox);
+            Controls.Add(Label21);
+            Controls.Add(MonSpoilBox);
+            Controls.Add(Label20);
+            Controls.Add(Label19);
+            Controls.Add(Label18);
+            Controls.Add(MonMotiveBox10);
+            Controls.Add(Label17);
+            Controls.Add(MonMotiveBox9);
+            Controls.Add(Label16);
+            Controls.Add(MonMotiveBox8);
+            Controls.Add(Label15);
+            Controls.Add(MonMotiveBox7);
+            Controls.Add(Label9);
+            Controls.Add(Label10);
+            Controls.Add(Label11);
+            Controls.Add(Label12);
+            Controls.Add(Label13);
+            Controls.Add(Label14);
+            Controls.Add(MonMotiveBox6);
+            Controls.Add(MonMotiveBox5);
+            Controls.Add(MonMotiveBox4);
+            Controls.Add(MonMotiveBox3);
+            Controls.Add(MonMotiveBox2);
+            Controls.Add(MonMotiveBox1);
+            Controls.Add(MonLifeTypeBox);
+            Controls.Add(Label8);
+            Controls.Add(MonLifeStageBox);
+            Controls.Add(Label7);
+            Controls.Add(MonSilverPeachBox);
+            Controls.Add(MonGoldPeachBox);
+            Controls.Add(MonInitLifespanBox);
+            Controls.Add(Label6);
+            Controls.Add(MonLifespanBox);
+            Controls.Add(Label5);
+            Controls.Add(MonAgeBox);
+            Controls.Add(Label4);
+            Controls.Add(MonFameBox);
+            Controls.Add(MonGutsRateBox);
+            Controls.Add(MonFameLabel);
+            Controls.Add(MonGRNumToggle);
+            Controls.Add(MonGRTitleLabel);
+            Controls.Add(MonBreedNameBox);
+            Controls.Add(MonBNLabel);
+            Controls.Add(MonNatureModBox);
+            Controls.Add(Label2);
+            Controls.Add(MonNatureBox);
+            Controls.Add(Label1);
+            Controls.Add(MonMoveSpdLabel);
+            Controls.Add(MonArenaSpeedBox);
+            Controls.Add(MonDEFGrLabel);
+            Controls.Add(MonSPDGrLabel);
+            Controls.Add(MonSKIGrLabel);
+            Controls.Add(MonINTGrLabel);
+            Controls.Add(MonPOWGrLabel);
+            Controls.Add(Label3);
+            Controls.Add(MonLIFGrLabel);
+            Controls.Add(MonDEFGRBox);
+            Controls.Add(MonSPDGRBox);
+            Controls.Add(MonSKLGRBox);
+            Controls.Add(MonINTGRBox);
+            Controls.Add(MonPOWGRBox);
+            Controls.Add(MonLIFGRBox);
+            Controls.Add(MonGRLabel);
+            Controls.Add(SubBreedLabel);
+            Controls.Add(MonsterBreedDiv);
+            Controls.Add(MainBreedLabel);
+            Controls.Add(MonsterBreedLabel);
+            Controls.Add(EmuSelectBox);
+            Controls.Add(EmuSelectLabel);
+            Controls.Add(EmuAttachButton);
+            FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            Icon = (System.Drawing.Icon)resources.GetObject("$this.Icon");
+            Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            MaximizeBox = false;
+            Name = "ViewerWindow";
+            RightToLeft = System.Windows.Forms.RightToLeft.No;
+            Text = "MR2 Advanced Viewer";
+            Load += ViewerWindow_Load;
+            ((System.ComponentModel.ISupportInitialize)UpdateRate).EndInit();
+            statusStrip1.ResumeLayout(false);
+            statusStrip1.PerformLayout();
+            ResumeLayout(false);
+            PerformLayout();
         }
 
         #endregion
