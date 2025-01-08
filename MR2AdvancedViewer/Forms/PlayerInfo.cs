@@ -4,12 +4,14 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Runtime.Versioning;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace MR2AdvancedViewer.Forms
 {
+    [SupportedOSPlatform("windows")]
     public partial class PlayerInfo : Form
     {
         public ViewerWindow AVW;
