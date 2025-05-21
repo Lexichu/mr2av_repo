@@ -2,11 +2,13 @@
 using System.Collections.Generic;
 using System.Drawing;
 using System.Linq;
+using System.Runtime.Versioning;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace MR2AdvancedViewer
 {
+    [SupportedOSPlatform("windows")]
     static class Program
     {
         /// <summary>
