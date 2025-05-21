@@ -17,7 +17,10 @@ using System.IO;
 // "is this condition true ? yes : no"
 
 #pragma warning disable IDE0052 // Stop the compiler alerting me to HasRead being unused.
+#pragma warning disable IDE0066 // Stop the compiler insisting I use Switch as a statement.
 #pragma warning disable IDE1006 // Stop the compiler criticising me for using functions not beginning with uppercase.
+#pragma warning disable IDE0090 // I don't care that new can be simplified. I am a simple mouse-girl - if it works, it's fine.
+
 
 namespace MR2AdvancedViewer
 {
@@ -42,24 +45,20 @@ namespace MR2AdvancedViewer
 
         const int PROCESS_ALLACCESS = 0x1F0FFF;
         const string VersionID = "0.7.2";
-        const string ReadableVersion = "MR2 Advanced Viewer 0.7.2";
-        const string ReadableVersionJP = "MF2 アドバンスド ビューアー 0.7.2";
+        const string ReadableVersion = "MR2 Advanced Viewer " + VersionID;
+        const string ReadableVersionJP = "MF2 アドバンスド ビューアー " + VersionID;
 
-        [DllImport("kernel32.dll")]
-        public static extern IntPtr OpenProcess(int dwDesiredAccess, bool bInheritHandle, int dwProcessId);
+        [LibraryImport("kernel32.dll")]
+        public static extern partial IntPtr OpenProcess(int dwDesiredAccess, bool bInheritHandle, int dwProcessId);
         // Add Read/WriteProcessMemory definitions from P/Invoke
-        [DllImport("kernel32.dll", SetLastError = true)]
+        [LibraryImport("kernel32.dll", SetLastError = true)]
         static extern bool ReadProcessMemory(IntPtr hProcess,IntPtr lpBaseAddress,[Out] byte[] lpBuffer,int dwSize, out IntPtr lpNumberOfBytesRead);
-        [DllImport("kernel32.dll", SetLastError = true)]
-        static extern bool ReadProcessMemory(IntPtr hProcess,IntPtr lpBaseAddress,[Out, MarshalAs(UnmanagedType.AsAny)] object lpBuffer,int dwSize,out IntPtr lpNumberOfBytesRead);
-        [DllImport("kernel32.dll", SetLastError = true)]
+        [LibraryImport("kernel32.dll", SetLastError = true)]
         static extern bool ReadProcessMemory(IntPtr hProcess,IntPtr lpBaseAddress,[Out] IntPtr lpBuffer,int dwSize,out IntPtr lpNumberOfBytesRead);
-        [DllImport("kernel32.dll", SetLastError = true)]
+        [LibraryImport("kernel32.dll", SetLastError = true)]
         public static extern bool WriteProcessMemory(IntPtr hProcess,IntPtr lpBaseAddress,byte[] lpBuffer,Int32 nSize,out IntPtr lpNumberOfBytesWritten);
-        [DllImport("kernel32.dll", SetLastError = true)]
-        public static extern bool WriteProcessMemory(IntPtr hProcess,IntPtr lpBaseAddress,[MarshalAs(UnmanagedType.AsAny)] object lpBuffer,int dwSize,out IntPtr lpNumberOfBytesWritten);
         // Used to access 64bit modules from a 32bit application
-        [DllImport("psapi.dll", SetLastError = true)]
+        [LibraryImport("psapi.dll", SetLastError = true)]
         public static extern bool EnumProcessModules(IntPtr hProcess,[MarshalAs(UnmanagedType.LPArray, ArraySubType = UnmanagedType.U4)][In][Out] uint[] lphModule, uint cb, [MarshalAs(UnmanagedType.U4)] out uint lpcbNeeded);
 
         public IntPtr PSXBase = IntPtr.Zero;
@@ -199,7 +198,7 @@ namespace MR2AdvancedViewer
             }
         }
 
-        public bool IsConnectedToInternet()
+        public static bool IsConnectedToInternet()
         {
             if (!NetworkInterface.GetIsNetworkAvailable()) // Do we even have a network device?
             {
@@ -268,7 +267,7 @@ Please visit https://github.com/Lexichu/mr2av_repo/releases/ to download the lat
             }
         }
 
-        public string MonGRAlphabetise(int gValue, TextBox BoxID)
+        public static string MonGRAlphabetise(int gValue, TextBox BoxID)
         {
             switch (gValue)
             {
@@ -4323,7 +4322,7 @@ Please visit https://github.com/Lexichu/mr2av_repo/releases/ to download the lat
             else return "---";
         }
 
-        public string MonGenusNames(int MonGene, bool bMainGenus)
+        public static string MonGenusNames(int MonGene, bool bMainGenus)
         {
             switch (MonGene)
             {
@@ -4375,7 +4374,7 @@ Please visit https://github.com/Lexichu/mr2av_repo/releases/ to download the lat
             }
         }
 
-        public string MonDesireNames(int MonItem)
+        public static string MonDesireNames(int MonItem)
         {
             switch (MonItem)
             {
@@ -4618,7 +4617,7 @@ Please visit https://github.com/Lexichu/mr2av_repo/releases/ to download the lat
             return Mon_AgeYears + "y," + Mon_AgeMonths + "m," + Mon_AgeWeeks + "w";
         }
 
-        public string MonPlaytimeNames(int MonPlay)
+        public static string MonPlaytimeNames(int MonPlay)
         {
             switch (MonPlay)
             {
@@ -4632,7 +4631,7 @@ Please visit https://github.com/Lexichu/mr2av_repo/releases/ to download the lat
         public string MonLifeStageNames(int MonLife)
         {
             if (Mon_Lifespan <= 0 && MonBreedNameBox.Text != "No Monster"/* || [some trigger for death by battle]*/)
-                return "11 - Dead";
+                return "Dead :(";
             switch (MonLife)
             {
                 case 0: return "1 - Baby";
@@ -4794,8 +4793,10 @@ Please visit https://github.com/Lexichu/mr2av_repo/releases/ to download the lat
                         if (CharaID == 0xFFFF)
                             break;
 
-                        if (CharMapping.charMap.ContainsKey(CharaID))
-                            MonGivenName += CharMapping.charMap[CharaID];
+                        //                        if (CharMapping.charMap.ContainsKey(CharaID))
+                        //                            MonGivenName += CharMapping.charMap[CharaID];
+                        if (CharMapping.charMap.TryGetValue(CharaID, out string value))
+                            MonGivenName += value;
                         else
                             MonGivenName += "?";                                                                                                        //display "?" if character is unrecognized
 
@@ -4806,8 +4807,8 @@ Please visit https://github.com/Lexichu/mr2av_repo/releases/ to download the lat
                         if (CharaID == 0xFF)
                             break;
 
-                        if (CharMapping.charMap.ContainsKey(CharaID))
-                            MonGivenName += CharMapping.charMap[CharaID];
+                        if (CharMapping.charMap.TryGetValue(CharaID, out string value))
+                            MonGivenName += value;
                         else
                             MonGivenName += "?";                                                                                                        //display "?" if character is unrecognized
                     }
@@ -5026,7 +5027,7 @@ Please visit https://github.com/Lexichu/mr2av_repo/releases/ to download the lat
             return MonGivenName;
         }
 
-        private string ExportEnglishPS1(int characterID, bool bJapaneseMode)
+        private static string ExportEnglishPS1(int characterID, bool bJapaneseMode)
         {
             if (bJapaneseMode)
                 characterID += 11;
@@ -5492,7 +5493,7 @@ This replaces the old button, skipping the additional window and saving Lexi a l
             }
         }
 
-        private string HumanNETFramework(int netFrameID)
+        private static string HumanNETFramework(int netFrameID)
         {
             switch (netFrameID)
             {
@@ -5769,7 +5770,7 @@ As a precaution, MR2AV has stopped reading from the emulator. To continue, press
             return loadedArray;
         }
 
-        private void HandleMotiveBox(TextBox boxID, int motivPercent)
+        private static void HandleMotiveBox(TextBox boxID, int motivPercent)
         {
             boxID.Invoke((MethodInvoker)delegate { boxID.Text = motivPercent + "%"; });
             if (motivPercent < 30 && motivPercent > -1)
